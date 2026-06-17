@@ -14,6 +14,8 @@ export const blogPostsGenerated: BlogPost[] = [
       "whatsapp"
     ],
     "html": "<h2>The usual gap</h2>\n<p>Many teams already have a landing page, but the primary <strong>“Contact us”</strong> action is vague: a form that rarely gets filled, or a bare WhatsApp number with no opener. Visitors hesitate — and nothing gets sent.</p>\n<h2>What we implement</h2>\n<ol><li>**One primary action** above the fold: a WhatsApp button with a specific label, e.g. *“Consult on WhatsApp”*, not *“Click here”*.</li><li>**Prefilled WhatsApp text** — business name and a short intent included; visitors only tap send.</li><li>**Proof near the top** — service scope, region, or a response-time promise (e.g. weekday reply within 24 hours).</li><li>**Ad-specific landings** — one campaign → one page → one CTA, not a generic homepage.</li></ol>\n<h2>Five-minute checklist</h2>\n<ul><li>WhatsApp button visible on mobile without excessive scrolling  </li><li>Meta title/description state **who** the offer is for  </li><li>Hero does not compete with three CTAs (WA, phone, email)</li></ul>\n<h2>Next step</h2>\n<p>Explore our <strong>Webinar Landing</strong> and <strong>Company Profile</strong> demos — they separate awareness from inquiry. If you need something similar, start with a 30-minute consult: we’ll recommend the leanest version that still looks credible.</p>",
+    "wordCount": 173,
+    "readingTimeMinutes": 1,
     "ogImage": "/og/blog/landing-page-whatsapp-cta-en.svg"
   },
   {
@@ -28,6 +30,8 @@ export const blogPostsGenerated: BlogPost[] = [
       "whatsapp"
     ],
     "html": "<h2>Masalah umum</h2>\n<p>Banyak bisnis sudah punya landing page, tapi tombol <strong>“Hubungi kami”</strong> tidak jelas: ke form yang jarang diisi, atau nomor WA tanpa pesan awal. Pengunjung ragu — chat tidak terjadi.</p>\n<h2>Pola yang kami pakai</h2>\n<ol><li>**Satu aksi utama** di fold pertama: tombol WhatsApp dengan label spesifik, misalnya *“Konsultasi via WhatsApp”*, bukan *“Klik di sini”*.</li><li>**Pesan WA prefilled** — nama bisnis + kebutuhan singkat sudah terisi; pengunjung tinggal kirim.</li><li>**Bukti di atas fold** — layanan, wilayah, atau estimasi respons (mis. ≤ 24 jam di hari kerja).</li><li>**Landing untuk iklan** — satu kampanye = satu halaman = satu CTA, bukan homepage umum.</li></ol>\n<h2>Checklist 5 menit</h2>\n<ul><li>Tomol WA terlihat di mobile tanpa scroll panjang  </li><li>Meta title/description menjelaskan **untuk siapa** layanan ini  </li><li>Tidak ada 3 CTA bersaing (WA, telepon, email) di hero</li></ul>\n<h2>Langkah berikutnya</h2>\n<p>Lihat demo <strong>Webinar Landing</strong> dan <strong>Company Profile</strong> di situs kami — keduanya memisahkan <em>awareness</em> dan <em>inquiry</em>. Kalau Anda butuh halaman serupa, mulai dari konsultasi 30 menit: kami bantu pilih versi paling ringan yang masih terasa profesional.</p>",
+    "wordCount": 167,
+    "readingTimeMinutes": 1,
     "ogImage": "/og/blog/landing-page-whatsapp-cta-id.svg"
   }
 ] as BlogPost[];

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
 import type { BlogPost } from "@/types/blog";
 import type { Lang } from "@/i18n/types";
 import { routes } from "@/lib/routes";
@@ -9,7 +9,9 @@ type BlogPostCardProps = {
   post: BlogPost;
   lang: Lang;
   featured?: boolean;
+  compact?: boolean;
   readLabel: string;
+  readTimeLabel: (minutes: number) => string;
 };
 
 function formatDate(date: string, lang: Lang): string {
@@ -28,7 +30,9 @@ export function BlogPostCard({
   post,
   lang,
   featured = false,
+  compact = false,
   readLabel,
+  readTimeLabel,
 }: BlogPostCardProps) {
   const href = routes.blogPost(lang, post.slug);
   const hasOg = Boolean(post.ogImage);
@@ -36,23 +40,27 @@ export function BlogPostCard({
   return (
     <article
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-brand-border bg-white shadow-card transition-all duration-300",
+        "group relative h-full overflow-hidden rounded-2xl border border-brand-border bg-white shadow-card transition-all duration-300",
         "hover:-translate-y-0.5 hover:border-brand-blue/25 hover:shadow-card-hover",
-        featured && "lg:grid lg:grid-cols-[1.15fr_1fr] lg:gap-0",
+        featured && !compact && "lg:grid lg:grid-cols-[1.15fr_1fr] lg:gap-0",
       )}
     >
       <Link
         to={href}
         className={cn(
-          "block focus-visible:outline-none",
-          featured ? "contents" : "flex flex-col",
+          "block h-full focus-visible:outline-none",
+          featured && !compact ? "contents" : "flex flex-col",
         )}
         aria-label={post.title}
       >
         <div
           className={cn(
             "relative overflow-hidden bg-gradient-to-br from-brand-navy via-[#1E3A8A] to-brand-violet",
-            featured ? "min-h-[220px] lg:min-h-full" : "aspect-[16/9]",
+            featured && !compact
+              ? "min-h-[220px] lg:min-h-full"
+              : compact
+                ? "aspect-[16/10]"
+                : "aspect-[16/9]",
           )}
         >
           {hasOg ? (
@@ -73,29 +81,43 @@ export function BlogPostCard({
           )}
         </div>
 
-        <div className={cn("flex flex-1 flex-col p-6 sm:p-8", featured && "justify-center")}>
-          <time
-            dateTime={post.date}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-brand-muted"
-          >
-            <Calendar className="h-3.5 w-3.5 text-brand-blue" aria-hidden />
-            {formatDate(post.date, lang)}
-          </time>
+        <div
+          className={cn(
+            "flex flex-1 flex-col",
+            compact ? "p-5" : "p-6 sm:p-8",
+            featured && !compact && "justify-center",
+          )}
+        >
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-medium text-brand-muted">
+            <time dateTime={post.date} className="inline-flex items-center gap-1.5">
+              <Calendar className="h-3.5 w-3.5 text-brand-blue" aria-hidden />
+              {formatDate(post.date, lang)}
+            </time>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-3.5 w-3.5 text-brand-blue" aria-hidden />
+              {readTimeLabel(post.readingTimeMinutes)}
+            </span>
+          </div>
 
           <h2
             className={cn(
               "mt-3 font-bold tracking-tight text-brand-navy transition-colors group-hover:text-brand-blue",
-              featured ? "text-2xl sm:text-3xl" : "text-xl",
+              featured && !compact ? "text-2xl sm:text-3xl" : compact ? "text-lg" : "text-xl",
             )}
           >
             {post.title}
           </h2>
 
-          <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-muted sm:text-base">
+          <p
+            className={cn(
+              "mt-3 flex-1 leading-relaxed text-brand-muted",
+              compact ? "line-clamp-2 text-sm" : "text-sm sm:text-base",
+            )}
+          >
             {post.description}
           </p>
 
-          {post.tags.length > 1 && (
+          {post.tags.length > 1 && !compact && (
             <div className="mt-4 flex flex-wrap gap-2">
               {post.tags.slice(1).map((t) => (
                 <span
@@ -108,7 +130,7 @@ export function BlogPostCard({
             </div>
           )}
 
-          <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue">
+          <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue">
             {readLabel}
             <ArrowRight
               className="h-4 w-4 transition-transform group-hover:translate-x-0.5"

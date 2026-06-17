@@ -1,14 +1,17 @@
+import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { PageShell } from "@/components/layout/PageShell";
 import { Container } from "@/components/ui/Container";
 import { BlogProse } from "@/components/blog/BlogProse";
 import { BlogArticleHero } from "@/components/blog/BlogArticleHero";
 import { BlogPostFooterCta } from "@/components/blog/BlogPostFooterCta";
+import { BlogRelatedPosts } from "@/components/blog/BlogRelatedPosts";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { useLang } from "@/i18n/use-lang";
-import { getBlogPost } from "@/lib/blog";
+import { getBlogPost, getRelatedPosts } from "@/lib/blog";
+import { formatReadTime } from "@/lib/blog-format";
 import { routes } from "@/lib/routes";
-import { applyPageMeta, getSiteUrl } from "@/lib/seo";
+import { applyPageMeta, getOgImageUrl, getSiteUrl } from "@/lib/seo";
 import {
   articleJsonLd,
   breadcrumbJsonLd,
@@ -25,6 +28,15 @@ export function BlogPostPage() {
   const { lang, dict } = useLang();
   const copy = dict.pages.blog;
   const post = slug ? getBlogPost(lang, slug) : undefined;
+
+  const related = useMemo(
+    () => (post ? getRelatedPosts(post, 3) : []),
+    [post],
+  );
+
+  const readTimeLabel = post
+    ? formatReadTime(copy.readTimeMinutes, post.readingTimeMinutes)
+    : "";
 
   useEffect(() => {
     if (!post) {
@@ -62,6 +74,8 @@ export function BlogPostPage() {
 
     const siteUrl = getSiteUrl();
     const path = routes.blogPost(lang, post.slug);
+    const imageUrl = post.ogImage ? getOgImageUrl(post.ogImage) : undefined;
+
     setPageJsonLd([
       articleJsonLd({
         siteUrl,
@@ -71,6 +85,8 @@ export function BlogPostPage() {
         datePublished: post.date,
         inLanguage: HTML_LANG[lang],
         authorName: APP_NAME,
+        wordCount: post.wordCount,
+        imageUrl,
       }),
       breadcrumbJsonLd(siteUrl, [
         { name: copy.hero.title, path: routes.blog(lang) },
@@ -85,7 +101,12 @@ export function BlogPostPage() {
 
   return (
     <PageShell>
-      <BlogArticleHero post={post} lang={lang} backLabel={copy.backToIndex} />
+      <BlogArticleHero
+        post={post}
+        lang={lang}
+        backLabel={copy.backToIndex}
+        readTimeLabel={readTimeLabel}
+      />
 
       <section className="section-padding bg-gradient-to-b from-brand-light/50 to-white">
         <Container className="max-w-3xl">
@@ -93,6 +114,13 @@ export function BlogPostPage() {
           <BlogPostFooterCta
             title={copy.articleCta.title}
             subtitle={copy.articleCta.subtitle}
+          />
+          <BlogRelatedPosts
+            posts={related}
+            lang={lang}
+            title={copy.relatedTitle}
+            readLabel={copy.readArticle}
+            readTimeLabel={(m) => formatReadTime(copy.readTimeMinutes, m)}
           />
         </Container>
       </section>

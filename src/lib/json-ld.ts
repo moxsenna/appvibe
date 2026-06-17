@@ -68,9 +68,11 @@ export function articleJsonLd(input: {
   dateModified?: string;
   inLanguage: string;
   authorName: string;
+  wordCount?: number;
+  imageUrl?: string;
 }): Record<string, unknown> {
   const url = `${input.siteUrl.replace(/\/$/, "")}${input.path.startsWith("/") ? input.path : `/${input.path}`}`;
-  return {
+  const node: Record<string, unknown> = {
     "@type": "BlogPosting",
     headline: input.headline,
     description: input.description,
@@ -81,6 +83,32 @@ export function articleJsonLd(input: {
     publisher: { "@type": "Organization", name: input.authorName },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
+  };
+  if (input.wordCount && input.wordCount > 0) {
+    node.wordCount = input.wordCount;
+  }
+  if (input.imageUrl) {
+    node.image = input.imageUrl;
+  }
+  return node;
+}
+
+export function blogItemListJsonLd(input: {
+  siteUrl: string;
+  listPath: string;
+  name: string;
+  items: { path: string; name: string }[];
+}): Record<string, unknown> {
+  const base = input.siteUrl.replace(/\/$/, "");
+  return {
+    "@type": "ItemList",
+    name: input.name,
+    itemListElement: input.items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: `${base}${item.path.startsWith("/") ? item.path : `/${item.path}`}`,
+    })),
   };
 }
 

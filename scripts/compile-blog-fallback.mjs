@@ -2,6 +2,7 @@
 import fs from "fs";
 import path from "path";
 import { spawnSync } from "child_process";
+import { readingStatsFromHtml } from "./blog-reading.mjs";
 
 const ROOT = path.resolve(".");
 const OUT = path.join(ROOT, "src/data/blog/posts.generated.ts");
@@ -71,6 +72,8 @@ for (const lang of ["id", "en"]) {
     const raw = fs.readFileSync(path.join(dir, file), "utf8");
     const { data, body } = parseFrontmatter(raw);
     const slug = file.replace(/\.mdx$/, "");
+    const html = mdToHtml(body);
+    const { wordCount, readingTimeMinutes } = readingStatsFromHtml(html);
     const row = {
       slug,
       lang,
@@ -78,7 +81,9 @@ for (const lang of ["id", "en"]) {
       description: data.description ?? "",
       date: data.date ?? "",
       tags: data.tags ?? [],
-      html: mdToHtml(body),
+      html,
+      wordCount,
+      readingTimeMinutes,
     };
     if (data.ogImage) row.ogImage = data.ogImage;
     posts.push(row);

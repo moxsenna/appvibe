@@ -305,6 +305,13 @@ export const pagesId = {
     empty: "Belum ada artikel dalam bahasa ini.",
     backToIndex: "Kembali ke blog",
     readArticle: "Baca artikel",
+    searchPlaceholder: "Cari artikel, topik, atau kata kunci…",
+    filterAllLabel: "Semua topik",
+    clearFiltersLabel: "Reset filter",
+    noResults: "Tidak ada artikel yang cocok. Coba kata kunci atau topik lain.",
+    relatedTitle: "Artikel terkait",
+    readTimeMinutes: "{n} menit baca",
+    resultsCount: "{n} artikel",
     articleCta: {
       title: "Mau halaman seperti ini untuk bisnis Anda?",
       subtitle:
@@ -467,6 +474,13 @@ type PagesDict = {
     empty: string;
     backToIndex: string;
     readArticle: string;
+    searchPlaceholder: string;
+    filterAllLabel: string;
+    clearFiltersLabel: string;
+    noResults: string;
+    relatedTitle: string;
+    readTimeMinutes: string;
+    resultsCount: string;
     articleCta: { title: string; subtitle: string };
   };
   uses: {

@@ -9,4 +9,11 @@ export type BlogPost = {
   tags: string[];
   html: string;
   ogImage?: string;
+  wordCount: number;
+  readingTimeMinutes: number;
+};
+
+export type BlogListFilters = {
+  query: string;
+  tag: string | null;
 };

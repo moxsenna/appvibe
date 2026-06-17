@@ -308,6 +308,13 @@ export const pagesEn: PagesDict = {
     empty: "No articles in this language yet.",
     backToIndex: "Back to blog",
     readArticle: "Read article",
+    searchPlaceholder: "Search articles, topics, or keywords…",
+    filterAllLabel: "All topics",
+    clearFiltersLabel: "Reset filters",
+    noResults: "No articles match. Try another keyword or topic.",
+    relatedTitle: "Related articles",
+    readTimeMinutes: "{n} min read",
+    resultsCount: "{n} articles",
     articleCta: {
       title: "Want a page like this for your business?",
       subtitle:

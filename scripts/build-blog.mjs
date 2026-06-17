@@ -6,6 +6,7 @@ import path from "path";
 import { spawnSync } from "child_process";
 import matter from "gray-matter";
 import { marked } from "marked";
+import { readingStatsFromHtml } from "./blog-reading.mjs";
 
 const ROOT = path.resolve(".");
 const CONTENT = path.join(ROOT, "content/blog");
@@ -57,6 +58,8 @@ async function loadPosts() {
       const raw = fs.readFileSync(path.join(dir, file), "utf8");
       const { data, content } = matter(raw);
       const slug = file.replace(/\.(mdx|md)$/, "");
+      const html = await markdownToHtml(content);
+      const { wordCount, readingTimeMinutes } = readingStatsFromHtml(html);
       const row = {
         slug,
         lang,
@@ -64,7 +67,9 @@ async function loadPosts() {
         description: String(data.description ?? ""),
         date: String(data.date ?? ""),
         tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
-        html: await markdownToHtml(content),
+        html,
+        wordCount,
+        readingTimeMinutes,
       };
       if (data.ogImage) row.ogImage = String(data.ogImage);
       posts.push(row);
