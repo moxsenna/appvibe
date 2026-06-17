@@ -5,8 +5,16 @@
   <link href="http://localhost:5173/feed/blog-en.xml" rel="self" type="application/atom+xml"/>
   <link href="http://localhost:5173/en/blog" rel="alternate" type="text/html"/>
   <id>http://localhost:5173/en/blog</id>
-  <updated>2026-06-20T00:00:00.000Z</updated>
+  <updated>2026-06-21T00:00:00.000Z</updated>
   <author><name>AppVibe Studio</name></author>
+  <entry>
+    <title>How to Measure Landing Page Conversion Without Expensive Tools</title>
+    <link href="http://localhost:5173/en/blog/measure-conversion" rel="alternate" type="text/html"/>
+    <id>http://localhost:5173/en/blog/measure-conversion</id>
+    <published>2026-06-21T00:00:00.000Z</published>
+    <updated>2026-06-21T00:00:00.000Z</updated>
+    <summary type="html">A simple framework for small businesses and service providers who want to know if their landing page is actually generating chats and leads.</summary>
+  </entry>
   <entry>
     <title>5 WhatsApp Copy Mistakes That Make Prospects Ghost You Instantly</title>
     <link href="http://localhost:5173/en/blog/whatsapp-copy-mistakes" rel="alternate" type="text/html"/>
