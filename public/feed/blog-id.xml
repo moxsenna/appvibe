@@ -5,8 +5,16 @@
   <link href="http://localhost:5173/feed/blog-id.xml" rel="self" type="application/atom+xml"/>
   <link href="http://localhost:5173/blog" rel="alternate" type="text/html"/>
   <id>http://localhost:5173/blog</id>
-  <updated>2026-06-19T00:00:00.000Z</updated>
+  <updated>2026-06-20T00:00:00.000Z</updated>
   <author><name>AppVibe Studio</name></author>
+  <entry>
+    <title>5 Kesalahan Copy WhatsApp yang Membuat Calon Klien Langsung Mute</title>
+    <link href="http://localhost:5173/blog/whatsapp-copy-mistakes" rel="alternate" type="text/html"/>
+    <id>http://localhost:5173/blog/whatsapp-copy-mistakes</id>
+    <published>2026-06-20T00:00:00.000Z</published>
+    <updated>2026-06-20T00:00:00.000Z</updated>
+    <summary type="html">Pesan yang terlalu panjang, tidak jelas, atau terlalu salesy — ini alasan utama calon klien tidak membalas chat Anda.</summary>
+  </entry>
   <entry>
     <title>Landing page khusus vs Homepage: mana yang benar-benar mengonversi iklan?</title>
     <link href="http://localhost:5173/blog/landing-vs-homepage" rel="alternate" type="text/html"/>
