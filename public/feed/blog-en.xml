@@ -5,8 +5,16 @@
   <link href="http://localhost:5173/feed/blog-en.xml" rel="self" type="application/atom+xml"/>
   <link href="http://localhost:5173/en/blog" rel="alternate" type="text/html"/>
   <id>http://localhost:5173/en/blog</id>
-  <updated>2026-06-18T00:00:00.000Z</updated>
+  <updated>2026-06-19T00:00:00.000Z</updated>
   <author><name>AppVibe Studio</name></author>
+  <entry>
+    <title>Dedicated Landing Page vs Homepage: Which One Actually Converts Paid Traffic?</title>
+    <link href="http://localhost:5173/en/blog/landing-vs-homepage" rel="alternate" type="text/html"/>
+    <id>http://localhost:5173/en/blog/landing-vs-homepage</id>
+    <published>2026-06-19T00:00:00.000Z</published>
+    <updated>2026-06-19T00:00:00.000Z</updated>
+    <summary type="html">Why sending all ad traffic to your homepage often kills conversions — and when you should create a campaign-specific landing page instead.</summary>
+  </entry>
   <entry>
     <title>Landing pages + WhatsApp: CTAs that actually start conversations</title>
     <link href="http://localhost:5173/en/blog/landing-page-whatsapp-cta" rel="alternate" type="text/html"/>

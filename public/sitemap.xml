@@ -309,6 +309,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://localhost:5173/blog/landing-vs-homepage</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/landing-vs-homepage" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/landing-vs-homepage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/landing-vs-homepage" />
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://localhost:5173/en/blog/landing-vs-homepage</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/landing-vs-homepage" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/landing-vs-homepage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/landing-vs-homepage" />
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>http://localhost:5173/blog/landing-page-whatsapp-cta</loc>
     <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/landing-page-whatsapp-cta" />
     <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/landing-page-whatsapp-cta" />
