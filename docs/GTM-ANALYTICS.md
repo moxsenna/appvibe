@@ -1,121 +1,85 @@
 # Google Tag Manager — AppVibe Studio
 
-Panduan mengaktifkan GTM di production (Cloudflare Pages) dan memetakan event dari `dataLayer`.
+Panduan GTM container **`GTM-NFJ5M7W4`** di production dan pemetaan event `dataLayer`.
 
-## 1. Prasyarat
+## 1. Snippet di situs (sudah terpasang)
 
-- Container GTM di [tagmanager.google.com](https://tagmanager.google.com) (format ID: `GTM-XXXXXXX`)
-- Akses **Cloudflare Pages** → project AppVibe → **Settings** → **Environment variables**
+Snippet resmi Google ada di **`index.html`** (repo):
 
-## 2. Environment variables (production)
+- Script GTM di awal `<head>` (setinggi mungkin)
+- `<noscript>` iframe tepat setelah `<body>`
 
-| Variable | Production | Preview / local |
-|----------|------------|-----------------|
-| `VITE_ENABLE_ANALYTICS` | `true` | `false` (default) |
-| `VITE_GTM_ID` | `GTM-NFJ5M7W4` | kosong |
+Setelah **deploy Cloudflare**, View Source `https://appvibe.web.id` harus memuat `GTM-NFJ5M7W4`. **Tidak bergantung** env Cloudflare untuk mendeteksi container di Tag Assistant.
 
-**Penting:** Setelah mengubah env di Cloudflare, **trigger deploy ulang** (rebuild) agar Vite meng-inline nilai baru.
+## 2. Environment variables (opsional)
 
-Contoh `.env.local` untuk uji lokal (opsional):
+| Variable | Kapan dipakai |
+|----------|----------------|
+| `VITE_GTM_ID` | Override ID (default production: `GTM-NFJ5M7W4`) |
+| `VITE_ENABLE_ANALYTICS` | `true` di **local dev** agar `dataLayer` push (bukan hanya console log) |
 
-```env
-VITE_ENABLE_ANALYTICS=true
-VITE_GTM_ID=GTM-NFJ5M7W4
-```
-
-Tanpa kedua nilai valid, GTM **tidak** dimuat (zero overhead).
+Di **production build**, event `trackEvent` / `page_view` aktif otomatis jika GTM ada di HTML.
 
 ## 3. Yang sudah di codebase
 
-- **Snippet resmi Google** disuntik ke `dist/index.html` saat build (`vite.config.ts`): script di awal `<head>`, `<noscript>` setelah `<body>` — container **`GTM-NFJ5M7W4`**.
-- `initGtm()` — `dataLayer` + `app_init` (tanpa duplikasi script jika HTML sudah berisi GTM).
-- `src/lib/analytics.ts` — `trackEvent()` → `window.dataLayer`
+- `index.html` — loader GTM + noscript
+- `initGtm()` — `app_init` di dataLayer
+- `src/lib/analytics.ts` — semua event marketing
 - `AnalyticsRouteListener` — `page_view` tiap navigasi SPA
-- CTA WhatsApp, form, demo, portfolio, dll. memanggil `trackEvent`
 
 ## 4. Event names (Custom Event di GTM)
 
 | Event | Kapan | Payload umum |
 |-------|--------|----------------|
 | `page_view` | Setiap route change | `page_path`, `page_lang`, `page_title` |
-| `cta_whatsapp_click` | Klik tombol WA | `location` (string unik per tombol) |
-| `contact_form_submit` | Submit form kontak/demo | `form`, `need`, `budget`, … |
-| `portfolio_view` | Buka case study | `slug`, `type` |
-| `demo_open` | Buka demo | `slug`, `location`, `status` |
-| `service_card_click` | Klik kartu layanan | `service_id`, … |
-| `industry_card_click` | Klik kartu industri | … |
-| `lead_status_change` | Ubah status lead (demo) | `id`, `status`, `backend` |
-| `auth_mock_submit` | Login mock dashboard | `source` |
-| `lang_switch` | Ganti ID/EN | `from_lang`, `to_lang`, `page_path` |
-| `blog_share_click` | Share artikel blog | `network`, `page_path` |
-| `app_init` | Sekali saat GTM load | `app_name` |
+| `cta_whatsapp_click` | Klik tombol WA | `location` |
+| `contact_form_submit` | Submit form | `form`, … |
+| `portfolio_view` | Case study | `slug`, `type` |
+| `demo_open` | Buka demo | `slug`, `location` |
+| `lang_switch` | ID ↔ EN | `from_lang`, `to_lang` |
+| `blog_share_click` | Share artikel | `network`, `page_path` |
+| `app_init` | Load app | `app_name` |
 
-Setiap push juga menyertakan `event_timestamp_ms`.
+## 5. Tag Assistant: "No Google tags found"
 
-## 5. Setup GTM (disarankan)
+### A. Container belum di HTML (sudah diperbaiki di repo)
 
-### 5.1 Tag GA4 Configuration
+Jika View Source **tidak** ada `googletagmanager.com/gtm.js` → redeploy branch `main` terbaru.
 
-1. **Tags** → New → **Google Analytics: GA4 Configuration**
-2. Measurement ID dari GA4 property
-3. Trigger: **All Pages** (untuk first load)
+### B. Container ada, tapi "no tags"
 
-### 5.2 Tag GA4 Event — `page_view` (SPA)
+GTM **container terdeteksi**, tetapi **belum ada tag yang dipublish** (mis. GA4):
 
-1. **Tags** → GA4 Event
-2. Event name: `page_view`
-3. Trigger: **Custom Event** → Event name: `page_view`
-4. Event parameters (Data Layer Variable):
-   - `page_path` → `{{dlv - page_path}}`
-   - `page_lang` → `{{dlv - page_lang}}`
+1. [tagmanager.google.com](https://tagmanager.google.com) → **GTM-NFJ5M7W4**
+2. **Tags** → tambah **Google Tag** atau **GA4 Configuration** (Measurement ID `G-…`)
+3. Trigger: **Initialization - All Pages** atau **All Pages**
+4. **Submit** → **Publish** versi container
 
-Buat **Data Layer Variables** di GTM untuk setiap key yang ingin dikirim ke GA4.
+Tanpa publish, Tag Assistant bisa bilang tidak ada Google tags meski GTM load.
 
-### 5.3 Trigger untuk conversion
+### C. Preview mode
 
-Contoh trigger **Custom Event**:
+1. GTM → **Preview** → masukkan `https://appvibe.web.id`
+2. Buka situs di tab yang terhubung
+3. Cek **Tags Fired** di debugger
 
-- Event name equals `cta_whatsapp_click` → tag GA4 event `whatsapp_cta` (atau gunakan nama sama)
-- Event name equals `contact_form_submit` → lead event
+## 6. Setup GA4 (disarankan)
 
-Gunakan **location** dari dataLayer untuk membedakan hero vs footer vs blog.
+1. Tag **Google Tag** / GA4 Configuration + Measurement ID
+2. Tag GA4 Event + trigger Custom Event `page_view` (SPA)
+3. Tag conversion + trigger `cta_whatsapp_click`, `contact_form_submit`
+4. **Publish**
 
-### 5.4 Preview & Debug
+## 7. Verifikasi
 
-1. GTM **Preview** mode → buka `https://appvibe.web.id`
-2. Tab **Tag Assistant** — pastikan container load
-3. Console: `window.dataLayer` — harus terisi setelah klik CTA / pindah halaman
-4. Di dev (`npm run dev`), event tetap di-log `[analytics]` meski GTM off
+- [ ] View Source: `GTM-NFJ5M7W4` di head
+- [ ] Network: `gtm.js?id=GTM-NFJ5M7W4` status 200
+- [ ] Console: `window.dataLayer` array terisi
+- [ ] GTM container **published** dengan minimal satu Google tag
+- [ ] GA4 Realtime (setelah tag GA4 publish)
 
-## 6. Meta Pixel (opsional)
+## 8. Cloudflare cache
 
-Di GTM tambahkan tag **Meta Pixel** dengan trigger Custom Event yang sama (`cta_whatsapp_click`, `contact_form_submit`). Tidak perlu ubah kode situs.
+Setelah deploy, jika HTML lama: **Caching** → Purge Everything sekali, lalu hard refresh (Ctrl+Shift+R).
 
-## 7. Privasi & consent (opsional)
-
-Saat ini tidak ada cookie banner. Jika diperlukan CMP:
-
-- Load GTM hanya setelah consent, atau
-- Gunakan **Consent Mode v2** di GTM + integrasi CMP nanti
-
-Default: analytics off sampai env production di-set.
-
-## 8. Checklist go-live
-
-- [ ] `VITE_ENABLE_ANALYTICS=true` + `VITE_GTM_ID` di Cloudflare **Production**
-- [ ] Redeploy sukses
-- [ ] View Source / Network: request ke `googletagmanager.com/gtm.js?id=GTM-…`
-- [ ] `page_view` saat navigasi antar halaman (bukan hanya refresh)
-- [ ] Klik WA homepage → `cta_whatsapp_click` di dataLayer
-- [ ] GA4 Realtime menampilkan traffic (jika tag GA4 sudah dipublish)
-
-## 9. Troubleshooting
-
-| Gejala | Penyebab |
-|--------|----------|
-| Tidak ada GTM request | Env false/kosong atau ID salah format |
-| Hanya 1 page_view | Trigger GA4 hanya All Pages — tambah Custom Event `page_view` |
-| Double page_view | Jangan pakai History Change GTM + SPA listener tanpa dedupe — cukup custom `page_view` dari app |
-| Event di dev tidak ke GA | Normal — aktifkan env lokal jika perlu uji GA4 |
-
-Lihat juga: `docs/08-DEPLOYMENT.md` §12, `docs/DEPLOY-CHECKLIST.md`.
+Lihat: `docs/DEPLOY-CHECKLIST.md`, `docs/08-DEPLOYMENT.md` §12.

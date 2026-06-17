@@ -1,11 +1,14 @@
-const GTM_ID = import.meta.env.VITE_GTM_ID?.trim() ?? "";
+/** Production container (also in index.html). Override via VITE_GTM_ID if needed. */
+const DEFAULT_GTM_ID = "GTM-NFJ5M7W4";
+
+const GTM_ID =
+  import.meta.env.VITE_GTM_ID?.trim() ||
+  (import.meta.env.PROD ? DEFAULT_GTM_ID : "");
 
 export function isAnalyticsEnabled(): boolean {
-  return (
-    import.meta.env.VITE_ENABLE_ANALYTICS === "true" &&
-    GTM_ID.length > 0 &&
-    /^GTM-[A-Z0-9]+$/i.test(GTM_ID)
-  );
+  if (!GTM_ID || !/^GTM-[A-Z0-9]+$/i.test(GTM_ID)) return false;
+  if (import.meta.env.PROD) return true;
+  return import.meta.env.VITE_ENABLE_ANALYTICS === "true";
 }
 
 export function getGtmId(): string {
@@ -19,18 +22,16 @@ function gtmScriptPresent(): boolean {
   );
 }
 
-/**
- * Ensures dataLayer exists and pushes app metadata.
- * GTM loader is injected in index.html at build time (see vite gtm plugin).
- * Falls back to dynamic inject only if HTML snippet is missing (e.g. misconfigured build).
- */
+/** Push app_init once; GTM loader lives in index.html. */
 export function initGtm(): void {
   if (!isAnalyticsEnabled() || typeof window === "undefined") return;
 
   const w = window as Window & { dataLayer?: Record<string, unknown>[] };
   w.dataLayer = w.dataLayer ?? [];
 
-  if (!w.dataLayer.some((e) => e && (e as { event?: string }).event === "app_init")) {
+  if (
+    !w.dataLayer.some((e) => e && (e as { event?: string }).event === "app_init")
+  ) {
     w.dataLayer.push({
       event: "app_init",
       app_name: import.meta.env.VITE_APP_NAME ?? "AppVibe Studio",
