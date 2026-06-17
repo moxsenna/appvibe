@@ -8,4 +8,5 @@ export type BlogPost = {
   date: string;
   tags: string[];
   html: string;
+  ogImage?: string;
 };

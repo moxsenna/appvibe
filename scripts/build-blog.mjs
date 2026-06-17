@@ -1,6 +1,5 @@
 /**
  * Compile content/blog/{id,en}/*.mdx → src/data/blog/posts.generated.ts
- * Syntax highlighting via Shiki at build time.
  */
 import fs from "fs";
 import path from "path";
@@ -58,7 +57,7 @@ async function loadPosts() {
       const raw = fs.readFileSync(path.join(dir, file), "utf8");
       const { data, content } = matter(raw);
       const slug = file.replace(/\.(mdx|md)$/, "");
-      posts.push({
+      const row = {
         slug,
         lang,
         title: String(data.title ?? slug),
@@ -66,7 +65,9 @@ async function loadPosts() {
         date: String(data.date ?? ""),
         tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
         html: await markdownToHtml(content),
-      });
+      };
+      if (data.ogImage) row.ogImage = String(data.ogImage);
+      posts.push(row);
     }
   }
   posts.sort((a, b) => (a.date < b.date ? 1 : -1));

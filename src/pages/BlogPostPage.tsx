@@ -48,6 +48,7 @@ export function BlogPostPage() {
           id: routes.blogPost("id", post.slug),
           en: routes.blogPost("en", post.slug),
         },
+        ogImage: post.ogImage,
         ogType: "article",
         article: {
           publishedTime: post.date,
