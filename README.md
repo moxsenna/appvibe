@@ -119,8 +119,8 @@ Older task reports (`docs/09`–`docs/18`) cover MVP build history.
 | Sprint 9–10 (hardening, View Transitions, Supabase, `/uses`) | ✅ |
 | **Sprint 11 — full ID/EN i18n** | ✅ |
 | Cloudflare Pages CI from GitHub | ✅ (auto deploy on `main`) |
-| Sprint 12 — Better Auth (planned) | 🔻 |
-| Sprint 13 — Engineering blog MDX (planned) | 🔻 |
+| Sprint 12 — Better Auth (deferred) | 🔻 optional |
+| Sprint 13 — Engineering blog (MDX + Shiki build) | ✅ |
 
 ---
 

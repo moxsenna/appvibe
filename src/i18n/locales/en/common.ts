@@ -20,6 +20,7 @@ export const commonEn: CommonDict = {
     demo: "Demos",
     industries: "Industries",
     about: "About",
+    blog: "Blog",
     contact: "Contact",
     uses: "/uses",
   },

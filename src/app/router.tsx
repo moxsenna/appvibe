@@ -9,6 +9,8 @@ import { IndustriesPage } from "@/pages/IndustriesPage";
 import { AboutPage } from "@/pages/AboutPage";
 import { ContactPage } from "@/pages/ContactPage";
 import { PortfolioDetailPage } from "@/pages/PortfolioDetailPage";
+import { BlogIndexPage } from "@/pages/BlogIndexPage";
+import { BlogPostPage } from "@/pages/BlogPostPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { LangProvider } from "@/i18n/LangProvider";
@@ -51,15 +53,6 @@ const withSuspense = (
   </Suspense>
 );
 
-/**
- * Shared children — identical for both ID and EN layout routes. Paths use
- * Indonesian words for the ID tree, English words for the EN tree (defined
- * by which segment patterns we list below). React Router resolves them
- * relative to the parent (no leading slash).
- *
- * Slugs are canonical across both languages so `/portfolio/clinic` and
- * `/en/portfolio/clinic` reach the same content (translated by locale).
- */
 const idChildren: RouteObject[] = [
   { index: true, element: <HomePage /> },
   { path: "layanan", element: <ServicesPage /> },
@@ -74,6 +67,8 @@ const idChildren: RouteObject[] = [
   { path: "industri", element: <IndustriesPage /> },
   { path: "tentang", element: <AboutPage /> },
   { path: "kontak", element: <ContactPage /> },
+  { path: "blog/:slug", element: <BlogPostPage /> },
+  { path: "blog", element: <BlogIndexPage /> },
   { path: "uses", element: withSuspense(UsesPage) },
 ];
 
@@ -91,6 +86,8 @@ const enChildren: RouteObject[] = [
   { path: "industries", element: <IndustriesPage /> },
   { path: "about", element: <AboutPage /> },
   { path: "contact", element: <ContactPage /> },
+  { path: "blog/:slug", element: <BlogPostPage /> },
+  { path: "blog", element: <BlogIndexPage /> },
   { path: "uses", element: withSuspense(UsesPage) },
 ];
 

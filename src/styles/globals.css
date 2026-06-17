@@ -189,3 +189,16 @@
     @apply rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-brand-cyan/30 hover:bg-white/10 hover:shadow-glow-cyan;
   }
 }
+
+@layer components {
+  .blog-prose h2 { @apply mt-10 text-2xl font-bold text-brand-navy; }
+  .blog-prose h3 { @apply mt-8 text-xl font-semibold text-brand-navy; }
+  .blog-prose p { @apply mt-4 leading-relaxed text-brand-muted; }
+  .blog-prose ol, .blog-prose ul { @apply mt-4 list-inside space-y-2 text-brand-muted; }
+  .blog-prose ol { @apply list-decimal; }
+  .blog-prose ul { @apply list-disc; }
+  .blog-prose code { @apply rounded bg-brand-light px-1.5 py-0.5 text-sm text-brand-navy; }
+  .blog-prose pre { @apply mt-4 overflow-x-auto rounded-xl; }
+  .blog-prose pre code { @apply bg-transparent p-0; }
+  .blog-code-fallback { @apply mt-4 overflow-x-auto rounded-xl bg-slate-900 p-4 text-sm text-slate-100; }
+}

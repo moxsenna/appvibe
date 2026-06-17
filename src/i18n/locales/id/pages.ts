@@ -279,6 +279,22 @@ export const pagesId = {
     },
   },
 
+  blog: {
+    hero: {
+      eyebrow: "Engineering",
+      title: "Catatan teknis dari tim AppVibe",
+      description:
+        "Keputusan arsitektur, sprint, dan pola yang kami pakai saat membangun situs ini — transparan untuk calon klien dan developer.",
+    },
+    meta: {
+      title: "Blog Engineering | AppVibe Studio",
+      description:
+        "Artikel teknis tentang React, Vite, i18n, deploy, dan cara kerja AppVibe Studio.",
+    },
+    empty: "Belum ada artikel dalam bahasa ini.",
+    backToIndex: "Kembali ke blog",
+  },
+
   uses: {
     hero: {
       eyebrow: "/uses",
@@ -295,10 +311,10 @@ export const pagesId = {
     principlesTitle: "Filosofi teknis yang dipegang",
     notUsedTitle: "Apa yang sengaja TIDAK dipakai",
     updateNote:
-      "Stack akan berkembang. Sprint 11 selesai menambah i18n (ID/EN). Sprint 12 akan integrate Better Auth untuk private tenant. Sprint 13 akan launch engineering blog dengan MDX + Shiki syntax highlight.",
+      "Stack akan berkembang. Sprint 11 selesai menambah i18n (ID/EN). Sprint 13 menambah blog engineering (MDX + Shiki di build). Sprint 12 (Better Auth + tenant privat) ditunda — hanya jika produk butuh login klien.",
     badges: {
-      lastUpdated: "Last updated: Sprint 11",
-      next: "Next: Better Auth",
+      lastUpdated: "Last updated: Sprint 13",
+      next: "Next: Engineering blog",
       openSource: "Open source contributions: planned",
     },
     keepGrowing: "Terus update",
@@ -422,6 +438,12 @@ type PagesDict = {
   contact: {
     hero: LocalizedHero;
     meta: LocalizedPageMeta;
+  };
+  blog: {
+    hero: LocalizedHero;
+    meta: LocalizedPageMeta;
+    empty: string;
+    backToIndex: string;
   };
   uses: {
     hero: LocalizedHero;

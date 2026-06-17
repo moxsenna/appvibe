@@ -41,6 +41,7 @@ export function Footer() {
     { label: common.nav.demo, to: routes.demo(lang) },
     { label: common.nav.industries, to: routes.industries(lang) },
     { label: common.nav.about, to: routes.about(lang) },
+    { label: common.nav.blog, to: routes.blog(lang) },
     { label: common.nav.contact, to: routes.contact(lang) },
   ];
 

@@ -282,6 +282,22 @@ export const pagesEn: PagesDict = {
     },
   },
 
+  blog: {
+    hero: {
+      eyebrow: "Engineering",
+      title: "Technical notes from the AppVibe team",
+      description:
+        "Architecture choices, sprints, and patterns we use to build this site — transparent for prospects and developers.",
+    },
+    meta: {
+      title: "Engineering Blog | AppVibe Studio",
+      description:
+        "Technical posts on React, Vite, i18n, deployment, and how AppVibe Studio works.",
+    },
+    empty: "No posts in this language yet.",
+    backToIndex: "Back to blog",
+  },
+
   uses: {
     hero: {
       eyebrow: "/uses",
@@ -298,10 +314,10 @@ export const pagesEn: PagesDict = {
     principlesTitle: "The technical philosophy we hold to",
     notUsedTitle: "What we deliberately do NOT use",
     updateNote:
-      "The stack keeps evolving. Sprint 11 just shipped i18n (ID/EN). Sprint 12 will integrate Better Auth for private tenants. Sprint 13 will launch the engineering blog with MDX and Shiki syntax highlighting.",
+      "The stack keeps evolving. Sprint 11 just shipped i18n (ID/EN). Sprint 13 adds the engineering blog (MDX + Shiki at build time). Sprint 12 (Better Auth + private tenants) is deferred until we need real client login.",
     badges: {
-      lastUpdated: "Last updated: Sprint 11",
-      next: "Next: Better Auth",
+      lastUpdated: "Last updated: Sprint 13",
+      next: "Next: Engineering blog",
       openSource: "Open source contributions: planned",
     },
     keepGrowing: "Always evolving",

@@ -21,6 +21,7 @@ const PATHS: Record<Lang, Record<string, string>> = {
     about: "/tentang",
     contact: "/kontak",
     uses: "/uses",
+    blog: "/blog",
   },
   en: {
     home: "/en",
@@ -31,6 +32,7 @@ const PATHS: Record<Lang, Record<string, string>> = {
     about: "/en/about",
     contact: "/en/contact",
     uses: "/en/uses",
+    blog: "/en/blog",
   },
 };
 
@@ -49,6 +51,8 @@ export const routes = {
   about: (lang: Lang) => PATHS[lang].about,
   contact: (lang: Lang) => PATHS[lang].contact,
   uses: (lang: Lang) => PATHS[lang].uses,
+  blog: (lang: Lang) => PATHS[lang].blog,
+  blogPost: (lang: Lang, slug: string) => `${PATHS[lang].blog}/${slug}`,
   portfolioDetail: (lang: Lang, slug: string) =>
     `${PATHS[lang].portfolio}/${slug}`,
   demoDetail: (lang: Lang, slug: string) => `${PATHS[lang].demo}/${slug}`,
@@ -68,7 +72,7 @@ export const routes = {
  */
 export type ResolvedRoute =
   | { lang: Lang; key: RouteKey }
-  | { lang: Lang; key: "portfolioDetail" | "demoDetail"; slug: string };
+  | { lang: Lang; key: "portfolioDetail" | "demoDetail" | "blogPost"; slug: string };
 
 export function resolveRoute(pathname: string): ResolvedRoute | null {
   const clean = pathname.replace(/\/$/, "") || "/";
@@ -97,6 +101,15 @@ export function resolveRoute(pathname: string): ResolvedRoute | null {
     }
   }
 
+  const blogPrefix = `${paths.blog}/`;
+  if (clean.startsWith(blogPrefix)) {
+    const slug = clean.slice(blogPrefix.length);
+    if (slug && !slug.includes("/")) {
+      return { lang, key: "blogPost", slug };
+    }
+  }
+  if (clean === paths.blog) return { lang, key: "blog" };
+
   return null;
 }
 
@@ -109,7 +122,7 @@ export function getEquivalentPath(pathname: string, target: Lang): string {
   const resolved = resolveRoute(pathname);
   if (!resolved) return PATHS[target].home;
 
-  if (resolved.key === "portfolioDetail" || resolved.key === "demoDetail") {
+  if (resolved.key === "portfolioDetail" || resolved.key === "demoDetail" || resolved.key === "blogPost") {
     const slug = (resolved as { slug: string }).slug;
     return routes[resolved.key](target, slug);
   }

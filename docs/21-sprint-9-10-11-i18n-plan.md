@@ -174,8 +174,8 @@ const { lang } = useLang();
 - Enum refactor: `categoryMapping` di IndustriesFilter masih hardcoded ID
   (`"jasa-profesional"`, `"kesehatan"`, dst). Bisa diganti enum stable
   (`professional`, `health`, dst) dengan label via dict.
-- Login flow / Better Auth — ditunda ke Sprint 12 (sesuai `/uses` page note)
-- Engineering blog dengan MDX + Shiki — Sprint 13
+- Login / Better Auth — **deferred** (optional product); see deferred-items.md
+- Engineering blog — **Sprint 13 ✅** ()
 
 ---
 

@@ -26,6 +26,7 @@ export function Navbar() {
     { label: common.nav.demo, to: routes.demo(lang) },
     { label: common.nav.industries, to: routes.industries(lang) },
     { label: common.nav.about, to: routes.about(lang) },
+    { label: common.nav.blog, to: routes.blog(lang) },
   ];
 
   const handleWhatsAppClick = () => {

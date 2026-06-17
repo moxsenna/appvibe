@@ -25,6 +25,7 @@ export const commonId = {
     demo: "Demo",
     industries: "Industri",
     about: "Tentang",
+    blog: "Blog",
     contact: "Kontak",
     uses: "/uses",
   },

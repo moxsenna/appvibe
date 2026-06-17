@@ -1,0 +1,35 @@
+---
+title: "Sprint 11: i18n ID/EN tanpa mengorbankan SEO"
+description: "Pola URL prefix, dictionary hybrid, dan Localized<T> di data — apa yang kami pakai di AppVibe Studio."
+date: "2026-06-17"
+tags: ["i18n", "react", "vite"]
+lang: id
+---
+
+## Konteks
+
+Situs agency kami default **Bahasa Indonesia**, dengan **English** di `/en/...`. Slug portfolio dan demo **tidak diterjemahkan** — mengurangi maintenance dan broken link.
+
+## Pola data
+
+```ts
+export type Localized<T> = { id: T; en: T };
+
+// Consumer
+const { lang } = useLang();
+<h2>{service.title[lang]}</h2>
+```
+
+UI chrome (navbar, section eyebrows) masuk `dict.pages.*`. Konten panjang (layanan, portfolio, demo) tetap di `src/data/*` dengan field `Localized`.
+
+## SEO
+
+Setiap halaman memanggil `applyPageMeta` dengan **title/description per bahasa** plus `paths: { id, en }` untuk **hreflang**.
+
+## Pelajaran
+
+1. Ubah data dan consumer **dalam batch yang sama** — kalau tidak, React error #31 (`[object Object]`).
+2. `typecheck` wajib di setiap milestone besar.
+3. Demo niche punya puluhan file — Tier B i18n butuh disiplin, bukan sekali sweep.
+
+Kalau Anda membangun situs bilingual serupa, mulai dari **routes + satu halaman**, baru data.

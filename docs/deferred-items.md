@@ -1,3 +1,11 @@
+## Deferred — Sprint 12 (Better Auth)
+
+Login sungguhan + multi-tenant privat untuk dashboard leads **bukan** kebutuhan deploy situs agency saat ini. Demo lead dashboard tetap mock auth + Supabase showcase opsional.
+
+**Trigger untuk mulai:** komitmen produk (klien login ke data mereka sendiri).
+
+---
+
 # Deferred Items — AppVibe Studio
 
 Dokumen ini mencatat item yang sengaja ditunda ke task berikutnya.

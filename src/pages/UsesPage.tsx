@@ -72,9 +72,9 @@ const STACK: StackGroup[] = [
         noteEn: "Postgres CDC over WebSocket. Open two tabs → status changes sync automatically.",
       },
       {
-        name: "Better Auth (planned)",
-        noteId: "Untuk Sprint 12 — login real + tenant pribadi. Pilihan modern di atas NextAuth.",
-        noteEn: "Sprint 12 work — real login + private tenants. A modern alternative to NextAuth.",
+        name: "Better Auth (deferred)",
+        noteId: "Opsional — hanya jika AppVibe jadi produk dengan login klien & tenant privat. Bukan kebutuhan situs marketing saat ini.",
+        noteEn: "Optional — only if AppVibe becomes a product with client login and private tenants. Not required for the marketing site today.",
       },
     ],
   },
