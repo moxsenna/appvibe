@@ -1,0 +1,58 @@
+{
+  "screens": [
+    {
+      "title": "Hero Klinik",
+      "found": true,
+      "y": 3180
+    },
+    {
+      "title": "Layanan Utama",
+      "found": true,
+      "y": 3180
+    },
+    {
+      "title": "Detail Layanan",
+      "found": true,
+      "y": 3772.75
+    },
+    {
+      "title": "Profil Tenaga Ahli",
+      "found": true,
+      "y": 3772.75
+    },
+    {
+      "title": "Jadwal & Booking",
+      "found": true,
+      "y": 4342.75
+    },
+    {
+      "title": "FAQ & Skenario",
+      "found": true,
+      "y": 4342.75
+    },
+    {
+      "title": "Lokasi & Kontak",
+      "found": true,
+      "y": 4935.5
+    }
+  ],
+  "whatsappCta": 1,
+  "naturacareInPreview": true,
+  "mockupFrames": 7,
+  "clippedMockups": 0,
+  "riskyContexts": [
+    {
+      "word": "hasil pasti",
+      "context": "konsultasi, dan CTA booking tanpa klaim hasil pasti.\n\nklinik — Profil Tenaga Ahli\n\nKenali T"
+    }
+  ],
+  "safetyFound": [
+    "konsultasi",
+    "non-emergency",
+    "simulasi",
+    "dapat berbeda",
+    "jadwal dapat berubah"
+  ],
+  "regression/portfolio/company-profile": true,
+  "regression/portfolio/webinar-landing": true
+}

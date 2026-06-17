@@ -1,0 +1,18 @@
+{
+  "name": "AppVibe Studio",
+  "short_name": "AppVibe",
+  "description": "Studio website & app bisnis untuk UMKM dan bisnis jasa Indonesia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#2563EB",
+  "lang": "id",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}
