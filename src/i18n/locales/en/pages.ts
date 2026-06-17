@@ -9,12 +9,12 @@ export const pagesEn: PagesDict = {
   home: {
     hero: {
       eyebrowDark:
-        "Websites, landing pages, and dashboards for businesses ready to look the part.",
+        "Websites and landing pages built for trust from the first click.",
       description:
-        "AppVibe Studio helps growing businesses across services, education, healthcare, real estate, and personal brands ship clean, responsive websites, landing pages, and dashboards built to grow with the business.",
+        "We help service businesses ship a credible web presence—with clear WhatsApp CTAs—so prospects trust you faster and start a conversation.",
       noscriptFallback: "A website that makes your business easier to trust.",
       tagline:
-        "Start with a simple website. Grow it deliberately as the business asks for more.",
+        "Free intro consult · Start with one deliverable · No pressure for a big build",
       labels: [
         "Professional website",
         "Promotional landing page",
@@ -129,6 +129,17 @@ export const pagesEn: PagesDict = {
           description:
             "Start with a fast static site, then grow step by step into databases, admin panels, and AI features as you need them.",
         },
+      ],
+    },
+    finalCta: {
+      title:
+        "Prospects judge your business from the first link. Ready to look credible?",
+      subtitle:
+        "A short WhatsApp chat: we'll help you choose company profile, ad landing page, or a simple leads dashboard.",
+      proofPoints: [
+        "Weekday WA reply ≤ 24h",
+        "Start lean, grow later",
+        "Inquiry & conversion focused",
       ],
     },
     meta: {

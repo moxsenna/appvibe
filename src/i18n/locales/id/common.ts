@@ -31,7 +31,7 @@ export const commonId = {
   },
 
   cta: {
-    consult: "Konsultasi via WhatsApp",
+    consult: "Konsultasi gratis via WhatsApp",
     consultShort: "Konsultasi",
     chatNow: "Chat Sekarang",
     viewPortfolio: "Lihat Portfolio",
@@ -114,7 +114,7 @@ export const commonId = {
   },
 
   mobileSticky: {
-    label: "Konsultasi Sekarang",
+    label: "Chat konsultasi gratis",
   },
 
   demo: {

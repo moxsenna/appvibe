@@ -6,22 +6,10 @@ import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp"
 import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
 
-const PROOF_POINTS_ID = [
-  "Mobile responsive",
-  "Bisa mulai bertahap",
-  "Fokus inquiry & konversi",
-];
-
-const PROOF_POINTS_EN = [
-  "Mobile responsive",
-  "Start lean, grow later",
-  "Inquiry & conversion focused",
-];
-
 export function FinalCTASection() {
   const { lang, dict } = useLang();
   const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
-  const proofPoints = lang === "id" ? PROOF_POINTS_ID : PROOF_POINTS_EN;
+  const copy = dict.pages.home.finalCta;
 
   return (
     <section className="section-padding bg-brand-light">
@@ -33,18 +21,14 @@ export function FinalCTASection() {
 
           <div className="relative mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-[2.25rem] lg:leading-tight">
-              {lang === "id"
-                ? "Siap membuat bisnis Anda terlihat lebih profesional saat calon pelanggan pertama kali klik?"
-                : "Ready to make a strong first impression when prospects click in?"}
+              {copy.title}
             </h2>
             <p className="mt-5 text-base leading-relaxed text-slate-200 sm:text-lg">
-              {lang === "id"
-                ? "Mulai dari website yang rapi. Lalu kembangkan menjadi sistem digital untuk menerima inquiry, mengelola leads, dan mendukung operasional bisnis."
-                : "Start with a polished website. Grow it into a digital system that handles inquiries, manages leads, and supports operations."}
+              {copy.subtitle}
             </p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-2.5">
-              {proofPoints.map((point) => (
+              {copy.proofPoints.map((point) => (
                 <span
                   key={point}
                   className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium text-slate-100"

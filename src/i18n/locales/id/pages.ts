@@ -7,12 +7,12 @@ export const pagesId = {
   home: {
     hero: {
       eyebrowDark:
-        "Website, landing page, dan dashboard untuk bisnis yang ingin terlihat lebih serius.",
+        "Website & landing page untuk bisnis yang ingin dipercaya sejak klik pertama.",
       description:
-        "AppVibe Studio membantu UMKM, bisnis jasa, edukasi, klinik, properti, dan personal brand membangun website, landing page, dan dashboard yang rapi, responsif, serta mudah dikembangkan sesuai kebutuhan bisnis.",
+        "Kami bantu UMKM dan bisnis jasa punya halaman resmi yang rapi—dengan CTA WhatsApp jelas—supaya calon pelanggan lebih mudah percaya dan mulai chat.",
       noscriptFallback: "Website yang membuat bisnis Anda lebih mudah dipercaya.",
       tagline:
-        "Mulai dari website sederhana. Bisa dikembangkan bertahap sesuai kebutuhan bisnis.",
+        "Konsultasi awal gratis · Mulai dari satu layanan · Tanpa paksaan project besar",
       labels: [
         "Website profesional",
         "Landing page promosi",
@@ -127,6 +127,17 @@ export const pagesId = {
           description:
             "Mulai dari static website cepat, lalu bisa dikembangkan bertahap ke database, admin panel, dan fitur AI sesuai kebutuhan.",
         },
+      ],
+    },
+    finalCta: {
+      title:
+        "Calon pelanggan menilai bisnis dari link pertama. Siap tampil lebih meyakinkan?",
+      subtitle:
+        "Diskusi singkat via WhatsApp: kami bantu pilih mulai dari company profile, landing page iklan, atau dashboard leads.",
+      proofPoints: [
+        "Respons WA ≤ 24 jam (hari kerja)",
+        "Mulai bertahap",
+        "Fokus inquiry & konversi",
       ],
     },
     meta: {
@@ -365,6 +376,11 @@ type PagesDict = {
       pillars: { title: string; description: string }[];
     };
     meta: LocalizedPageMeta;
+    finalCta: {
+      title: string;
+      subtitle: string;
+      proofPoints: string[];
+    };
   };
   services: {
     hero: LocalizedHero;
