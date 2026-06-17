@@ -4,6 +4,7 @@
  */
 import fs from "fs";
 import path from "path";
+import { spawnSync } from "child_process";
 import matter from "gray-matter";
 import { marked } from "marked";
 
@@ -83,3 +84,8 @@ export const blogPostsGenerated: BlogPost[] = ${JSON.stringify(posts, null, 2)} 
 `,
 );
 console.log("blog:", posts.length, "posts");
+
+spawnSync(process.execPath, ["scripts/generate-sitemap.mjs"], {
+  cwd: ROOT,
+  stdio: "inherit",
+});

@@ -7,29 +7,77 @@ import { NotFoundPage } from "@/pages/NotFoundPage";
 import { useLang } from "@/i18n/use-lang";
 import { getBlogPost } from "@/lib/blog";
 import { routes } from "@/lib/routes";
-import { applyPageMeta } from "@/lib/seo";
+import { applyPageMeta, getSiteUrl } from "@/lib/seo";
+import {
+  articleJsonLd,
+  breadcrumbJsonLd,
+  clearPageJsonLd,
+  setPageJsonLd,
+} from "@/lib/json-ld";
+import { HTML_LANG } from "@/i18n/types";
 import { useEffect } from "react";
+
+const APP_NAME = import.meta.env.VITE_APP_NAME ?? "AppVibe Studio";
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const { lang, dict } = useLang();
-  const post = slug ? getBlogPost(lang, slug) : undefined;
   const copy = dict.pages.blog;
+  const post = slug ? getBlogPost(lang, slug) : undefined;
 
   useEffect(() => {
-    if (!post) return;
+    if (!post) {
+      clearPageJsonLd();
+      return;
+    }
+
+    const idPost = getBlogPost("id", post.slug);
+    const enPost = getBlogPost("en", post.slug);
+
     applyPageMeta(
       {
-        id: { title: `${post.title} | AppVibe Studio`, description: post.description },
-        en: { title: `${post.title} | AppVibe Studio`, description: post.description },
+        id: {
+          title: idPost?.title ?? post.title,
+          description: idPost?.description ?? post.description,
+        },
+        en: {
+          title: enPost?.title ?? post.title,
+          description: enPost?.description ?? post.description,
+        },
         paths: {
           id: routes.blogPost("id", post.slug),
           en: routes.blogPost("en", post.slug),
         },
+        ogType: "article",
+        article: {
+          publishedTime: post.date,
+          author: APP_NAME,
+          tags: post.tags,
+        },
       },
       lang,
     );
-  }, [post, lang]);
+
+    const siteUrl = getSiteUrl();
+    const path = routes.blogPost(lang, post.slug);
+    setPageJsonLd([
+      articleJsonLd({
+        siteUrl,
+        path,
+        headline: post.title,
+        description: post.description,
+        datePublished: post.date,
+        inLanguage: HTML_LANG[lang],
+        authorName: APP_NAME,
+      }),
+      breadcrumbJsonLd(siteUrl, [
+        { name: copy.hero.title, path: routes.blog(lang) },
+        { name: post.title, path },
+      ]),
+    ]);
+
+    return () => clearPageJsonLd();
+  }, [post, lang, copy.hero.title]);
 
   if (!post) return <NotFoundPage />;
 

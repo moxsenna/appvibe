@@ -5,26 +5,27 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { useLang } from "@/i18n/use-lang";
+import { dictionaries } from "@/i18n/dictionaries";
 import { getBlogPosts } from "@/lib/blog";
 import { routes } from "@/lib/routes";
 import { applyPageMeta } from "@/lib/seo";
 import { useEffect } from "react";
 
 export function BlogIndexPage() {
-  const { lang, dict } = useLang();
-  const copy = dict.pages.blog;
+  const { lang } = useLang();
+  const copy = dictionaries[lang].pages.blog;
   const posts = getBlogPosts(lang);
 
   useEffect(() => {
     applyPageMeta(
       {
-        id: dict.pages.blog.meta,
-        en: dict.pages.blog.meta,
+        id: dictionaries.id.pages.blog.meta,
+        en: dictionaries.en.pages.blog.meta,
         paths: { id: routes.blog("id"), en: routes.blog("en") },
       },
       lang,
     );
-  }, [lang, dict]);
+  }, [lang]);
 
   return (
     <PageShell>

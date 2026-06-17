@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
     "seed:leads": "tsx scripts/seed-leads.ts",
-    "blog:build": "node scripts/build-blog.mjs"
+    "blog:build": "node scripts/build-blog.mjs",
+    "sitemap:build": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",

@@ -7,55 +7,68 @@ export type LocalizedMeta = {
   description: string;
 };
 
-/**
- * Page meta keyed by language. Each route declares both ID and EN copy plus
- * the canonical path in each language so we can emit valid hreflang alternates.
- *
- * `routeKey` is optional — used when the path is built dynamically (portfolio
- * detail, demo detail). For static pages, just provide `paths`.
- */
 export type PageMeta = {
   id: LocalizedMeta;
   en: LocalizedMeta;
   paths: { id: string; en: string };
   ogImage?: string;
+  /** Default `website`; use `article` for blog posts. */
+  ogType?: "website" | "article";
+  article?: {
+    publishedTime: string;
+    modifiedTime?: string;
+    author?: string;
+    tags?: string[];
+  };
 };
 
 const APP_NAME = import.meta.env.VITE_APP_NAME ?? "AppVibe Studio";
 const SITE_URL = import.meta.env.VITE_SITE_URL ?? "http://localhost:5173";
-const DEFAULT_OG_IMAGE = "/images/og/default.png";
+const DEFAULT_OG_IMAGE = "/og/default.svg";
+
+export function getSiteUrl(): string {
+  return SITE_URL.replace(/\/$/, "");
+}
 
 export function getCanonicalUrl(path: string): string {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-  return `${SITE_URL.replace(/\/$/, "")}${normalizedPath}`;
+  return `${getSiteUrl()}${normalizedPath}`;
+}
+
+/** Absolute URL for Open Graph / Twitter image tags. */
+export function getOgImageUrl(path?: string): string {
+  const p = path ?? DEFAULT_OG_IMAGE;
+  if (p.startsWith("http://") || p.startsWith("https://")) return p;
+  return `${getSiteUrl()}${p.startsWith("/") ? p : `/${p}`}`;
 }
 
 /**
  * Apply page-level metadata for the active language:
- *  - <title>
- *  - <meta name="description">
- *  - <meta property="og:*"> (title, description, image, url, locale)
- *  - <link rel="canonical">
- *  - <link rel="alternate" hreflang="..."> for each supported lang + x-default
- *
- * Idempotent: re-running on the same page replaces existing tags rather than
- * appending duplicates.
+ * title, description, canonical, hreflang, Open Graph, Twitter Card.
  */
 export function applyPageMeta(meta: PageMeta, lang: Lang): void {
   const localized = meta[lang];
   const currentPath = meta.paths[lang];
+  const ogType = meta.ogType ?? "website";
 
   const title = localized.title.includes(APP_NAME)
     ? localized.title
     : `${localized.title} | ${APP_NAME}`;
 
+  const ogImage = getOgImageUrl(meta.ogImage);
+  const canonical = getCanonicalUrl(currentPath);
+
   document.title = title;
 
   setMetaTag("description", localized.description);
+  setMetaTag("robots", "index, follow, max-image-preview:large");
+
   setMetaTag("og:title", title, "property");
   setMetaTag("og:description", localized.description, "property");
-  setMetaTag("og:image", meta.ogImage ?? DEFAULT_OG_IMAGE, "property");
-  setMetaTag("og:url", getCanonicalUrl(currentPath), "property");
+  setMetaTag("og:image", ogImage, "property");
+  setMetaTag("og:url", canonical, "property");
+  setMetaTag("og:type", ogType, "property");
+  setMetaTag("og:site_name", APP_NAME, "property");
   setMetaTag("og:locale", OG_LOCALE[lang], "property");
   setMetaTag(
     "og:locale:alternate",
@@ -63,7 +76,30 @@ export function applyPageMeta(meta: PageMeta, lang: Lang): void {
     "property",
   );
 
-  setLinkTag("canonical", getCanonicalUrl(currentPath));
+  if (ogType === "article" && meta.article) {
+    setMetaTag("article:published_time", meta.article.publishedTime, "property");
+    if (meta.article.modifiedTime) {
+      setMetaTag("article:modified_time", meta.article.modifiedTime, "property");
+    }
+    if (meta.article.author) {
+      setMetaTag("article:author", meta.article.author, "property");
+    }
+    meta.article.tags?.forEach((tag) => {
+      appendMetaProperty("article:tag", tag);
+    });
+  } else {
+    removeMetaProperties("article:tag");
+    removeMetaTag("property", "article:published_time");
+    removeMetaTag("property", "article:modified_time");
+    removeMetaTag("property", "article:author");
+  }
+
+  setMetaTag("twitter:card", "summary_large_image");
+  setMetaTag("twitter:title", title);
+  setMetaTag("twitter:description", localized.description);
+  setMetaTag("twitter:image", ogImage);
+
+  setLinkTag("canonical", canonical);
   setHreflangAlternates(meta.paths);
 }
 
@@ -81,6 +117,25 @@ function setMetaTag(
   tag.content = content;
 }
 
+function removeMetaTag(attr: "name" | "property", name: string): void {
+  document
+    .querySelectorAll<HTMLMetaElement>(`meta[${attr}="${name}"]`)
+    .forEach((n) => n.remove());
+}
+
+function appendMetaProperty(property: string, content: string): void {
+  const tag = document.createElement("meta");
+  tag.setAttribute("property", property);
+  tag.content = content;
+  document.head.appendChild(tag);
+}
+
+function removeMetaProperties(property: string): void {
+  document
+    .querySelectorAll<HTMLMetaElement>(`meta[property="${property}"]`)
+    .forEach((n) => n.remove());
+}
+
 function setLinkTag(rel: string, href: string): void {
   let tag = document.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`);
   if (!tag) {
@@ -91,24 +146,19 @@ function setLinkTag(rel: string, href: string): void {
   tag.href = href;
 }
 
-/**
- * Replace all existing hreflang alternates with a fresh set for this page.
- * Critical for SEO: Google penalises stale/duplicate hreflang tags.
- */
 function setHreflangAlternates(paths: { id: string; en: string }): void {
   document
     .querySelectorAll<HTMLLinkElement>('link[rel="alternate"][hreflang]')
     .forEach((node) => node.remove());
 
-  for (const lang of LANGS) {
+  for (const l of LANGS) {
     const link = document.createElement("link");
     link.rel = "alternate";
-    link.hreflang = HTML_LANG[lang];
-    link.href = getCanonicalUrl(paths[lang]);
+    link.hreflang = HTML_LANG[l];
+    link.href = getCanonicalUrl(paths[l]);
     document.head.appendChild(link);
   }
 
-  // x-default → Indonesian (the source of truth, default lang)
   const xdef = document.createElement("link");
   xdef.rel = "alternate";
   xdef.hreflang = "x-default";
@@ -116,10 +166,6 @@ function setHreflangAlternates(paths: { id: string; en: string }): void {
   document.head.appendChild(xdef);
 }
 
-/**
- * Default fallback meta used at the very top of HomePage and as the seed for
- * any page that hasn't called applyPageMeta yet. Keep both languages here.
- */
 export const defaultMeta: PageMeta = {
   id: {
     title: "AppVibe Studio — Website dan App Bisnis untuk UMKM",
