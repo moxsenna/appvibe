@@ -3,6 +3,7 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import type { BlogPost } from "@/types/blog";
 import type { Lang } from "@/i18n/types";
 import { routes } from "@/lib/routes";
+import { blogIndexPathWithSearch } from "@/lib/blog-url";
 import { Container } from "@/components/ui/Container";
 
 type BlogArticleHeroProps = {
@@ -57,12 +58,13 @@ export function BlogArticleHero({
         {post.tags.length > 0 && (
           <div className="mt-6 flex flex-wrap gap-2">
             {post.tags.map((t) => (
-              <span
+              <Link
                 key={t}
-                className="rounded-full border border-brand-blue/20 bg-brand-blue/5 px-3 py-1 text-xs font-semibold capitalize text-brand-blue"
+                to={blogIndexPathWithSearch(lang, t, 1)}
+                className="rounded-full border border-brand-blue/20 bg-brand-blue/5 px-3 py-1 text-xs font-semibold capitalize text-brand-blue transition-colors hover:bg-brand-blue/10"
               >
                 {t}
-              </span>
+              </Link>
             ))}
           </div>
         )}

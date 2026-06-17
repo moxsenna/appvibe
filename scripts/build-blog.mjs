@@ -95,3 +95,8 @@ spawnSync(process.execPath, ["scripts/generate-sitemap.mjs"], {
   cwd: ROOT,
   stdio: "inherit",
 });
+
+spawnSync(process.execPath, ["scripts/generate-rss.mjs"], {
+  cwd: ROOT,
+  stdio: "inherit",
+});

@@ -315,6 +315,20 @@ export const pagesEn: PagesDict = {
     relatedTitle: "Related articles",
     readTimeMinutes: "{n} min read",
     resultsCount: "{n} articles",
+    rssLinkLabel: "RSS feed",
+    paginationPrev: "Previous",
+    paginationNext: "Next",
+    paginationPage: "Page {current} of {total}",
+    shareTitle: "Share article",
+    shareCopyLink: "Copy link",
+    shareCopied: "Copied",
+    shareNetworks: {
+      whatsapp: "Share on WhatsApp",
+      x: "Share on X",
+      facebook: "Share on Facebook",
+      linkedin: "Share on LinkedIn",
+      threads: "Share on Threads",
+    },
     articleCta: {
       title: "Want a page like this for your business?",
       subtitle:

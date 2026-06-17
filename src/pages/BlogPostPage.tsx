@@ -5,13 +5,14 @@ import { Container } from "@/components/ui/Container";
 import { BlogProse } from "@/components/blog/BlogProse";
 import { BlogArticleHero } from "@/components/blog/BlogArticleHero";
 import { BlogPostFooterCta } from "@/components/blog/BlogPostFooterCta";
+import { BlogShareBar } from "@/components/blog/BlogShareBar";
 import { BlogRelatedPosts } from "@/components/blog/BlogRelatedPosts";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { useLang } from "@/i18n/use-lang";
 import { getBlogPost, getRelatedPosts } from "@/lib/blog";
 import { formatReadTime } from "@/lib/blog-format";
 import { routes } from "@/lib/routes";
-import { applyPageMeta, getOgImageUrl, getSiteUrl } from "@/lib/seo";
+import { applyPageMeta, getCanonicalUrl, getOgImageUrl, getSiteUrl } from "@/lib/seo";
 import {
   articleJsonLd,
   breadcrumbJsonLd,
@@ -111,6 +112,15 @@ export function BlogPostPage() {
       <section className="section-padding bg-gradient-to-b from-brand-light/50 to-white">
         <Container className="max-w-3xl">
           <BlogProse html={post.html} />
+          <BlogShareBar
+            url={getCanonicalUrl(routes.blogPost(lang, post.slug))}
+            title={post.title}
+            lang={lang}
+            shareTitle={copy.shareTitle}
+            copyLabel={copy.shareCopyLink}
+            copiedLabel={copy.shareCopied}
+            labels={copy.shareNetworks}
+          />
           <BlogPostFooterCta
             title={copy.articleCta.title}
             subtitle={copy.articleCta.subtitle}

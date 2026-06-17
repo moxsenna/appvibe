@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AppVibe Studio — Insight bisnis</title>
+  <subtitle>Landing page, WhatsApp CTA, dan digital presence untuk bisnis Indonesia.</subtitle>
+  <link href="http://localhost:5173/feed/blog-id.xml" rel="self" type="application/atom+xml"/>
+  <link href="http://localhost:5173/blog" rel="alternate" type="text/html"/>
+  <id>http://localhost:5173/blog</id>
+  <updated>2026-06-18T00:00:00.000Z</updated>
+  <author><name>AppVibe Studio</name></author>
+  <entry>
+    <title>Landing page + WhatsApp: CTA yang benar-benar menghasilkan chat</title>
+    <link href="http://localhost:5173/blog/landing-page-whatsapp-cta" rel="alternate" type="text/html"/>
+    <id>http://localhost:5173/blog/landing-page-whatsapp-cta</id>
+    <published>2026-06-18T00:00:00.000Z</published>
+    <updated>2026-06-18T00:00:00.000Z</updated>
+    <summary type="html">Struktur halaman, copy tombol, dan pesan WA pertama — pola yang kami pakai untuk UMKM dan bisnis jasa.</summary>
+  </entry>
+</feed>

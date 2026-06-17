@@ -11,6 +11,8 @@ export type PageMeta = {
   id: LocalizedMeta;
   en: LocalizedMeta;
   paths: { id: string; en: string };
+  /** Overrides canonical/og:url for current lang (e.g. blog query). */
+  canonicalPath?: string;
   ogImage?: string;
   /** Default `website`; use `article` for blog posts. */
   ogType?: "website" | "article";
@@ -48,7 +50,7 @@ export function getOgImageUrl(path?: string): string {
  */
 export function applyPageMeta(meta: PageMeta, lang: Lang): void {
   const localized = meta[lang];
-  const currentPath = meta.paths[lang];
+  const currentPath = meta.canonicalPath ?? meta.paths[lang];
   const ogType = meta.ogType ?? "website";
 
   const title = localized.title.includes(APP_NAME)

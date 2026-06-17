@@ -312,6 +312,20 @@ export const pagesId = {
     relatedTitle: "Artikel terkait",
     readTimeMinutes: "{n} menit baca",
     resultsCount: "{n} artikel",
+    rssLinkLabel: "Langganan RSS",
+    paginationPrev: "Sebelumnya",
+    paginationNext: "Berikutnya",
+    paginationPage: "Halaman {current} dari {total}",
+    shareTitle: "Bagikan artikel",
+    shareCopyLink: "Salin tautan",
+    shareCopied: "Tersalin",
+    shareNetworks: {
+      whatsapp: "Bagikan via WhatsApp",
+      x: "Bagikan di X",
+      facebook: "Bagikan di Facebook",
+      linkedin: "Bagikan di LinkedIn",
+      threads: "Bagikan di Threads",
+    },
     articleCta: {
       title: "Mau halaman seperti ini untuk bisnis Anda?",
       subtitle:
@@ -481,6 +495,20 @@ type PagesDict = {
     relatedTitle: string;
     readTimeMinutes: string;
     resultsCount: string;
+    rssLinkLabel: string;
+    paginationPrev: string;
+    paginationNext: string;
+    paginationPage: string;
+    shareTitle: string;
+    shareCopyLink: string;
+    shareCopied: string;
+    shareNetworks: {
+      whatsapp: string;
+      x: string;
+      facebook: string;
+      linkedin: string;
+      threads: string;
+    };
     articleCta: { title: string; subtitle: string };
   };
   uses: {

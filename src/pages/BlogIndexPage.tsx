@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { BookOpen, SearchX } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { BlogPostCard } from "@/components/blog/BlogPostCard";
 import { BlogListToolbar } from "@/components/blog/BlogListToolbar";
+import { BlogPagination } from "@/components/blog/BlogPagination";
 import { useLang } from "@/i18n/use-lang";
 import { dictionaries } from "@/i18n/dictionaries";
 import {
@@ -12,6 +14,17 @@ import {
   getBlogPosts,
   getBlogTags,
 } from "@/lib/blog";
+import {
+  blogIndexShowFeatured,
+  paginateBlogPosts,
+  shouldPaginateBlogList,
+  splitFeaturedAndGrid,
+} from "@/lib/blog-pagination";
+import {
+  blogIndexPathWithSearch,
+  buildBlogIndexSearchParams,
+  parseBlogIndexSearch,
+} from "@/lib/blog-url";
 import { formatBlogCount, formatReadTime } from "@/lib/blog-format";
 import { routes } from "@/lib/routes";
 import { applyPageMeta, getSiteUrl } from "@/lib/seo";
@@ -19,33 +32,99 @@ import { blogItemListJsonLd, clearPageJsonLd, setPageJsonLd } from "@/lib/json-l
 
 const APP_NAME = import.meta.env.VITE_APP_NAME ?? "AppVibe Studio";
 
+function formatPaginationPage(
+  template: string,
+  current: number,
+  total: number,
+): string {
+  return template
+    .replace(/\{current\}/g, String(current))
+    .replace(/\{total\}/g, String(total));
+}
+
 export function BlogIndexPage() {
   const { lang } = useLang();
   const copy = dictionaries[lang].pages.blog;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [query, setQuery] = useState("");
+
   const allPosts = useMemo(() => getBlogPosts(lang), [lang]);
   const tags = useMemo(() => getBlogTags(lang), [lang]);
 
-  const [query, setQuery] = useState("");
-  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const { tag: activeTag, page: urlPage } = useMemo(
+    () => parseBlogIndexSearch(searchParams, tags),
+    [searchParams, tags],
+  );
 
   const filtered = useMemo(
     () => filterBlogPosts(allPosts, { query, tag: activeTag }),
     [allPosts, query, activeTag],
   );
 
-  const showFeatured = !query.trim() && !activeTag && filtered.length > 0;
-  const [featured, ...rest] = showFeatured ? filtered : [];
-  const gridPosts = showFeatured ? rest : filtered;
+  const usePagination = shouldPaginateBlogList(filtered.length);
+  const { page, totalPages, slice: pageSlice } = paginateBlogPosts(
+    filtered,
+    usePagination ? urlPage : 1,
+  );
+
+  useEffect(() => {
+    if (!usePagination || page === urlPage) return;
+    setSearchParams(buildBlogIndexSearchParams(activeTag, page), {
+      replace: true,
+    });
+  }, [usePagination, page, urlPage, activeTag, setSearchParams]);
+
+  const showFeatured = blogIndexShowFeatured(
+    query,
+    activeTag,
+    page,
+    filtered.length,
+  );
+  const { featured, gridPosts } = splitFeaturedAndGrid(pageSlice, showFeatured);
 
   const readTimeLabel = (minutes: number) =>
     formatReadTime(copy.readTimeMinutes, minutes);
 
+  const syncTagToUrl = useCallback(
+    (tag: string | null) => {
+      setSearchParams(buildBlogIndexSearchParams(tag, 1), { replace: false });
+    },
+    [setSearchParams],
+  );
+
+  const clearFilters = useCallback(() => {
+    setQuery("");
+    setSearchParams(new URLSearchParams(), { replace: false });
+  }, [setSearchParams]);
+
+  const listPath = blogIndexPathWithSearch(lang, activeTag, page);
+
   useEffect(() => {
+    const idBase = dictionaries.id.pages.blog.meta;
+    const enBase = dictionaries.en.pages.blog.meta;
+
     applyPageMeta(
       {
-        id: dictionaries.id.pages.blog.meta,
-        en: dictionaries.en.pages.blog.meta,
+        id: {
+          title:
+            activeTag || page > 1
+              ? `${idBase.title}${activeTag ? ` — ${activeTag}` : ""}${page > 1 ? ` — hal. ${page}` : ""}`
+              : idBase.title,
+          description: activeTag
+            ? `Artikel bertopik «${activeTag}» — ${APP_NAME}.`
+            : idBase.description,
+        },
+        en: {
+          title:
+            activeTag || page > 1
+              ? `${enBase.title}${activeTag ? ` — ${activeTag}` : ""}${page > 1 ? ` — p. ${page}` : ""}`
+              : enBase.title,
+          description: activeTag
+            ? `Articles tagged «${activeTag}» — ${APP_NAME}.`
+            : enBase.description,
+        },
         paths: { id: routes.blog("id"), en: routes.blog("en") },
+        canonicalPath: listPath,
       },
       lang,
     );
@@ -54,16 +133,18 @@ export function BlogIndexPage() {
     setPageJsonLd(
       blogItemListJsonLd({
         siteUrl,
-        listPath: routes.blog(lang),
+        listPath,
         name: `${copy.hero.title} | ${APP_NAME}`,
-        items: allPosts.map((p) => ({
+        items: pageSlice.map((p) => ({
           path: routes.blogPost(lang, p.slug),
           name: p.title,
         })),
       }),
     );
     return () => clearPageJsonLd();
-  }, [lang, copy.hero.title, allPosts]);
+  }, [lang, copy.hero.title, activeTag, page, pageSlice, listPath]);
+
+  const feedPath = lang === "en" ? "/feed/blog-en.xml" : "/feed/blog-id.xml";
 
   return (
     <PageShell>
@@ -85,12 +166,23 @@ export function BlogIndexPage() {
             </div>
           ) : (
             <div className="mx-auto max-w-5xl">
+              <div className="mb-6 flex justify-end">
+                <a
+                  href={feedPath}
+                  className="text-sm font-semibold text-brand-blue hover:underline"
+                >
+                  {copy.rssLinkLabel}
+                </a>
+              </div>
+
               <BlogListToolbar
                 query={query}
                 onQueryChange={setQuery}
                 activeTag={activeTag}
-                onTagChange={setActiveTag}
+                onTagChange={syncTagToUrl}
+                onClearFilters={clearFilters}
                 tags={tags}
+                lang={lang}
                 searchPlaceholder={copy.searchPlaceholder}
                 filterAllLabel={copy.filterAllLabel}
                 clearFiltersLabel={copy.clearFiltersLabel}
@@ -127,6 +219,20 @@ export function BlogIndexPage() {
                         </li>
                       ))}
                     </ul>
+                  )}
+
+                  {usePagination && (
+                    <BlogPagination
+                      lang={lang}
+                      page={page}
+                      totalPages={totalPages}
+                      activeTag={activeTag}
+                      prevLabel={copy.paginationPrev}
+                      nextLabel={copy.paginationNext}
+                      pageLabel={(c, t) =>
+                        formatPaginationPage(copy.paginationPage, c, t)
+                      }
+                    />
                   )}
                 </div>
               )}

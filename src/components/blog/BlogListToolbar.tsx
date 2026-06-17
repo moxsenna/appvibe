@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import { Search, X } from "lucide-react";
+import type { Lang } from "@/i18n/types";
+import { blogIndexPathWithSearch } from "@/lib/blog-url";
 import { cn } from "@/lib/cn";
 
 type BlogListToolbarProps = {
@@ -6,7 +9,9 @@ type BlogListToolbarProps = {
   onQueryChange: (value: string) => void;
   activeTag: string | null;
   onTagChange: (tag: string | null) => void;
+  onClearFilters: () => void;
   tags: string[];
+  lang: Lang;
   searchPlaceholder: string;
   filterAllLabel: string;
   clearFiltersLabel: string;
@@ -19,7 +24,9 @@ export function BlogListToolbar({
   onQueryChange,
   activeTag,
   onTagChange,
+  onClearFilters,
   tags,
+  lang,
   searchPlaceholder,
   filterAllLabel,
   clearFiltersLabel,
@@ -40,17 +47,17 @@ export function BlogListToolbar({
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
           placeholder={searchPlaceholder}
-          className="w-full rounded-xl border border-brand-border bg-white py-3.5 pl-11 pr-11 text-sm text-brand-navy shadow-card outline-none transition-colors placeholder:text-brand-muted focus:border-brand-blue/40 focus:ring-2 focus:ring-brand-blue/15"
+          className="w-full rounded-xl border border-brand-border bg-white py-3 pl-11 pr-10 text-sm shadow-card outline-none transition-colors placeholder:text-brand-muted/70 focus:border-brand-blue/40"
           aria-label={searchPlaceholder}
         />
         {query && (
           <button
             type="button"
             onClick={() => onQueryChange("")}
-            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg text-brand-muted transition-colors hover:bg-brand-light hover:text-brand-navy"
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg p-1 text-brand-muted hover:text-brand-navy"
             aria-label={clearFiltersLabel}
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4" aria-hidden />
           </button>
         )}
       </div>
@@ -69,21 +76,31 @@ export function BlogListToolbar({
           >
             {filterAllLabel}
           </button>
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              type="button"
-              onClick={() => onTagChange(activeTag === tag ? null : tag)}
-              className={cn(
-                "rounded-full border px-3.5 py-1.5 text-xs font-semibold capitalize transition-colors",
-                activeTag === tag
-                  ? "border-brand-blue bg-brand-blue/10 text-brand-blue"
-                  : "border-brand-border bg-white text-brand-muted hover:border-brand-blue/30 hover:text-brand-navy",
-              )}
-            >
-              {tag}
-            </button>
-          ))}
+          {tags.map((tag) => {
+            const isActive = activeTag === tag;
+            const className = cn(
+              "rounded-full border px-3.5 py-1.5 text-xs font-semibold capitalize transition-colors",
+              isActive
+                ? "border-brand-blue bg-brand-blue/10 text-brand-blue"
+                : "border-brand-border bg-white text-brand-muted hover:border-brand-blue/30 hover:text-brand-navy",
+            );
+            if (isActive) {
+              return (
+                <button key={tag} type="button" onClick={() => onTagChange(null)} className={className}>
+                  {tag}
+                </button>
+              );
+            }
+            return (
+              <Link
+                key={tag}
+                to={blogIndexPathWithSearch(lang, tag, 1)}
+                className={className}
+              >
+                {tag}
+              </Link>
+            );
+          })}
         </div>
       )}
 
@@ -92,10 +109,7 @@ export function BlogListToolbar({
         {hasFilters && (
           <button
             type="button"
-            onClick={() => {
-              onQueryChange("");
-              onTagChange(null);
-            }}
+            onClick={onClearFilters}
             className="ml-2 font-semibold text-brand-blue hover:underline"
           >
             {clearFiltersLabel}
