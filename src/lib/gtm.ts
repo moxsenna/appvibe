@@ -12,21 +12,38 @@ export function getGtmId(): string {
   return GTM_ID;
 }
 
-/** Idempotent GTM bootstrap — call once before React mount. */
+function gtmScriptPresent(): boolean {
+  if (typeof document === "undefined") return false;
+  return Boolean(
+    document.querySelector('script[src*="googletagmanager.com/gtm.js"]'),
+  );
+}
+
+/**
+ * Ensures dataLayer exists and pushes app metadata.
+ * GTM loader is injected in index.html at build time (see vite gtm plugin).
+ * Falls back to dynamic inject only if HTML snippet is missing (e.g. misconfigured build).
+ */
 export function initGtm(): void {
-  if (!isAnalyticsEnabled() || typeof document === "undefined") return;
-  if (document.querySelector(`script[data-gtm="${GTM_ID}"]`)) return;
+  if (!isAnalyticsEnabled() || typeof window === "undefined") return;
 
   const w = window as Window & { dataLayer?: Record<string, unknown>[] };
   w.dataLayer = w.dataLayer ?? [];
-  w.dataLayer.push({
-    event: "app_init",
-    app_name: import.meta.env.VITE_APP_NAME ?? "AppVibe Studio",
-  });
+
+  if (!w.dataLayer.some((e) => e && (e as { event?: string }).event === "app_init")) {
+    w.dataLayer.push({
+      event: "app_init",
+      app_name: import.meta.env.VITE_APP_NAME ?? "AppVibe Studio",
+    });
+  }
+
+  if (gtmScriptPresent() || document.querySelector("script[data-gtm-fallback]")) {
+    return;
+  }
 
   const script = document.createElement("script");
   script.async = true;
-  script.dataset.gtm = GTM_ID;
+  script.dataset.gtmFallback = "true";
   script.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

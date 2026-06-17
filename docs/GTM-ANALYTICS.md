@@ -12,7 +12,7 @@ Panduan mengaktifkan GTM di production (Cloudflare Pages) dan memetakan event da
 | Variable | Production | Preview / local |
 |----------|------------|-----------------|
 | `VITE_ENABLE_ANALYTICS` | `true` | `false` (default) |
-| `VITE_GTM_ID` | `GTM-XXXXXXX` | kosong |
+| `VITE_GTM_ID` | `GTM-NFJ5M7W4` | kosong |
 
 **Penting:** Setelah mengubah env di Cloudflare, **trigger deploy ulang** (rebuild) agar Vite meng-inline nilai baru.
 
@@ -20,17 +20,18 @@ Contoh `.env.local` untuk uji lokal (opsional):
 
 ```env
 VITE_ENABLE_ANALYTICS=true
-VITE_GTM_ID=GTM-XXXXXXX
+VITE_GTM_ID=GTM-NFJ5M7W4
 ```
 
 Tanpa kedua nilai valid, GTM **tidak** dimuat (zero overhead).
 
 ## 3. Yang sudah di codebase
 
-- `src/lib/gtm.ts` — bootstrap GTM di `main.tsx` (sebelum React)
+- **Snippet resmi Google** disuntik ke `dist/index.html` saat build (`vite.config.ts`): script di awal `<head>`, `<noscript>` setelah `<body>` — container **`GTM-NFJ5M7W4`**.
+- `initGtm()` — `dataLayer` + `app_init` (tanpa duplikasi script jika HTML sudah berisi GTM).
 - `src/lib/analytics.ts` — `trackEvent()` → `window.dataLayer`
-- `AnalyticsRouteListener` — event `page_view` tiap navigasi SPA (pathname + search + `page_lang`)
-- Semua CTA WhatsApp, form, demo, portfolio, dll. sudah memanggil `trackEvent`
+- `AnalyticsRouteListener` — `page_view` tiap navigasi SPA
+- CTA WhatsApp, form, demo, portfolio, dll. memanggil `trackEvent`
 
 ## 4. Event names (Custom Event di GTM)
 
