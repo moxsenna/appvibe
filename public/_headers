@@ -1,0 +1,9 @@
+# Cloudflare Pages — keep HTML shell fresh (GSC meta tag, title updates)
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/google0f197632763ef486.html
+  Cache-Control: public, max-age=3600
