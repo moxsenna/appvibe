@@ -5,8 +5,16 @@
   <link href="http://localhost:5173/feed/blog-id.xml" rel="self" type="application/atom+xml"/>
   <link href="http://localhost:5173/blog" rel="alternate" type="text/html"/>
   <id>http://localhost:5173/blog</id>
-  <updated>2026-06-21T00:00:00.000Z</updated>
+  <updated>2026-06-22T00:00:00.000Z</updated>
   <author><name>AppVibe Studio</name></author>
+  <entry>
+    <title>Bukti Sosial di Landing Page: Contoh yang Benar-Benar Dipakai Bisnis Jasa</title>
+    <link href="http://localhost:5173/blog/social-proof-landing" rel="alternate" type="text/html"/>
+    <id>http://localhost:5173/blog/social-proof-landing</id>
+    <published>2026-06-22T00:00:00.000Z</published>
+    <updated>2026-06-22T00:00:00.000Z</updated>
+    <summary type="html">Testimoni, angka, dan logo klien — mana yang benar-benar meningkatkan kepercayaan dan konversi di landing page.</summary>
+  </entry>
   <entry>
     <title>Cara Mengukur Konversi Landing Page Tanpa Tools Mahal</title>
     <link href="http://localhost:5173/blog/measure-conversion" rel="alternate" type="text/html"/>
