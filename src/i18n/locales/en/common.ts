@@ -26,7 +26,7 @@ export const commonEn: CommonDict = {
   },
 
   cta: {
-    consult: "Start on WhatsApp",
+    consult: "Free consult on WhatsApp",
     consultShort: "Get in touch",
     chatNow: "Chat now",
     viewPortfolio: "See the work",
@@ -108,7 +108,7 @@ export const commonEn: CommonDict = {
   },
 
   mobileSticky: {
-    label: "Start a conversation",
+    label: "Free consult on WhatsApp",
   },
 
   demo: {
