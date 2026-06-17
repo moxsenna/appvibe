@@ -295,18 +295,24 @@ export const pagesEn: PagesDict = {
 
   blog: {
     hero: {
-      eyebrow: "Engineering",
-      title: "Technical notes from the AppVibe team",
+      eyebrow: "Business insights",
+      title: "Websites, landing pages & conversion tips",
       description:
-        "Architecture choices, sprints, and patterns we use to build this site — transparent for prospects and developers.",
+        "Short guides for service businesses — trust, WhatsApp CTAs, and pages that are pleasant to read.",
     },
     meta: {
-      title: "Engineering Blog | AppVibe Studio",
+      title: "Blog | AppVibe Studio",
       description:
-        "Technical posts on React, Vite, i18n, deployment, and how AppVibe Studio works.",
+        "Articles on landing pages, WhatsApp CTAs, and digital presence for growing teams.",
     },
-    empty: "No posts in this language yet.",
+    empty: "No articles in this language yet.",
     backToIndex: "Back to blog",
+    readArticle: "Read article",
+    articleCta: {
+      title: "Want a page like this for your business?",
+      subtitle:
+        "Free consult on WhatsApp — we'll help you shape a credible landing page or company profile.",
+    },
   },
 
   uses: {

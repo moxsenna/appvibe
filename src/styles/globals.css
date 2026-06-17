@@ -191,14 +191,61 @@
 }
 
 @layer components {
-  .blog-prose h2 { @apply mt-10 text-2xl font-bold text-brand-navy; }
-  .blog-prose h3 { @apply mt-8 text-xl font-semibold text-brand-navy; }
-  .blog-prose p { @apply mt-4 leading-relaxed text-brand-muted; }
-  .blog-prose ol, .blog-prose ul { @apply mt-4 list-inside space-y-2 text-brand-muted; }
-  .blog-prose ol { @apply list-decimal; }
-  .blog-prose ul { @apply list-disc; }
-  .blog-prose code { @apply rounded bg-brand-light px-1.5 py-0.5 text-sm text-brand-navy; }
-  .blog-prose pre { @apply mt-4 overflow-x-auto rounded-xl; }
-  .blog-prose pre code { @apply bg-transparent p-0; }
-  .blog-code-fallback { @apply mt-4 overflow-x-auto rounded-xl bg-slate-900 p-4 text-sm text-slate-100; }
+  .blog-prose {
+    @apply text-[1.0625rem] leading-[1.75] text-slate-700;
+  }
+  .blog-prose > *:first-child { margin-top: 0; }
+  .blog-prose h2 {
+    @apply relative mt-12 scroll-mt-24 border-b border-brand-border/60 pb-3 text-2xl font-bold tracking-tight text-brand-navy first:mt-0;
+  }
+  .blog-prose h2::before {
+    content: '';
+    @apply absolute -left-4 top-1 h-[calc(100%-0.25rem)] w-1 rounded-full bg-cta-gradient opacity-80;
+  }
+  .blog-prose h3 {
+    @apply mt-8 text-xl font-semibold text-brand-navy;
+  }
+  .blog-prose p {
+    @apply mt-5 text-slate-600;
+  }
+  .blog-prose strong {
+    @apply font-semibold text-brand-navy;
+  }
+  .blog-prose a {
+    @apply font-medium text-brand-blue underline decoration-brand-blue/30 underline-offset-4 transition-colors hover:decoration-brand-blue;
+  }
+  .blog-prose ul,
+  .blog-prose ol {
+    @apply mt-5 space-y-2 pl-6 text-slate-600;
+  }
+  .blog-prose ul { @apply list-disc marker:text-brand-blue; }
+  .blog-prose ol { @apply list-decimal marker:font-semibold marker:text-brand-blue; }
+  .blog-prose li { @apply pl-1; }
+  .blog-prose li::marker { @apply text-brand-blue; }
+  .blog-prose blockquote {
+    @apply my-8 rounded-r-xl border-l-4 border-brand-blue bg-brand-light/80 px-5 py-4 text-base italic text-brand-navy/90;
+  }
+  .blog-prose hr {
+    @apply my-10 border-brand-border;
+  }
+  .blog-prose code:not(pre code) {
+    @apply rounded-md bg-brand-light px-1.5 py-0.5 text-[0.9em] font-medium text-brand-navy;
+  }
+  .blog-prose pre,
+  .blog-prose .blog-code-fallback {
+    @apply my-8 overflow-x-auto rounded-xl border border-slate-800/50 shadow-card;
+  }
+  .blog-prose pre code { @apply bg-transparent p-0 text-inherit; }
+  .blog-prose img {
+    @apply my-8 rounded-xl shadow-card;
+  }
+  .blog-prose table {
+    @apply my-8 w-full overflow-hidden rounded-xl border border-brand-border text-sm;
+  }
+  .blog-prose th {
+    @apply bg-brand-light px-4 py-2 text-left font-semibold text-brand-navy;
+  }
+  .blog-prose td {
+    @apply border-t border-brand-border px-4 py-2 text-slate-600;
+  }
 }

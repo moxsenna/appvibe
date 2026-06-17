@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
-import { Calendar, Tag } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
+import { BlogPostCard } from "@/components/blog/BlogPostCard";
 import { useLang } from "@/i18n/use-lang";
 import { dictionaries } from "@/i18n/dictionaries";
 import { getBlogPosts } from "@/lib/blog";
@@ -15,6 +14,7 @@ export function BlogIndexPage() {
   const { lang } = useLang();
   const copy = dictionaries[lang].pages.blog;
   const posts = getBlogPosts(lang);
+  const [featured, ...rest] = posts;
 
   useEffect(() => {
     applyPageMeta(
@@ -34,50 +34,41 @@ export function BlogIndexPage() {
         title={copy.hero.title}
         description={copy.hero.description}
       />
-      <section className="section-padding bg-white">
-        <Container>
+
+      <section className="relative section-padding">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(37,99,235,0.08),transparent)]" />
+        <div className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-[0.35]" />
+
+        <Container className="relative">
           {posts.length === 0 ? (
-            <p className="text-center text-brand-muted">{copy.empty}</p>
+            <div className="mx-auto flex max-w-md flex-col items-center rounded-2xl border border-dashed border-brand-border bg-white/80 px-8 py-16 text-center">
+              <BookOpen className="h-10 w-10 text-brand-blue/40" aria-hidden />
+              <p className="mt-4 text-brand-muted">{copy.empty}</p>
+            </div>
           ) : (
-            <ul className="mx-auto flex max-w-3xl flex-col gap-6">
-              {posts.map((post) => (
-                <li key={post.slug}>
-                  <Card hover padding="lg">
-                    <Link
-                      to={routes.blogPost(lang, post.slug)}
-                      className="block"
-                    >
-                      <time
-                        dateTime={post.date}
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-brand-muted"
-                      >
-                        <Calendar className="h-3.5 w-3.5" aria-hidden />
-                        {post.date}
-                      </time>
-                      <h2 className="mt-2 text-xl font-bold text-brand-navy">
-                        {post.title}
-                      </h2>
-                      <p className="mt-2 text-sm leading-relaxed text-brand-muted">
-                        {post.description}
-                      </p>
-                      {post.tags.length > 0 && (
-                        <div className="mt-4 flex flex-wrap gap-2">
-                          {post.tags.map((t) => (
-                            <span
-                              key={t}
-                              className="inline-flex items-center gap-1 rounded-full bg-brand-light px-2.5 py-0.5 text-xs text-brand-muted"
-                            >
-                              <Tag className="h-3 w-3" aria-hidden />
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </Link>
-                  </Card>
-                </li>
-              ))}
-            </ul>
+            <div className="mx-auto max-w-4xl space-y-10">
+              {featured && (
+                <BlogPostCard
+                  post={featured}
+                  lang={lang}
+                  featured
+                  readLabel={copy.readArticle}
+                />
+              )}
+              {rest.length > 0 && (
+                <ul className="grid gap-8 sm:grid-cols-2">
+                  {rest.map((post) => (
+                    <li key={post.slug} className="sm:col-span-2">
+                      <BlogPostCard
+                        post={post}
+                        lang={lang}
+                        readLabel={copy.readArticle}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           )}
         </Container>
       </section>

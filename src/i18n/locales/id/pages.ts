@@ -292,18 +292,24 @@ export const pagesId = {
 
   blog: {
     hero: {
-      eyebrow: "Engineering",
-      title: "Catatan teknis dari tim AppVibe",
+      eyebrow: "Insight bisnis",
+      title: "Tips website, landing page, dan konversi",
       description:
-        "Keputusan arsitektur, sprint, dan pola yang kami pakai saat membangun situs ini — transparan untuk calon klien dan developer.",
+        "Panduan singkat untuk UMKM dan bisnis jasa — fokus pada kepercayaan calon pelanggan, CTA WhatsApp, dan halaman yang enak dibaca.",
     },
     meta: {
-      title: "Blog Engineering | AppVibe Studio",
+      title: "Blog | AppVibe Studio",
       description:
-        "Artikel teknis tentang React, Vite, i18n, deploy, dan cara kerja AppVibe Studio.",
+        "Artikel tentang landing page, WhatsApp CTA, dan digital presence untuk bisnis Indonesia.",
     },
     empty: "Belum ada artikel dalam bahasa ini.",
     backToIndex: "Kembali ke blog",
+    readArticle: "Baca artikel",
+    articleCta: {
+      title: "Mau halaman seperti ini untuk bisnis Anda?",
+      subtitle:
+        "Konsultasi gratis via WhatsApp — kami bantu susun landing page atau company profile yang rapi.",
+    },
   },
 
   uses: {
@@ -460,6 +466,8 @@ type PagesDict = {
     meta: LocalizedPageMeta;
     empty: string;
     backToIndex: string;
+    readArticle: string;
+    articleCta: { title: string; subtitle: string };
   };
   uses: {
     hero: LocalizedHero;

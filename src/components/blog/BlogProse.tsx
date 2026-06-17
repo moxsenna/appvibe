@@ -5,20 +5,18 @@ type BlogProseProps = {
   className?: string;
 };
 
-/**
- * Renders pre-compiled blog HTML (Shiki blocks included at build time).
- */
 export function BlogProse({ html, className }: BlogProseProps) {
   return (
-    <article
+    <div
       className={cn(
-        "blog-prose prose prose-slate max-w-none",
-        "prose-headings:font-bold prose-headings:text-brand-navy",
-        "prose-a:text-brand-blue prose-code:text-brand-navy",
-        "prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:p-0",
+        "rounded-2xl border border-brand-border/80 bg-white px-6 py-8 shadow-card sm:px-10 sm:py-12",
         className,
       )}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    >
+      <article
+        className="blog-prose mx-auto max-w-none pl-1 sm:pl-3"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </div>
   );
 }
