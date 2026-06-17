@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useLang } from "@/i18n/use-lang";
 import { LANGS, LANG_LABEL, LANG_NAME } from "@/i18n/types";
 import { getEquivalentPath } from "@/lib/routes";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 
 type LanguageToggleProps = {
@@ -66,6 +67,11 @@ export function LanguageToggle({
             aria-label={LANG_NAME[target][lang]}
             onClick={() => {
               if (active) return;
+              trackEvent("lang_switch", {
+                from_lang: lang,
+                to_lang: target,
+                page_path: location.pathname,
+              });
               navigate(targetPath);
             }}
             className={cn(

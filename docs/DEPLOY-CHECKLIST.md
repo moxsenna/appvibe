@@ -20,8 +20,8 @@ Copy from `.env.example` into Cloudflare Pages → Settings → Environment vari
 | `VITE_APP_NAME` | AppVibe Studio | |
 | `VITE_SITE_URL` | `https://appvibe.web.id` | Used for SEO / sitemap |
 | `VITE_WHATSAPP_NUMBER` | `6285179595302` | No `+`, no spaces |
-| `VITE_ENABLE_ANALYTICS` | `false` | Set `true` + GTM when ready |
-| `VITE_GTM_ID` | (empty) | |
+| `VITE_ENABLE_ANALYTICS` | `true` when live | Requires `VITE_GTM_ID`; see `docs/GTM-ANALYTICS.md` |
+| `VITE_GTM_ID` | `GTM-XXXXXXX` | Empty = GTM not loaded |
 | `VITE_SUPABASE_URL` | (optional) | Lead dashboard live backend |
 | `VITE_SUPABASE_ANON_KEY` | (optional) | |
 | `VITE_SUPABASE_SHOWCASE_TENANT_ID` | (optional) | |

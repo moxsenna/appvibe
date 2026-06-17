@@ -7,7 +7,9 @@ import {
   MessageCircle,
 } from "lucide-react";
 import type { Lang } from "@/i18n/types";
+import type { ShareNetwork } from "@/lib/share";
 import { buildShareUrl, copyPageUrl } from "@/lib/share";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 
 type BlogShareBarProps = {
@@ -29,11 +31,15 @@ type BlogShareBarProps = {
 function ShareButton({
   href,
   label,
+  network,
+  pagePath,
   className,
   children,
 }: {
   href: string;
   label: string;
+  network: ShareNetwork;
+  pagePath: string;
   className?: string;
   children: React.ReactNode;
 }) {
@@ -44,6 +50,9 @@ function ShareButton({
       rel="noopener noreferrer"
       aria-label={label}
       title={label}
+      onClick={() =>
+        trackEvent("blog_share_click", { network, page_path: pagePath })
+      }
       className={cn(
         "inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-border bg-white text-brand-navy shadow-card transition-colors hover:border-brand-blue/40 hover:text-brand-blue",
         className,
@@ -54,7 +63,6 @@ function ShareButton({
   );
 }
 
-/** Threads mark (lucide has no Threads icon). */
 function ThreadsIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -87,10 +95,17 @@ export function BlogShareBar({
 }: BlogShareBarProps) {
   const [copied, setCopied] = useState(false);
   const text = title;
+  let pagePath = url;
+  try {
+    pagePath = new URL(url).pathname;
+  } catch {
+    pagePath = url;
+  }
 
   async function onCopy() {
     const ok = await copyPageUrl(url);
     if (ok) {
+      trackEvent("blog_share_click", { network: "copy_link", page_path: pagePath });
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     }
@@ -111,27 +126,40 @@ export function BlogShareBar({
         <ShareButton
           href={buildShareUrl("whatsapp", url, title, text)}
           label={labels.whatsapp}
+          network="whatsapp"
+          pagePath={pagePath}
         >
           <MessageCircle className="h-4 w-4" aria-hidden />
         </ShareButton>
-        <ShareButton href={buildShareUrl("x", url, title)} label={labels.x}>
+        <ShareButton
+          href={buildShareUrl("x", url, title)}
+          label={labels.x}
+          network="x"
+          pagePath={pagePath}
+        >
           <XIcon className="h-4 w-4" />
         </ShareButton>
         <ShareButton
           href={buildShareUrl("facebook", url, title)}
           label={labels.facebook}
+          network="facebook"
+          pagePath={pagePath}
         >
           <Facebook className="h-4 w-4" aria-hidden />
         </ShareButton>
         <ShareButton
           href={buildShareUrl("linkedin", url, title)}
           label={labels.linkedin}
+          network="linkedin"
+          pagePath={pagePath}
         >
           <Linkedin className="h-4 w-4" aria-hidden />
         </ShareButton>
         <ShareButton
           href={buildShareUrl("threads", url, title, text)}
           label={labels.threads}
+          network="threads"
+          pagePath={pagePath}
         >
           <ThreadsIcon className="h-4 w-4" />
         </ShareButton>

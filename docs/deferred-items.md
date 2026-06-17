@@ -90,7 +90,7 @@ Bundle JS utama turun dari 578 kB ke 138 kB (gzip 56 kB) dengan lazy-load 5 demo
 - Thumbnail PNG di `public/images/portfolio/{slug}.png` masih placeholder. Visual preview di portfolio cards masih CSS gradient.
 - OG image placeholder SVG (default untuk halaman tanpa screenshot).
 - Browser QA visual oleh founder (long-running, di luar agent scope).
-- Analytics GTM tidak aktif (default `VITE_ENABLE_ANALYTICS=false`).
+- **GTM:** kode siap (`initGtm`, `page_view`, dataLayer events); aktifkan env production — `docs/GTM-ANALYTICS.md`.
 - ESLint belum di-configure.
 - Git repository belum diinisialisasi.
 - Founder info di About page masih placeholder.

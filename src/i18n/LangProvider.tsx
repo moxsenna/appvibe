@@ -4,6 +4,7 @@ import { LangContext } from "./LangContext";
 import { dictionaries } from "./dictionaries";
 import { HTML_LANG, type Lang } from "./types";
 import { GlobalStructuredData } from "@/components/seo/GlobalStructuredData";
+import { AnalyticsRouteListener } from "@/components/analytics/AnalyticsRouteListener";
 
 const STORAGE_KEY = "appvibe.preferredLang";
 
@@ -33,6 +34,7 @@ export function LangProvider({ lang, children }: LangProviderProps) {
   return (
     <LangContext.Provider value={value}>
       <GlobalStructuredData />
+      <AnalyticsRouteListener />
       {children ?? <Outlet />}
     </LangContext.Provider>
   );
