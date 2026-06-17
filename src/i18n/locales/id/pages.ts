@@ -61,6 +61,74 @@ export const pagesId = {
       ],
       viewAll: "Lihat Semua Portfolio",
     },
+    problemSection: {
+      eyebrow: "Kenapa ini penting",
+      title:
+        "Bisnis yang bagus tetap bisa terlihat kurang serius kalau tampilan digitalnya belum rapi.",
+      intro:
+        "Calon pelanggan sering menilai bisnis dari link pertama yang mereka buka. Kalau informasi layanan tercecer, hanya mengandalkan chat manual, atau belum punya halaman resmi, peluang kepercayaan bisa hilang sebelum percakapan dimulai.",
+      items: [
+        {
+          num: "01",
+          title: "Belum punya halaman resmi",
+          description:
+            "Calon pelanggan tidak menemukan tempat yang rapi untuk memahami layanan, produk, harga, dan cara menghubungi Anda.",
+        },
+        {
+          num: "02",
+          title: "Terlalu bergantung pada chat manual",
+          description:
+            "Pertanyaan yang sama terus berulang karena informasi penting belum disusun dalam halaman yang jelas.",
+        },
+        {
+          num: "03",
+          title: "Portfolio dan testimoni tidak tertata",
+          description:
+            "Bukti kerja, galeri, review, dan studi kasus belum disajikan dengan cara yang meyakinkan.",
+        },
+        {
+          num: "04",
+          title: "Leads sulit dilacak",
+          description:
+            "Calon pelanggan datang dari banyak sumber, tetapi belum ada form, status, atau dashboard sederhana untuk mengelolanya.",
+        },
+        {
+          num: "05",
+          title: "Iklan tidak punya landing page yang kuat",
+          description:
+            "Traffic dari iklan atau promosi bisa terbuang jika halaman tujuan tidak fokus pada satu aksi yang jelas.",
+        },
+      ],
+    },
+    solutionSection: {
+      eyebrow: "Solusi AppVibe",
+      title:
+        "Kami bukan hanya membuat tampilan. Kami membangun alur digital yang membantu bisnis Anda terlihat siap.",
+      intro:
+        "Setiap website atau app ringan kami susun dari tiga hal: pesan yang jelas, tampilan yang profesional, dan aksi yang mudah dilakukan pengunjung.",
+      pillars: [
+        {
+          title: "Digital presence",
+          description:
+            "Website company profile, halaman layanan, galeri, testimoni, dan CTA yang membuat bisnis terlihat lebih kredibel.",
+        },
+        {
+          title: "Conversion page",
+          description:
+            "Landing page untuk webinar, campaign, produk, atau jasa dengan struktur copy dan CTA yang fokus menghasilkan inquiry.",
+        },
+        {
+          title: "Business workflow",
+          description:
+            "Form, WhatsApp redirect, dashboard leads, booking, payment, dan automation ringan agar proses bisnis lebih tertata.",
+        },
+        {
+          title: "Scalable foundation",
+          description:
+            "Mulai dari static website cepat, lalu bisa dikembangkan bertahap ke database, admin panel, dan fitur AI sesuai kebutuhan.",
+        },
+      ],
+    },
     meta: {
       title: "AppVibe Studio — Website dan App Bisnis untuk UMKM",
       description:
@@ -267,6 +335,18 @@ type PagesDict = {
       subtitle: string;
       badges: string[];
       viewAll: string;
+    };
+    problemSection: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      items: { num: string; title: string; description: string }[];
+    };
+    solutionSection: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      pillars: { title: string; description: string }[];
     };
     meta: LocalizedPageMeta;
   };

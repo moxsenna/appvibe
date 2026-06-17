@@ -63,6 +63,74 @@ export const pagesEn: PagesDict = {
       ],
       viewAll: "View full portfolio",
     },
+    problemSection: {
+      eyebrow: "Why this matters",
+      title:
+        "A strong business can still look less credible when its digital presence is not polished.",
+      intro:
+        "Prospects often judge a business from the first link they open. Scattered service information, reliance on manual chat alone, or no official page can erode trust before a conversation even starts.",
+      items: [
+        {
+          num: "01",
+          title: "No official web presence",
+          description:
+            "Prospects cannot find one clear place to understand your services, pricing, and how to reach you.",
+        },
+        {
+          num: "02",
+          title: "Over-reliance on manual chat",
+          description:
+            "The same questions keep coming back because key information is not organized on clear pages.",
+        },
+        {
+          num: "03",
+          title: "Portfolio and proof are scattered",
+          description:
+            "Work samples, galleries, reviews, and case studies are not presented in a convincing structure.",
+        },
+        {
+          num: "04",
+          title: "Leads are hard to track",
+          description:
+            "Inquiries arrive from many channels, but there is no form, status, or simple dashboard to manage them.",
+        },
+        {
+          num: "05",
+          title: "Ads lack a focused landing page",
+          description:
+            "Paid traffic is wasted when the destination page does not drive one clear action.",
+        },
+      ],
+    },
+    solutionSection: {
+      eyebrow: "The AppVibe approach",
+      title:
+        "We do more than design screens. We build digital flows that help your business look ready to serve.",
+      intro:
+        "Every website or lightweight app we ship balances three things: clear messaging, professional presentation, and actions visitors can take easily.",
+      pillars: [
+        {
+          title: "Digital presence",
+          description:
+            "Company profile sites, service pages, galleries, testimonials, and CTAs that make your business look more credible.",
+        },
+        {
+          title: "Conversion page",
+          description:
+            "Landing pages for webinars, campaigns, products, or services with copy and CTAs focused on generating inquiries.",
+        },
+        {
+          title: "Business workflow",
+          description:
+            "Forms, WhatsApp handoff, lead dashboards, booking, payments, and light automation so operations stay organized.",
+        },
+        {
+          title: "Scalable foundation",
+          description:
+            "Start with a fast static site, then grow step by step into databases, admin panels, and AI features as you need them.",
+        },
+      ],
+    },
     meta: {
       title: "AppVibe Studio — Websites and Business Apps for Growing Teams",
       description:
