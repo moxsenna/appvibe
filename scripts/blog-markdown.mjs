@@ -21,22 +21,33 @@ export function inlineMarkdown(raw) {
   return t;
 }
 
-export function mdToHtml(md) {
+function waTemplateHtml(text) {
+  const body = inlineMarkdown(text.trim());
+  return `<div class="blog-wa-template" role="figure" aria-label="Contoh pesan WhatsApp">
+  <div class="blog-wa-template__bar">
+    <span class="blog-wa-template__dot" aria-hidden="true"></span>
+    <span class="blog-wa-template__title">Pesan siap kirim</span>
+  </div>
+  <p class="blog-wa-template__bubble">${body}</p>
+</div>`;
+}
+
+function codeFenceHtml(code, lang) {
+  const trimmed = code.replace(/\n$/, "").trim();
+  if (!lang || lang === "wa" || lang === "text") {
+    return waTemplateHtml(trimmed);
+  }
+  const escaped = escapeHtml(trimmed);
+  return `<pre class="blog-code"><code>${escaped}</code></pre>`;
+}
+
+function mdBlocksToHtml(md) {
   const blocks = md.split(/\n\n+/);
   const out = [];
 
   for (let block of blocks) {
     block = block.trim();
     if (!block) continue;
-
-    if (block.startsWith("```")) {
-      const fence = block.match(/^```(\w*)\n([\s\S]*)```$/);
-      if (fence) {
-        const code = escapeHtml(fence[2].replace(/\n$/, ""));
-        out.push(`<pre class="blog-code"><code>${code}</code></pre>`);
-        continue;
-      }
-    }
 
     if (block.startsWith("### ")) {
       out.push(`<h3>${inlineMarkdown(block.slice(4))}</h3>`);
@@ -78,7 +89,7 @@ export function mdToHtml(md) {
       continue;
     }
 
-    if (lines.length === 1 && (block.startsWith("**") && block.endsWith("**"))) {
+    if (lines.length === 1 && block.startsWith("**") && block.endsWith("**")) {
       out.push(`<p><strong>${inlineMarkdown(block.slice(2, -2))}</strong></p>`);
       continue;
     }
@@ -87,4 +98,44 @@ export function mdToHtml(md) {
   }
 
   return out.join("\n");
+}
+
+/** Full document: extract ``` fences first (even without blank lines around them). */
+export function mdToHtml(md) {
+  const fenceRe = /```(\w*)\r?\n([\s\S]*?)```/g;
+  const segments = [];
+  let last = 0;
+  let match;
+
+  while ((match = fenceRe.exec(md)) !== null) {
+    if (match.index > last) {
+      segments.push({
+        kind: "md",
+        text: md.slice(last, match.index),
+      });
+    }
+    segments.push({
+      kind: "fence",
+      lang: match[1],
+      code: match[2],
+    });
+    last = match.index + match[0].length;
+  }
+
+  if (last < md.length) {
+    segments.push({ kind: "md", text: md.slice(last) });
+  }
+
+  if (segments.length === 0) {
+    return mdBlocksToHtml(md);
+  }
+
+  return segments
+    .map((seg) =>
+      seg.kind === "fence"
+        ? codeFenceHtml(seg.code, seg.lang)
+        : mdBlocksToHtml(seg.text),
+    )
+    .filter(Boolean)
+    .join("\n");
 }
