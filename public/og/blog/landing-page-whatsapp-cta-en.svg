@@ -5,16 +5,51 @@
       <stop offset="0" stop-color="#0F172A"/>
       <stop offset="1" stop-color="#1E3A8A"/>
     </linearGradient>
-    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#22C55E"/>
       <stop offset="1" stop-color="#06B6D4"/>
     </linearGradient>
   </defs>
+
+  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <text x="80" y="120" font-family="system-ui,sans-serif" font-size="22" fill="#94A3B8">AppVibe Blog · EN</text>
-  <text x="80" y="280" font-family="system-ui,sans-serif" font-weight="800" font-size="44" fill="#FFFFFF">Landing pages + WhatsApp</text>
-  <text x="80" y="340" font-family="system-ui,sans-serif" font-weight="600" font-size="30" fill="#CBD5E1">CTAs that start conversations</text>
-  <rect x="80" y="400" width="300" height="56" rx="28" fill="url(#acc)"/>
-  <text x="230" y="436" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="700" font-size="20" fill="#0F172A">Consult on WhatsApp</text>
-  <text x="80" y="560" font-family="system-ui,sans-serif" font-size="20" fill="#64748B">appvibe.web.id/en/blog</text>
+
+  <!-- Subtle grid -->
+  <g opacity="0.08">
+    <path d="M0 80 L1200 80 M0 160 L1200 160 M0 240 L1200 240 M0 320 L1200 320 M0 400 L1200 400 M0 480 L1200 480 M0 560 L1200 560" stroke="#64748B" stroke-width="1"/>
+    <path d="M80 0 L80 630 M160 0 L160 630 M240 0 L240 630 M320 0 L320 630 M400 0 L400 630 M480 0 L480 630 M560 0 L560 630 M640 0 L640 630 M720 0 L720 630 M800 0 L800 630 M880 0 L880 630 M960 0 L960 630 M1040 0 L1040 630 M1120 0 L1120 630" stroke="#64748B" stroke-width="1"/>
+  </g>
+
+  <!-- Phone mockup -->
+  <g transform="translate(820, 140)">
+    <rect x="0" y="0" width="260" height="520" rx="36" fill="#0F172A" stroke="#334155" stroke-width="8"/>
+    <rect x="16" y="48" width="228" height="424" rx="20" fill="#1E293B"/>
+    
+    <!-- WhatsApp header -->
+    <rect x="16" y="48" width="228" height="52" rx="20" fill="#166534"/>
+    <circle cx="52" cy="74" r="16" fill="#4ADE80"/>
+    <text x="82" y="80" font-family="system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff">Healthy Clinic</text>
+    
+    <!-- Message bubble -->
+    <rect x="32" y="130" width="180" height="72" rx="16" fill="#166534"/>
+    <text x="48" y="158" font-family="system-ui,sans-serif" font-size="13" fill="#fff">Hello, I'm interested in</text>
+    <text x="48" y="176" font-family="system-ui,sans-serif" font-size="13" fill="#fff">your acne treatment.</text>
+    
+    <!-- CTA Button -->
+    <rect x="32" y="380" width="196" height="52" rx="26" fill="url(#accent)"/>
+    <text x="130" y="412" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#0F172A">Consult on WhatsApp</text>
+  </g>
+
+  <!-- Text content -->
+  <text x="80" y="110" font-family="system-ui,sans-serif" font-size="18" fill="#64748B">AppVibe Blog</text>
+  
+  <text x="80" y="200" font-family="system-ui,sans-serif" font-weight="800" font-size="52" fill="#fff">Landing pages + WhatsApp</text>
+  <text x="80" y="260" font-family="system-ui,sans-serif" font-weight="600" font-size="28" fill="#94A3B8">CTAs that actually start conversations</text>
+
+  <!-- Accent line -->
+  <rect x="80" y="300" width="120" height="4" rx="2" fill="url(#accent)"/>
+
+  <text x="80" y="380" font-family="system-ui,sans-serif" font-size="20" fill="#64748B">Message templates • 5-minute checklist • Industry examples</text>
+
+  <text x="80" y="560" font-family="system-ui,sans-serif" font-size="18" fill="#475569">appvibe.web.id/blog</text>
 </svg>
