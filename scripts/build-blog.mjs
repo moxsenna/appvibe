@@ -7,6 +7,8 @@ import { spawnSync } from "child_process";
 import matter from "gray-matter";
 import { marked } from "marked";
 import { readingStatsFromHtml } from "./blog-reading.mjs";
+import { renderBlogFenceHtml } from "./blog-markdown.mjs";
+
 
 const ROOT = path.resolve(".");
 const CONTENT = path.join(ROOT, "content/blog");
@@ -41,7 +43,11 @@ async function markdownToHtml(md) {
   let m;
   while ((m = re.exec(md)) !== null) {
     out += marked.parse(md.slice(last, m.index));
-    out += await codeToHtml(m[2].replace(/\n$/, ""), m[1]);
+    if (m[1] === "wa") {
+      out += renderBlogFenceHtml(m[2], "wa");
+    } else {
+      out += await codeToHtml(m[2].replace(/\n$/, ""), m[1]);
+    }
     last = m.index + m[0].length;
   }
   out += marked.parse(md.slice(last));

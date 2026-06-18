@@ -5,7 +5,7 @@
 - Routes: `/blog`, `/blog/:slug` (ID) · `/en/blog`, `/en/blog/:slug` (EN)
 - Content: `content/blog/{id,en}/*.mdx` with YAML frontmatter
 - Build: `node scripts/build-blog.mjs` → `src/data/blog/posts.generated.ts`
-- Highlighting: **Shiki** at build time (fallback plain `<pre>` if Shiki missing)
+- Highlighting: **Shiki** at build time (fallback plain `<pre>` if Shiki missing); fence lang `wa` renders as the WhatsApp message card (`.blog-wa-template`), not Shiki
 
 ## Add a post
 

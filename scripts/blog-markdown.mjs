@@ -40,6 +40,12 @@ function codeFenceHtml(code, lang) {
   const escaped = escapeHtml(trimmed);
   return `<pre class="blog-code"><code>${escaped}</code></pre>`;
 }
+ 
+/** Public renderer for build-blog to use WA template for explicit `wa` fences only (delegates, no duplicate HTML). */
+export function renderBlogFenceHtml(code, lang) {
+  return codeFenceHtml(code, lang);
+}
+
 
 function mdBlocksToHtml(md) {
   const blocks = md.split(/\n\n+/);
