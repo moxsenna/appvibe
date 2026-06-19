@@ -10,3 +10,6 @@
 
 # workflow
 - Work in named sprints with structured reports: `docs/XX-sprint-N-{name}-report.md` containing Status, Goals, What changed (file-level), Verification table, Performance summary, Rollback steps, Definition of Done, Next steps. Follow the same template for consistency. Confidence: 0.85
+
+# deployment
+- Project is hosted on Cloudflare Pages. Use Cloudflare-specific configuration (e.g., `_headers` file) instead of Vercel/Netlify configs. Confidence: 0.70
