@@ -23,6 +23,16 @@ const previewAccents: Record<string, string> = {
   klinik: "from-cyan-700/60 via-cyan-600/30 to-slate-950",
   properti: "from-indigo-700/60 via-indigo-600/30 to-slate-950",
   "lead-dashboard": "from-emerald-700/60 via-emerald-600/30 to-slate-950",
+  "natura-skin-clinic": "from-teal-700/60 via-teal-600/30 to-slate-950",
+  "nusa-grove-residences": "from-indigo-700/60 via-indigo-600/30 to-slate-950",
+  "kelaspintar-ai": "from-violet-700/60 via-violet-600/30 to-slate-950",
+  "leadloop-crm": "from-blue-700/60 via-blue-600/30 to-slate-950",
+  "banyu-villa": "from-green-700/60 via-green-600/30 to-slate-950",
+  "ruangtumbuh-interior": "from-orange-700/60 via-orange-600/30 to-slate-950",
+  "lunaria-wedding": "from-pink-700/60 via-pink-600/30 to-slate-950",
+  "satria-print": "from-red-700/60 via-red-600/30 to-slate-950",
+  "kopi-pagi": "from-amber-700/60 via-amber-600/30 to-slate-950",
+  "mitra-legal": "from-blue-800/60 via-blue-700/30 to-slate-950",
 };
 
 function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boolean }) {
@@ -199,7 +209,26 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
         </>
       );
     default:
-      return null;
+      return (
+        <>
+          <div className="col-span-3 rounded-md border border-white/20 bg-slate-800/60 p-2">
+            <div className={`${textSize} font-semibold text-slate-300`}>Overview</div>
+            <div className="mt-1 h-3 w-3/4 rounded bg-white/20" />
+            <div className="mt-1.5 h-3 w-1/2 rounded bg-white/15" />
+            <div className="mt-1.5 h-3 w-5/6 rounded bg-white/10" />
+          </div>
+          <div className="col-span-2 space-y-1 rounded-md border border-white/15 bg-slate-800/50 p-1.5">
+            <div className={`${textSize} font-medium text-slate-300`}>Fitur</div>
+            <div className="h-2 rounded bg-white/20" />
+            <div className="h-2 rounded bg-white/15" />
+            <div className="h-2 rounded bg-white/10" />
+          </div>
+          <div className="rounded-md border border-white/15 bg-slate-800/50 p-1.5">
+            <div className={`${textSize} text-slate-300`}>CTA</div>
+            <div className="mt-1 h-8 rounded bg-white/20" />
+          </div>
+        </>
+      );
   }
 }
 

@@ -15,6 +15,14 @@ export const demoFilters: DemoFilterOption[] = [
   { id: "clinic", category: "clinic" },
   { id: "property", category: "property" },
   { id: "dashboard", category: "dashboard" },
+  { id: "education", category: "education" },
+  { id: "saas", category: "saas" },
+  { id: "hospitality", category: "hospitality" },
+  { id: "interior", category: "interior" },
+  { id: "wedding", category: "wedding" },
+  { id: "b2b", category: "b2b" },
+  { id: "fnb", category: "fnb" },
+  { id: "legal", category: "legal" },
 ];
 
 export function getDemoBySlug(slug: string): DemoItem | undefined {

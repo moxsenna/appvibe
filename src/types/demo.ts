@@ -3,7 +3,19 @@ import type { PortfolioCategory } from "@/types/portfolio";
 
 export type DemoCategory = Extract<
   PortfolioCategory,
-  "company-profile" | "landing-page" | "clinic" | "property" | "dashboard"
+  | "company-profile"
+  | "landing-page"
+  | "clinic"
+  | "property"
+  | "dashboard"
+  | "education"
+  | "saas"
+  | "hospitality"
+  | "interior"
+  | "wedding"
+  | "b2b"
+  | "fnb"
+  | "legal"
 >;
 
 export type DemoStatus = "live" | "coming-soon" | "draft";
@@ -32,7 +44,15 @@ export type DemoFilterId =
   | "landing-page"
   | "clinic"
   | "property"
-  | "dashboard";
+  | "dashboard"
+  | "education"
+  | "saas"
+  | "hospitality"
+  | "interior"
+  | "wedding"
+  | "b2b"
+  | "fnb"
+  | "legal";
 
 export type DemoFilterOption = {
   id: DemoFilterId;

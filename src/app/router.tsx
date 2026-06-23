@@ -19,6 +19,10 @@ const UsesPage = lazy(() =>
   import("@/pages/UsesPage").then((m) => ({ default: m.UsesPage })),
 );
 
+const StaticDemoPage = lazy(() =>
+  import("@/pages/StaticDemoPage").then((m) => ({ default: m.StaticDemoPage })),
+);
+
 const CompanyProfileDemoPage = lazy(() =>
   import("@/pages/demos/CompanyProfileDemoPage").then((m) => ({
     default: m.CompanyProfileDemoPage,
@@ -64,6 +68,7 @@ const idChildren: RouteObject[] = [
   { path: "demo/klinik", element: withSuspense(KlinikDemoPage) },
   { path: "demo/properti", element: withSuspense(PropertiDemoPage) },
   { path: "demo/lead-dashboard", element: withSuspense(LeadDashboardDemoPage) },
+  { path: "demo/:slug", element: withSuspense(StaticDemoPage) },
   { path: "industri", element: <IndustriesPage /> },
   { path: "tentang", element: <AboutPage /> },
   { path: "kontak", element: <ContactPage /> },
@@ -83,6 +88,7 @@ const enChildren: RouteObject[] = [
   { path: "demos/klinik", element: withSuspense(KlinikDemoPage) },
   { path: "demos/properti", element: withSuspense(PropertiDemoPage) },
   { path: "demos/lead-dashboard", element: withSuspense(LeadDashboardDemoPage) },
+  { path: "demos/:slug", element: withSuspense(StaticDemoPage) },
   { path: "industries", element: <IndustriesPage /> },
   { path: "about", element: <AboutPage /> },
   { path: "contact", element: <ContactPage /> },

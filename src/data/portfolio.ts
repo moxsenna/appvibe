@@ -800,4 +800,1156 @@ export const portfolioItems: PortfolioItem[] = [
       },
     ],
   },
+  {
+    id: "natura-skin-clinic",
+    slug: "natura-skin-clinic",
+    title: {
+      id: "Landing Page Klinik Kecantikan & Wellness",
+      en: "Beauty Clinic & Wellness Landing Page",
+    },
+    category: "clinic",
+    categoryLabel: { id: "Klinik", en: "Clinic" },
+    niche: {
+      id: "Klinik kecantikan, dental, wellness center, dan perawatan kulit",
+      en: "Beauty clinics, dental practices, wellness centers, and skincare treatments",
+    },
+    summary: {
+      id: "Landing page statis responsif untuk Natura Skin Clinic — brand kecantikan, dental, dan wellness. Split hero layout, 3 layanan unggulan, dan CTA booking yang terarah.",
+      en: "A responsive static landing page for Natura Skin Clinic — beauty, dental, and wellness brand. Split hero layout, three highlight services, and targeted booking CTA.",
+    },
+    businessProblem: {
+      id: "Klinik kecantikan kecil dan menengah sering hanya mengandalkan Instagram dan WhatsApp. Calon pasien sulit memahami layanan utama, jadwal tidak jelas, dan booking hanya lewat chat manual.",
+      en: "Small to mid-size beauty clinics rely mostly on Instagram and WhatsApp. Prospects struggle to understand core services, schedules are unclear, and booking only happens through manual chat.",
+    },
+    solution: {
+      id: "Landing page statis yang menghadirkan hero trust-focused, 3 layanan unggulan dengan deskripsi singkat, dan CTA booking WhatsApp yang langsung mengarah ke admin klinik.",
+      en: "A static landing page featuring a trust-focused hero, three highlight services with concise descriptions, and a WhatsApp booking CTA that directs straight to the clinic admin.",
+    },
+    businessValue: {
+      id: [
+        "Klinik terlihat lebih profesional saat dibagikan dari Google Maps atau iklan",
+        "Layanan utama tersampaikan dalam hitungan detik tanpa scroll panjang",
+        "Calon pasien bisa langsung booking lewat WhatsApp dari landing page",
+      ],
+      en: [
+        "Clinic looks more professional when shared from Google Maps or ads",
+        "Core services are communicated within seconds without long scrolling",
+        "Prospects can book directly via WhatsApp from the landing page",
+      ],
+    },
+    features: {
+      id: [
+        "Hero split layout dengan tagline dan CTA konsultasi",
+        "3 kartu layanan unggulan — kulit, dental, wellness",
+        "Closes section dengan CTA WhatsApp yang langsung mengarah ke admin",
+        "Layout responsif untuk mobile, tablet, dan desktop",
+      ],
+      en: [
+        "Split hero layout with tagline and consultation CTA",
+        "Three highlight service cards — skin, dental, wellness",
+        "Closing section with WhatsApp CTA directing to clinic admin",
+        "Responsive layout for mobile, tablet, and desktop",
+      ],
+    },
+    tags: {
+      id: ["Klinik", "Kecantikan", "WhatsApp CTA", "Landing Page"],
+      en: ["Clinic", "Beauty", "WhatsApp CTA", "Landing Page"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/natura-skin-clinic",
+    caseStudyPath: "/portfolio/natura-skin-clinic",
+    mockDataHighlights: {
+      id: [
+        "Brand: Natura Skin Clinic — Skin · Dental · Wellness",
+        "3 layanan: Konsultasi kulit, Dental care, Wellness ritual",
+        "Hero CTA: Jadwalkan konsultasi",
+        "Metric band: 8 layanan · 7 hari · 1 pendekatan",
+        "Closing: Mulai konsultasi singkat",
+      ],
+      en: [
+        "Brand: Natura Skin Clinic — Skin · Dental · Wellness",
+        "Three services: Skin consultation, Dental care, Wellness ritual",
+        "Hero CTA: Schedule a consultation",
+        "Metric band: 8 services · 7 days · 1 approach",
+        "Closing: Start a quick consultation",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi landing page dari Google Maps, iklan, atau Instagram",
+        "Baca hero — pahami 3 layanan utama klinik",
+        "Scroll ke layanan — pilih layanan yang relevan",
+        "Klik CTA WhatsApp — langsung terhubung ke admin",
+      ],
+      en: [
+        "Visit the landing page from Google Maps, ads, or Instagram",
+        "Read the hero — understand the clinic's three core services",
+        "Scroll to services — pick the relevant treatment",
+        "Tap the WhatsApp CTA — connect directly with the admin",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Split Layout", en: "Split Hero Layout" },
+        description: {
+          id: "Tagline perawatan yang tenang, CTA konsultasi, dan visual gradient abstrak — calon pasien paham positioning dalam hitungan detik.",
+          en: "Calm care tagline, consultation CTA, and abstract gradient visual — prospects grasp the positioning in seconds.",
+        },
+      },
+      {
+        title: { id: "Layanan Unggulan", en: "Highlight Services" },
+        description: {
+          id: "3 kartu layanan: kulit, dental, wellness — masing-masing dengan deskripsi singkat dan CTA navigasi.",
+          en: "Three service cards: skin, dental, wellness — each with a brief description and navigation CTA.",
+        },
+      },
+      {
+        title: { id: "Closing CTA", en: "Closing CTA" },
+        description: {
+          id: "Section closing dengan CTA WhatsApp untuk konsultasi singkat — transisi langsung ke chat admin.",
+          en: "Closing section with WhatsApp CTA for a quick consultation — seamless transition to admin chat.",
+        },
+      },
+    ],
+  },
+  {
+    id: "nusa-grove-residences",
+    slug: "nusa-grove-residences",
+    title: {
+      id: "Landing Page Perumahan Premium",
+      en: "Premium Residences Landing Page",
+    },
+    category: "property",
+    categoryLabel: { id: "Properti", en: "Property" },
+    niche: {
+      id: "Perumahan, properti premium, residence, apartemen, dan villa",
+      en: "Residences, premium property, apartments, and villa developments",
+    },
+    summary: {
+      id: "Landing page properti premium untuk Nusa Grove Residences — hero dark, 4 metrik kuat, fitur visual tipe unit, dan CTA private viewing untuk developer properti.",
+      en: "A premium property landing page for Nusa Grove Residences — dark hero, four key metrics, visual unit-type features, and a private viewing CTA for property developers.",
+    },
+    businessProblem: {
+      id: "Developer properti kecil sering kesulitan menampilkan unit properti dengan cara yang menarik dan terstruktur. Calon pembeli harus datang ke site atau bertanya via chat untuk info dasar.",
+      en: "Small property developers struggle to present their units in an attractive, structured way. Buyers must visit the site or ask via chat for basic information.",
+    },
+    solution: {
+      id: "Landing page statis dengan hero premium, metrik proyek yang kuat, fitur visual tipe unit, dan CTA private viewing — langsung mengarah ke sales team.",
+      en: "A static landing page with a premium hero, strong project metrics, visual unit-type features, and a private viewing CTA — directing prospects straight to the sales team.",
+    },
+    businessValue: {
+      id: [
+        "Unit properti terlihat lebih profesional dan menarik di share link dan iklan",
+        "4 metrik kuat membangun trust dalam hitungan detik",
+        "Private viewing CTA memfasilitasi kunjungan langsung ke site",
+      ],
+      en: [
+        "Property units look more professional and attractive in share links and ads",
+        "Four strong metrics build trust within seconds",
+        "Private viewing CTA facilitates direct site visits",
+      ],
+    },
+    features: {
+      id: [
+        "Hero dark premium dengan positioning properti",
+        "4 metrik proyek: luas, kamar, jarak, keamanan",
+        "3 fitur visual tipe unit dengan deskripsi",
+        "CTA private viewing yang mengarah ke WhatsApp sales",
+      ],
+      en: [
+        "Dark premium hero with property positioning",
+        "Four project metrics: size, rooms, distance, security",
+        "Three visual unit-type features with descriptions",
+        "Private viewing CTA directing to WhatsApp sales",
+      ],
+    },
+    tags: {
+      id: ["Properti", "Developer", "Residences", "Landing Page"],
+      en: ["Property", "Developer", "Residences", "Landing Page"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/nusa-grove-residences",
+    caseStudyPath: "/portfolio/nusa-grove-residences",
+    mockDataHighlights: {
+      id: [
+        "Brand: Nusa Grove Residences · Jatinangor",
+        "4 metrik: 120–180 m² · 3–4 BR · 8 menit · 24/7",
+        "3 fitur: The courtyard · Warm materials · Open light",
+        "CTA: Private viewing",
+        "Tagline: Rumah yang memberi ruang untuk hidup lebih utuh",
+      ],
+      en: [
+        "Brand: Nusa Grove Residences · Jatinangor",
+        "Four metrics: 120–180 m² · 3–4 BR · 8 min · 24/7",
+        "Three features: The courtyard · Warm materials · Open light",
+        "CTA: Private viewing",
+        "Tagline: A home that gives space for fuller living",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari iklan, Google Maps, atau link chat sales",
+        "Baca hero — pahami positioning properti premium",
+        "Scroll metrik — lihat angka kuat yang membangun trust",
+        "Lihat fitur tipe unit — bayangkan kondisi hunian",
+        "Klik CTA private viewing — terhubung ke WhatsApp sales",
+      ],
+      en: [
+        "Visit from ads, Google Maps, or a sales team's chat link",
+        "Read the hero — understand the premium property positioning",
+        "Scroll metrics — see the strong numbers that build trust",
+        "View unit-type features — imagine the living space",
+        "Tap the private viewing CTA — connect to WhatsApp sales",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Dark", en: "Dark Hero" },
+        description: {
+          id: "Hero dengan tema gelap, positioning residence premium, dan CTA private viewing — langsung menunjukkan kelas properti.",
+          en: "Dark-themed hero with premium residence positioning and a private viewing CTA — immediately signals property class.",
+        },
+      },
+      {
+        title: { id: "Metrik Proyek", en: "Project Metrics" },
+        description: {
+          id: "4 angka utama: luas bangunan, jumlah kamar, jarak ke akses, dan keamanan 24/7.",
+          en: "Four key numbers: building size, bedroom count, access distance, and 24/7 security.",
+        },
+      },
+      {
+        title: { id: "Fitur Tipe Unit", en: "Unit-Type Features" },
+        description: {
+          id: "3 fitur visual dengan deskripsi — courtyard, material hangat, dan bukaan cahaya.",
+          en: "Three visual features with descriptions — courtyard, warm materials, and natural light openings.",
+        },
+      },
+    ],
+  },
+  {
+    id: "kelaspintar-ai",
+    slug: "kelaspintar-ai",
+    title: {
+      id: "Landing Page Webinar & Kelas Online",
+      en: "Webinar & Online Class Landing Page",
+    },
+    category: "education",
+    categoryLabel: { id: "Edukasi", en: "Education" },
+    niche: {
+      id: "Webinar, kelas online, workshop, bootcamp, dan pelatihan digital",
+      en: "Webinars, online classes, workshops, bootcamps, and digital training",
+    },
+    summary: {
+      id: "Landing page edukasi untuk KelasPintar AI — webinar interaktif AI untuk pemula. Hero browser card, 3 agenda sesi, ticker audiens, dan CTA pendaftaran.",
+      en: "An education landing page for KelasPintar AI — an interactive webinar on AI for beginners. Browser-card hero, three-session agenda, audience ticker, and registration CTA.",
+    },
+    businessProblem: {
+      id: "Promosi webinar sering hanya poster dan caption Instagram. Calon peserta tidak tahu manfaat sesi, tidak ada form pendaftaran, dan admin harus menjawab pertanyaan berulang.",
+      en: "Webinar promotions are often just Instagram posters and captions. Prospects don't know the session benefits, there's no registration form, and admins answer repetitive questions.",
+    },
+    solution: {
+      id: "Landing page webinar dengan browser card interaktif sebagai hero, 3 agenda sesi dengan durasi, ticker target audiens, dan CTA pendaftaran yang langsung mengarah ke formulir.",
+      en: "A webinar landing page with an interactive browser-card hero, three-session agenda with durations, an audience ticker, and a registration CTA leading directly to the form.",
+    },
+    businessValue: {
+      id: [
+        "Satu link promosi untuk iklan, bio Instagram, dan broadcast",
+        "Browser card interaktif meningkatkan engagement di hero",
+        "Ticker audiens menunjukkan siapa yang harus hadir",
+        "Agenda 3 sesi memberikan kejelasan manfaat acara",
+      ],
+      en: [
+        "One promotion link for ads, Instagram bio, and broadcasts",
+        "Interactive browser card increases hero engagement",
+        "Audience ticker shows who should attend",
+        "Three-session agenda provides clear event benefits",
+      ],
+    },
+    features: {
+      id: [
+        "Hero dengan browser card interaktif dan status LIVE",
+        "Ticker target audiens: UMKM owner, freelancer, admin, mentor",
+        "3 agenda sesi dengan durasi masing-masing",
+        "CTA: Daftar kelas gratis — kuota interaktif terbatas",
+      ],
+      en: [
+        "Hero with interactive browser card and LIVE status",
+        "Audience ticker: UMKM owner, freelancer, admin, mentor",
+        "Three-session agenda with individual durations",
+        "CTA: Register free — limited interactive seats",
+      ],
+    },
+    tags: {
+      id: ["Webinar", "Edukasi", "Workshop", "Lead Capture"],
+      en: ["Webinar", "Education", "Workshop", "Lead Capture"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/kelaspintar-ai",
+    caseStudyPath: "/portfolio/kelaspintar-ai",
+    mockDataHighlights: {
+      id: [
+        "Brand: KelasPintar AI — Webinar & Workshop",
+        "3 sesi: Kenali tugas AI · Susun prompt · Bangun workflow",
+        "Target audiens: UMKM owner, freelancer, admin, mentor, mahasiswa",
+        "CTA: Amankan kursi saya — kuota interaktif untuk 100 peserta",
+        "Browser card menunjukkan 1,248 joined",
+      ],
+      en: [
+        "Brand: KelasPintar AI — Webinar & Workshop",
+        "Three sessions: Know AI tasks · Build prompts · Create workflow",
+        "Target audience: UMKM owners, freelancers, admins, mentors, students",
+        "CTA: Secure my seat — interactive quota for 100 participants",
+        "Browser card shows 1,248 joined",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari iklan, link komunitas, atau Instagram",
+        "Baca hero — pahami acara AI gratis untuk pemula",
+        "Lihat ticker audiens — resonansi dengan profil diri sendiri",
+        "Scroll ke agenda — lihat 3 sesi dengan durasi",
+        "Klik CTA daftar — isi formulir pendaftaran",
+      ],
+      en: [
+        "Visit from ads, community links, or Instagram",
+        "Read the hero — understand the free AI event for beginners",
+        "See the audience ticker — relate with your own profile",
+        "Scroll to the agenda — see three sessions with durations",
+        "Tap the register CTA — fill in the registration form",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Browser Card", en: "Browser Card Hero" },
+        description: {
+          id: "Browser card interaktif dengan status LIVE, jumlah joined, dan headline — menarik perhatian segera.",
+          en: "Interactive browser card with LIVE status, join count, and headline — captures attention immediately.",
+        },
+      },
+      {
+        title: { id: "Ticker Audiens", en: "Audience Ticker" },
+        description: {
+          id: "Ticker berjalan: UMKM owner · freelancer · admin · mentor — menunjukkan siapa yang harus hadir.",
+          en: "Scrolling ticker: UMKM owner · freelancer · admin · mentor — shows who should attend.",
+        },
+      },
+      {
+        title: { id: "Agenda 3 Sesi", en: "Three-Session Agenda" },
+        description: {
+          id: "3 sesi dengan deskripsi dan durasi: Kenali tugas AI, Susun prompt, Bangun workflow.",
+          en: "Three sessions with descriptions and durations: Know AI tasks, Build prompts, Create workflow.",
+        },
+      },
+    ],
+  },
+  {
+    id: "leadloop-crm",
+    slug: "leadloop-crm",
+    title: {
+      id: "Landing Page SaaS CRM untuk Tim Sales",
+      en: "SaaS CRM Landing Page for Sales Teams",
+    },
+    category: "saas",
+    categoryLabel: { id: "SaaS", en: "SaaS" },
+    niche: {
+      id: "SaaS, CRM, tools produktivitas, automasi, dan B2B software",
+      en: "SaaS, CRM, productivity tools, automation, and B2B software",
+    },
+    summary: {
+      id: "Landing page produk SaaS untuk LeadLoop CRM — hero produk, 3 fitur unggulan, fitur interaktif, dan CTA free trial. Cocok untuk tools dan produk digital B2B.",
+      en: "A product landing page for LeadLoop CRM — product hero, three key features, interactive feature showcase, and free trial CTA. Built for digital B2B tools and products.",
+    },
+    businessProblem: {
+      id: "Produk SaaS dan CRM sering kali sulit dijelaskan dalam satu halaman. Calon pengguna tidak tahu fitur utama, tidak yakin dengan free trial, dan membutuhkan demo sebelum komit.",
+      en: "SaaS and CRM products are often hard to explain on a single page. Prospects don't know the key features, are unsure about free trials, and need a demo before committing.",
+    },
+    solution: {
+      id: "Landing page produk dengan hero produk yang kuat, 3 fitur unggulan dengan ikon, fitur interaktif yang menunjukkan cara kerja, dan CTA free trial yang jelas.",
+      en: "A product landing page with a strong product hero, three key features with icons, interactive features showing how it works, and a clear free trial CTA.",
+    },
+    businessValue: {
+      id: [
+        "Produk terlihat lebih profesional dan terpercaya di market",
+        "3 fitur unggulan langsung menjawab pertanyaan calon pengguna",
+        "Fitur interaktif meningkatkan engagement dan pemahaman",
+        "Free trial CTA mengurangi barrier untuk mencoba produk",
+      ],
+      en: [
+        "Product looks more professional and trustworthy in the market",
+        "Three key features directly answer prospects' questions",
+        "Interactive features increase engagement and understanding",
+        "Free trial CTA reduces the barrier to trying the product",
+      ],
+    },
+    features: {
+      id: [
+        "Hero produk dengan headline fitur utama",
+        "3 kartu fitur unggulan dengan deskripsi",
+        "Fitur interaktif — demonstrasi cara kerja produk",
+        "CTA free trial yang clear dan mudah diakses",
+      ],
+      en: [
+        "Product hero with key feature headline",
+        "Three feature cards with descriptions",
+        "Interactive feature — product workflow demonstration",
+        "Clear and accessible free trial CTA",
+      ],
+    },
+    tags: {
+      id: ["SaaS", "CRM", "B2B", "Product Landing"],
+      en: ["SaaS", "CRM", "B2B", "Product Landing"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/leadloop-crm",
+    caseStudyPath: "/portfolio/leadloop-crm",
+    mockDataHighlights: {
+      id: [
+        "Brand: LeadLoop CRM — Kelola lead dari banyak channel",
+        "3 fitur unggulan: Lead tracking, Pipeline kanban, Follow-up otomatis",
+        "CTA: Mulai free trial 14 hari",
+        "Target: Tim sales UMKM dan startup",
+        "Hero: LeadLoop — Lead management yang tidak ribet",
+      ],
+      en: [
+        "Brand: LeadLoop CRM — Manage leads from many channels",
+        "Three key features: Lead tracking, Kanban pipeline, Automatic follow-up",
+        "CTA: Start 14-day free trial",
+        "Target: UMKM and startup sales teams",
+        "Hero: LeadLoop — Lead management, simplified",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari iklan, rekomendasi, atau pencarian tools CRM",
+        "Baca hero — pahami nilai utama produk",
+        "Scroll ke 3 fitur unggulan — lihat cara kerja",
+        "Lihat fitur interaktif — bayangkan diimplementasikan",
+        "Klik CTA free trial — mulai menggunakan produk",
+      ],
+      en: [
+        "Visit from ads, recommendations, or CRM tool searches",
+        "Read the hero — understand the product's core value",
+        "Scroll to three key features — see how it works",
+        "View interactive features — imagine implementation",
+        "Tap the free trial CTA — start using the product",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Produk", en: "Product Hero" },
+        description: {
+          id: "Hero dengan headline produk dan CTA free trial — langsung menyampaikan nilai utama LeadLoop.",
+          en: "Hero with product headline and free trial CTA — immediately communicates LeadLoop's core value.",
+        },
+      },
+      {
+        title: { id: "3 Fitur Unggulan", en: "Three Key Features" },
+        description: {
+          id: "Kartu fitur: Lead tracking, Pipeline kanban, Follow-up otomatis — setiap fitur dengan deskripsi singkat.",
+          en: "Feature cards: Lead tracking, Kanban pipeline, Automatic follow-up — each with a brief description.",
+        },
+      },
+      {
+        title: { id: "Fitur Interaktif", en: "Interactive Features" },
+        description: {
+          id: "Demonstrasi cara kerja produk — calon pengguna bisa membayangkan workflow sebelum mencoba.",
+          en: "Product workflow demonstration — prospects can imagine the workflow before trying.",
+        },
+      },
+    ],
+  },
+  {
+    id: "banyu-villa",
+    slug: "banyu-villa",
+    title: {
+      id: "Landing Page Villa Butik Premium",
+      en: "Premium Boutique Villa Landing Page",
+    },
+    category: "hospitality",
+    categoryLabel: { id: "Hospitality", en: "Hospitality" },
+    niche: {
+      id: "Villa, hotel boutique, resort, homestay, dan properti liburan",
+      en: "Villas, boutique hotels, resorts, homestays, and vacation properties",
+    },
+    summary: {
+      id: "Landing page hospitality untuk Banyu Boutique Villa — villa tropis premium dengan hero natural, fitur kamar, galeri atmosfer, dan CTA booking.",
+      en: "A hospitality landing page for Banyu Boutique Villa — a premium tropical villa with natural hero, room features, atmospheric gallery, and booking CTA.",
+    },
+    businessProblem: {
+      id: "Villa kecil dan homestay sering kesulitan menampilkan pengalaman menginap yang menarik. Calon tamu tidak tahu fasilitas, suasana, dan cara booking. Informasi tersebar di Instagram.",
+      en: "Small villas and homestays struggle to showcase the stay experience. Prospects don't know the facilities, atmosphere, or how to book. Information is scattered on Instagram.",
+    },
+    solution: {
+      id: "Landing page villa dengan hero natural, fitur kamar yang menonjolkan suasana, galeri atmosfer, dan CTA booking yang langsung mengarah ke admin.",
+      en: "A villa landing page with a natural hero, room features highlighting atmosphere, an atmospheric gallery, and a booking CTA directing straight to the admin.",
+    },
+    businessValue: {
+      id: [
+        "Villa terlihat lebih premium dan profesional di link booking",
+        "Suasana dan fasilitas tersampaikan dalam visual yang menarik",
+        "Booking CTA langsung mengarah ke admin, mempersingkat proses",
+      ],
+      en: [
+        "Villa looks more premium and professional in booking links",
+        "Atmosphere and facilities are conveyed through attractive visuals",
+        "Booking CTA directs straight to admin, streamlining the process",
+      ],
+    },
+    features: {
+      id: [
+        "Hero natural dengan atmosfer villa tropis",
+        "Fitur kamar: desain alami, teras, dan privasi",
+        "Galeri atmosfer: cahaya, material, dan taman",
+        "CTA booking langsung ke WhatsApp admin",
+      ],
+      en: [
+        "Natural hero with tropical villa atmosphere",
+        "Room features: natural design, terrace, and privacy",
+        "Atmospheric gallery: light, materials, and garden",
+        "Booking CTA directing to WhatsApp admin",
+      ],
+    },
+    tags: {
+      id: ["Hospitality", "Villa", "Booking", "Landing Page"],
+      en: ["Hospitality", "Villa", "Booking", "Landing Page"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/banyu-villa",
+    caseStudyPath: "/portfolio/banyu-villa",
+    mockDataHighlights: {
+      id: [
+        "Brand: Banyu Boutique Villa",
+        "Fitur kamar: desain alami, teras privat, lingkungan tenang",
+        "CTA: Book now",
+        "Tagline: Villa yang terasa seperti rumah kedua",
+        "Galeri atmosfer: cahaya, material, taman tropis",
+      ],
+      en: [
+        "Brand: Banyu Boutique Villa",
+        "Room features: natural design, private terrace, quiet surroundings",
+        "CTA: Book now",
+        "Tagline: A villa that feels like a second home",
+        "Atmospheric gallery: light, materials, tropical garden",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari booking platform, link travel, atau Instagram",
+        "Baca hero — rasakan suasana villa tropis",
+        "Lihat fitur kamar — bayangkan pengalaman menginap",
+        "Lihat galeri atmosfer — bayangkan suasana",
+        "Klik CTA booking — hubungi admin via WhatsApp",
+      ],
+      en: [
+        "Visit from booking platforms, travel links, or Instagram",
+        "Read the hero — feel the tropical villa atmosphere",
+        "View room features — imagine the stay experience",
+        "View atmospheric gallery — picture the ambiance",
+        "Tap the booking CTA — contact admin via WhatsApp",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Natural", en: "Natural Hero" },
+        description: {
+          id: "Hero dengan atmosfer villa tropis dan CTA booking — langsung menunjukkan pengalaman menginap.",
+          en: "Hero with tropical villa atmosphere and booking CTA — immediately shows the stay experience.",
+        },
+      },
+      {
+        title: { id: "Fitur Kamar", en: "Room Features" },
+        description: {
+          id: "Fitur kamar yang menonjolkan desain alami, teras privat, dan lingkungan tenang.",
+          en: "Room features highlighting natural design, private terrace, and quiet surroundings.",
+        },
+      },
+      {
+        title: { id: "Galeri Atmosfer", en: "Atmospheric Gallery" },
+        description: {
+          id: "Galeri: cahaya, material alami, taman tropis — calon tamu membayangkan suasana sebelum booking.",
+          en: "Gallery: light, natural materials, tropical garden — guests envision the ambiance before booking.",
+        },
+      },
+    ],
+  },
+  {
+    id: "ruangtumbuh-interior",
+    slug: "ruangtumbuh-interior",
+    title: {
+      id: "Landing Page Studio Interior & Renovasi",
+      en: "Interior Design & Renovation Studio Landing Page",
+    },
+    category: "interior",
+    categoryLabel: { id: "Interior", en: "Interior" },
+    niche: {
+      id: "Studio interior, desain rumah, renovasi, arsitek, dan kontraktor interior",
+      en: "Interior design studios, home design, renovation, architects, and interior contractors",
+    },
+    summary: {
+      id: "Landing page untuk RuangTumbuh Interior — studio desain interior dengan 3 layanan utama, portofolio proyek, tim kreatif, dan CTA konsultasi desain.",
+      en: "A landing page for RuangTumbuh Interior — an interior design studio with three core services, project portfolio, creative team, and design consultation CTA.",
+    },
+    businessProblem: {
+      id: "Studio interior dan desainer rumah sering kesulitan menunjukkan hasil kerja secara online. Calon klien sulit memahami gaya desain, layanan yang tersedia, dan cara memulai proyek.",
+      en: "Interior studios and home designers struggle to showcase their work online. Prospects find it hard to understand the design style, available services, and how to start a project.",
+    },
+    solution: {
+      id: "Landing page studio interior dengan 3 layanan utama (desain, renovasi, konsultasi), portofolio proyek visual, profil tim kreatif, dan CTA konsultasi langsung.",
+      en: "An interior studio landing page with three core services (design, renovation, consultation), visual project portfolio, creative team profile, and direct consultation CTA.",
+    },
+    businessValue: {
+      id: [
+        "Portofolio proyek menunjukkan gaya desain studio secara visual",
+        "3 layanan utama memperjelas apa yang ditawarkan studio",
+        "Profil tim membangun trust dengan calon klien",
+        "CTA konsultasi mempersingkat jalur dari kunjungan ke proyek",
+      ],
+      en: [
+        "Project portfolio visually showcases the studio's design style",
+        "Three core services clarify what the studio offers",
+        "Team profiles build trust with prospective clients",
+        "Consultation CTA shortens the path from visit to project",
+      ],
+    },
+    features: {
+      id: [
+        "3 layanan: desain interior, renovasi, konsultasi",
+        "Portofolio proyek dengan visual yang menarik",
+        "Profil tim kreatif dengan spesialisasi",
+        "CTA konsultasi langsung mengarah ke WhatsApp",
+      ],
+      en: [
+        "Three services: interior design, renovation, consultation",
+        "Project portfolio with attractive visuals",
+        "Creative team profile with specializations",
+        "Consultation CTA directing to WhatsApp",
+      ],
+    },
+    tags: {
+      id: ["Interior", "Desain", "Renovasi", "Landing Page"],
+      en: ["Interior", "Design", "Renovation", "Landing Page"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/ruangtumbuh-interior",
+    caseStudyPath: "/portfolio/ruangtumbuh-interior",
+    mockDataHighlights: {
+      id: [
+        "Brand: RuangTumbuh Interior",
+        "3 layanan: Desain interior, Renovasi, Konsultasi",
+        "Portofolio proyek dengan visual visualisasi",
+        "Tim kreatif: desainer interior, arsitek, project manager",
+        "CTA: Konsultasi desain gratis",
+      ],
+      en: [
+        "Brand: RuangTumbuh Interior",
+        "Three services: Interior design, Renovation, Consultation",
+        "Project portfolio with visual visualizations",
+        "Creative team: interior designers, architects, project managers",
+        "CTA: Free design consultation",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari pencarian Google, referensi, atau Instagram",
+        "Baca hero — pahami studio desain interior",
+        "Lihat 3 layanan utama — pilih layanan yang relevan",
+        "Lihat portofolio — nilai gaya desain studio",
+        "Klik CTA konsultasi — hubungi studio via WhatsApp",
+      ],
+      en: [
+        "Visit from Google search, referrals, or Instagram",
+        "Read the hero — understand the interior design studio",
+        "View three core services — pick the relevant service",
+        "View portfolio — evaluate the studio's design style",
+        "Tap the consultation CTA — contact the studio via WhatsApp",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "3 Layanan Utama", en: "Three Core Services" },
+        description: {
+          id: "3 kartu layanan: desain interior, renovasi, konsultasi — memperjelas apa yang ditawarkan studio.",
+          en: "Three service cards: interior design, renovation, consultation — clarifying what the studio offers.",
+        },
+      },
+      {
+        title: { id: "Portofolio Proyek", en: "Project Portfolio" },
+        description: {
+          id: "Visual portofolio proyek — gaya desain dan hasil kerja studio.",
+          en: "Visual project portfolio — showcasing the studio's design style and work.",
+        },
+      },
+      {
+        title: { id: "Tim Kreatif", en: "Creative Team" },
+        description: {
+          id: "Profil tim: desainer interior, arsitek, project manager — membangun trust.",
+          en: "Team profiles: interior designers, architects, project managers — building trust.",
+        },
+      },
+    ],
+  },
+  {
+    id: "lunaria-wedding",
+    slug: "lunaria-wedding",
+    title: {
+      id: "Landing Page Wedding Organizer",
+      en: "Wedding Organizer Landing Page",
+    },
+    category: "wedding",
+    categoryLabel: { id: "Wedding", en: "Wedding" },
+    niche: {
+      id: "Wedding organizer, wedding planner, rias pengantin, dan vendor pernikahan",
+      en: "Wedding organizers, wedding planners, bridal makeup, and wedding vendors",
+    },
+    summary: {
+      id: "Landing page wedding organizer untuk Lunaria Wedding — tema elegant soft, galeri konsep pernikahan, paket layanan, dan CTA booking konsultasi.",
+      en: "A wedding organizer landing page for Lunaria Wedding — elegant soft theme, wedding concept gallery, service packages, and consultation booking CTA.",
+    },
+    businessProblem: {
+      id: "Wedding organizer dan vendor pernikahan sering kesulitan menampilkan portfolio acara mereka secara menarik. Calon pengantin tidak tahu paket layanan, harga, dan cara memulai perencanaan.",
+      en: "Wedding organizers and vendors struggle to showcase their event portfolio attractively. Couples don't know the service packages, pricing, or how to start planning.",
+    },
+    solution: {
+      id: "Landing page wedding organizer dengan tema elegant soft, galeri konsep pernikahan visual, paket layanan dengan deskripsi, dan CTA booking konsultasi langsung.",
+      en: "A wedding organizer landing page with an elegant soft theme, visual wedding concept gallery, service packages with descriptions, and a direct consultation booking CTA.",
+    },
+    businessValue: {
+      id: [
+        "Galeri konsep menunjukkan gaya dan kualitas wedding organizer",
+        "Paket layanan memperjelas opsi yang tersedia untuk calon pengantin",
+        "Booking konsultasi CTA mempersingkat jalur dari kunjungan ke jadwal",
+        "Tema elegant soft membangun first impression yang tepat untuk brand wedding",
+      ],
+      en: [
+        "Concept gallery showcases the wedding organizer's style and quality",
+        "Service packages clarify available options for prospective couples",
+        "Consultation booking CTA shortens the path from visit to schedule",
+        "Elegant soft theme builds the right first impression for a wedding brand",
+      ],
+    },
+    features: {
+      id: [
+        "Tema elegant soft yang konsisten untuk brand wedding",
+        "Galeri konsep pernikahan dengan visual menarik",
+        "Paket layanan dengan deskripsi singkat",
+        "CTA booking konsultasi langsung mengarah ke WhatsApp",
+      ],
+      en: [
+        "Consistent elegant soft theme for a wedding brand",
+        "Wedding concept gallery with attractive visuals",
+        "Service packages with brief descriptions",
+        "Consultation booking CTA directing to WhatsApp",
+      ],
+    },
+    tags: {
+      id: ["Wedding", "Pernikahan", "Event", "Landing Page"],
+      en: ["Wedding", "Events", "Landing Page", "Booking"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/lunaria-wedding",
+    caseStudyPath: "/portfolio/lunaria-wedding",
+    mockDataHighlights: {
+      id: [
+        "Brand: Lunaria Wedding",
+        "Tema: elegant soft — warna pastel, tipografi elegan",
+        "Galeri konsep: pernikahan outdoor, indoor, dan intimate",
+        "Paket: Basic, Premium, VIP",
+        "CTA: Booking konsultasi",
+      ],
+      en: [
+        "Brand: Lunaria Wedding",
+        "Theme: elegant soft — pastel colors, elegant typography",
+        "Concept gallery: outdoor, indoor, and intimate weddings",
+        "Packages: Basic, Premium, VIP",
+        "CTA: Book a consultation",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari referensi, Instagram, atau wedding portal",
+        "Baca hero — rasakan tema elegant soft brand wedding",
+        "Lihat galeri konsep — bayangkan pernikahan sendiri",
+        "Lihat paket layanan — pilih opsi yang sesuai",
+        "Klik CTA konsultasi — jadwalkan pertemuan dengan wedding organizer",
+      ],
+      en: [
+        "Visit from referrals, Instagram, or wedding portals",
+        "Read the hero — feel the elegant soft wedding brand theme",
+        "View concept gallery — envision your own wedding",
+        "View service packages — choose the right option",
+        "Tap the consultation CTA — schedule a meeting with the wedding organizer",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Elegant", en: "Elegant Hero" },
+        description: {
+          id: "Hero dengan tema elegant soft, tagline pernikahan, dan CTA konsultasi — langsung membangun suasana wedding.",
+          en: "Hero with elegant soft theme, wedding tagline, and consultation CTA — immediately sets the wedding mood.",
+        },
+      },
+      {
+        title: { id: "Galeri Konsep", en: "Concept Gallery" },
+        description: {
+          id: "Galeri visual konsep pernikahan — outdoor, indoor, dan intimate — calon pengantin terinspirasi.",
+          en: "Visual gallery of wedding concepts — outdoor, indoor, and intimate — inspiring prospective couples.",
+        },
+      },
+      {
+        title: { id: "Paket Layanan", en: "Service Packages" },
+        description: {
+          id: "3 paket: Basic, Premium, VIP — dengan deskripsi layanan masing-masing.",
+          en: "Three packages: Basic, Premium, VIP — each with service descriptions.",
+        },
+      },
+    ],
+  },
+  {
+    id: "satria-print",
+    slug: "satria-print",
+    title: {
+      id: "Landing Page Jasa Printing B2B",
+      en: "B2B Printing Service Landing Page",
+    },
+    category: "b2b",
+    categoryLabel: { id: "B2B", en: "B2B" },
+    niche: {
+      id: "Percetakan, printing, manufaktur, produksi, dan jasa cetak B2B",
+      en: "Printing services, manufacturing, production, and B2B printing solutions",
+    },
+    summary: {
+      id: "Landing page B2B untuk Satria Print — jasa percetakan dan printing. Hero industri, layanan cetak, kapasitas produksi, dan CTA request quote.",
+      en: "A B2B landing page for Satria Print — printing and manufacturing services. Industrial hero, print services, production capacity, and request-a-quote CTA.",
+    },
+    businessProblem: {
+      id: "Bisnis percetakan B2B sering hanya mengandalkan website statis atau brosur. Calon klien tidak tahu kapasitas produksi, jenis layanan cetak, dan cara request quote secara efisien.",
+      en: "B2B printing businesses often rely only on static websites or brochures. Prospects don't know production capacity, print service types, or how to request a quote efficiently.",
+    },
+    solution: {
+      id: "Landing page B2B dengan hero industri, layanan cetak yang jelas, kapasitas produksi, dan CTA request quote yang mengarah ke WhatsApp atau form.",
+      en: "A B2B landing page with industrial hero, clear print services, production capacity, and a request-a-quote CTA directing to WhatsApp or form.",
+    },
+    businessValue: {
+      id: [
+        "Hero industri membangun trust dan profesionalitas B2B",
+        "Layanan cetak memperjelas jenis percetakan yang tersedia",
+        "Kapasitas produksi memberikan kejelasan pada calon klien",
+        "Request quote CTA mempersingkat jalur dari kunjungan ke penawaran",
+      ],
+      en: [
+        "Industrial hero builds B2B trust and professionalism",
+        "Print services clarify the types of printing available",
+        "Production capacity gives prospects clear expectations",
+        "Request quote CTA shortens the path from visit to quote",
+      ],
+    },
+    features: {
+      id: [
+        "Hero industri dengan headline B2B",
+        "Layanan cetak: digital, offset, large format, packaging",
+        "Kapasitas produksi: mesin, output per hari",
+        "CTA request quote langsung mengarah ke WhatsApp",
+      ],
+      en: [
+        "Industrial hero with B2B headline",
+        "Print services: digital, offset, large format, packaging",
+        "Production capacity: machines, daily output",
+        "Request quote CTA directing to WhatsApp",
+      ],
+    },
+    tags: {
+      id: ["B2B", "Printing", "Manufaktur", "Landing Page"],
+      en: ["B2B", "Printing", "Manufacturing", "Landing Page"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/satria-print",
+    caseStudyPath: "/portfolio/satria-print",
+    mockDataHighlights: {
+      id: [
+        "Brand: Satria Print",
+        "Layanan: Digital printing, Offset, Large format, Packaging",
+        "Kapasitas: High-speed digital + offset machines",
+        "CTA: Request a quote",
+        "Hero: Satria Print — Printing yang tepat waktu, tepat spek",
+      ],
+      en: [
+        "Brand: Satria Print",
+        "Services: Digital printing, Offset, Large format, Packaging",
+        "Capacity: High-speed digital + offset machines",
+        "CTA: Request a quote",
+        "Hero: Satria Print — Printing that's on time and on spec",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari pencarian Google, iklan B2B, atau rekomendasi",
+        "Baca hero — pahami layanan printing B2B",
+        "Lihat layanan cetak — pilih jenis yang dibutuhkan",
+        "Lihat kapasitas produksi — pastikan kebutuhan bisa dipenuhi",
+        "Klik CTA request quote — kirim permintaan penawaran via WhatsApp",
+      ],
+      en: [
+        "Visit from Google search, B2B ads, or referrals",
+        "Read the hero — understand the B2B printing services",
+        "View print services — pick the type needed",
+        "View production capacity — ensure requirements can be met",
+        "Tap the request quote CTA — send quote request via WhatsApp",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Industri", en: "Industrial Hero" },
+        description: {
+          id: "Hero dengan headline B2B, positioning printing tepat waktu, dan CTA request quote.",
+          en: "Hero with B2B headline, on-time printing positioning, and request quote CTA.",
+        },
+      },
+      {
+        title: { id: "Layanan Cetak", en: "Print Services" },
+        description: {
+          id: "4 jenis layanan: digital, offset, large format, packaging — memperjaskan opsi cetak.",
+          en: "Four service types: digital, offset, large format, packaging — clarifying printing options.",
+        },
+      },
+      {
+        title: { id: "Kapasitas Produksi", en: "Production Capacity" },
+        description: {
+          id: "Informasi kapasitas mesin dan output per hari — memberikan kejelasan pada calon klien.",
+          en: "Machine capacity and daily output information — providing clarity for prospects.",
+        },
+      },
+    ],
+  },
+  {
+    id: "kopi-pagi",
+    slug: "kopi-pagi",
+    title: {
+      id: "Landing Page Coffee Shop & F&B",
+      en: "Coffee Shop & F&B Landing Page",
+    },
+    category: "fnb",
+    categoryLabel: { id: "F&B", en: "F&B" },
+    niche: {
+      id: "Coffee shop, kafe, restoran, warung kopi, dan UMKM F&B",
+      en: "Coffee shops, cafes, restaurants, and F&B businesses",
+    },
+    summary: {
+      id: "Landing page untuk Kopi Pagi — kafe kekinian dengan menu andalan, penawaran spesial, cerita brand, dan CTA order atau delivery.",
+      en: "A landing page for Kopi Pagi — a trendy café with featured menu, special offers, brand story, and order/delivery CTA.",
+    },
+    businessProblem: {
+      id: "Coffee shop dan UMKM F&B sering hanya mengandalkan Instagram dan GrabFood. Tidak ada link resmi untuk menu, penawaran spesial, dan cerita brand dalam satu tempat.",
+      en: "Coffee shops and F&B businesses rely mostly on Instagram and GrabFood. There's no official link for menu, special offers, and brand story in one place.",
+    },
+    solution: {
+      id: "Landing page kafe dengan menu andalan, penawaran spesial, cerita brand, dan CTA order atau delivery yang langsung mengarah ke platform atau WhatsApp.",
+      en: "A café landing page with featured menu, special offers, brand story, and order/delivery CTA directing to platform or WhatsApp.",
+    },
+    businessValue: {
+      id: [
+        "Satu link resmi untuk menu dan penawaran — bisa dibagikan di bio dan iklan",
+        "Menu andalan membangun first impression yang menarik",
+        "Penawaran spesial mendorong repeat order",
+        "Cerita brand membangun loyalitas pelanggan",
+      ],
+      en: [
+        "One official link for menu and offers — shareable in bios and ads",
+        "Featured menu builds an attractive first impression",
+        "Special offers drive repeat orders",
+        "Brand story builds customer loyalty",
+      ],
+    },
+    features: {
+      id: [
+        "Menu andalan dengan foto dan harga",
+        "Penawaran spesial: promo dan bundle",
+        "Cerita brand: visi dan values kafe",
+        "CTA order atau delivery langsung mengarah ke platform/WhatsApp",
+      ],
+      en: [
+        "Featured menu with photos and prices",
+        "Special offers: promos and bundles",
+        "Brand story: café vision and values",
+        "Order/delivery CTA directing to platform/WhatsApp",
+      ],
+    },
+    tags: {
+      id: ["F&B", "Coffee Shop", "Kafe", "Landing Page"],
+      en: ["F&B", "Coffee Shop", "Café", "Landing Page"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/kopi-pagi",
+    caseStudyPath: "/portfolio/kopi-pagi",
+    mockDataHighlights: {
+      id: [
+        "Brand: Kopi Pagi",
+        "Menu andalan: Kopi Pagi Special, Es Kopi Susu, Match Latte",
+        "Penawaran: Promo pagi 06.00–08.00 · Bundle kopi + croissant",
+        "CTA: Order sekarang atau Delivery",
+        "Tagline: Kopi yang dibuat dengan sabar",
+      ],
+      en: [
+        "Brand: Kopi Pagi",
+        "Featured menu: Kopi Pagi Special, Iced Kopi Susu, Matcha Latte",
+        "Offers: Morning promo 06:00–08:00 · Coffee + croissant bundle",
+        "CTA: Order now or Delivery",
+        "Tagline: Coffee made with patience",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari Instagram, GrabFood, atau WhatsApp blast",
+        "Baca hero — pahami brand kafe kekinian",
+        "Lihat menu andalan — pilih minuman yang menarik",
+        "Lihat penawaran spesial — manfaatkan promo",
+        "Klik CTA order — langsung ke platform atau WhatsApp",
+      ],
+      en: [
+        "Visit from Instagram, GrabFood, or WhatsApp blast",
+        "Read the hero — understand the trendy café brand",
+        "View featured menu — pick an attractive drink",
+        "View special offers — take advantage of promos",
+        "Tap the order CTA — go directly to platform or WhatsApp",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Brand", en: "Brand Hero" },
+        description: {
+          id: "Hero dengan tagline dan suasana kafe — langsung membangun first impression brand.",
+          en: "Hero with tagline and café atmosphere — immediately building brand first impression.",
+        },
+      },
+      {
+        title: { id: "Menu Andalan", en: "Featured Menu" },
+        description: {
+          id: "Menu andalan dengan foto, nama, dan harga — memudahkan pelanggan memilih.",
+          en: "Featured menu with photos, names, and prices — making it easy for customers to choose.",
+        },
+      },
+      {
+        title: { id: "Penawaran Spesial", en: "Special Offers" },
+        description: {
+          id: "Penawaran spesial: promo pagi dan bundle — mendorong pelanggan untuk order.",
+          en: "Special offers: morning promo and bundles — encouraging customers to order.",
+        },
+      },
+    ],
+  },
+  {
+    id: "mitra-legal",
+    slug: "mitra-legal",
+    title: {
+      id: "Landing Page Firma Hukum Profesional",
+      en: "Professional Law Firm Landing Page",
+    },
+    category: "legal",
+    categoryLabel: { id: "Legal", en: "Legal" },
+    niche: {
+      id: "Firma hukum, konsultan hukum, notaris, advokat, dan layanan legal bisnis",
+      en: "Law firms, legal consultants, notaries, attorneys, and business legal services",
+    },
+    summary: {
+      id: "Landing page untuk Mitra Legal — firma hukum profesional dengan layanan hukum, profil tim advokat, studi kasus, dan CTA konsultasi hukum.",
+      en: "A landing page for Mitra Legal — a professional law firm with legal services, attorney team profiles, case studies, and legal consultation CTA.",
+    },
+    businessProblem: {
+      id: "Firma hukum dan konsultan legal sering kesulitan menunjukkan spesialisasi dan pengalaman mereka secara online. Calon klien tidak tahu layanan apa yang tersedia, siapa timnya, dan bagaimana memulai konsultasi.",
+      en: "Law firms and legal consultants struggle to showcase their specialization and experience online. Prospects don't know what services are available, who the team is, or how to start a consultation.",
+    },
+    solution: {
+      id: "Landing page firma hukum dengan layanan hukum yang jelas, profil tim advokat, studi kasus untuk membangun trust, dan CTA konsultasi hukum langsung.",
+      en: "A law firm landing page with clear legal services, attorney team profiles, case studies for trust building, and a direct legal consultation CTA.",
+    },
+    businessValue: {
+      id: [
+        "Layanan hukum memperjaskan spesialisasi firma",
+        "Profil tim membangun trust dan kredibilitas",
+        "Studi kasus menunjukkan pengalaman dan hasil",
+        "CTA konsultasi mempersingkat jalur dari kunjungan ke engagement",
+      ],
+      en: [
+        "Legal services clarify the firm's specialization",
+        "Team profiles build trust and credibility",
+        "Case studies demonstrate experience and results",
+        "Consultation CTA shortens the path from visit to engagement",
+      ],
+    },
+    features: {
+      id: [
+        "Layanan hukum: korporasi, perdata, pidana, dan bisnis",
+        "Profil tim advokat dengan spesialisasi",
+        "Studi kasus: kasus yang pernah ditangani",
+        "CTA konsultasi hukum langsung mengarah ke WhatsApp",
+      ],
+      en: [
+        "Legal services: corporate, civil, criminal, and business",
+        "Attorney team profiles with specializations",
+        "Case studies: previously handled cases",
+        "Legal consultation CTA directing to WhatsApp",
+      ],
+    },
+    tags: {
+      id: ["Legal", "Firma Hukum", "Konsultan", "Landing Page"],
+      en: ["Legal", "Law Firm", "Consultant", "Landing Page"],
+    },
+    thumbnail: "",
+    demoPath: "/demo/mitra-legal",
+    caseStudyPath: "/portfolio/mitra-legal",
+    mockDataHighlights: {
+      id: [
+        "Brand: Mitra Legal",
+        "Layanan: Hukum korporasi, Perdata, Pidana, Bisnis",
+        "Tim: Senior partner, Associate, Paralegal",
+        "Studi kasus: Sengketa kontrak, Due diligence, Litigasi",
+        "CTA: Konsultasi hukum",
+      ],
+      en: [
+        "Brand: Mitra Legal",
+        "Services: Corporate law, Civil, Criminal, Business",
+        "Team: Senior partner, Associate, Paralegal",
+        "Case studies: Contract disputes, Due diligence, Litigation",
+        "CTA: Legal consultation",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Kunjungi dari pencarian Google, referensi, atau iklan",
+        "Baca hero — pahami spesialisasi firma hukum",
+        "Lihat layanan hukum — pilih layanan yang relevan",
+        "Lihat profil tim — membangun trust dengan advokat",
+        "Klik CTA konsultasi — jadwalkan pertemuan via WhatsApp",
+      ],
+      en: [
+        "Visit from Google search, referrals, or ads",
+        "Read the hero — understand the law firm's specialization",
+        "View legal services — pick the relevant service",
+        "View team profiles — build trust with the attorneys",
+        "Tap the consultation CTA — schedule a meeting via WhatsApp",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Hero Profesional", en: "Professional Hero" },
+        description: {
+          id: "Hero dengan headline firma hukum dan CTA konsultasi — langsung membangun trust profesional.",
+          en: "Hero with law firm headline and consultation CTA — immediately building professional trust.",
+        },
+      },
+      {
+        title: { id: "Layanan Hukum", en: "Legal Services" },
+        description: {
+          id: "4 layanan: korporasi, perdata, pidana, bisnis — memperjaskan spesialisasi firma.",
+          en: "Four services: corporate, civil, criminal, business — clarifying the firm's specialization.",
+        },
+      },
+      {
+        title: { id: "Profil Tim", en: "Team Profiles" },
+        description: {
+          id: "Profil senior partner dan associate — membangun trust dengan pengalaman dan kredibilitas.",
+          en: "Senior partner and associate profiles — building trust through experience and credibility.",
+        },
+      },
+    ],
+  },
 ];

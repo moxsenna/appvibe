@@ -7,6 +7,13 @@ export type PortfolioCategory =
   | "clinic"
   | "property"
   | "education"
+  | "saas"
+  | "hospitality"
+  | "interior"
+  | "wedding"
+  | "b2b"
+  | "fnb"
+  | "legal"
   | "umkm"
   | "custom-app";
 

@@ -154,6 +154,14 @@ export const commonId = {
     clinic: "Klinik",
     property: "Properti",
     dashboard: "Dashboard",
+    education: "Edukasi",
+    saas: "SaaS",
+    hospitality: "Hospitality",
+    interior: "Interior",
+    wedding: "Wedding",
+    b2b: "B2B",
+    fnb: "F&B",
+    legal: "Legal",
   },
 
   demoCard: {

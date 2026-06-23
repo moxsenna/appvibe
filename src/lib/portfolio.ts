@@ -9,6 +9,14 @@ export const portfolioFilters: PortfolioFilterOption[] = [
   { id: "clinic", label: "Klinik", category: "clinic" },
   { id: "property", label: "Properti", category: "property" },
   { id: "dashboard", label: "Dashboard", category: "dashboard" },
+  { id: "education", label: "Edukasi", category: "education" },
+  { id: "saas", label: "SaaS", category: "saas" },
+  { id: "hospitality", label: "Hospitality", category: "hospitality" },
+  { id: "interior", label: "Interior", category: "interior" },
+  { id: "wedding", label: "Wedding", category: "wedding" },
+  { id: "b2b", label: "B2B", category: "b2b" },
+  { id: "fnb", label: "F&B", category: "fnb" },
+  { id: "legal", label: "Legal", category: "legal" },
 ];
 
 export function getPortfolioBySlug(slug: string): PortfolioItem | undefined {
