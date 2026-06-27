@@ -2,47 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>AppVibe Studio — Insight bisnis</title>
   <subtitle>Landing page, WhatsApp CTA, dan digital presence untuk bisnis Indonesia.</subtitle>
-  <link href="http://localhost:5173/feed/blog-id.xml" rel="self" type="application/atom+xml"/>
-  <link href="http://localhost:5173/blog" rel="alternate" type="text/html"/>
-  <id>http://localhost:5173/blog</id>
+  <link href="https://appvibe.web.id/feed/blog-id.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://appvibe.web.id/blog" rel="alternate" type="text/html"/>
+  <id>https://appvibe.web.id/blog</id>
   <updated>2026-06-22T00:00:00.000Z</updated>
   <author><name>AppVibe Studio</name></author>
   <entry>
     <title>Bukti Sosial di Landing Page: Contoh yang Benar-Benar Dipakai Bisnis Jasa</title>
-    <link href="http://localhost:5173/blog/social-proof-landing" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/blog/social-proof-landing</id>
+    <link href="https://appvibe.web.id/blog/social-proof-landing" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/blog/social-proof-landing</id>
     <published>2026-06-22T00:00:00.000Z</published>
     <updated>2026-06-22T00:00:00.000Z</updated>
     <summary type="html">Testimoni, angka, dan logo klien — mana yang benar-benar meningkatkan kepercayaan dan konversi di landing page.</summary>
   </entry>
   <entry>
     <title>Cara Mengukur Konversi Landing Page Tanpa Tools Mahal</title>
-    <link href="http://localhost:5173/blog/measure-conversion" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/blog/measure-conversion</id>
+    <link href="https://appvibe.web.id/blog/measure-conversion" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/blog/measure-conversion</id>
     <published>2026-06-21T00:00:00.000Z</published>
     <updated>2026-06-21T00:00:00.000Z</updated>
     <summary type="html">Framework sederhana untuk UMKM dan bisnis jasa yang ingin tahu apakah landing page mereka benar-benar menghasilkan chat dan prospek.</summary>
   </entry>
   <entry>
     <title>5 Kesalahan Copy WhatsApp yang Membuat Calon Klien Langsung Mute</title>
-    <link href="http://localhost:5173/blog/whatsapp-copy-mistakes" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/blog/whatsapp-copy-mistakes</id>
+    <link href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/blog/whatsapp-copy-mistakes</id>
     <published>2026-06-20T00:00:00.000Z</published>
     <updated>2026-06-20T00:00:00.000Z</updated>
     <summary type="html">Pesan yang terlalu panjang, tidak jelas, atau terlalu salesy — ini alasan utama calon klien tidak membalas chat Anda.</summary>
   </entry>
   <entry>
     <title>Landing page khusus vs Homepage: mana yang benar-benar mengonversi iklan?</title>
-    <link href="http://localhost:5173/blog/landing-vs-homepage" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/blog/landing-vs-homepage</id>
+    <link href="https://appvibe.web.id/blog/landing-vs-homepage" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/blog/landing-vs-homepage</id>
     <published>2026-06-19T00:00:00.000Z</published>
     <updated>2026-06-19T00:00:00.000Z</updated>
     <summary type="html">Kenapa homepage sering gagal mengubah traffic iklan menjadi chat WhatsApp, dan kapan Anda harus membuat halaman khusus.</summary>
   </entry>
   <entry>
     <title>Landing page + WhatsApp: CTA yang benar-benar menghasilkan chat</title>
-    <link href="http://localhost:5173/blog/landing-page-whatsapp-cta" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/blog/landing-page-whatsapp-cta</id>
+    <link href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/blog/landing-page-whatsapp-cta</id>
     <published>2026-06-18T00:00:00.000Z</published>
     <updated>2026-06-18T00:00:00.000Z</updated>
     <summary type="html">Struktur halaman, copy tombol, dan pesan WA pertama — pola yang terbukti meningkatkan respons untuk UMKM dan bisnis jasa di Indonesia.</summary>

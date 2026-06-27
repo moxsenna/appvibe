@@ -2,47 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>AppVibe Studio — Business insights</title>
   <subtitle>Landing pages, WhatsApp CTAs, and digital presence for growing businesses.</subtitle>
-  <link href="http://localhost:5173/feed/blog-en.xml" rel="self" type="application/atom+xml"/>
-  <link href="http://localhost:5173/en/blog" rel="alternate" type="text/html"/>
-  <id>http://localhost:5173/en/blog</id>
+  <link href="https://appvibe.web.id/feed/blog-en.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://appvibe.web.id/en/blog" rel="alternate" type="text/html"/>
+  <id>https://appvibe.web.id/en/blog</id>
   <updated>2026-06-22T00:00:00.000Z</updated>
   <author><name>AppVibe Studio</name></author>
   <entry>
     <title>Social Proof on Landing Pages: Real Examples Used by Service Businesses</title>
-    <link href="http://localhost:5173/en/blog/social-proof-landing" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/en/blog/social-proof-landing</id>
+    <link href="https://appvibe.web.id/en/blog/social-proof-landing" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/en/blog/social-proof-landing</id>
     <published>2026-06-22T00:00:00.000Z</published>
     <updated>2026-06-22T00:00:00.000Z</updated>
     <summary type="html">Testimonials, numbers, and client logos — which ones actually increase trust and conversion on landing pages.</summary>
   </entry>
   <entry>
     <title>How to Measure Landing Page Conversion Without Expensive Tools</title>
-    <link href="http://localhost:5173/en/blog/measure-conversion" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/en/blog/measure-conversion</id>
+    <link href="https://appvibe.web.id/en/blog/measure-conversion" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/en/blog/measure-conversion</id>
     <published>2026-06-21T00:00:00.000Z</published>
     <updated>2026-06-21T00:00:00.000Z</updated>
     <summary type="html">A simple framework for small businesses and service providers who want to know if their landing page is actually generating chats and leads.</summary>
   </entry>
   <entry>
     <title>5 WhatsApp Copy Mistakes That Make Prospects Ghost You Instantly</title>
-    <link href="http://localhost:5173/en/blog/whatsapp-copy-mistakes" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/en/blog/whatsapp-copy-mistakes</id>
+    <link href="https://appvibe.web.id/en/blog/whatsapp-copy-mistakes" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/en/blog/whatsapp-copy-mistakes</id>
     <published>2026-06-20T00:00:00.000Z</published>
     <updated>2026-06-20T00:00:00.000Z</updated>
     <summary type="html">Messages that are too long, unclear, or overly salesy — these are the real reasons prospects stop replying to your WhatsApp.</summary>
   </entry>
   <entry>
     <title>Dedicated Landing Page vs Homepage: Which One Actually Converts Paid Traffic?</title>
-    <link href="http://localhost:5173/en/blog/landing-vs-homepage" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/en/blog/landing-vs-homepage</id>
+    <link href="https://appvibe.web.id/en/blog/landing-vs-homepage" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/en/blog/landing-vs-homepage</id>
     <published>2026-06-19T00:00:00.000Z</published>
     <updated>2026-06-19T00:00:00.000Z</updated>
     <summary type="html">Why sending all ad traffic to your homepage often kills conversions — and when you should create a campaign-specific landing page instead.</summary>
   </entry>
   <entry>
     <title>Landing pages + WhatsApp: CTAs that actually start conversations</title>
-    <link href="http://localhost:5173/en/blog/landing-page-whatsapp-cta" rel="alternate" type="text/html"/>
-    <id>http://localhost:5173/en/blog/landing-page-whatsapp-cta</id>
+    <link href="https://appvibe.web.id/en/blog/landing-page-whatsapp-cta" rel="alternate" type="text/html"/>
+    <id>https://appvibe.web.id/en/blog/landing-page-whatsapp-cta</id>
     <published>2026-06-18T00:00:00.000Z</published>
     <updated>2026-06-18T00:00:00.000Z</updated>
     <summary type="html">Page structure, button copy, and prefilled messages — patterns that reliably increase response rates for service businesses in Indonesia.</summary>

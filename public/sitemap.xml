@@ -5,396 +5,396 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
   <url>
-    <loc>http://localhost:5173/</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/" />
+    <loc>https://appvibe.web.id/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/" />
+    <loc>https://appvibe.web.id/en</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/layanan</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/layanan" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/services" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/layanan" />
+    <loc>https://appvibe.web.id/layanan</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/layanan" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/layanan" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/services</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/layanan" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/services" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/layanan" />
+    <loc>https://appvibe.web.id/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/layanan" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/layanan" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/portfolio</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio" />
+    <loc>https://appvibe.web.id/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/portfolio</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio" />
+    <loc>https://appvibe.web.id/en/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/demo</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo" />
+    <loc>https://appvibe.web.id/demo</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/demos</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo" />
+    <loc>https://appvibe.web.id/en/demos</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/industri</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/industri" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/industries" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/industri" />
+    <loc>https://appvibe.web.id/industri</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/industri" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/industries" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/industri" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/industries</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/industri" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/industries" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/industri" />
+    <loc>https://appvibe.web.id/en/industries</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/industri" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/industries" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/industri" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/tentang</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/tentang" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/tentang" />
+    <loc>https://appvibe.web.id/tentang</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/tentang" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/tentang" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/tentang" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/tentang" />
+    <loc>https://appvibe.web.id/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/tentang" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/tentang" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/kontak</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/kontak" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/kontak" />
+    <loc>https://appvibe.web.id/kontak</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/kontak" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/kontak" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/kontak" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/kontak" />
+    <loc>https://appvibe.web.id/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/kontak" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/kontak" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/blog</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog" />
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>http://localhost:5173/en/blog</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog" />
+    <loc>https://appvibe.web.id/blog</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog" />
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/uses</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/uses" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/uses" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/uses" />
+    <loc>https://appvibe.web.id/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog" />
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://appvibe.web.id/uses</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/uses" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/uses" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/uses" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/uses</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/uses" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/uses" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/uses" />
+    <loc>https://appvibe.web.id/en/uses</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/uses" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/uses" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/uses" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/portfolio/company-profile</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/company-profile" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/company-profile" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/company-profile" />
+    <loc>https://appvibe.web.id/portfolio/company-profile</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/company-profile" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/company-profile" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/company-profile" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/portfolio/company-profile</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/company-profile" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/company-profile" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/company-profile" />
+    <loc>https://appvibe.web.id/en/portfolio/company-profile</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/company-profile" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/company-profile" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/company-profile" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/portfolio/webinar-landing</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/webinar-landing" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/webinar-landing" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/webinar-landing" />
+    <loc>https://appvibe.web.id/portfolio/webinar-landing</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/webinar-landing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/webinar-landing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/webinar-landing" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/portfolio/webinar-landing</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/webinar-landing" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/webinar-landing" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/webinar-landing" />
+    <loc>https://appvibe.web.id/en/portfolio/webinar-landing</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/webinar-landing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/webinar-landing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/webinar-landing" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/portfolio/klinik</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/klinik" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/klinik" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/klinik" />
+    <loc>https://appvibe.web.id/portfolio/klinik</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/klinik" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/klinik" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/klinik" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/portfolio/klinik</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/klinik" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/klinik" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/klinik" />
+    <loc>https://appvibe.web.id/en/portfolio/klinik</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/klinik" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/klinik" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/klinik" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/portfolio/properti</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/properti" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/properti" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/properti" />
+    <loc>https://appvibe.web.id/portfolio/properti</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/properti" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/properti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/properti" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/portfolio/properti</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/properti" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/properti" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/properti" />
+    <loc>https://appvibe.web.id/en/portfolio/properti</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/properti" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/properti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/properti" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/portfolio/lead-dashboard</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/lead-dashboard" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/lead-dashboard" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/lead-dashboard" />
+    <loc>https://appvibe.web.id/portfolio/lead-dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/lead-dashboard" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/lead-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/lead-dashboard" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/portfolio/lead-dashboard</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/portfolio/lead-dashboard" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/portfolio/lead-dashboard" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/portfolio/lead-dashboard" />
+    <loc>https://appvibe.web.id/en/portfolio/lead-dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/lead-dashboard" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/lead-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/portfolio/lead-dashboard" />
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/demo/company-profile</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/company-profile" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/company-profile" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/company-profile" />
+    <loc>https://appvibe.web.id/demo/company-profile</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/company-profile" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/company-profile" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/company-profile" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/demos/company-profile</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/company-profile" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/company-profile" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/company-profile" />
+    <loc>https://appvibe.web.id/en/demos/company-profile</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/company-profile" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/company-profile" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/company-profile" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/demo/webinar-landing</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/webinar-landing" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/webinar-landing" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/webinar-landing" />
+    <loc>https://appvibe.web.id/demo/webinar-landing</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/webinar-landing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/webinar-landing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/webinar-landing" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/demos/webinar-landing</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/webinar-landing" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/webinar-landing" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/webinar-landing" />
+    <loc>https://appvibe.web.id/en/demos/webinar-landing</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/webinar-landing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/webinar-landing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/webinar-landing" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/demo/klinik</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/klinik" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/klinik" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/klinik" />
+    <loc>https://appvibe.web.id/demo/klinik</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/klinik" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/klinik" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/klinik" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/demos/klinik</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/klinik" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/klinik" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/klinik" />
+    <loc>https://appvibe.web.id/en/demos/klinik</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/klinik" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/klinik" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/klinik" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/demo/properti</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/properti" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/properti" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/properti" />
+    <loc>https://appvibe.web.id/demo/properti</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/properti" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/properti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/properti" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/demos/properti</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/properti" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/properti" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/properti" />
+    <loc>https://appvibe.web.id/en/demos/properti</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/properti" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/properti" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/properti" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/demo/lead-dashboard</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/lead-dashboard" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/lead-dashboard" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/lead-dashboard" />
+    <loc>https://appvibe.web.id/demo/lead-dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/lead-dashboard" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/lead-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/lead-dashboard" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/demos/lead-dashboard</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/demo/lead-dashboard" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/demos/lead-dashboard" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/demo/lead-dashboard" />
+    <loc>https://appvibe.web.id/en/demos/lead-dashboard</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/demo/lead-dashboard" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/demos/lead-dashboard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/demo/lead-dashboard" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/blog/social-proof-landing</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/social-proof-landing" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/social-proof-landing" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/social-proof-landing" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/blog/social-proof-landing</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/social-proof-landing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/social-proof-landing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/social-proof-landing" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/blog/social-proof-landing</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/social-proof-landing" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/social-proof-landing" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/social-proof-landing" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/en/blog/social-proof-landing</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/social-proof-landing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/social-proof-landing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/social-proof-landing" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/blog/measure-conversion</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/measure-conversion" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/measure-conversion" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/measure-conversion" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/blog/measure-conversion</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/measure-conversion" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/measure-conversion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/measure-conversion" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/blog/measure-conversion</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/measure-conversion" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/measure-conversion" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/measure-conversion" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/en/blog/measure-conversion</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/measure-conversion" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/measure-conversion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/measure-conversion" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/blog/whatsapp-copy-mistakes</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/whatsapp-copy-mistakes" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/whatsapp-copy-mistakes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/whatsapp-copy-mistakes" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/blog/whatsapp-copy-mistakes</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/whatsapp-copy-mistakes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/blog/whatsapp-copy-mistakes</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/whatsapp-copy-mistakes" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/whatsapp-copy-mistakes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/whatsapp-copy-mistakes" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/en/blog/whatsapp-copy-mistakes</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/whatsapp-copy-mistakes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/blog/landing-vs-homepage</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/landing-vs-homepage" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/landing-vs-homepage" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/landing-vs-homepage" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/blog/landing-vs-homepage</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/landing-vs-homepage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/landing-vs-homepage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/landing-vs-homepage" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/blog/landing-vs-homepage</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/landing-vs-homepage" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/landing-vs-homepage" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/landing-vs-homepage" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/en/blog/landing-vs-homepage</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/landing-vs-homepage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/landing-vs-homepage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/landing-vs-homepage" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/blog/landing-page-whatsapp-cta</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/landing-page-whatsapp-cta" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/landing-page-whatsapp-cta" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/landing-page-whatsapp-cta" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/blog/landing-page-whatsapp-cta</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/landing-page-whatsapp-cta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:5173/en/blog/landing-page-whatsapp-cta</loc>
-    <xhtml:link rel="alternate" hreflang="id" href="http://localhost:5173/blog/landing-page-whatsapp-cta" />
-    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:5173/en/blog/landing-page-whatsapp-cta" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:5173/blog/landing-page-whatsapp-cta" />
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://appvibe.web.id/en/blog/landing-page-whatsapp-cta</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/landing-page-whatsapp-cta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" />
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
