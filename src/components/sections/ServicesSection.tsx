@@ -10,7 +10,7 @@ import type { LucideIcon } from "lucide-react";
 import { services } from "@/data/services";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, getServiceMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
 import { useDict } from "@/i18n/use-dict";
@@ -32,7 +32,6 @@ const serviceAccents: Record<string, string> = {
 export function ServicesSection() {
   const { lang } = useLang();
   const dict = useDict();
-  const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
 
   return (
     <section className="section-padding bg-white">
@@ -92,7 +91,9 @@ export function ServicesSection() {
 
                 <div className="mt-5">
                   <Button
-                    href={whatsappUrl}
+                    href={buildWhatsAppUrl(
+                      getServiceMessage(lang, service.title[lang]),
+                    )}
                     variant="outline"
                     size="sm"
                     className="group/btn"

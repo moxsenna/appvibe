@@ -85,6 +85,15 @@ export function DemoIndexPage() {
     [activeCategory, searchQuery, lang],
   );
 
+  const interactiveItems = useMemo(
+    () => filteredItems.filter((d) => d.kind === "interactive"),
+    [filteredItems],
+  );
+  const templateItems = useMemo(
+    () => filteredItems.filter((d) => d.kind === "template"),
+    [filteredItems],
+  );
+
   const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
   const faqItems = lang === "id" ? FAQ_ID : FAQ_EN;
 
@@ -137,8 +146,8 @@ export function DemoIndexPage() {
             }
             description={
               lang === "id"
-                ? "Filter berdasarkan kategori, atau cari berdasarkan niche dan tag. Setiap demo mengarah ke shell interaktif yang bisa dibuka langsung."
-                : "Filter by category, or search by niche and tag. Every demo opens a live interactive shell."
+                ? "5 demo React interaktif (form, filter, interaksi) di atas; 10 landing template HTML sebagai referensi visual niche. Filter atau cari sesuai industri Anda."
+                : "Five full React interactive demos (forms, filters, interactions) first; ten HTML landing templates as niche visual references. Filter or search by industry."
             }
           />
           <div className="mt-8">
@@ -150,9 +159,38 @@ export function DemoIndexPage() {
               onSearchChange={setSearchQuery}
             />
           </div>
-          <div className="mt-10">
-            <DemoGrid items={filteredItems} />
-          </div>
+          {interactiveItems.length > 0 && (
+            <div className="mt-10">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-blue">
+                {lang === "id"
+                  ? `Demo interaktif · ${interactiveItems.length}`
+                  : `Interactive demos · ${interactiveItems.length}`}
+              </h3>
+              <DemoGrid items={interactiveItems} />
+            </div>
+          )}
+          {templateItems.length > 0 && (
+            <div className="mt-12">
+              <h3 className="mb-2 text-sm font-semibold uppercase tracking-widest text-brand-violet">
+                {lang === "id"
+                  ? `Landing template · ${templateItems.length}`
+                  : `Landing templates · ${templateItems.length}`}
+              </h3>
+              <p className="mb-4 max-w-2xl text-sm text-brand-muted">
+                {lang === "id"
+                  ? "Referensi visual HTML — bukan shell React penuh. Cocok untuk membayangkan tone niche; interaksi terbatas."
+                  : "HTML visual references — not full React shells. Useful for niche tone; limited interaction."}
+              </p>
+              <DemoGrid items={templateItems} />
+            </div>
+          )}
+          {filteredItems.length === 0 && (
+            <p className="mt-10 text-center text-sm text-brand-muted">
+              {lang === "id"
+                ? "Tidak ada demo yang cocok dengan filter."
+                : "No demos match this filter."}
+            </p>
+          )}
         </Container>
       </section>
 

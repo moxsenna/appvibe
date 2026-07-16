@@ -82,8 +82,8 @@ export function Footer() {
 
   const legalLinks = [
     { label: common.nav.uses, to: routes.uses(lang) },
-    { label: common.footer.legal.privacy, to: "/privacy" },
-    { label: common.footer.legal.terms, to: "/terms" },
+    { label: common.footer.legal.privacy, to: routes.privacy(lang) },
+    { label: common.footer.legal.terms, to: routes.terms(lang) },
     { label: common.footer.legal.sitemap, to: "/sitemap.xml", external: true },
   ];
 

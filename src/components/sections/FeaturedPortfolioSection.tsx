@@ -13,7 +13,18 @@ export function FeaturedPortfolioSection() {
   const { lang } = useLang();
   const dict = useDict();
   const fp = dict.pages.home.featuredPortfolio;
-  const [featured, ...rest] = portfolioItems;
+  // Home showcase: 5 interactive demos only — avoid dumping all mock templates.
+  const FEATURED_SLUGS = [
+    "company-profile",
+    "webinar-landing",
+    "klinik",
+    "properti",
+    "lead-dashboard",
+  ] as const;
+  const homeItems = FEATURED_SLUGS.map(
+    (slug) => portfolioItems.find((p) => p.slug === slug),
+  ).filter((p): p is (typeof portfolioItems)[number] => Boolean(p));
+  const [featured, ...rest] = homeItems;
 
   return (
     <section className="relative section-padding overflow-hidden bg-hero-mesh text-white reveal-on-scroll">

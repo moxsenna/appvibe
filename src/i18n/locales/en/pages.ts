@@ -28,7 +28,7 @@ export const pagesEn: PagesDict = {
         { value: "≤ 24 hrs", label: "WhatsApp response on weekdays" },
         { value: "30–45 min", label: "Free initial consultation" },
         { value: "1 service", label: "Start with what matters most" },
-        { value: "Founder-led", label: "Hands-on at every project" },
+        { value: "Bima", label: "Founder · hands-on every project" },
       ],
     },
     servicesSection: {
@@ -199,15 +199,15 @@ export const pagesEn: PagesDict = {
 
   demoIndex: {
     hero: {
-      eyebrow: "Interactive Demos",
-      title: "Try it first — feel how the finished product behaves",
+      eyebrow: "Demos & templates",
+      title: "Try it first — feel how the finished result works",
       description:
-        "Five interactive demos from popular business niches. Click, scroll, fill the forms — everything works as if shipped. If it fits your vision, we keep the conversation going.",
+        "Five full React interactive demos (clicks, forms, filters) plus ten HTML landing templates by niche. All simulations — not live client sites. Fit your vision? Let's talk.",
     },
     meta: {
-      title: "Interactive Website and App Demos | AppVibe Studio",
+      title: "Interactive Website & App Demos | AppVibe Studio",
       description:
-        "Try five interactive demos across popular niches: Company Profile, Webinar Landing, Clinic, Property, Lead Dashboard. All live, never screenshots.",
+        "Five React interactive demos + ten landing templates: Company Profile, Webinar, Clinic, Property, CRM Lite, and more. AppVibe portfolio simulations.",
     },
     filter: {
       searchPlaceholder: "Search demos by title, niche, or tag...",
@@ -338,13 +338,13 @@ export const pagesEn: PagesDict = {
 
   uses: {
     hero: {
-      eyebrow: "/uses",
+      eyebrow: "Stack & Tools",
       title: "Stack, tools, and engineering choices",
       description:
         "What we build AppVibe Studio with — not to lecture, but because technical transparency is part of how we build trust. This page is kept up to date.",
     },
     meta: {
-      title: "/uses — AppVibe Studio Stack and Tools",
+      title: "Stack & Tools — AppVibe Studio",
       description:
         "The technology stack, design tools, and engineering decisions behind AppVibe Studio. Honest, opinionated, and always evolving.",
     },

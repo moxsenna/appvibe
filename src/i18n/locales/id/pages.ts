@@ -26,7 +26,7 @@ export const pagesId = {
         { value: "≤ 24 jam", label: "Respons WhatsApp di hari kerja" },
         { value: "30–45 mnt", label: "Konsultasi awal gratis" },
         { value: "1 layanan", label: "Bisa mulai dari yang paling kritikal" },
-        { value: "Founder", label: "Terlibat langsung di setiap proyek" },
+        { value: "Bima", label: "Founder · terlibat di setiap proyek" },
       ],
     },
     servicesSection: {
@@ -195,20 +195,20 @@ export const pagesId = {
 
   demoIndex: {
     hero: {
-      eyebrow: "Demo Interaktif",
+      eyebrow: "Demo & template",
       title: "Coba dulu, lihat sendiri bagaimana hasil akhirnya terasa",
       description:
-        "5 demo interaktif dari niche bisnis populer. Klik, scroll, isi form — semua berfungsi seperti website jadi. Kalau cocok dengan visi bisnis Anda, kita lanjut diskusi.",
+        "5 demo React interaktif (klik, form, filter) plus 10 landing template HTML per niche. Semua simulasi — bukan website klien sungguhan. Cocok? Lanjut diskusi.",
     },
     meta: {
       title: "Demo Interaktif Website & App | AppVibe Studio",
       description:
-        "Coba 5 demo interaktif dari niche populer: Company Profile, Webinar Landing, Klinik, Properti, Lead Dashboard. Semua live, bukan screenshot.",
+        "5 demo React interaktif + 10 landing template: Company Profile, Webinar, Klinik, Properti, CRM Lite, dan niche lain. Simulasi portfolio AppVibe.",
     },
     filter: {
       searchPlaceholder: "Cari demo berdasarkan judul, niche, atau tag...",
       searchAriaLabel: "Cari demo",
-      resultCount: "{{n}} demo ditemukan",
+      resultCount: "{{n}} item ditemukan",
     },
   },
 
@@ -335,13 +335,13 @@ export const pagesId = {
 
   uses: {
     hero: {
-      eyebrow: "/uses",
+      eyebrow: "Stack & Tools",
       title: "Stack, tools, dan keputusan teknis",
       description:
         "Apa saja yang dipakai untuk membangun AppVibe Studio — bukan untuk menggurui, tapi karena saya percaya transparansi teknis itu bagian dari trust. Halaman ini akan terus diperbarui.",
     },
     meta: {
-      title: "/uses — Stack & Tools AppVibe Studio",
+      title: "Stack & Tools AppVibe Studio",
       description:
         "Stack teknologi, alat desain, dan keputusan engineering di balik AppVibe Studio. Jujur, opinionated, dan terus berkembang.",
     },

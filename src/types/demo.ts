@@ -18,7 +18,10 @@ export type DemoCategory = Extract<
   | "legal"
 >;
 
-export type DemoStatus = "live" | "coming-soon" | "draft";
+export type DemoStatus = "live" | "template" | "coming-soon" | "draft";
+
+/** How the demo is delivered in the app shell. */
+export type DemoKind = "interactive" | "template";
 
 export type DemoItem = {
   id: string;
@@ -34,6 +37,8 @@ export type DemoItem = {
   accentColor: string;
   ctaLabel: Localized<string>;
   status: DemoStatus;
+  /** interactive = full React demo; template = static HTML landing reference */
+  kind: DemoKind;
   tags: Localized<string[]>;
   relatedCaseStudySlug: string;
 };

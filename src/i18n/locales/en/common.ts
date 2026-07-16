@@ -22,7 +22,7 @@ export const commonEn: CommonDict = {
     about: "About",
     blog: "Blog",
     contact: "Contact",
-    uses: "/uses",
+    uses: "Stack & Tools",
   },
 
   cta: {
@@ -130,13 +130,15 @@ export const commonEn: CommonDict = {
   },
 
   demoStatus: {
-    live: "Live",
+    live: "Interactive",
+    template: "Template",
     "coming-soon": "Coming soon",
     draft: "Draft",
   },
 
   demoStatusDetail: {
-    live: "Demo ready to open",
+    live: "Full React demo — forms, filters, live interactions",
+    template: "HTML landing template — visual niche reference",
     "coming-soon": "Shell ready — full content soon",
     draft: "In preparation",
   },
@@ -189,8 +191,14 @@ export const commonEn: CommonDict = {
     default:
       "Hi AppVibe, I would like to explore a website/app for my business. Could we talk?",
     portfolio:
-      'Hi AppVibe, I would like a website similar to the {{title}} demo. Could you help?',
+      "Hi AppVibe, I would like a website similar to the {{title}} demo. Could you help?",
     demo:
       'Hi AppVibe, I just explored the "{{title}}" demo and would like to discuss it for my business. Could we look further?',
+    service:
+      "Hi AppVibe, I'm interested in {{title}}. Could we discuss scope and a rough estimate?",
+    home:
+      "Hi AppVibe, I run a small/service business and want to discuss a website or landing page. Can we talk?",
+    contact:
+      "Hi AppVibe, I'd like to book a free 30–45 minute consult. When works?",
   },
 };

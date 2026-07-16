@@ -28,6 +28,7 @@ export const demoItems: DemoItem[] = [
     accentColor: "#7C3AED",
     ctaLabel: { id: "Konsultasi AppVibe", en: "Consult with AppVibe" },
     status: "live",
+    kind: "interactive",
     tags: {
       id: ["Company Profile", "WhatsApp CTA", "Form Inquiry", "Mobile Friendly"],
       en: ["Company Profile", "WhatsApp CTA", "Inquiry Form", "Mobile Friendly"],
@@ -60,6 +61,7 @@ export const demoItems: DemoItem[] = [
     accentColor: "#06B6D4",
     ctaLabel: { id: "Diskusi Campaign", en: "Discuss Your Campaign" },
     status: "live",
+    kind: "interactive",
     tags: {
       id: ["Landing Page", "Webinar", "Lead Capture", "WhatsApp CTA"],
       en: ["Landing Page", "Webinar", "Lead Capture", "WhatsApp CTA"],
@@ -92,6 +94,7 @@ export const demoItems: DemoItem[] = [
     accentColor: "#0EA5E9",
     ctaLabel: { id: "Diskusi Booking Klinik", en: "Discuss Clinic Booking" },
     status: "live",
+    kind: "interactive",
     tags: {
       id: ["Klinik", "Booking CTA", "Mobile Friendly"],
       en: ["Clinic", "Booking CTA", "Mobile Friendly"],
@@ -124,6 +127,7 @@ export const demoItems: DemoItem[] = [
     accentColor: "#0EA5E9",
     ctaLabel: { id: "Diskusi Listing Properti", en: "Discuss Property Listings" },
     status: "live",
+    kind: "interactive",
     tags: {
       id: ["Properti", "Listing", "Galeri", "Survei Lokasi"],
       en: ["Property", "Listings", "Gallery", "Site Survey"],
@@ -156,6 +160,7 @@ export const demoItems: DemoItem[] = [
     accentColor: "#06B6D4",
     ctaLabel: { id: "Diskusi CRM Lite", en: "Discuss CRM Lite" },
     status: "live",
+    kind: "interactive",
     tags: {
       id: ["CRM Lite", "Lead Management", "Sales Dashboard"],
       en: ["CRM Lite", "Lead Management", "Sales Dashboard"],
@@ -166,8 +171,8 @@ export const demoItems: DemoItem[] = [
     id: "demo-natura-skin-clinic",
     slug: "natura-skin-clinic",
     title: {
-      id: "Demo Landing Page Klinik Kecantikan",
-      en: "Beauty Clinic Landing Page Demo",
+      id: "Template Landing Klinik Kecantikan",
+      en: "Beauty Clinic Landing Template",
     },
     category: "clinic",
     categoryLabel: { id: "Klinik", en: "Clinic" },
@@ -183,11 +188,12 @@ export const demoItems: DemoItem[] = [
       id: "Perawatan yang lebih tenang dan personal",
       en: "Calm, personal care experiences",
     },
-    brandName: same("Natura Skin Clinic"),
+    brandName: same("Natura Skin (Template)"),
     brandColor: "#0891B2",
     accentColor: "#06B6D4",
     ctaLabel: { id: "Diskusi Klinik", en: "Discuss Clinic Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["Klinik", "Kecantikan", "Landing Page", "Mobile Friendly"],
       en: ["Clinic", "Beauty", "Landing Page", "Mobile Friendly"],
@@ -219,7 +225,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#4F46E5",
     accentColor: "#818CF8",
     ctaLabel: { id: "Diskusi Properti", en: "Discuss Property Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["Properti", "Developer", "Residences", "Landing Page"],
       en: ["Property", "Developer", "Residences", "Landing Page"],
@@ -251,7 +258,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#7C3AED",
     accentColor: "#A78BFA",
     ctaLabel: { id: "Diskusi Webinar", en: "Discuss Webinar Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["Webinar", "Edukasi", "Workshop", "Lead Capture"],
       en: ["Webinar", "Education", "Workshop", "Lead Capture"],
@@ -283,7 +291,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#2563EB",
     accentColor: "#3B82F6",
     ctaLabel: { id: "Diskusi Produk Digital", en: "Discuss Digital Product" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["SaaS", "CRM", "B2B", "Product Landing"],
       en: ["SaaS", "CRM", "B2B", "Product Landing"],
@@ -315,7 +324,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#16A34A",
     accentColor: "#4ADE80",
     ctaLabel: { id: "Diskusi Villa", en: "Discuss Villa Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["Hospitality", "Villa", "Booking", "Landing Page"],
       en: ["Hospitality", "Villa", "Booking", "Landing Page"],
@@ -347,7 +357,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#EA580C",
     accentColor: "#FB923C",
     ctaLabel: { id: "Diskusi Interior", en: "Discuss Interior Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["Interior", "Desain", "Renovasi", "Landing Page"],
       en: ["Interior", "Design", "Renovation", "Landing Page"],
@@ -379,7 +390,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#DB2777",
     accentColor: "#F472B6",
     ctaLabel: { id: "Diskusi Wedding", en: "Discuss Wedding Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["Wedding", "Pernikahan", "Event", "Landing Page"],
       en: ["Wedding", "Events", "Landing Page", "Booking"],
@@ -411,7 +423,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#DC2626",
     accentColor: "#F87171",
     ctaLabel: { id: "Diskusi Printing", en: "Discuss Printing Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["B2B", "Printing", "Manufaktur", "Landing Page"],
       en: ["B2B", "Printing", "Manufacturing", "Landing Page"],
@@ -443,7 +456,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#92400E",
     accentColor: "#D97706",
     ctaLabel: { id: "Diskusi F&B", en: "Discuss F&B Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["F&B", "Coffee Shop", "Kafe", "Landing Page"],
       en: ["F&B", "Coffee Shop", "Café", "Landing Page"],
@@ -475,7 +489,8 @@ export const demoItems: DemoItem[] = [
     brandColor: "#1E40AF",
     accentColor: "#3B82F6",
     ctaLabel: { id: "Diskusi Legal", en: "Discuss Legal Project" },
-    status: "live",
+    status: "template",
+    kind: "template",
     tags: {
       id: ["Legal", "Firma Hukum", "Konsultan", "Landing Page"],
       en: ["Legal", "Law Firm", "Consultant", "Landing Page"],

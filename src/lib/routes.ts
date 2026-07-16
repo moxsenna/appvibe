@@ -22,6 +22,8 @@ const PATHS: Record<Lang, Record<string, string>> = {
     contact: "/kontak",
     uses: "/uses",
     blog: "/blog",
+    privacy: "/privacy",
+    terms: "/terms",
   },
   en: {
     home: "/en",
@@ -33,6 +35,8 @@ const PATHS: Record<Lang, Record<string, string>> = {
     contact: "/en/contact",
     uses: "/en/uses",
     blog: "/en/blog",
+    privacy: "/en/privacy",
+    terms: "/en/terms",
   },
 };
 
@@ -52,6 +56,8 @@ export const routes = {
   contact: (lang: Lang) => PATHS[lang].contact,
   uses: (lang: Lang) => PATHS[lang].uses,
   blog: (lang: Lang) => PATHS[lang].blog,
+  privacy: (lang: Lang) => PATHS[lang].privacy,
+  terms: (lang: Lang) => PATHS[lang].terms,
   blogPost: (lang: Lang, slug: string) => `${PATHS[lang].blog}/${slug}`,
   portfolioDetail: (lang: Lang, slug: string) =>
     `${PATHS[lang].portfolio}/${slug}`,

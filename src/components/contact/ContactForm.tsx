@@ -5,7 +5,7 @@ import { formFields, whatsappPrefill } from "@/data/contact/form";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, getContactConsultationMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 import { useLang } from "@/i18n/use-lang";
@@ -223,7 +223,7 @@ export function ContactForm() {
 
 function ContactInfo() {
   const { lang } = useLang();
-  const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
+  const whatsappUrl = buildWhatsAppUrl(getContactConsultationMessage(lang));
   return (
     <Card padding="lg" className="h-full bg-white">
       <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">

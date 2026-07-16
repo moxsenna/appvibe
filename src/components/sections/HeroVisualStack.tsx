@@ -1,38 +1,43 @@
 import {
-  BarChart3,
   Code2,
   MessageCircle,
   Monitor,
   Smartphone,
-  Users,
+  Layout,
+  Zap,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { MockupFrame } from "@/components/ui/MockupFrame";
 import { useDict } from "@/i18n/use-dict";
+import { useLang } from "@/i18n/use-lang";
 
 export function HeroVisualStack() {
-  const { pages } = useDict();
-  // Floating stats kept inline — the labels are tiny and only show on xl+
-  // breakpoints, where translating "Leads baru" → "New leads" doesn't add
-  // signal but does add dict churn. Treat as visual filler.
+  const { lang } = useLang();
+
+  // Floating chips mirror real hero stats — not fake "24 leads / 68%" metrics.
   const floatingStats = [
     {
-      label: pages.home.hero.stats[0]?.label ?? "Leads",
-      value: "24",
-      icon: Users,
+      label: lang === "id" ? "Respons WA" : "WA reply",
+      value: "≤ 24j",
+      icon: MessageCircle,
     },
     {
-      label: pages.home.hero.stats[1]?.label ?? "Conversion",
-      value: "68%",
-      icon: BarChart3,
+      label: lang === "id" ? "Mulai dari" : "Start with",
+      value: lang === "id" ? "1 layanan" : "1 service",
+      icon: Zap,
     },
   ];
+
+  const cardLabels =
+    lang === "id"
+      ? ["Website", "WhatsApp", "Dashboard"]
+      : ["Website", "WhatsApp", "Dashboard"];
 
   return (
     <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
       <div className="animate-float-slow">
         <MockupFrame
-          title="appvibe.studio/preview"
+          title="appvibe.web.id/preview"
           className="border-slate-600 shadow-glow ring-2 ring-white/15"
         >
           <div className="flex h-full min-h-[280px] flex-col gap-4 bg-slate-50 p-5">
@@ -44,13 +49,15 @@ export function HeroVisualStack() {
               </div>
             </div>
             <div className="grid grid-cols-3 gap-2.5">
-              {[Monitor, MessageCircle, BarChart3].map((Icon, i) => (
+              {[Monitor, MessageCircle, Layout].map((Icon, i) => (
                 <div
-                  key={i}
+                  key={cardLabels[i]}
                   className="flex flex-col items-center gap-2 rounded-xl border border-slate-200 bg-white p-3 shadow-md"
                 >
                   <Icon className="h-4 w-4 text-brand-blue" aria-hidden />
-                  <div className="h-2 w-full rounded bg-slate-300" />
+                  <p className="text-[9px] font-semibold text-slate-600">
+                    {cardLabels[i]}
+                  </p>
                   <div className="h-1.5 w-2/3 rounded bg-slate-200" />
                 </div>
               ))}
@@ -89,7 +96,9 @@ export function HeroVisualStack() {
         <div
           key={stat.label}
           className={`absolute z-20 hidden rounded-xl border border-white/25 bg-slate-950/95 p-3 shadow-lg backdrop-blur-md xl:block ${
-            i === 0 ? "-left-1 top-6 xl:-left-6" : "right-0 top-1/2 -translate-y-1/2 xl:-right-4"
+            i === 0
+              ? "-left-1 top-6 xl:-left-6"
+              : "right-0 top-1/2 -translate-y-1/2 xl:-right-4"
           }`}
           style={{ boxShadow: "0 8px 32px 0 rgb(15 23 42 / 0.35)" }}
         >

@@ -8,14 +8,14 @@ import {
   HeroStatsBar,
 } from "@/components/sections/HeroVisualStack";
 import { routes } from "@/lib/routes";
-import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, getHomeConsultationMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
 
 export function HeroSection() {
   const { lang, dict } = useLang();
   const { common, pages } = dict;
-  const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
+  const whatsappUrl = buildWhatsAppUrl(getHomeConsultationMessage(lang));
 
   return (
     <section className="mesh-hero relative text-white section-padding-lg">

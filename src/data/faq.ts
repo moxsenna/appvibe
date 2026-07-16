@@ -90,6 +90,17 @@ export const faqItems: FAQItem[] = [
     },
   },
   {
+    id: "harga",
+    question: {
+      id: "Berapa kisaran biaya website atau landing page?",
+      en: "What is a rough price range?",
+    },
+    answer: {
+      id: "Indikatif (bukan penawaran final): landing page fokus konversi sering mulai belasan juta; company profile multi-section dan dashboard lebih tinggi tergantung fitur. Scope, timeline, dan harga pasti dibahas di konsultasi gratis — kami sesuaikan dengan tahap bisnis Anda, bukan paket kaku.",
+      en: "Indicative only (not a final quote): conversion landing pages often start in the mid–high millions IDR; multi-section company profiles and dashboards cost more depending on features. Exact scope, timeline, and price are set in a free consult — tailored to your stage, not a rigid package.",
+    },
+  },
+  {
     id: "maintenance",
     question: {
       id: "Apakah bisa dibantu setelah website selesai?",

@@ -11,6 +11,8 @@ import { ContactPage } from "@/pages/ContactPage";
 import { PortfolioDetailPage } from "@/pages/PortfolioDetailPage";
 import { BlogIndexPage } from "@/pages/BlogIndexPage";
 import { BlogPostPage } from "@/pages/BlogPostPage";
+import { PrivacyPage } from "@/pages/PrivacyPage";
+import { TermsPage } from "@/pages/TermsPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { LangProvider } from "@/i18n/LangProvider";
@@ -75,6 +77,8 @@ const idChildren: RouteObject[] = [
   { path: "blog/:slug", element: <BlogPostPage /> },
   { path: "blog", element: <BlogIndexPage /> },
   { path: "uses", element: withSuspense(UsesPage) },
+  { path: "privacy", element: <PrivacyPage /> },
+  { path: "terms", element: <TermsPage /> },
 ];
 
 const enChildren: RouteObject[] = [
@@ -95,6 +99,8 @@ const enChildren: RouteObject[] = [
   { path: "blog/:slug", element: <BlogPostPage /> },
   { path: "blog", element: <BlogIndexPage /> },
   { path: "uses", element: withSuspense(UsesPage) },
+  { path: "privacy", element: <PrivacyPage /> },
+  { path: "terms", element: <TermsPage /> },
 ];
 
 export const router = createBrowserRouter([

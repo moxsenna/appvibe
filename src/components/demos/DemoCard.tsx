@@ -15,12 +15,15 @@ type DemoCardProps = {
   item: DemoItem;
 };
 
-const STATUS_VARIANT: Record<DemoItem["status"], "success" | "warning" | "gray"> =
-  {
-    live: "success",
-    "coming-soon": "warning",
-    draft: "gray",
-  };
+const STATUS_VARIANT: Record<
+  DemoItem["status"],
+  "success" | "warning" | "gray" | "violet"
+> = {
+  live: "success",
+  template: "violet",
+  "coming-soon": "warning",
+  draft: "gray",
+};
 
 export function DemoCard({ item }: DemoCardProps) {
   const { lang } = useLang();

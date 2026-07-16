@@ -35,8 +35,35 @@ const previewAccents: Record<string, string> = {
   "mitra-legal": "from-blue-800/60 via-blue-700/30 to-slate-950",
 };
 
-function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boolean }) {
+function SlugPreviewContent({
+  slug,
+  featured,
+  lang,
+}: {
+  slug: string;
+  featured?: boolean;
+  lang: "id" | "en";
+}) {
   const textSize = featured ? "text-[9px]" : "text-[8px]";
+  const t = {
+    services: lang === "id" ? "Layanan" : "Services",
+    inquiry: "Inquiry",
+    freeWebinar: lang === "id" ? "Webinar Gratis" : "Free Webinar",
+    agenda: "Agenda",
+    speaker: "Speaker",
+    register: lang === "id" ? "Daftar Sekarang" : "Register Now",
+    submit: "Submit",
+    doctor: lang === "id" ? "Dokter" : "Doctor",
+    booking: lang === "id" ? "Booking Sen, 10:00" : "Mon booking, 10:00",
+    book: "Book",
+    contact: lang === "id" ? "Hubungi" : "Contact",
+    name: lang === "id" ? "Nama" : "Name",
+    status: "Status",
+    source: lang === "id" ? "Sumber" : "Source",
+    overview: "Overview",
+    features: lang === "id" ? "Fitur" : "Features",
+    cta: "CTA",
+  };
 
   switch (slug) {
     case "company-profile":
@@ -48,15 +75,15 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
             <div className="mt-1.5 h-5 rounded bg-blue-500/35" />
           </div>
           <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-blue-200/80`}>Layanan</div>
+            <div className={`${textSize} text-blue-200/80`}>{t.services}</div>
             <div className="mt-1 h-4 rounded bg-blue-400/30" />
           </div>
           <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-blue-200/80`}>Layanan</div>
+            <div className={`${textSize} text-blue-200/80`}>{t.services}</div>
             <div className="mt-1 h-4 rounded bg-blue-400/25" />
           </div>
           <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-blue-200/80`}>Layanan</div>
+            <div className={`${textSize} text-blue-200/80`}>{t.services}</div>
             <div className="mt-1 h-4 rounded bg-blue-400/20" />
           </div>
           <div className="col-span-2 flex gap-1">
@@ -69,7 +96,7 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
           </div>
           <div className="flex items-end">
             <div className="w-full rounded-md bg-blue-500/50 py-1.5 text-center text-[7px] font-bold text-white">
-              Inquiry
+              {t.inquiry}
             </div>
           </div>
         </>
@@ -78,26 +105,26 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
       return (
         <>
           <div className="col-span-3 rounded-md border border-violet-400/30 bg-violet-950/50 p-2">
-            <div className={`${textSize} font-bold text-violet-200`}>Webinar Gratis</div>
+            <div className={`${textSize} font-bold text-violet-200`}>{t.freeWebinar}</div>
             <div className="mt-1 h-2 w-1/2 rounded bg-violet-300/40" />
           </div>
           <div className="col-span-2 space-y-1 rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} font-medium text-violet-200/90`}>Agenda</div>
+            <div className={`${textSize} font-medium text-violet-200/90`}>{t.agenda}</div>
             <div className="h-1.5 rounded bg-white/25" />
             <div className="h-1.5 w-4/5 rounded bg-white/20" />
             <div className="h-1.5 w-3/5 rounded bg-white/15" />
           </div>
           <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-violet-200/80`}>Speaker</div>
+            <div className={`${textSize} text-violet-200/80`}>{t.speaker}</div>
             <div className="mx-auto mt-1 h-6 w-6 rounded-full bg-violet-400/40" />
             <div className="mt-1 h-1 rounded bg-white/20" />
           </div>
           <div className="col-span-3 rounded-md border border-violet-400/20 bg-violet-900/40 p-1.5">
-            <div className={`${textSize} text-violet-100`}>Daftar Sekarang</div>
+            <div className={`${textSize} text-violet-100`}>{t.register}</div>
             <div className="mt-1 h-2 rounded bg-white/20" />
             <div className="mt-1 h-2 rounded bg-white/15" />
             <div className="mt-1.5 h-4 rounded bg-violet-500/50 text-center text-[7px] leading-4 text-white">
-              Submit
+              {t.submit}
             </div>
           </div>
         </>
@@ -114,7 +141,7 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
             <div className="mt-1 h-5 rounded bg-cyan-400/25" />
           </div>
           <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-cyan-200/80`}>Dokter</div>
+            <div className={`${textSize} text-cyan-200/80`}>{t.doctor}</div>
             <div className="mt-1 flex justify-center gap-0.5">
               <span className="h-4 w-4 rounded-full bg-cyan-400/35" />
               <span className="h-4 w-4 rounded-full bg-cyan-400/25" />
@@ -122,9 +149,9 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
           </div>
           <div className="col-span-3 rounded-md border border-cyan-400/20 bg-slate-800/70 p-1.5">
             <div className="flex items-center justify-between">
-              <div className={`${textSize} text-cyan-100`}>Booking Sen, 10:00</div>
+              <div className={`${textSize} text-cyan-100`}>{t.booking}</div>
               <div className="rounded-full bg-cyan-500/45 px-1.5 py-0.5 text-[7px] text-white">
-                Book
+                {t.book}
               </div>
             </div>
           </div>
@@ -149,7 +176,7 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
             <div className="h-7 rounded bg-indigo-500/25" />
             <div className="h-7 rounded bg-indigo-500/20" />
             <div className="h-5 rounded bg-indigo-400/35 text-center text-[6px] leading-5 text-white">
-              Hubungi
+              {t.contact}
             </div>
           </div>
           <div className="col-span-3 flex gap-1">
@@ -179,7 +206,7 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
           </div>
           <div className="col-span-3 rounded-md border border-emerald-400/20 bg-slate-900/80 p-1.5">
             <div className="flex gap-1 border-b border-white/10 pb-1">
-              {["Nama", "Status", "Sumber"].map((h) => (
+              {[t.name, t.status, t.source].map((h) => (
                 <div key={h} className={`flex-1 ${textSize} text-white/50`}>
                   {h}
                 </div>
@@ -212,19 +239,19 @@ function SlugPreviewContent({ slug, featured }: { slug: string; featured?: boole
       return (
         <>
           <div className="col-span-3 rounded-md border border-white/20 bg-slate-800/60 p-2">
-            <div className={`${textSize} font-semibold text-slate-300`}>Overview</div>
+            <div className={`${textSize} font-semibold text-slate-300`}>{t.overview}</div>
             <div className="mt-1 h-3 w-3/4 rounded bg-white/20" />
             <div className="mt-1.5 h-3 w-1/2 rounded bg-white/15" />
             <div className="mt-1.5 h-3 w-5/6 rounded bg-white/10" />
           </div>
           <div className="col-span-2 space-y-1 rounded-md border border-white/15 bg-slate-800/50 p-1.5">
-            <div className={`${textSize} font-medium text-slate-300`}>Fitur</div>
+            <div className={`${textSize} font-medium text-slate-300`}>{t.features}</div>
             <div className="h-2 rounded bg-white/20" />
             <div className="h-2 rounded bg-white/15" />
             <div className="h-2 rounded bg-white/10" />
           </div>
           <div className="rounded-md border border-white/15 bg-slate-800/50 p-1.5">
-            <div className={`${textSize} text-slate-300`}>CTA</div>
+            <div className={`${textSize} text-slate-300`}>{t.cta}</div>
             <div className="mt-1 h-8 rounded bg-white/20" />
           </div>
         </>
@@ -273,7 +300,7 @@ function PortfolioPreview({
         </div>
 
         <div className="mt-2 grid flex-1 grid-cols-3 gap-1.5 content-start">
-          <SlugPreviewContent slug={item.slug} featured={featured} />
+          <SlugPreviewContent slug={item.slug} featured={featured} lang={lang} />
         </div>
 
         <div className="mt-1.5 flex items-center justify-between">
@@ -382,13 +409,33 @@ export function PortfolioCard({
 
       <div className={cn("mt-5 flex flex-wrap gap-3", featured && "mt-6")}>
         <Button
-          href={caseStudyHref}
-          viewTransition
-          variant={isShowcase ? "secondary" : "outline"}
+          href={demoHref}
+          variant={isShowcase ? "secondary" : "primary"}
           size="sm"
           className={
             isShowcase
-              ? "border-white/25 bg-white/15 text-white hover:bg-white/25"
+              ? "border-white/25 bg-white text-brand-navy hover:bg-white/90"
+              : undefined
+          }
+          onClick={() =>
+            trackEvent("demo_open", {
+              slug: item.slug,
+              location: isShowcase ? "home_featured_card" : "portfolio_card",
+              deferred: false,
+            })
+          }
+        >
+          <Sparkles className="h-4 w-4" aria-hidden />
+          {dict.common.cta.openDemo}
+        </Button>
+        <Button
+          href={caseStudyHref}
+          viewTransition
+          variant={isShowcase ? "ghost" : "outline"}
+          size="sm"
+          className={
+            isShowcase
+              ? "border-white/25 bg-white/10 text-white hover:bg-white/20"
               : undefined
           }
           onClick={() =>
@@ -398,23 +445,6 @@ export function PortfolioCard({
           <FileText className="h-4 w-4" aria-hidden />
           {dict.common.cta.viewCaseStudy}
         </Button>
-        {!isShowcase && !compact && (
-          <Button
-            href={demoHref}
-            variant="secondary"
-            size="sm"
-            onClick={() =>
-              trackEvent("demo_open", {
-                slug: item.slug,
-                location: "portfolio_card",
-                deferred: false,
-              })
-            }
-          >
-            <Sparkles className="h-4 w-4" aria-hidden />
-            {dict.common.cta.openDemo}
-          </Button>
-        )}
       </div>
 
       {!compact && !isShowcase && (

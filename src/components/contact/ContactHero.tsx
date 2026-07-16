@@ -1,13 +1,13 @@
 import { MessageCircle, Send } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/Button";
-import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, getContactConsultationMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
 
 export function ContactHero() {
   const { lang, dict } = useLang();
-  const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
+  const whatsappUrl = buildWhatsAppUrl(getContactConsultationMessage(lang));
 
   return (
     <PageHero

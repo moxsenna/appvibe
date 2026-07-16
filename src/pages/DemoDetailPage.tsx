@@ -23,6 +23,7 @@ import type { DemoItem } from "@/types/demo";
 
 const STATUS_TONE: Record<DemoItem["status"], string> = {
   live: "bg-green-50 text-semantic-success border-green-100",
+  template: "bg-violet-50 text-brand-violet border-violet-100",
   "coming-soon": "bg-amber-50 text-semantic-warning border-amber-100",
   draft: "bg-slate-100 text-brand-muted border-slate-200",
 };

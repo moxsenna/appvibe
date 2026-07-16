@@ -36,6 +36,8 @@ const staticPairs = [
   ["/kontak", "/en/contact", "monthly", "0.8"],
   ["/blog", "/en/blog", "weekly", "0.85"],
   ["/uses", "/en/uses", "monthly", "0.6"],
+  ["/privacy", "/en/privacy", "yearly", "0.3"],
+  ["/terms", "/en/terms", "yearly", "0.3"],
 ];
 
 const portfolioSlugs = [

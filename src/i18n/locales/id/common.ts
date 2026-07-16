@@ -27,7 +27,7 @@ export const commonId = {
     about: "Tentang",
     blog: "Blog",
     contact: "Kontak",
-    uses: "/uses",
+    uses: "Stack & Tools",
   },
 
   cta: {
@@ -136,13 +136,15 @@ export const commonId = {
   },
 
   demoStatus: {
-    live: "Live",
+    live: "Interaktif",
+    template: "Template",
     "coming-soon": "Segera",
     draft: "Draft",
   },
 
   demoStatusDetail: {
-    live: "Demo siap dibuka",
+    live: "Demo React penuh — form, filter, interaksi aktif",
+    template: "Landing page template (HTML) — referensi visual niche",
     "coming-soon": "Shell siap — konten penuh segera",
     draft: "Sedang disiapkan",
   },
@@ -195,9 +197,15 @@ export const commonId = {
     default:
       "Halo AppVibe, saya tertarik membuat website/app untuk bisnis saya. Bisa bantu konsultasi?",
     portfolio:
-      'Halo AppVibe, saya tertarik membuat website seperti demo {{title}}. Bisa dibantu?',
+      "Halo AppVibe, saya tertarik membuat website seperti demo {{title}}. Bisa dibantu?",
     demo:
       'Halo AppVibe, saya baru mencoba demo "{{title}}" dan ingin diskusi lebih detail untuk bisnis saya. Bisa dilihat lebih lanjut?',
+    service:
+      "Halo AppVibe, saya tertarik layanan {{title}}. Bisa bantu konsultasi scope dan estimasi?",
+    home:
+      "Halo AppVibe, saya dari bisnis UMKM/jasa dan ingin diskusi website atau landing page. Bisa konsultasi?",
+    contact:
+      "Halo AppVibe, saya ingin mulai konsultasi gratis 30–45 menit. Bisa dijadwalkan?",
   },
 } satisfies CommonShape;
 
@@ -238,7 +246,14 @@ type CommonShape = {
     leadSource: Record<string, string>;
     leadPriority: Record<string, string>;
   };
-  whatsapp: { default: string; portfolio: string; demo: string };
+  whatsapp: {
+    default: string;
+    portfolio: string;
+    demo: string;
+    service: string;
+    home: string;
+    contact: string;
+  };
 };
 
 export type CommonDict = CommonShape;

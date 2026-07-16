@@ -2,13 +2,13 @@ import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { routes } from "@/lib/routes";
-import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, getHomeConsultationMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
 
 export function FinalCTASection() {
   const { lang, dict } = useLang();
-  const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
+  const whatsappUrl = buildWhatsAppUrl(getHomeConsultationMessage(lang));
   const copy = dict.pages.home.finalCta;
 
   return (
