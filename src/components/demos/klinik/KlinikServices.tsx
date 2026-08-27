@@ -89,6 +89,13 @@ export function KlinikServices({ onSelect }: KlinikServicesProps) {
   );
 }
 
+const serviceImages: Record<string, string> = {
+  "konsultasi-kulit": "/images/demo/klinik-service-facial.webp",
+  facial: "/images/demo/natura-skin-clinic-product.webp",
+  konseling: "/images/demo/klinik-service-wellness.webp",
+  dental: "/images/demo/klinik-service-dental.webp",
+};
+
 function FeaturedServiceCard({
   service,
   lang,
@@ -100,23 +107,43 @@ function FeaturedServiceCard({
   badgeLabel: string;
   onClick: () => void;
 }) {
+  const img = serviceImages[service.id];
+
   return (
     <button
       type="button"
       onClick={onClick}
-      className="group flex flex-col rounded-2xl border-2 border-teal-200 bg-white p-5 text-left shadow-card transition-all hover:border-teal-400 hover:shadow-card-hover"
+      className="group flex flex-col overflow-hidden rounded-2xl border-2 border-teal-200 bg-white text-left shadow-card transition-all hover:border-teal-400 hover:shadow-card-hover"
     >
-      <Badge className="mb-3 w-fit border border-teal-200 bg-teal-50 text-teal-700">
-        {badgeLabel}
-      </Badge>
-      <h3 className="text-base font-semibold text-brand-navy group-hover:text-teal-700">
-        {pick(service.name, lang)}
-      </h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-muted">
-        {pick(service.description, lang)}
-      </p>
-      <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand-muted">
-        {pick(service.duration, lang)}
+      {img && (
+        <div className="relative h-32 w-full overflow-hidden bg-slate-900">
+          <img
+            src={img}
+            alt={pick(service.name, lang)}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+          <Badge className="absolute bottom-2.5 left-3 border border-teal-200/50 bg-teal-900/80 text-white backdrop-blur-md">
+            {badgeLabel}
+          </Badge>
+        </div>
+      )}
+      <div className="flex flex-1 flex-col p-5">
+        {!img && (
+          <Badge className="mb-3 w-fit border border-teal-200 bg-teal-50 text-teal-700">
+            {badgeLabel}
+          </Badge>
+        )}
+        <h3 className="text-base font-semibold text-brand-navy group-hover:text-teal-700">
+          {pick(service.name, lang)}
+        </h3>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-muted">
+          {pick(service.description, lang)}
+        </p>
+        <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-brand-muted">
+          {pick(service.duration, lang)}
+        </div>
       </div>
     </button>
   );

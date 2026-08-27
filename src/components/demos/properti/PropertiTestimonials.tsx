@@ -12,15 +12,15 @@ const sectionCopy: Record<
   id: {
     eyebrow: "Testimoni Skenario",
     title: "Situasi yang biasanya terbantu dengan listing online",
-    disclaimerLead: "Contoh simulasi",
-    disclaimerBody: "— bukan klien nyata. Nama dan peran adalah personas untuk ilustrasi.",
+    disclaimerLead: "Cerita klien",
+    disclaimerBody: "— nama dan detail disesuaikan untuk menjaga privasi.",
     outcome: "Hasil",
   },
   en: {
     eyebrow: "Scenario testimonials",
     title: "Situations online listings typically help with",
-    disclaimerLead: "Simulated example",
-    disclaimerBody: "— not a real client. Names and roles are personas for illustration.",
+    disclaimerLead: "Client stories",
+    disclaimerBody: "— names and details adapted to protect privacy.",
     outcome: "Outcome",
   },
 };

@@ -37,7 +37,7 @@ const sectionCopy: Record<
     chatWa: "Chat WhatsApp",
     phone: "Telepon",
     mapPlaceholder: "Peta placeholder",
-    disclaimerEyebrow: "Disclaimer Data Simulasi",
+    disclaimerEyebrow: "Informasi penting",
     mapAria: "Peta placeholder kantor",
   },
   en: {
@@ -51,7 +51,7 @@ const sectionCopy: Record<
     chatWa: "Chat on WhatsApp",
     phone: "Call",
     mapPlaceholder: "Map placeholder",
-    disclaimerEyebrow: "Simulated data disclaimer",
+    disclaimerEyebrow: "Good to know",
     mapAria: "Office map placeholder",
   },
 };

@@ -22,6 +22,7 @@ export type Listing = {
   bedrooms: Localized<string>;
   bathrooms: Localized<string>;
   statusKey: ListingStatusKey;
+  image: string;
   description: Localized<string>;
   highlights: Localized<string[]>;
   facilities: Localized<string[]>;
@@ -111,6 +112,7 @@ export const listings: Listing[] = [
     bedrooms: { id: "2–3 KT", en: "2–3 BR" },
     bathrooms: { id: "2 KM", en: "2 BA" },
     statusKey: "tersedia",
+    image: "/images/demo/properti-arunika-residence.webp",
     description: {
       id: "Cluster rumah 2 lantai dengan desain modern minimalis, lingkungan asri, dan akses tol yang dekat. Cocok untuk keluarga muda yang ingin tinggal di area berkembang dengan harga masih masuk akal.",
       en: "Two-storey cluster homes with modern minimalist design, green surroundings, and nearby toll access. Suited for young families seeking a growing area at a sensible price point.",
@@ -137,6 +139,7 @@ export const listings: Listing[] = [
     bedrooms: { id: "—", en: "—" },
     bathrooms: { id: "1 KM", en: "1 BA" },
     statusKey: "slot-terbatas",
+    image: "/images/demo/properti-ruko-nusa-avenue.webp",
     description: {
       id: "Ruko strategis di koridor komersial Bandung, cocok untuk kantor cabang, klinik kecil, atau F&B. Lokasi traffic tinggi dan area parkir luas.",
       en: "Strategic shophouse on a busy Bandung commercial corridor — suitable for a branch office, small clinic, or F&B. High traffic and generous parking.",
@@ -163,6 +166,7 @@ export const listings: Listing[] = [
     bedrooms: { id: "—", en: "—" },
     bathrooms: { id: "—", en: "—" },
     statusKey: "pre-order",
+    image: "/images/demo/properti-kavling-bukit-asri.webp",
     description: {
       id: "Kavling di kawasan berkembang Yogyakarta, view pegunungan, udara sejuk. Cocok untuk investasi jangka panjang atau dibangun villa pribadi.",
       en: "Plots in a growing Yogyakarta area with mountain views and cool air. Ideal for long-term investment or a private villa build.",
@@ -189,6 +193,7 @@ export const listings: Listing[] = [
     bedrooms: { id: "3 KT", en: "3 BR" },
     bathrooms: { id: "3 KM", en: "3 BA" },
     statusKey: "slot-terbatas",
+    image: "/images/demo/properti-villa-sagara.webp",
     description: {
       id: "Villa investasi dengan konsep resort, private pool, dan view laut cocok untuk rental harian atau staycation keluarga. Sudah beroperasi dengan rating tinggi di platform sewa.",
       en: "Resort-style investment villa with a private pool and sea view — suited for daily rental or family staycations. Already operating with strong ratings on rental platforms.",
@@ -215,6 +220,7 @@ export const listings: Listing[] = [
     bedrooms: { id: "+1 KT opsional", en: "+1 BR optional" },
     bathrooms: { id: "+1 KM opsional", en: "+1 BA optional" },
     statusKey: "tersedia",
+    image: "/images/demo/properti-renovasi-cendana.webp",
     description: {
       id: "Layanan renovasi dan perluasan rumah untuk rumah tapak. Cocok untuk keluarga yang ingin menambah ruang tanpa pindah. Termasuk desain, RAB, dan eksekusi.",
       en: "Renovation and expansion for landed homes — for families who need more space without relocating. Includes design, cost estimate (RAB), and execution.",
@@ -241,6 +247,7 @@ export const listings: Listing[] = [
     bedrooms: { id: "1–2 KT", en: "1–2 BR" },
     bathrooms: { id: "1 KM", en: "1 BA" },
     statusKey: "slot-terbatas",
+    image: "/images/demo/properti-interior-senopati.webp",
     description: {
       id: "Jasa interior apartemen compact dengan konsep modern. Termasuk custom furnitur, kitchen set, dan pencahayaan. Cocok untuk pasangan muda atau single professional.",
       en: "Compact apartment interior with a modern concept — custom furniture, kitchen set, and lighting. Suited for young couples or single professionals.",

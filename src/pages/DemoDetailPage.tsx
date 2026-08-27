@@ -116,7 +116,6 @@ export function DemoDetailPage() {
             </div>
             <p className="text-xs font-semibold uppercase tracking-widest text-white/80">
               {brandName}
-              {copy.heroSimulationSuffix}
             </p>
             <h1
               className="mt-3 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"

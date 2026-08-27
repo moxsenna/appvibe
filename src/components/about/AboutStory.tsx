@@ -19,7 +19,19 @@ export function AboutStory() {
           <h2 className="mt-2 text-2xl font-bold text-brand-navy sm:text-3xl">
             Kenapa AppVibe Studio
           </h2>
-          <div className="mt-6 space-y-5 text-base leading-relaxed text-brand-muted sm:text-lg">
+          <div className="mt-8 overflow-hidden rounded-2xl border border-brand-border bg-slate-100 shadow-card">
+            <img
+              src="/images/about/studio.webp"
+              alt="AppVibe Studio Workspace - Desain dan Pengembangan Solusi Digital"
+              loading="lazy"
+              className="h-64 w-full object-cover sm:h-80"
+            />
+            <div className="p-4 bg-slate-50 border-t border-brand-border text-center text-xs text-brand-muted">
+              AppVibe Studio — Berfokus pada perancangan antarmuka, arsitektur web konversi tinggi, dan alur inquiry digital terpadu.
+            </div>
+          </div>
+
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-brand-muted sm:text-lg">
             {paragraphs.map((p, idx) => (
               <p key={idx}>{p}</p>
             ))}

@@ -109,16 +109,26 @@ export function CompanyProfilePortfolio() {
               onClick={() => setOpenProject(project)}
               className="group flex flex-col rounded-2xl border border-brand-border bg-white p-6 text-left shadow-card transition-shadow duration-200 hover:shadow-card-hover"
             >
-              <div
-                className="mb-4 h-32 rounded-xl"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(135deg, #1E3A8A 0%, #4C1D95 100%)",
-                }}
-                aria-hidden
-              >
-                <div className="flex h-full items-end p-3">
-                  <Badge className="border border-white/20 bg-white/15 text-white">
+              <div className="relative mb-4 h-36 overflow-hidden rounded-xl bg-slate-900">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title[lang]}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div
+                    className="h-full w-full"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(135deg, #1E3A8A 0%, #4C1D95 100%)",
+                    }}
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                <div className="absolute bottom-3 left-3">
+                  <Badge className="border border-white/20 bg-black/40 text-white backdrop-blur-md">
                     {projectCategoryLabels[project.category][lang]}
                   </Badge>
                 </div>

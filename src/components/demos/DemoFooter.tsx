@@ -25,14 +25,14 @@ export function DemoFooter({ brand }: DemoFooterProps) {
     lang === "id"
       ? `← Kembali ke ${APP_NAME}`
       : `← Back to ${APP_NAME}`;
-  const disclaimer =
+  const byline =
     lang === "id"
-      ? `Demo simulasi — dibuat oleh ${APP_NAME} untuk showcase portfolio.`
-      : `Simulated demo — built by ${APP_NAME} to showcase the portfolio.`;
+      ? `Website oleh ${APP_NAME}`
+      : `Website by ${APP_NAME}`;
   const copyright =
     lang === "id"
-      ? `© ${year} ${brand.name} (demo simulasi). Konten, brand, dan data bersifat contoh — bukan klien nyata.`
-      : `© ${year} ${brand.name} (simulated demo). Content, brand, and data are illustrative — not a real client.`;
+      ? `© ${year} ${brand.name}. All rights reserved.`
+      : `© ${year} ${brand.name}. All rights reserved.`;
 
   return (
     <footer className="relative border-t border-slate-800 bg-brand-navy text-slate-300">
@@ -63,7 +63,7 @@ export function DemoFooter({ brand }: DemoFooterProps) {
             >
               {backLabel}
             </Link>
-            <p className="text-xs text-slate-500">{disclaimer}</p>
+            <p className="text-xs text-slate-500">{byline}</p>
           </div>
         </div>
 

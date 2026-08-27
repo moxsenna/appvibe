@@ -69,7 +69,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Company Profile", "WhatsApp CTA", "Form Inquiry", "Mobile Friendly"],
       en: ["Company Profile", "WhatsApp CTA", "Inquiry Form", "Mobile Friendly"],
     },
-    thumbnail: "/images/portfolio/company-profile.png",
+    thumbnail: "/images/portfolio/company-profile.webp",
     demoPath: "/demo/company-profile",
     caseStudyPath: "/portfolio/company-profile",
     mockDataHighlights: {
@@ -173,7 +173,7 @@ export const portfolioItems: PortfolioItem[] = [
       en: "Webinars, online classes, bootcamps, seminars, and promotional events",
     },
     summary: {
-      id: "Landing page konversi untuk SkillPath Studio (simulasi) — webinar gratis orientasi skill digital. Satu halaman fokus: jelaskan manfaat acara, kumpulkan data peserta, lalu arahkan ke WhatsApp untuk konfirmasi dan follow-up admin.",
+      id: "Landing page konversi untuk SkillPath Studio — webinar gratis orientasi skill digital. Satu halaman fokus: jelaskan manfaat acara, kumpulkan data peserta, lalu arahkan ke WhatsApp untuk konfirmasi dan follow-up admin.",
       en: "A conversion-focused landing page for SkillPath Studio (simulated)—a free digital-skills orientation webinar. Designed with a single focus: highlight event value, collect registrant data, and redirect to WhatsApp for seamless confirmation and follow-up.",
     },
     businessProblem: {
@@ -213,7 +213,7 @@ export const portfolioItems: PortfolioItem[] = [
         "Form pendaftaran 6 field dengan 3 wajib (nama, WhatsApp, status)",
         "FAQ 8 pertanyaan transparan seputar event dan program lanjutan",
         "Sticky CTA mobile dan tombol Tanya via WhatsApp",
-        "Alur sukses submit → redirect WhatsApp konfirmasi (simulasi demo)",
+        "Alur sukses submit → redirect WhatsApp konfirmasi",
       ],
       en: [
         "SkillPath Studio campaign hero section with a benefit-driven headline and schedule info",
@@ -232,16 +232,16 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Landing Page", "Webinar", "Lead Capture", "Campaign", "WhatsApp CTA"],
       en: ["Landing Page", "Webinar Landing", "Lead Capture", "Campaign", "WhatsApp CTA"],
     },
-    thumbnail: "/images/portfolio/webinar-landing.png",
+    thumbnail: "/images/portfolio/webinar-landing.webp",
     demoPath: "/demo/webinar-landing",
     caseStudyPath: "/portfolio/webinar-landing",
     mockDataHighlights: {
       id: [
-        "Campaign simulasi: SkillPath Studio — Webinar Gratis: Dari Bingung Arah Menjadi Lebih Siap Memilih Skill Digital",
+        "Campaign: SkillPath Studio — Webinar Gratis: Dari Bingung Arah Menjadi Lebih Siap Memilih Skill Digital",
         "Jadwal: Sabtu, 21 Juni 2026 · 19.00–21.00 WIB · Zoom (link via WhatsApp)",
-        "Kuota simulasi 150 peserta · traffic dari Meta Ads, IG bio, WA broadcast, komunitas",
+        "Kuota 150 peserta · traffic dari Meta Ads, IG bio, WA broadcast, komunitas",
         "5 problem + 6 benefit + agenda 5 sesi (90 menit materi + 30 menit Q&A)",
-        "2 speaker simulasi: Alif Pratama & Dina Kartika, S.Pd. · 4 bonus PDF/Sheet",
+        "2 speaker: Alif Pratama & Dina Kartika, S.Pd. · 4 bonus PDF/Sheet",
         "Form 6 field: nama, WhatsApp, email, domisili, status/profesi, pertanyaan/tujuan",
         "8 FAQ + 5 pesan follow-up WhatsApp (konfirmasi, reminder, soft-sell opsional)",
         "Alur konversi: visitor → form → WhatsApp → admin lead → reminder → event",
@@ -264,7 +264,7 @@ export const portfolioItems: PortfolioItem[] = [
         "Scroll problem & benefit — resonansi masalah dan nilai yang dibawa pulang",
         "Cek agenda dan profil pembicara untuk membangun kepercayaan",
         "Isi form pendaftaran (nama, WhatsApp, status wajib)",
-        "Submit → halaman sukses → diarahkan ke WhatsApp konfirmasi (simulasi)",
+        "Submit → halaman sukses → diarahkan ke WhatsApp konfirmasi",
         "Admin menerima lead terstruktur untuk reminder H-1 dan follow-up setelah acara",
       ],
       en: [
@@ -302,7 +302,7 @@ export const portfolioItems: PortfolioItem[] = [
       {
         title: { id: "Speaker & Bonus", en: "Speakers & Bonuses" },
         description: {
-          id: "Dua pembicara simulasi dengan expertise chips dan 4 bonus pendaftar untuk meningkatkan minat mendaftar.",
+          id: "Dua pembicara dengan expertise chips dan 4 bonus pendaftar untuk meningkatkan minat mendaftar.",
           en: "Profiles of two simulated speakers with expertise chips, paired with four bonus offers to drive conversions.",
         },
       },
@@ -372,7 +372,7 @@ export const portfolioItems: PortfolioItem[] = [
         "4 profil tenaga ahli: dr. Anindita, drg. Raka, Bidan Meisya, Nadia Putri (Psikolog)",
         "Jadwal praktik 7 hari dengan highlight hari ini dan CTA booking per hari",
         "Cara booking 4 langkah + 5 template pesan WhatsApp terstruktur",
-        "6 FAQ aman, 4 testimoni skenario berlabel simulasi, lokasi Bandung + kontak dummy",
+        "6 FAQ aman, 4 testimoni skenario, lokasi Bandung + kontak",
       ],
       en: [
         "Split hero layout featuring an appointment card, doctor status chips, and a primary booking CTA",
@@ -389,7 +389,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Klinik", "Booking CTA", "Layanan", "Mobile Friendly"],
       en: ["Clinic", "Booking CTA", "Service Details", "Mobile Friendly"],
     },
-    thumbnail: "/images/portfolio/klinik.png",
+    thumbnail: "/images/portfolio/klinik.webp",
     demoPath: "/demo/klinik",
     caseStudyPath: "/portfolio/klinik",
     mockDataHighlights: {
@@ -401,7 +401,7 @@ export const portfolioItems: PortfolioItem[] = [
         "6 FAQ niche, 4 testimoni skenario berlabel, 5 template WhatsApp booking, alamat Jl. Anggrek Sehat No. 18 Bandung",
       ],
       en: [
-        "NaturaCare Clinic dummy brand—tagline: Guided Care That Feels Calmer and Personal",
+        "Klinik NaturaCare — tagline: Guided Care That Feels Calmer and Personal",
         "Eight services: Skin & Skincare Consultation, Facial Therapy, Dental Check-Up, Scaling, Midwifery, Psychology, Physiotherapy, and Wellness",
         "Four practitioner profiles: dr. Anindita Prameswari, drg. Raka Mahendra, Midwife Meisya Rahmani, and Nadia Putri M.Psi.",
         "Seven-day Mon–Sun schedule displaying active services and available practitioners per shift",
@@ -472,7 +472,7 @@ export const portfolioItems: PortfolioItem[] = [
       {
         title: { id: "Lokasi & Kontak", en: "Location & Contact" },
         description: {
-          id: "Kartu kontak Jl. Anggrek Sehat Bandung, WhatsApp admin, jam operasional, map placeholder, dan CTA final — dengan disclaimer data simulasi AppVibe.",
+          id: "Kartu kontak Jl. Anggrek Sehat Bandung, WhatsApp admin, jam operasional, map placeholder, dan CTA final — dengan disclaimer data contoh AppVibe.",
           en: "Interactive contact card with dummy address, operating hours, and booking CTAs, labeled with AppVibe simulation disclaimers.",
         },
       },
@@ -545,7 +545,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Properti", "Listing", "Galeri", "Survei Lokasi"],
       en: ["Property Listing", "Real Estate Grid", "Project Gallery", "Site Visit Booking"],
     },
-    thumbnail: "/images/portfolio/properti.png",
+    thumbnail: "/images/portfolio/properti.webp",
     demoPath: "/demo/properti",
     caseStudyPath: "/portfolio/properti",
     mockDataHighlights: {
@@ -554,7 +554,7 @@ export const portfolioItems: PortfolioItem[] = [
         "4 kategori: rumah siap huni, kavling & lahan, renovasi & bangun rumah, interior & komersial",
         "Filter tipe, lokasi (Jabodetabek & sekitarnya), kisaran harga, dan status (tersedia, pre-order, slot terbatas)",
         "Spesifikasi per unit: luas tanah/bangunan, kamar, kisaran harga, fasilitas sekitar, dan cocok untuk siapa",
-        "Galeri visual per proyek — eksterior, interior, area sekitar, before/after renovasi (label contoh/simulasi)",
+        "Galeri visual per proyek — eksterior, interior, area sekitar, before/after renovasi (label contoh)",
         "5 FAQ niche: survei lokasi, harga dapat berubah, konsultasi tanpa komitmen, jasa desain & bangun, penyesuaian spesifikasi",
         "Demo bisnis GrahaNusa Properti & Karya — studio properti + konstruksi untuk hunian, ruko, renovasi, dan interior",
       ],
@@ -611,7 +611,7 @@ export const portfolioItems: PortfolioItem[] = [
       {
         title: { id: "Galeri Visual", en: "Visual Galleries" },
         description: {
-          id: "Galeri terstruktur per proyek — fasad, interior, taman, before/after renovasi — dengan label contoh/simulasi agar ekspektasi calon pembeli tetap realistis.",
+          id: "Galeri terstruktur per proyek — fasad, interior, taman, before/after renovasi — dengan label contoh agar ekspektasi calon pembeli tetap realistis.",
           en: "Structured galleries showing exteriors, interiors, and before/after renovations, clearly labeled with simulation markers.",
         },
       },
@@ -691,13 +691,13 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["CRM Lite", "Lead Management", "Sales Dashboard", "Follow-up Tracking", "Mock Data"],
       en: ["CRM Lite", "Lead Management", "Sales Dashboard", "Follow-up Tracking", "Analytics Dashboard"],
     },
-    thumbnail: "/images/portfolio/lead-dashboard.png",
+    thumbnail: "/images/portfolio/lead-dashboard.webp",
     demoPath: "/demo/lead-dashboard",
     caseStudyPath: "/portfolio/lead-dashboard",
     mockDataHighlights: {
       id: [
         "Produk demo: LeadFlow CRM Lite — Kelola lead dari banyak channel tanpa tercecer",
-        "50 leads simulasi dengan variasi klinik, properti, kursus, agency, UMKM, event organizer",
+        "50 leads dengan variasi klinik, properti, kursus, agency, UMKM, event organizer",
         "12 lead detail lengkap: Ayu Kartika, Bima Santoso, Citra Maharani, Dewi Lestari, dan 8 lainnya",
         "4 tim dummy: Rina Wulandari (RW), Bayu Pratama (BP), Sari Melati (SM), Dimas Arya (DA)",
         "5 status + 5 source + 3 level prioritas (Tinggi, Sedang, Rendah)",
@@ -738,7 +738,7 @@ export const portfolioItems: PortfolioItem[] = [
       {
         title: { id: "Ringkasan Lead", en: "Lead Summary Dashboard" },
         description: {
-          id: "Overview dengan stat cards, mini chart source, recent leads, dan follow-up reminders — owner langsung paham kondisi lead hari ini. Data simulasi untuk demo portfolio.",
+          id: "Overview dengan stat cards, mini chart source, recent leads, dan follow-up reminders — owner langsung paham kondisi lead hari ini. Data contoh untuk demo portfolio.",
           en: "High-level overview displaying stat cards, lead source charts, recent activity, and follow-up reminders for quick business health checks.",
         },
       },
@@ -855,7 +855,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Klinik", "Kecantikan", "WhatsApp CTA", "Landing Page"],
       en: ["Clinic", "Beauty", "WhatsApp CTA", "Landing Page"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/natura-skin-clinic.webp",
     demoPath: "/demo/natura-skin-clinic",
     caseStudyPath: "/portfolio/natura-skin-clinic",
     mockDataHighlights: {
@@ -967,7 +967,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Properti", "Developer", "Residences", "Landing Page"],
       en: ["Property", "Developer", "Residences", "Landing Page"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/nusa-grove-residences.webp",
     demoPath: "/demo/nusa-grove-residences",
     caseStudyPath: "/portfolio/nusa-grove-residences",
     mockDataHighlights: {
@@ -1083,7 +1083,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Webinar", "Edukasi", "Workshop", "Lead Capture"],
       en: ["Webinar", "Education", "Workshop", "Lead Capture"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/kelaspintar-ai.webp",
     demoPath: "/demo/kelaspintar-ai",
     caseStudyPath: "/portfolio/kelaspintar-ai",
     mockDataHighlights: {
@@ -1199,7 +1199,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["SaaS", "CRM", "B2B", "Product Landing"],
       en: ["SaaS", "CRM", "B2B", "Product Landing"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/leadloop-crm.webp",
     demoPath: "/demo/leadloop-crm",
     caseStudyPath: "/portfolio/leadloop-crm",
     mockDataHighlights: {
@@ -1313,7 +1313,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Hospitality", "Villa", "Booking", "Landing Page"],
       en: ["Hospitality", "Villa", "Booking", "Landing Page"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/banyu-villa.webp",
     demoPath: "/demo/banyu-villa",
     caseStudyPath: "/portfolio/banyu-villa",
     mockDataHighlights: {
@@ -1429,7 +1429,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Interior", "Desain", "Renovasi", "Landing Page"],
       en: ["Interior", "Design", "Renovation", "Landing Page"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/ruangtumbuh-interior.webp",
     demoPath: "/demo/ruangtumbuh-interior",
     caseStudyPath: "/portfolio/ruangtumbuh-interior",
     mockDataHighlights: {
@@ -1545,7 +1545,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Wedding", "Pernikahan", "Event", "Landing Page"],
       en: ["Wedding", "Events", "Landing Page", "Booking"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/lunaria-wedding.webp",
     demoPath: "/demo/lunaria-wedding",
     caseStudyPath: "/portfolio/lunaria-wedding",
     mockDataHighlights: {
@@ -1661,7 +1661,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["B2B", "Printing", "Manufaktur", "Landing Page"],
       en: ["B2B", "Printing", "Manufacturing", "Landing Page"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/satria-print.webp",
     demoPath: "/demo/satria-print",
     caseStudyPath: "/portfolio/satria-print",
     mockDataHighlights: {
@@ -1707,7 +1707,7 @@ export const portfolioItems: PortfolioItem[] = [
       {
         title: { id: "Layanan Cetak", en: "Print Services" },
         description: {
-          id: "4 jenis layanan: digital, offset, large format, packaging — memperjaskan opsi cetak.",
+          id: "4 jenis layanan: digital, offset, large format, packaging — memperjelas opsi cetak.",
           en: "Four service types: digital, offset, large format, packaging — clarifying printing options.",
         },
       },
@@ -1777,7 +1777,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["F&B", "Coffee Shop", "Kafe", "Landing Page"],
       en: ["F&B", "Coffee Shop", "Café", "Landing Page"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/kopi-pagi.webp",
     demoPath: "/demo/kopi-pagi",
     caseStudyPath: "/portfolio/kopi-pagi",
     mockDataHighlights: {
@@ -1863,7 +1863,7 @@ export const portfolioItems: PortfolioItem[] = [
     },
     businessValue: {
       id: [
-        "Layanan hukum memperjaskan spesialisasi firma",
+        "Layanan hukum memperjelas spesialisasi firma",
         "Profil tim membangun trust dan kredibilitas",
         "Studi kasus menunjukkan pengalaman dan hasil",
         "CTA konsultasi mempersingkat jalur dari kunjungan ke engagement",
@@ -1893,7 +1893,7 @@ export const portfolioItems: PortfolioItem[] = [
       id: ["Legal", "Firma Hukum", "Konsultan", "Landing Page"],
       en: ["Legal", "Law Firm", "Consultant", "Landing Page"],
     },
-    thumbnail: "",
+    thumbnail: "/images/portfolio/mitra-legal.webp",
     demoPath: "/demo/mitra-legal",
     caseStudyPath: "/portfolio/mitra-legal",
     mockDataHighlights: {
@@ -1939,7 +1939,7 @@ export const portfolioItems: PortfolioItem[] = [
       {
         title: { id: "Layanan Hukum", en: "Legal Services" },
         description: {
-          id: "4 layanan: korporasi, perdata, pidana, bisnis — memperjaskan spesialisasi firma.",
+          id: "4 layanan: korporasi, perdata, pidana, bisnis — memperjelas spesialisasi firma.",
           en: "Four services: corporate, civil, criminal, business — clarifying the firm's specialization.",
         },
       },

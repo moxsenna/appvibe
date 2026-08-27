@@ -1,4 +1,4 @@
-import { same } from "@/i18n/localized";
+﻿import { same } from "@/i18n/localized";
 import type { DemoItem } from "@/types/demo";
 
 export const demoItems: DemoItem[] = [
@@ -49,7 +49,7 @@ export const demoItems: DemoItem[] = [
       en: "Webinars, online classes, bootcamps, seminars, promotional campaigns",
     },
     summary: {
-      id: "Demo landing page SkillPath Studio (simulasi) — hero campaign, problem & benefit, agenda 5 sesi, 2 speaker, 4 bonus, dan form pendaftaran 6 field.",
+      id: "Demo landing page SkillPath Studio — hero campaign, problem & benefit, agenda 5 sesi, 2 speaker, 4 bonus, dan form pendaftaran 6 field.",
       en: "SkillPath Studio landing page demo (simulation) — campaign hero, problem and benefits, five-session agenda, two speakers, four bonuses, and a six-field registration form.",
     },
     tagline: {
@@ -148,7 +148,7 @@ export const demoItems: DemoItem[] = [
       en: "SMBs, clinics, education, property, agencies, consultants, sales teams",
     },
     summary: {
-      id: "Demo LeadFlow CRM Lite — 50 lead simulasi, pipeline kanban 5 status, detail drawer, source tracking, dan laporan ringkas untuk owner dan tim sales.",
+      id: "Demo LeadFlow CRM Lite — 50 lead aktif, pipeline kanban 5 status, detail drawer, source tracking, dan laporan ringkas untuk owner dan tim sales.",
       en: "LeadFlow CRM Lite demo — fifty simulated leads, five-status kanban pipeline, detail drawer, source tracking, and concise reports for owners and sales teams.",
     },
     tagline: {

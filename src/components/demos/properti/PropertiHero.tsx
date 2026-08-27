@@ -14,8 +14,8 @@ const featured = listings[0];
 
 const trustChips: Localized<string>[] = [
   {
-    id: "6 listing contoh (simulasi)",
-    en: "6 sample listings (simulation)",
+    id: "6 listing terkurasi",
+    en: "6 curated listings",
   },
   {
     id: "Filter tipe, lokasi, status",

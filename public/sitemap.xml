@@ -149,6 +149,38 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://appvibe.web.id/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://appvibe.web.id/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://appvibe.web.id/terms</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/terms" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://appvibe.web.id/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/terms" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://appvibe.web.id/portfolio/company-profile</loc>
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/portfolio/company-profile" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/portfolio/company-profile" />
@@ -313,7 +345,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/social-proof-landing" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/social-proof-landing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/social-proof-landing" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -322,7 +354,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/social-proof-landing" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/social-proof-landing" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/social-proof-landing" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -331,7 +363,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/measure-conversion" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/measure-conversion" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/measure-conversion" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -340,7 +372,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/measure-conversion" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/measure-conversion" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/measure-conversion" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -349,7 +381,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/whatsapp-copy-mistakes" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -358,7 +390,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/whatsapp-copy-mistakes" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/whatsapp-copy-mistakes" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -367,7 +399,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/landing-vs-homepage" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/landing-vs-homepage" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/landing-vs-homepage" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -376,7 +408,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/landing-vs-homepage" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/landing-vs-homepage" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/landing-vs-homepage" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -385,7 +417,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/landing-page-whatsapp-cta" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -394,7 +426,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" />
     <xhtml:link rel="alternate" hreflang="en" href="https://appvibe.web.id/en/blog/landing-page-whatsapp-cta" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://appvibe.web.id/blog/landing-page-whatsapp-cta" />
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

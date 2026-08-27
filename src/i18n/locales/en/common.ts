@@ -112,11 +112,11 @@ export const commonEn: CommonDict = {
   },
 
   demo: {
-    bannerEyebrow: "Simulated demo",
-    bannerTitle: "This is a demo, not a live client website",
+    bannerEyebrow: "Built by AppVibe Studio",
+    bannerTitle: "A sample website your business could have",
     bannerCta: "Discuss a similar project",
     bannerNote:
-      "The brand content on this page is a simulation AppVibe built to show how a website like this could work for you.",
+      "Want something similar for your business? Talk to our team about your needs.",
     realBackendTitle: "Live backend mode",
     realBackendBody:
       "Data is read directly from Supabase Postgres with Row Level Security. Status changes are saved to the showcase tenant — visible to every visitor.",

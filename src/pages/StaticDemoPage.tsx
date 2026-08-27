@@ -56,34 +56,29 @@ export function StaticDemoPage() {
   const banner =
     lang === "id"
       ? {
-          eyebrow: "Template landing · simulasi",
-          body: "Ini referensi visual HTML — bukan website klien sungguhan. Demo React interaktif ada di etalase Demo.",
+          body: "Desain & pengembangan oleh AppVibe Studio",
           back: "Semua demo",
           consult: "Diskusi proyek serupa",
         }
       : {
-          eyebrow: "Landing template · simulation",
-          body: "HTML visual reference — not a live client site. Full React interactive demos live in the Demo catalogue.",
+          body: "Design & development by AppVibe Studio",
           back: "All demos",
           consult: "Discuss a similar project",
         };
 
   return (
     <div className="fixed inset-0 z-[60] flex flex-col bg-white">
-      <div className="shrink-0 border-b border-amber-200/80 bg-amber-50 px-3 py-2.5 text-amber-950 sm:px-4">
+      <div className="shrink-0 border-b border-slate-800 bg-brand-navy px-3 py-2.5 text-slate-300 sm:px-4">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2">
-          <div className="min-w-0 flex-1">
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-amber-800">
-              {banner.eyebrow}
-            </p>
-            <p className="truncate text-xs text-amber-900/90 sm:text-sm">
-              {banner.body}
-            </p>
-          </div>
+          <p className="min-w-0 flex-1 truncate text-xs sm:text-sm">
+            <span className="font-semibold text-white">AppVibe Studio</span>
+            {" — "}
+            {banner.body}
+          </p>
           <div className="flex flex-wrap items-center gap-2">
             <Link
               to={routes.demo(lang)}
-              className="inline-flex items-center gap-1 rounded-lg border border-amber-300 bg-white px-2.5 py-1.5 text-xs font-semibold text-amber-950 hover:bg-amber-100"
+              className="inline-flex items-center gap-1 rounded-lg border border-slate-600 px-2.5 py-1.5 text-xs font-semibold text-slate-200 hover:bg-slate-800"
             >
               <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
               {banner.back}

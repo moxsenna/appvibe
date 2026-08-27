@@ -28,12 +28,21 @@ export function WebinarLandingSpeakers() {
           {speakers.map((speaker) => (
             <Card key={speaker.name} hover className="overflow-hidden p-0">
               <div
-                className={`h-28 bg-gradient-to-br sm:h-32 ${speaker.gradient}`}
+                className={`relative h-28 bg-gradient-to-br sm:h-32 ${speaker.gradient}`}
               >
                 <div className="flex h-full items-end p-5">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/40 bg-white/15 text-base font-bold text-white backdrop-blur-sm sm:h-14 sm:w-14">
-                    {speaker.initials}
-                  </span>
+                  {speaker.image ? (
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      loading="lazy"
+                      className="h-16 w-16 rounded-2xl border-2 border-white object-cover shadow-md sm:h-20 sm:w-20"
+                    />
+                  ) : (
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/40 bg-white/15 text-base font-bold text-white backdrop-blur-sm sm:h-14 sm:w-14">
+                      {speaker.initials}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="p-5 sm:p-6">

@@ -37,11 +37,20 @@ export function KlinikExperts() {
             );
             return (
               <Card key={expert.id} hover className="overflow-hidden p-0">
-                <div className={`h-24 bg-gradient-to-br ${expert.gradient}`}>
+                <div className={`relative h-28 bg-gradient-to-br ${expert.gradient}`}>
                   <div className="flex h-full items-end p-4">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/40 bg-white/15 text-sm font-bold text-white backdrop-blur-sm">
-                      {expert.initials}
-                    </span>
+                    {expert.image ? (
+                      <img
+                        src={expert.image}
+                        alt={pick(expert.name, lang)}
+                        loading="lazy"
+                        className="h-16 w-16 rounded-2xl border-2 border-white object-cover shadow-md"
+                      />
+                    ) : (
+                      <span className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-white/40 bg-white/15 text-base font-bold text-white backdrop-blur-sm">
+                        {expert.initials}
+                      </span>
+                    )}
                   </div>
                 </div>
                 <div className="p-5 sm:p-6">

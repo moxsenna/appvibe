@@ -20,8 +20,8 @@ export const brand = {
     en: "Pricing, availability, and specifications may change without notice. Final terms are confirmed during a site visit or meeting with the GrahaNusa team.",
   } satisfies Localized<string>,
   demoDisclaimer: {
-    id: "GrahaNusa Properti & Karya adalah brand dummy untuk demo portfolio AppVibe Studio. Semua listing, harga, dan visual bersifat simulasi.",
-    en: "GrahaNusa Properti & Karya is a fictitious brand for the AppVibe Studio portfolio demo. All listings, prices, and visuals are simulated.",
+    id: "Harga, ketersediaan, dan spesifikasi dapat berubah tanpa pemberitahuan. Konfirmasi final dilakukan saat survei lokasi atau pertemuan dengan tim kami.",
+    en: "Pricing, availability, and specifications may change without notice. Final terms are confirmed during a site visit or meeting with our team.",
   } satisfies Localized<string>,
   mainCta: {
     id: "Jadwalkan Survei Lokasi",

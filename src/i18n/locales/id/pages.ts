@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Indonesian page-level copy — heroes, section eyebrows, inline content not
  * driven by data files. Anything that lives only in a JSX page belongs here.
  */
@@ -198,12 +198,12 @@ export const pagesId = {
       eyebrow: "Demo & template",
       title: "Coba dulu, lihat sendiri bagaimana hasil akhirnya terasa",
       description:
-        "5 demo React interaktif (klik, form, filter) plus 10 landing template HTML per niche. Semua simulasi — bukan website klien sungguhan. Cocok? Lanjut diskusi.",
+        "5 demo React interaktif (klik, form, filter) plus 10 landing template HTML per niche — dari company profile sampai CRM. Cocok? Lanjut diskusi.",
     },
     meta: {
       title: "Demo Interaktif Website & App | AppVibe Studio",
       description:
-        "5 demo React interaktif + 10 landing template: Company Profile, Webinar, Klinik, Properti, CRM Lite, dan niche lain. Simulasi portfolio AppVibe.",
+        "5 demo React interaktif + 10 landing template: Company Profile, Webinar, Klinik, Properti, CRM Lite, dan niche lain. Contoh kerja AppVibe Studio.",
     },
     filter: {
       searchPlaceholder: "Cari demo berdasarkan judul, niche, atau tag...",
@@ -213,7 +213,7 @@ export const pagesId = {
   },
 
   demoDetail: {
-    heroSimulationSuffix: " — Demo Simulasi",
+    heroSimulationSuffix: " — oleh AppVibe Studio",
     viewCaseStudy: "Lihat Studi Kasus",
     openFullDemo: "Buka Demo Penuh",
     aboutEyebrow: "Tentang demo ini",

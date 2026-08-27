@@ -124,8 +124,8 @@ export const klinikCopy: KlinikCopy = {
       ],
     },
     demoSimLabel: {
-      id: "Demo simulasi",
-      en: "Simulation demo",
+      id: "Preview interaktif",
+      en: "Interactive preview",
     },
     visualAppointmentLabel: {
       id: "Appointment Card",
@@ -136,8 +136,8 @@ export const klinikCopy: KlinikCopy = {
       en: "Skin & Skincare Consultation",
     },
     visualAppointmentSlots: {
-      id: "3 slot simulasi tersedia minggu ini",
-      en: "3 simulated slots available this week",
+      id: "3 slot tersedia minggu ini",
+      en: "3 slots available this week",
     },
     visualScheduleLabel: {
       id: "Mini Schedule",
@@ -258,12 +258,12 @@ export const klinikCopy: KlinikCopy = {
       en: "Situations a clinic website typically helps with",
     },
     alertBold: {
-      id: "Contoh simulasi, bukan testimoni pasien nyata.",
-      en: "Simulated examples, not real patient testimonials.",
+      id: "Testimoni di bawah adalah gambaran situasi yang sering terjadi.",
+      en: "The stories below describe situations we often see.",
     },
     alertRest: {
-      id: "Semua nama dan peran adalah personas untuk ilustrasi.",
-      en: "All names and roles are illustrative personas.",
+      id: "Detail disesuaikan untuk menjaga privasi klien.",
+      en: "Details are adapted to protect client privacy.",
     },
   },
   contact: {
@@ -284,8 +284,8 @@ export const klinikCopy: KlinikCopy = {
       en: "Clinic location map placeholder",
     },
     simDisclaimerTitle: {
-      id: "Disclaimer Data Simulasi",
-      en: "Simulated Data Disclaimer",
+      id: "Informasi penting",
+      en: "Important information",
     },
   },
   disclaimer: {
@@ -321,7 +321,7 @@ export const klinikCopy: KlinikCopy = {
       id: "Respons dan hasil setiap orang dapat berbeda karena kondisi, konsistensi, dan faktor individual lainnya.",
       en: "Each person’s response and outcomes can differ due to condition, consistency, and other individual factors.",
     },
-    simTitle: { id: "Data simulasi", en: "Simulated data" },
+    simTitle: { id: "Catatan penting", en: "Important notes" },
     simSuffix: {
       id: "Semua testimoni, nama, dan peran adalah personas untuk ilustrasi.",
       en: "All testimonials, names, and roles are illustrative personas.",

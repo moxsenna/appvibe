@@ -101,8 +101,8 @@ export type WebinarLandingCopy = {
 export const webinarLandingCopy: WebinarLandingCopy = {
   hero: {
     quotaFootnote: {
-      id: "Kuota {remaining} slot simulasi tersisa · Pendaftaran ditutup saat kuota terpenuhi",
-      en: "{remaining} simulated seats left · Registration closes when quota is full",
+      id: "Kuota {remaining} slot tersisa · Pendaftaran ditutup saat kuota terpenuhi",
+      en: "{remaining} seats left · Registration closes when quota is full",
     },
     whatsappInquiry: {
       id: "Halo SkillPath Studio, saya ingin bertanya tentang webinar orientasi skill digital.",

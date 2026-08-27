@@ -27,6 +27,7 @@ export type Project = {
   id: string;
   title: Localized<string>;
   category: ProjectCategoryKey;
+  image: string;
   location: Localized<string>;
   year: string;
   summary: Localized<string>;
@@ -45,6 +46,7 @@ export const projects: Project[] = [
       en: "Interior vendor inquiry digitization",
     },
     category: "b2b-vendor",
+    image: "/images/demo/company-project-interior.webp",
     location: { id: "Jakarta", en: "Jakarta" },
     year: "2025",
     summary: {
@@ -76,6 +78,7 @@ export const projects: Project[] = [
       en: "Aesthetic clinic customer service SOPs",
     },
     category: "clinic-service",
+    image: "/images/demo/company-project-clinic.webp",
     location: { id: "Surabaya", en: "Surabaya" },
     year: "2024",
     summary: {
@@ -107,6 +110,7 @@ export const projects: Project[] = [
       en: "Distributor sales monitoring dashboard",
     },
     category: "consultant",
+    image: "/images/demo/company-project-fnb.webp",
     location: { id: "Bandung", en: "Bandung" },
     year: "2025",
     summary: {
@@ -138,6 +142,7 @@ export const projects: Project[] = [
       en: "Renovation booking flow optimization",
     },
     category: "contractor",
+    image: "/images/demo/company-project-contractor.webp",
     location: { id: "Tangerang", en: "Tangerang" },
     year: "2024",
     summary: {
@@ -169,6 +174,7 @@ export const projects: Project[] = [
       en: "Bootcamp lead follow-up system",
     },
     category: "consultant",
+    image: "/images/portfolio/kelaspintar-ai.webp",
     location: { id: "Depok", en: "Depok" },
     year: "2025",
     summary: {
@@ -200,6 +206,7 @@ export const projects: Project[] = [
       en: "Food SMB order process audit",
     },
     category: "b2b-vendor",
+    image: "/images/portfolio/kopi-pagi.webp",
     location: { id: "Bekasi", en: "Bekasi" },
     year: "2024",
     summary: {
@@ -231,6 +238,7 @@ export const projects: Project[] = [
       en: "Legal consulting service structure",
     },
     category: "consultant",
+    image: "/images/demo/company-project-tax.webp",
     location: { id: "Jakarta", en: "Jakarta" },
     year: "2025",
     summary: {
@@ -262,6 +270,7 @@ export const projects: Project[] = [
       en: "Creative agency weekly reporting setup",
     },
     category: "agency",
+    image: "/images/demo/company-project-agency.webp",
     location: { id: "Jakarta", en: "Jakarta" },
     year: "2024",
     summary: {

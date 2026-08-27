@@ -1,5 +1,5 @@
 import { AlertTriangle, ShieldCheck } from "lucide-react";
-import { klinik, klinikCopy } from "@/data/demos/klinik";
+import { klinikCopy } from "@/data/demos/klinik";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { useLang } from "@/i18n/use-lang";
@@ -53,14 +53,6 @@ export function KlinikDisclaimer() {
                     </p>
                     <p className="mt-1.5 text-sm leading-relaxed text-brand-dark">
                       {pick(section.outcomesBody, lang)}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-violet-700">
-                      {pick(section.simTitle, lang)}
-                    </p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-brand-dark">
-                      {pick(klinik.demoDisclaimer, lang)} {pick(section.simSuffix, lang)}
                     </p>
                   </div>
                 </div>

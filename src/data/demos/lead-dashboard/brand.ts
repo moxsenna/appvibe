@@ -1,4 +1,4 @@
-import { same, type Localized } from "@/i18n/localized";
+﻿import { same, type Localized } from "@/i18n/localized";
 
 export type LeadDashboardBrand = {
   name: Localized<string>;
@@ -27,8 +27,8 @@ export const brand: LeadDashboardBrand = {
   adminEmail: "admin@leadflow.example",
   adminPassword: "demo1234",
   disclaimer: {
-    id: "Dashboard LeadFlow CRM Lite pada demo ini adalah produk portofolio simulasi AppVibe Studio. Semua lead, nama, dan angka bersifat contoh — bukan data klien nyata.",
-    en: "The LeadFlow CRM Lite dashboard in this demo is a simulated portfolio product from AppVibe Studio. All leads, names, and figures are illustrative — not real client data.",
+    id: "Semua data pada dashboard ini adalah data contoh untuk keperluan demonstrasi produk.",
+    en: "All data in this dashboard is sample data for product demonstration purposes.",
   },
   whatsappPrefill: {
     id: "Halo AppVibe, saya tertarik dengan LeadFlow CRM Lite untuk bisnis saya.",

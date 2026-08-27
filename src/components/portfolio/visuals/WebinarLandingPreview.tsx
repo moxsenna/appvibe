@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+﻿import { cn } from "@/lib/cn";
 
 export type WebinarLandingPreviewVariant =
   | "hero"
@@ -18,7 +18,7 @@ const CAMPAIGN = {
   event: "Dari Bingung Arah Menjadi Lebih Siap Memilih Skill Digital",
   date: "Sabtu, 21 Jun 2026 · 19.00 WIB",
   platform: "Zoom · link via WhatsApp",
-  quota: "87 slot simulasi tersisa",
+  quota: "87 slot tersisa",
 };
 
 const PROBLEMS = [
@@ -93,7 +93,7 @@ function CampaignNavbar() {
           {CAMPAIGN.organizer}
         </span>
         <span className="rounded bg-white/15 px-1 py-0.5 text-[5px] text-violet-100">
-          simulasi
+          contoh
         </span>
       </div>
       <span className="rounded bg-white/20 px-1.5 py-0.5 text-[5px] font-semibold text-white">
@@ -268,7 +268,7 @@ function SpeakerBonusPreview() {
         </div>
       </div>
       <p className="text-[7px] text-brand-muted">
-        Materi bonus dikirim setelah webinar · format PDF/Sheet (simulasi)
+        Materi bonus dikirim setelah webinar · format PDF/Sheet
       </p>
     </div>
   );
@@ -281,7 +281,7 @@ function RegistrationPreview() {
         Form Pendaftaran
       </p>
       <p className="mt-0.5 text-[8px] text-brand-muted">
-        Setelah submit → konfirmasi WhatsApp (simulasi)
+        Setelah submit → konfirmasi WhatsApp
       </p>
       <div className="mt-2 flex-1 space-y-1">
         {FORM_FIELDS.map((field) => (
@@ -327,7 +327,7 @@ function FaqStickyPreview() {
         <p className="pt-1 text-[7px] text-brand-muted">+ 5 pertanyaan lain</p>
         <div className="rounded-md border border-dashed border-brand-border bg-slate-50 px-2 py-1">
           <p className="text-[7px] text-brand-muted">
-            Testimoni skenario berlabel simulasi — bukan klien nyata
+            Testimoni skenario — detail disesuaikan untuk privasi
           </p>
         </div>
       </div>

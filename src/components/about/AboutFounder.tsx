@@ -70,18 +70,15 @@ export function AboutFounder() {
               <p className="mt-1 text-sm font-medium text-brand-muted">{t.role}</p>
               <div className="mt-6">
                 <div className="flex items-center gap-3">
-                  {/*
-                    Photo slot: drop a real headshot at /images/about/founder.jpg
-                    and swap this block for <img src=... />. Initials keep the
-                    page honest until a photo is ready — better than a stock face.
-                  */}
-                  <span
-                    className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-cta-gradient text-xl font-bold text-white shadow-md ring-4 ring-white"
-                    role="img"
-                    aria-label={t.photoAlt}
-                  >
-                    BS
-                  </span>
+                  <img
+                    src="/images/about/founder.webp"
+                    alt="Bima Putra Sena - Founder & Principal AppVibe"
+                    className="h-20 w-20 shrink-0 rounded-2xl object-cover shadow-md ring-4 ring-white"
+                    onError={(e) => {
+                      // Graceful fallback if image fails
+                      (e.currentTarget as HTMLElement).style.display = 'none';
+                    }}
+                  />
                   <div>
                     <p className="text-sm font-semibold text-brand-navy">
                       {t.involved}

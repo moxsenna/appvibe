@@ -63,15 +63,25 @@ export function CompanyProfilePortfolioModal({
         aria-hidden
       />
       <div className="relative z-10 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl">
-        <div
-          className="h-32 sm:h-40"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, #0F172A 0%, #1E3A8A 45%, #4C1D95 100%)",
-          }}
-        >
-          <div className="flex h-full items-end p-5 sm:p-6">
-            <Badge className="border border-white/20 bg-white/15 text-white">
+        <div className="relative h-44 overflow-hidden bg-slate-950 sm:h-52">
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={project.title[lang]}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <div
+              className="h-full w-full"
+              style={{
+                backgroundImage:
+                  "linear-gradient(135deg, #0F172A 0%, #1E3A8A 45%, #4C1D95 100%)",
+              }}
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent" />
+          <div className="absolute bottom-4 left-5 sm:bottom-5 sm:left-6">
+            <Badge className="border border-white/20 bg-black/40 text-white backdrop-blur-md">
               {projectCategoryLabels[project.category][lang]}
             </Badge>
           </div>

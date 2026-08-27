@@ -323,8 +323,8 @@ function ListView({
         </table>
         {leads.length > 25 && (
           <p className="border-t border-brand-border bg-slate-50 px-4 py-3 text-center text-xs text-brand-muted">
-            Menampilkan 25 lead pertama · Total {initialLeads.length} lead
-            simulasi. Klik baris untuk lihat detail.
+            Menampilkan 25 lead pertama dari total {initialLeads.length} lead.
+            Klik baris untuk lihat detail.
           </p>
         )}
         {leads.length === 0 && (

@@ -1,11 +1,10 @@
-import { FileText, MessageCircle, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { useViewTransitionState } from "react-router-dom";
 import type { PortfolioItem } from "@/types/portfolio";
 import { Card } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { routes } from "@/lib/routes";
-import { getPortfolioMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 import { useLang } from "@/i18n/use-lang";
@@ -17,249 +16,38 @@ type PortfolioCardProps = {
   variant?: "default" | "showcase";
 };
 
-const previewAccents: Record<string, string> = {
-  "company-profile": "from-blue-700/60 via-blue-600/30 to-slate-950",
-  "webinar-landing": "from-violet-700/60 via-violet-600/30 to-slate-950",
-  klinik: "from-cyan-700/60 via-cyan-600/30 to-slate-950",
-  properti: "from-indigo-700/60 via-indigo-600/30 to-slate-950",
-  "lead-dashboard": "from-emerald-700/60 via-emerald-600/30 to-slate-950",
-  "natura-skin-clinic": "from-teal-700/60 via-teal-600/30 to-slate-950",
-  "nusa-grove-residences": "from-indigo-700/60 via-indigo-600/30 to-slate-950",
-  "kelaspintar-ai": "from-violet-700/60 via-violet-600/30 to-slate-950",
-  "leadloop-crm": "from-blue-700/60 via-blue-600/30 to-slate-950",
-  "banyu-villa": "from-green-700/60 via-green-600/30 to-slate-950",
-  "ruangtumbuh-interior": "from-orange-700/60 via-orange-600/30 to-slate-950",
-  "lunaria-wedding": "from-pink-700/60 via-pink-600/30 to-slate-950",
-  "satria-print": "from-red-700/60 via-red-600/30 to-slate-950",
-  "kopi-pagi": "from-amber-700/60 via-amber-600/30 to-slate-950",
-  "mitra-legal": "from-blue-800/60 via-blue-700/30 to-slate-950",
+/**
+ * Cover per project: real photo from public/images/portfolio/<slug>.webp
+ * with a typographic monogram as graceful fallback.
+ */
+const covers: Record<string, { bg: string; accent: string; brand: string }> = {
+  "company-profile": { bg: "#24344d", accent: "#8fb3dd", brand: "Arunika Konsultan" },
+  "webinar-landing": { bg: "#3a2f5b", accent: "#b3a4e3", brand: "SkillPath Studio" },
+  klinik: { bg: "#1e4744", accent: "#7fc4bd", brand: "NaturaCare Clinic" },
+  properti: { bg: "#2e3950", accent: "#9db0d6", brand: "GrahaNusa Properti" },
+  "lead-dashboard": { bg: "#1f4034", accent: "#86c3a8", brand: "LeadFlow CRM" },
+  "natura-skin-clinic": { bg: "#55333f", accent: "#dfa3b4", brand: "Natura Skin Clinic" },
+  "nusa-grove-residences": { bg: "#3c4a36", accent: "#a8bd93", brand: "Nusa Grove Residences" },
+  "kelaspintar-ai": { bg: "#45315e", accent: "#bb9fd9", brand: "KelasPintar AI" },
+  "leadloop-crm": { bg: "#27405e", accent: "#92b4dc", brand: "LeadLoop CRM" },
+  "banyu-villa": { bg: "#2f5747", accent: "#8fc7ad", brand: "Banyu Boutique Villa" },
+  "ruangtumbuh-interior": { bg: "#59452f", accent: "#d3b489", brand: "RuangTumbuh Studio" },
+  "lunaria-wedding": { bg: "#5c3a4d", accent: "#dda6bf", brand: "Lunaria Wedding" },
+  "satria-print": { bg: "#5d352e", accent: "#dba38f", brand: "Satria Print" },
+  "kopi-pagi": { bg: "#5a442b", accent: "#d9bc8a", brand: "Kopi Pagi" },
+  "mitra-legal": { bg: "#2b3450", accent: "#9aa8d4", brand: "Mitra Legal" },
 };
 
-function SlugPreviewContent({
-  slug,
-  featured,
-  lang,
-}: {
-  slug: string;
-  featured?: boolean;
-  lang: "id" | "en";
-}) {
-  const textSize = featured ? "text-[9px]" : "text-[8px]";
-  const t = {
-    services: lang === "id" ? "Layanan" : "Services",
-    inquiry: "Inquiry",
-    freeWebinar: lang === "id" ? "Webinar Gratis" : "Free Webinar",
-    agenda: "Agenda",
-    speaker: "Speaker",
-    register: lang === "id" ? "Daftar Sekarang" : "Register Now",
-    submit: "Submit",
-    doctor: lang === "id" ? "Dokter" : "Doctor",
-    booking: lang === "id" ? "Booking Sen, 10:00" : "Mon booking, 10:00",
-    book: "Book",
-    contact: lang === "id" ? "Hubungi" : "Contact",
-    name: lang === "id" ? "Nama" : "Name",
-    status: "Status",
-    source: lang === "id" ? "Sumber" : "Source",
-    overview: "Overview",
-    features: lang === "id" ? "Fitur" : "Features",
-    cta: "CTA",
-  };
-
-  switch (slug) {
-    case "company-profile":
-      return (
-        <>
-          <div className="col-span-3 rounded-md border border-blue-400/25 bg-blue-950/50 p-2">
-            <div className={`${textSize} font-semibold text-blue-200`}>Hero</div>
-            <div className="mt-1 h-2 w-2/3 rounded bg-blue-300/50" />
-            <div className="mt-1.5 h-5 rounded bg-blue-500/35" />
-          </div>
-          <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-blue-200/80`}>{t.services}</div>
-            <div className="mt-1 h-4 rounded bg-blue-400/30" />
-          </div>
-          <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-blue-200/80`}>{t.services}</div>
-            <div className="mt-1 h-4 rounded bg-blue-400/25" />
-          </div>
-          <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-blue-200/80`}>{t.services}</div>
-            <div className="mt-1 h-4 rounded bg-blue-400/20" />
-          </div>
-          <div className="col-span-2 flex gap-1">
-            {[1, 2].map((n) => (
-              <div key={n} className="flex-1 rounded border border-white/10 bg-slate-800/70 p-1">
-                <div className="h-6 rounded bg-blue-500/25" />
-                <div className="mt-1 h-1.5 rounded bg-white/20" />
-              </div>
-            ))}
-          </div>
-          <div className="flex items-end">
-            <div className="w-full rounded-md bg-blue-500/50 py-1.5 text-center text-[7px] font-bold text-white">
-              {t.inquiry}
-            </div>
-          </div>
-        </>
-      );
-    case "webinar-landing":
-      return (
-        <>
-          <div className="col-span-3 rounded-md border border-violet-400/30 bg-violet-950/50 p-2">
-            <div className={`${textSize} font-bold text-violet-200`}>{t.freeWebinar}</div>
-            <div className="mt-1 h-2 w-1/2 rounded bg-violet-300/40" />
-          </div>
-          <div className="col-span-2 space-y-1 rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} font-medium text-violet-200/90`}>{t.agenda}</div>
-            <div className="h-1.5 rounded bg-white/25" />
-            <div className="h-1.5 w-4/5 rounded bg-white/20" />
-            <div className="h-1.5 w-3/5 rounded bg-white/15" />
-          </div>
-          <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-violet-200/80`}>{t.speaker}</div>
-            <div className="mx-auto mt-1 h-6 w-6 rounded-full bg-violet-400/40" />
-            <div className="mt-1 h-1 rounded bg-white/20" />
-          </div>
-          <div className="col-span-3 rounded-md border border-violet-400/20 bg-violet-900/40 p-1.5">
-            <div className={`${textSize} text-violet-100`}>{t.register}</div>
-            <div className="mt-1 h-2 rounded bg-white/20" />
-            <div className="mt-1 h-2 rounded bg-white/15" />
-            <div className="mt-1.5 h-4 rounded bg-violet-500/50 text-center text-[7px] leading-4 text-white">
-              {t.submit}
-            </div>
-          </div>
-        </>
-      );
-    case "klinik":
-      return (
-        <>
-          <div className="rounded-md border border-cyan-400/25 bg-cyan-950/40 p-1.5">
-            <div className={`${textSize} text-cyan-200`}>Facial</div>
-            <div className="mt-1 h-5 rounded bg-cyan-400/30" />
-          </div>
-          <div className="rounded-md border border-cyan-400/25 bg-cyan-950/40 p-1.5">
-            <div className={`${textSize} text-cyan-200`}>Dental</div>
-            <div className="mt-1 h-5 rounded bg-cyan-400/25" />
-          </div>
-          <div className="rounded-md border border-white/15 bg-slate-800/80 p-1.5">
-            <div className={`${textSize} text-cyan-200/80`}>{t.doctor}</div>
-            <div className="mt-1 flex justify-center gap-0.5">
-              <span className="h-4 w-4 rounded-full bg-cyan-400/35" />
-              <span className="h-4 w-4 rounded-full bg-cyan-400/25" />
-            </div>
-          </div>
-          <div className="col-span-3 rounded-md border border-cyan-400/20 bg-slate-800/70 p-1.5">
-            <div className="flex items-center justify-between">
-              <div className={`${textSize} text-cyan-100`}>{t.booking}</div>
-              <div className="rounded-full bg-cyan-500/45 px-1.5 py-0.5 text-[7px] text-white">
-                {t.book}
-              </div>
-            </div>
-          </div>
-        </>
-      );
-    case "properti":
-      return (
-        <>
-          <div className="col-span-2 rounded-md border border-indigo-400/25 bg-indigo-950/40 p-1.5">
-            <div className="h-12 rounded bg-indigo-500/35" />
-            <div className="mt-1 h-1.5 w-3/4 rounded bg-white/30" />
-            <div className="mt-0.5 flex gap-1">
-              <span className="rounded bg-indigo-400/30 px-1 text-[6px] text-indigo-100">
-                3KT
-              </span>
-              <span className="rounded bg-white/15 px-1 text-[6px] text-white/70">
-                120m²
-              </span>
-            </div>
-          </div>
-          <div className="space-y-1">
-            <div className="h-7 rounded bg-indigo-500/25" />
-            <div className="h-7 rounded bg-indigo-500/20" />
-            <div className="h-5 rounded bg-indigo-400/35 text-center text-[6px] leading-5 text-white">
-              {t.contact}
-            </div>
-          </div>
-          <div className="col-span-3 flex gap-1">
-            {[1, 2, 3, 4].map((n) => (
-              <div key={n} className="h-7 flex-1 rounded bg-indigo-400/20" />
-            ))}
-          </div>
-        </>
-      );
-    case "lead-dashboard":
-      return (
-        <>
-          <div className="col-span-3 grid grid-cols-3 gap-1">
-            {[
-              { label: "24 Leads", color: "bg-emerald-500/40" },
-              { label: "8 Hot", color: "bg-amber-500/35" },
-              { label: "5 Closed", color: "bg-blue-500/35" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded border border-white/15 bg-slate-800/80 p-1"
-              >
-                <div className={`${textSize} text-emerald-200/80`}>{stat.label}</div>
-                <div className={`mt-0.5 h-3 rounded ${stat.color}`} />
-              </div>
-            ))}
-          </div>
-          <div className="col-span-3 rounded-md border border-emerald-400/20 bg-slate-900/80 p-1.5">
-            <div className="flex gap-1 border-b border-white/10 pb-1">
-              {[t.name, t.status, t.source].map((h) => (
-                <div key={h} className={`flex-1 ${textSize} text-white/50`}>
-                  {h}
-                </div>
-              ))}
-            </div>
-            {[
-              { status: "bg-emerald-500/40", label: "New" },
-              { status: "bg-amber-500/40", label: "Hot" },
-              { status: "bg-blue-500/35", label: "Done" },
-            ].map((row, i) => (
-              <div key={i} className="mt-0.5 flex items-center gap-1">
-                <div className="h-1.5 flex-1 rounded bg-white/20" />
-                <div
-                  className={`w-8 rounded px-0.5 text-center text-[6px] text-white ${row.status}`}
-                >
-                  {row.label}
-                </div>
-                <div className="h-1.5 w-8 rounded bg-white/10" />
-              </div>
-            ))}
-          </div>
-          <div className="col-span-3 flex h-2 gap-0.5 overflow-hidden rounded-full bg-slate-800">
-            <div className="w-[40%] bg-emerald-500/50" />
-            <div className="w-[35%] bg-amber-500/40" />
-            <div className="w-[25%] bg-blue-500/35" />
-          </div>
-        </>
-      );
-    default:
-      return (
-        <>
-          <div className="col-span-3 rounded-md border border-white/20 bg-slate-800/60 p-2">
-            <div className={`${textSize} font-semibold text-slate-300`}>{t.overview}</div>
-            <div className="mt-1 h-3 w-3/4 rounded bg-white/20" />
-            <div className="mt-1.5 h-3 w-1/2 rounded bg-white/15" />
-            <div className="mt-1.5 h-3 w-5/6 rounded bg-white/10" />
-          </div>
-          <div className="col-span-2 space-y-1 rounded-md border border-white/15 bg-slate-800/50 p-1.5">
-            <div className={`${textSize} font-medium text-slate-300`}>{t.features}</div>
-            <div className="h-2 rounded bg-white/20" />
-            <div className="h-2 rounded bg-white/15" />
-            <div className="h-2 rounded bg-white/10" />
-          </div>
-          <div className="rounded-md border border-white/15 bg-slate-800/50 p-1.5">
-            <div className={`${textSize} text-slate-300`}>{t.cta}</div>
-            <div className="mt-1 h-8 rounded bg-white/20" />
-          </div>
-        </>
-      );
-  }
+function initialsOf(brand: string): string {
+  return brand
+    .split(/\s+/)
+    .filter((w) => /[A-Za-z]/.test(w[0] ?? ""))
+    .slice(0, 2)
+    .map((w) => w[0].toUpperCase())
+    .join("");
 }
 
-function PortfolioPreview({
+function ProjectCover({
   item,
   showcase,
   featured,
@@ -271,48 +59,81 @@ function PortfolioPreview({
   vtCoverName?: string;
 }) {
   const { lang } = useLang();
-  const accent = previewAccents[item.slug] ?? "from-blue-700/60 via-blue-600/30 to-slate-950";
+  // Swap the placeholder file for a real photo anytime — same path.
+  const [imgOk, setImgOk] = useState(true);
+  const cover =
+    covers[item.slug] ?? { bg: "#24344d", accent: "#8fb3dd", brand: item.slug };
+  const initials = initialsOf(cover.brand);
 
   return (
     <div
       className={cn(
-        "relative mb-4 flex items-stretch overflow-hidden rounded-xl",
-        featured ? "aspect-[16/9] min-h-[220px]" : "aspect-[16/10] min-h-[140px]",
-        showcase
-          ? "border border-white/20 bg-slate-950 shadow-xl ring-1 ring-white/10"
-          : "bg-gradient-to-br from-brand-light to-blue-50",
+        "relative mb-5 flex flex-col justify-between overflow-hidden rounded-xl",
+        featured ? "aspect-[16/9] min-h-[220px] p-6 sm:p-7" : "aspect-[16/10] min-h-[150px] p-5",
+        showcase ? "ring-1 ring-white/15" : undefined,
       )}
-      style={vtCoverName ? { viewTransitionName: vtCoverName } : undefined}
+      style={{
+        backgroundColor: cover.bg,
+        ...(vtCoverName ? { viewTransitionName: vtCoverName } : undefined),
+      }}
     >
-      <div
-        className={cn(
-          "absolute inset-0 bg-gradient-to-br",
-          showcase ? accent : "from-brand-blue/5 to-brand-violet/5",
-        )}
-      />
-
-      <div className="relative flex w-full flex-col p-2.5 sm:p-3">
-        <div className="flex items-center gap-1">
-          <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
-          <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-          <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-          <span className="ml-1.5 h-1.5 flex-1 max-w-[80px] rounded-full bg-white/20" />
+      {!imgOk && (
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div
+            className="absolute inset-0 opacity-[0.07]"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+            }}
+          />
+          <div className="absolute inset-0 flex flex-col justify-between p-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">
+              {item.categoryLabel[lang]}
+            </p>
+            <div>
+              <p
+                className={cn(
+                  "font-serif leading-none text-white/95",
+                  featured ? "text-6xl sm:text-7xl" : "text-5xl",
+                )}
+              >
+                {initials}
+              </p>
+              <div
+                className="mt-3 h-0.5 w-10"
+                style={{ backgroundColor: cover.accent }}
+              />
+              <p className="mt-2.5 text-sm font-medium text-white/85">
+                {cover.brand}
+              </p>
+            </div>
+          </div>
         </div>
+      )}
 
-        <div className="mt-2 grid flex-1 grid-cols-3 gap-1.5 content-start">
-          <SlugPreviewContent slug={item.slug} featured={featured} lang={lang} />
-        </div>
+      {imgOk && (
+        <>
+          <img
+            src={`/images/portfolio/${item.slug}.webp`}
+            alt={item.title[lang]}
+            loading="lazy"
+            onError={() => setImgOk(false)}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-black/25" />
+        </>
+      )}
 
-        <div className="mt-1.5 flex items-center justify-between">
-          <Badge
-            variant="violet"
-            className={showcase ? "border-white/15 bg-white/15 text-cyan-100" : undefined}
-          >
-            {item.categoryLabel[lang]}
-          </Badge>
+      <p className="relative z-10 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/80 [text-shadow:0_1px_8px_rgba(0,0,0,.45)]">
+        {item.categoryLabel[lang]}
+      </p>
 
-        </div>
-      </div>
+      {imgOk && (
+        <p className="relative z-10 text-sm font-medium text-white/95 [text-shadow:0_1px_8px_rgba(0,0,0,.55)]">
+          {cover.brand}
+        </p>
+      )}
     </div>
   );
 }
@@ -327,7 +148,6 @@ export function PortfolioCard({
   const isShowcase = variant === "showcase";
   const caseStudyHref = routes.portfolioDetail(lang, item.slug);
   const demoHref = routes.demoDetail(lang, item.slug);
-  const whatsappUrl = buildWhatsAppUrl(getPortfolioMessage(lang, item.title[lang]));
 
   // Only attach view-transition-name when this card's link is the active
   // navigation target — prevents name collisions across multiple grid items.
@@ -341,7 +161,7 @@ export function PortfolioCard({
 
   const cardContent = (
     <>
-      <PortfolioPreview
+      <ProjectCover
         item={item}
         showcase={isShowcase}
         featured={featured}
@@ -349,13 +169,12 @@ export function PortfolioCard({
       />
 
       {!isShowcase && (
-        <Badge variant="blue" className="mb-3 w-fit">
+        <p className="text-xs font-semibold uppercase tracking-wide text-brand-muted">
           {item.niche[lang]}
-        </Badge>
+        </p>
       )}
-
       {isShowcase && (
-        <p className="mb-2 text-xs font-medium uppercase tracking-wide text-brand-cyan">
+        <p className="mb-1 text-xs font-medium uppercase tracking-wide text-white/60">
           {item.niche[lang]}
         </p>
       )}
@@ -363,7 +182,7 @@ export function PortfolioCard({
       <h3
         className={cn(
           featured ? "text-xl" : "text-lg",
-          "font-semibold",
+          "font-semibold tracking-tight",
           isShowcase ? "text-white" : "text-brand-navy",
         )}
         style={vtTitleName ? { viewTransitionName: vtTitleName } : undefined}
@@ -373,49 +192,50 @@ export function PortfolioCard({
       <p
         className={cn(
           "mt-2 flex-1 text-sm leading-relaxed",
-          isShowcase ? "text-slate-300" : "text-brand-muted",
+          isShowcase ? "text-white/75" : "text-brand-muted",
           featured ? "line-clamp-3" : "line-clamp-2",
         )}
       >
         {item.summary[lang]}
       </p>
 
-      {!compact && item.businessValue[lang][0] && (
+      {!compact && (
         <p
           className={cn(
-            "mt-3 text-xs font-medium",
-            isShowcase ? "text-cyan-300/90" : "text-brand-blue",
+            "mt-3 text-xs",
+            isShowcase ? "text-white/50" : "text-brand-muted/80",
           )}
         >
-          {item.businessValue[lang][0]}
+          {item.tags[lang].slice(0, 3).join(" · ")}
         </p>
       )}
 
-      <div className="mt-3 flex flex-wrap gap-2">
-        {item.tags[lang].slice(0, compact ? 2 : featured ? 4 : 3).map((tag) => (
-          <Badge
-            key={tag}
-            variant="gray"
-            className={
-              isShowcase
-                ? "border border-white/10 bg-white/10 text-slate-200"
-                : undefined
-            }
-          >
-            {tag}
-          </Badge>
-        ))}
-      </div>
-
-      <div className={cn("mt-5 flex flex-wrap gap-3", featured && "mt-6")}>
+      <div className={cn("mt-5 flex flex-wrap items-center gap-x-4 gap-y-2", featured && "mt-6")}>
         <Button
-          href={demoHref}
-          variant={isShowcase ? "secondary" : "primary"}
+          href={caseStudyHref}
+          viewTransition
           size="sm"
+          variant={isShowcase ? "secondary" : "primary"}
           className={
             isShowcase
               ? "border-white/25 bg-white text-brand-navy hover:bg-white/90"
               : undefined
+          }
+          onClick={() =>
+            trackEvent("portfolio_view", { slug: item.slug, type: "card" })
+          }
+        >
+          {dict.common.cta.viewCaseStudy}
+          <ArrowUpRight className="h-4 w-4" aria-hidden />
+        </Button>
+        <Button
+          href={demoHref}
+          variant="ghost"
+          size="sm"
+          className={
+            isShowcase
+              ? "px-0 text-white/70 hover:text-white"
+              : "px-0 text-brand-blue"
           }
           onClick={() =>
             trackEvent("demo_open", {
@@ -425,47 +245,9 @@ export function PortfolioCard({
             })
           }
         >
-          <Sparkles className="h-4 w-4" aria-hidden />
-          {dict.common.cta.openDemo}
-        </Button>
-        <Button
-          href={caseStudyHref}
-          viewTransition
-          variant={isShowcase ? "ghost" : "outline"}
-          size="sm"
-          className={
-            isShowcase
-              ? "border-white/25 bg-white/10 text-white hover:bg-white/20"
-              : undefined
-          }
-          onClick={() =>
-            trackEvent("portfolio_view", { slug: item.slug, type: "card" })
-          }
-        >
-          <FileText className="h-4 w-4" aria-hidden />
-          {dict.common.cta.viewCaseStudy}
+          {dict.common.cta.openDemo} →
         </Button>
       </div>
-
-      {!compact && !isShowcase && (
-        <Button
-          href={whatsappUrl}
-          variant="ghost"
-          size="sm"
-          className="mt-2 justify-start px-0 text-xs"
-          onClick={() =>
-            trackEvent("cta_whatsapp_click", {
-              location: "portfolio_card",
-              portfolio: item.slug,
-            })
-          }
-        >
-          <MessageCircle className="h-3.5 w-3.5" aria-hidden />
-          {lang === "id"
-            ? "Ingin website seperti ini? Konsultasi"
-            : "Want a website like this? Let's talk"}
-        </Button>
-      )}
     </>
   );
 

@@ -3,6 +3,7 @@ import type { Localized } from "@/i18n/localized";
 export type Speaker = {
   initials: string;
   name: string;
+  image: string;
   role: Localized<string>;
   bio: Localized<string>;
   expertise: Localized<string[]>;
@@ -13,6 +14,7 @@ export const speakers: Speaker[] = [
   {
     initials: "AP",
     name: "Alif Pratama",
+    image: "/images/demo/speaker-alif.webp",
     role: {
       id: "Digital Talent Mentor",
       en: "Digital Talent Mentor",
@@ -30,6 +32,7 @@ export const speakers: Speaker[] = [
   {
     initials: "DK",
     name: "Dina Kartika, S.Pd.",
+    image: "/images/demo/speaker-dina.webp",
     role: {
       id: "Learning Coach & Former School Counselor",
       en: "Learning Coach & Former School Counselor",

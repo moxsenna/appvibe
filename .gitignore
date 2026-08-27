@@ -33,3 +33,8 @@ npm-debug.log*
 
 # Local terminal captures
 terminals/
+
+# Audit screenshots & temp tool output
+audit-*.png
+.playwright-mcp/
+graphify-out/

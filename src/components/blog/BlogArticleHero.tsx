@@ -93,6 +93,16 @@ export function BlogArticleHero({
           <span className="hidden h-4 w-px bg-brand-border sm:block" aria-hidden />
           <span>AppVibe Studio</span>
         </div>
+
+        {hasCover && (
+          <div className="mt-8 overflow-hidden rounded-2xl border border-brand-border bg-slate-900 shadow-card">
+            <img
+              src={post.ogImage}
+              alt={post.title}
+              className="h-64 w-full object-cover sm:h-80 lg:h-96"
+            />
+          </div>
+        )}
       </Container>
     </header>
   );

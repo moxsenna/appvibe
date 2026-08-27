@@ -52,7 +52,7 @@ const modalCopy: Record<
   }
 > = {
   id: {
-    simVisual: "Contoh visual simulasi",
+    simVisual: "Contoh visual unit",
     closeAria: "Tutup detail listing",
     priceLabel: "Kisaran harga",
     priceNote: "*Dapat berubah saat survei",
@@ -64,15 +64,15 @@ const modalCopy: Record<
     facilities: "Fasilitas sekitar",
     gallery: "Galeri visual",
     galleryNote:
-      "Galeri contoh visual simulasi. Foto asli tersedia saat survei lokasi atau pertemuan dengan tim GrahaNusa.",
-    photoSim: (n) => `Foto ${n} (simulasi)`,
+      "Galeri contoh visual. Foto asli tersedia saat survei lokasi atau pertemuan dengan tim GrahaNusa.",
+    photoSim: (n) => `Foto ${n} (ilustrasi)`,
     askUnit: "Tanya Unit Ini",
     scheduleVisit: "Jadwalkan Survei",
     defaultNeed: "Hunian pribadi / keluarga",
     defaultVisit: "Belum pasti, diskusi dulu",
   },
   en: {
-    simVisual: "Simulated sample visual",
+    simVisual: "Sample unit visual",
     closeAria: "Close listing details",
     priceLabel: "Price range",
     priceNote: "*May change after a site visit",
@@ -149,23 +149,30 @@ export function PropertiListingDetailModal({
         aria-hidden
       />
       <div className="relative z-10 max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl">
-        <div
-          className="relative h-44 sm:h-56"
-          style={{
-            backgroundImage: `linear-gradient(135deg, ${brand.primaryColor} 0%, ${brand.accentColor} 100%)`,
-          }}
-        >
+        <div className="relative h-52 overflow-hidden bg-slate-950 sm:h-64">
+          {listing.image ? (
+            <img
+              src={listing.image}
+              alt={listing.title[lang]}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <div
+              className="h-full w-full"
+              style={{
+                backgroundImage: `linear-gradient(135deg, ${brand.primaryColor} 0%, ${brand.accentColor} 100%)`,
+              }}
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent" />
           <div className="absolute bottom-4 left-5 flex flex-wrap items-center gap-2 sm:left-6">
-            <Badge className="border border-white/20 bg-white/15 text-white">
+            <Badge className="border border-white/20 bg-black/40 text-white backdrop-blur-md">
               {listingTypeLabels[listing.typeKey][lang]}
             </Badge>
-            <Badge className={`border-0 ${statusTone}`}>
+            <Badge className={`border-0 backdrop-blur-md ${statusTone}`}>
               {listingStatusLabels[listing.statusKey][lang]}
             </Badge>
           </div>
-          <span className="absolute right-4 top-4 rounded-full bg-white/15 px-3 py-1 text-[10px] font-medium text-white backdrop-blur-sm">
-            {copy.simVisual}
-          </span>
         </div>
         <button
           type="button"

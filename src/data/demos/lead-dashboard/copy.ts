@@ -159,7 +159,7 @@ export const leadDashboardCopy: LeadDashboardCopy = {
       en: "LeadFlow CRM Lite helps your team track status, assign owners, and estimate pipeline value without scattered spreadsheets.",
     },
     trustChips: [
-      { id: "50 lead simulasi", en: "50 sample leads" },
+      { id: "50 lead aktif", en: "50 active leads" },
       { id: "5 status pipeline", en: "5 pipeline stages" },
       { id: "5 channel source", en: "5 source channels" },
       { id: "4 tim dummy", en: "4 demo team members" },
@@ -173,8 +173,8 @@ export const leadDashboardCopy: LeadDashboardCopy = {
       en: "Ask AppVibe",
     },
     footnote: {
-      id: "Demo interaktif — data simulasi, bukan produksi.",
-      en: "Interactive demo — simulated data, not production.",
+      id: "Dashboard interaktif dengan data contoh.",
+      en: "Interactive dashboard with sample data.",
     },
     stats: {
       totalLeads: { id: "Total Lead", en: "Total leads" },
@@ -182,15 +182,15 @@ export const leadDashboardCopy: LeadDashboardCopy = {
       deals: { id: "Deal", en: "Won deals" },
       pipeline: { id: "Estimasi Pipeline", en: "Estimated pipeline" },
       pipelineFootnote: {
-        id: "*Data simulasi untuk demo portfolio AppVibe",
-        en: "*Simulated data for the AppVibe portfolio demo",
+        id: "*Data contoh untuk keperluan demonstrasi",
+        en: "*Sample data for demonstration",
       },
-      demoBadge: { id: "Demo simulasi", en: "Simulated demo" },
+      demoBadge: { id: "Preview interaktif", en: "Interactive preview" },
     },
   },
   inbox: {
     eyebrow: { id: "Lead Inbox", en: "Lead inbox" },
-    title: titleWithCount("{n} lead simulasi", "{n} sample leads"),
+    title: titleWithCount("{n} lead aktif", "{n} active leads"),
     subtitle: {
       id: "Filter by status, source, dan cari nama bisnis — lalu buka detail untuk ubah status.",
       en: "Filter by status and source, search by business name, then open details to update status.",
@@ -238,7 +238,7 @@ export const leadDashboardCopy: LeadDashboardCopy = {
     fuPending: { id: "FU pending", en: "Follow-up pending" },
     estPipeline: { id: "Est. pipeline", en: "Est. pipeline" },
     footer: countLeads(
-      "Total {n} lead · Data simulasi untuk demo portfolio AppVibe",
+      "Total {n} lead",
       "Total {n} leads · Simulated data for the AppVibe portfolio demo",
     ),
   },
@@ -273,7 +273,7 @@ export const leadDashboardCopy: LeadDashboardCopy = {
       en: "Lead aging",
     },
     agingSubtitle: {
-      id: "Distribusi lead berdasarkan lama di pipeline (simulasi).",
+      id: "Distribusi lead berdasarkan lama di pipeline.",
       en: "Distribution of leads by time in pipeline (simulated).",
     },
     agingCardTitle: {
@@ -297,7 +297,7 @@ export const leadDashboardCopy: LeadDashboardCopy = {
     ctaPrimary: { id: "Tambah Lead Pertama", en: "Add first lead" },
     ctaSecondary: { id: "Pelajari integrasi form", en: "Learn form integration" },
     footnote: {
-      id: "*Tambah lead pertama adalah aksi simulasi di demo ini.",
+      id: "*Aksi tambah lead adalah contoh alur kerja.",
       en: "*Adding the first lead is a simulated action in this demo.",
     },
   },

@@ -77,13 +77,87 @@ const WEBINAR_LANDING_VARIANTS: WebinarLandingPreviewVariant[] = [
   "faq-sticky",
 ];
 
+const DEMO_GALLERY_MAP: Record<string, string[]> = {
+  "natura-skin-clinic": [
+    "/images/demo/natura-skin-clinic-product.webp",
+    "/images/demo/natura-skin-clinic-reception.webp",
+    "/images/demo/natura-skin-clinic-treatment-room.webp",
+  ],
+  "nusa-grove-residences": [
+    "/images/demo/nusa-grove-residences-exterior.webp",
+    "/images/demo/nusa-grove-residences-interior.webp",
+    "/images/demo/nusa-grove-residences-courtyard.webp",
+  ],
+  "kelaspintar-ai": [
+    "/images/portfolio/kelaspintar-ai.webp",
+    "/images/demo/kelaspintar-ai-mentor-1.webp",
+    "/images/demo/kelaspintar-ai-mentor-2.webp",
+  ],
+  "leadloop-crm": [
+    "/images/demo/leadloop-crm-dashboard.webp",
+    "/images/demo/leadloop-crm-d.webp",
+    "/images/demo/leadloop-crm-S.webp",
+  ],
+  "banyu-villa": [
+    "/images/demo/banyu-villa-pool.webp",
+    "/images/demo/banyu-villa-bedroom.webp",
+    "/images/demo/banyu-villa-bathroom.webp",
+  ],
+  "ruangtumbuh-interior": [
+    "/images/demo/ruangtumbuh-interior-casa-aira.webp",
+    "/images/demo/ruangtumbuh-interior-kosama-kitchen.webp",
+    "/images/demo/ruangtumbuh-interior-ruma-rasa.webp",
+    "/images/demo/ruangtumbuh-interior-sora-workspace.webp",
+  ],
+  "lunaria-wedding": [
+    "/images/demo/lunaria-wedding-ceremony.webp",
+    "/images/demo/lunaria-wedding-reception.webp",
+    "/images/demo/lunaria-wedding-detail.webp",
+  ],
+  "satria-print": [
+    "/images/demo/satria-print-factory.webp",
+    "/images/demo/satria-print-apparel.webp",
+    "/images/demo/satria-print-packing.webp",
+  ],
+  "kopi-pagi": [
+    "/images/demo/kopi-pagi-es-kopi-pagi.webp",
+    "/images/demo/kopi-pagi-interior.webp",
+    "/images/demo/kopi-pagi-butter-bun.webp",
+    "/images/demo/kopi-pagi-cloud-latte.webp",
+  ],
+  "mitra-legal": [
+    "/images/demo/mitra-legal-office.webp",
+    "/images/demo/mitra-legal-team.webp",
+    "/images/portfolio/mitra-legal.webp",
+  ],
+};
+
 function GenericScreenPlaceholder({
+  item,
   index,
   total,
 }: {
+  item: PortfolioItem;
   index: number;
   total: number;
 }) {
+  const gallery = DEMO_GALLERY_MAP[item.slug];
+  const image = gallery ? gallery[index % gallery.length] : item.thumbnail;
+
+  if (image) {
+    return (
+      <div className="relative h-full min-h-[220px] w-full overflow-hidden bg-slate-950">
+        <img
+          src={image}
+          alt={item.title.id}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+      </div>
+    );
+  }
+
   return (
     <div className="flex h-full min-h-[180px] flex-col justify-between p-5">
       <div>
@@ -128,7 +202,11 @@ function renderScreenContent(item: PortfolioItem, index: number): ReactNode {
   }
 
   return (
-    <GenericScreenPlaceholder index={index} total={item.screens.length} />
+    <GenericScreenPlaceholder
+      item={item}
+      index={index}
+      total={item.screens.length}
+    />
   );
 }
 
@@ -149,17 +227,17 @@ const SECTION_COPY: Record<
   "webinar-landing": {
     title: "Cuplikan landing page webinar dan campaign",
     description:
-      "Preview CSS mockup SkillPath Studio (simulasi) — hero, problem & benefit, agenda 5 sesi, speaker & bonus, form pendaftaran, FAQ, dan sticky CTA mobile.",
+      "Preview CSS mockup SkillPath Studio — hero, problem & benefit, agenda 5 sesi, speaker & bonus, form pendaftaran, FAQ, dan sticky CTA mobile.",
   },
   properti: {
     title: "Cuplikan website properti dan konstruksi",
     description:
-      "Preview CSS mockup GrahaNusa Properti & Karya — hero dengan trust badges, listing & filter, detail spesifikasi, galeri visual, dan form survei lokasi. Semua data berlabel contoh/simulasi.",
+      "Preview CSS mockup GrahaNusa Properti & Karya — hero dengan trust badges, listing & filter, detail spesifikasi, galeri visual, dan form survei lokasi. Data berlabel contoh.",
   },
   "lead-dashboard": {
     title: "Cuplikan dashboard LeadFlow CRM Lite untuk tim sales",
     description:
-      "Preview CSS mockup 9 layar — ringkasan lead, inbox, pipeline kanban, detail drawer, aktivitas follow-up, source tracking, laporan, empty state, dan mobile view. Semua data simulasi.",
+      "Preview CSS mockup 9 layar — ringkasan lead, inbox, pipeline kanban, detail drawer, aktivitas follow-up, source tracking, laporan, empty state, dan mobile view. Data contoh.",
   },
 };
 

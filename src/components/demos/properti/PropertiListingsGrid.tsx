@@ -68,7 +68,7 @@ const sectionCopy: Record<
     found: (n) => `${n} listing ditemukan`,
     emptyTitle: "Tidak ada listing di filter ini",
     emptyBody: "Coba ubah filter tipe, lokasi, atau status di atas.",
-    simVisual: "Contoh visual simulasi",
+    simVisual: "Contoh visual unit",
     priceNote: "*Kisaran, dapat berubah",
     detail: "Detail",
   },
@@ -299,22 +299,31 @@ function ListingCard({
       onClick={onClick}
       className="group flex flex-col overflow-hidden rounded-2xl border border-brand-border bg-white text-left shadow-card transition-shadow hover:shadow-card-hover"
     >
-      <div
-        className="relative h-40"
-        style={{
-          backgroundImage: `linear-gradient(135deg, ${gradient} 0%, #1F2937 100%)`,
-        }}
-        aria-hidden
-      >
-        <div className="flex h-full items-end justify-between p-3">
-          <Badge className="border border-white/20 bg-white/15 text-white">{typeLabel}</Badge>
-          <Badge className={`border ${statusTone[listing.statusKey]}`}>
+      <div className="relative h-48 overflow-hidden bg-slate-900">
+        {listing.image ? (
+          <img
+            src={listing.image}
+            alt={listing.title[lang]}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div
+            className="h-full w-full"
+            style={{
+              backgroundImage: `linear-gradient(135deg, ${gradient} 0%, #1F2937 100%)`,
+            }}
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+          <Badge className="border border-white/20 bg-black/40 text-white backdrop-blur-md">
+            {typeLabel}
+          </Badge>
+          <Badge className={`border shadow-sm backdrop-blur-md ${statusTone[listing.statusKey]}`}>
             {listingStatusLabels[listing.statusKey][lang]}
           </Badge>
         </div>
-        <span className="absolute right-3 top-3 text-[10px] font-medium text-white/70">
-          {copy.simVisual}
-        </span>
       </div>
       <div className="flex flex-1 flex-col p-5">
         <p className="inline-flex items-center gap-1 text-xs text-brand-muted">

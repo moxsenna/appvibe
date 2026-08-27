@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+﻿import { cn } from "@/lib/cn";
 
 export type LeadDashboardPreviewVariant =
   | "overview"
@@ -337,7 +337,7 @@ function OverviewPreview() {
     { label: "Lead Bulan Ini", value: "50", hint: "+12 minggu lalu" },
     { label: "Baru Hari Ini", value: "12", hint: "Perlu diproses" },
     { label: "Follow-up Hari Ini", value: "9", hint: "Jatuh tempo" },
-    { label: "Deal Bulan Ini", value: "7", hint: "Data simulasi" },
+    { label: "Deal Bulan Ini", value: "7", hint: "Data contoh" },
     { label: "Estimasi Pipeline", value: "Rp186,5jt", hint: "Nilai aktif" },
     { label: "Prioritas Tinggi", value: "6", hint: "Perlu segera" },
   ];
@@ -395,7 +395,7 @@ function OverviewPreview() {
           </div>
         </div>
         <p className="mt-1 text-[3px] italic text-[#64748B]">
-          Data simulasi untuk demo portfolio
+          Data contoh untuk demonstrasi
         </p>
       </div>
     </div>
@@ -471,7 +471,7 @@ function TablePreview() {
           </div>
         ))}
       </div>
-      <p className="mt-0.5 text-[3px] text-[#64748B]">50 leads · data simulasi</p>
+      <p className="mt-0.5 text-[3px] text-[#64748B]">50 leads</p>
     </div>
   );
 }
@@ -773,7 +773,7 @@ function ReportPreview() {
       <div className="mb-1 flex items-center justify-between">
         <div>
           <p className="text-[8px] font-bold text-[#0F172A]">Laporan Ringkas</p>
-          <p className="text-[5px] text-[#64748B]">Bulan ini · data simulasi</p>
+          <p className="text-[5px] text-[#64748B]">Bulan ini</p>
         </div>
         <span className="rounded border border-[#E2E8F0] px-1 py-0.5 text-[4px] text-[#64748B]">
           Export
@@ -867,7 +867,7 @@ function EmptyPreview() {
         </span>
       </div>
       <p className="mt-1.5 text-[3px] italic text-[#64748B]">
-        Data demo adalah simulasi. Project nyata dapat dihubungkan ke form,
+        Data pada demo ini adalah contoh. Project nyata dapat dihubungkan ke form,
         spreadsheet, atau workflow WhatsApp.
       </p>
     </div>

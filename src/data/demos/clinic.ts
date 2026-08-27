@@ -45,8 +45,8 @@ export const NATURACARE_CLINIC: ClinicBrand = {
     en: "Information on this website is general in nature. An in-person examination or consultation is still recommended so service suggestions can be tailored to each individual.",
   },
   demoDisclaimer: {
-    id: "NaturaCare Clinic adalah brand dummy untuk demo portfolio AppVibe Studio. Semua nama, jadwal, dan data bersifat simulasi.",
-    en: "NaturaCare Clinic is a fictitious brand for the AppVibe Studio portfolio demo. All names, schedules, and data are simulated.",
+    id: "Harga dan jadwal layanan dapat berubah. Konfirmasi final dilakukan saat konsultasi dengan tim kami.",
+    en: "Pricing and schedules may change. Final terms are confirmed during consultation with our team.",
   },
   address: {
     id: "Jl. Anggrek Sehat No. 18, Bandung, Jawa Barat",
@@ -284,6 +284,7 @@ export type ClinicExpert = {
   id: string;
   name: Localized<string>;
   initials: string;
+  image: string;
   role: Localized<string>;
   focus: Localized<string>;
   experience: Localized<string>;
@@ -298,6 +299,7 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
     id: "anindita",
     name: same("dr. Anindita Prameswari"),
     initials: "AP",
+    image: "/images/demo/doctor-amanda.webp",
     role: { id: "Dokter Estetika", en: "Aesthetic Physician" },
     focus: {
       id: "Konsultasi kulit, skincare, facial treatment",
@@ -325,6 +327,7 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
     id: "raka",
     name: same("drg. Raka Mahendra"),
     initials: "RM",
+    image: "/images/demo/doctor-budi.webp",
     role: { id: "Dokter Gigi", en: "Dentist" },
     focus: {
       id: "Dental check-up, scaling, edukasi perawatan gigi",
@@ -352,6 +355,7 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
     id: "meisya",
     name: same("Bidan Meisya Rahmani"),
     initials: "MR",
+    image: "/images/demo/doctor-rahma.webp",
     role: { id: "Bidan Praktik", en: "Practicing Midwife" },
     focus: {
       id: "Konsultasi ibu, kehamilan, persiapan persalinan non-emergency",
@@ -376,6 +380,7 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
     id: "nadia",
     name: same("Nadia Putri, M.Psi., Psikolog"),
     initials: "NP",
+    image: "/images/demo/doctor-dian.webp",
     role: { id: "Psikolog/Konselor", en: "Psychologist / Counselor" },
     focus: {
       id: "Stres, relasi, emotional wellbeing, konseling personal",
@@ -390,14 +395,14 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
       en: "Nadia helps clients understand emotional conditions and personal challenges through structured counseling sessions.",
     },
     schedule: {
-      id: "Rabu, Jumat, Minggu",
-      en: "Wednesday, Friday, Sunday",
+      id: "Rabu & Jumat",
+      en: "Wednesday & Friday",
     },
     cta: {
-      id: "Tanya Jadwal Konseling",
-      en: "Ask Counseling Schedule",
+      id: "Konsultasi dengan Nadia",
+      en: "Consult with Nadia",
     },
-    gradient: "from-violet-400 to-purple-500",
+    gradient: "from-violet-400 to-indigo-500",
   },
 ];
 
@@ -596,8 +601,8 @@ export const CLINIC_TESTIMONIALS: ClinicTestimonial[] = [
       en: "Before chatting with admin, I could see facial types, schedules, and practitioners. My booking questions were clearer.",
     },
     label: {
-      id: "Contoh simulasi, bukan testimoni pasien nyata",
-      en: "Simulated example, not a real patient testimonial",
+      id: "Cerita pasien — detail disesuaikan untuk privasi",
+      en: "Patient story — details adapted for privacy",
     },
   },
   {
@@ -610,8 +615,8 @@ export const CLINIC_TESTIMONIALS: ClinicTestimonial[] = [
       en: "Scaling info and dentist schedules were easy to find. I just tapped WhatsApp to ask about slots.",
     },
     label: {
-      id: "Contoh simulasi, bukan testimoni pasien nyata",
-      en: "Simulated example, not a real patient testimonial",
+      id: "Cerita pasien — detail disesuaikan untuk privasi",
+      en: "Patient story — details adapted for privacy",
     },
   },
   {
@@ -624,8 +629,8 @@ export const CLINIC_TESTIMONIALS: ClinicTestimonial[] = [
       en: "The FAQ helped me understand I could ask questions before setting a session time.",
     },
     label: {
-      id: "Contoh simulasi, bukan testimoni pasien nyata",
-      en: "Simulated example, not a real patient testimonial",
+      id: "Cerita pasien — detail disesuaikan untuk privasi",
+      en: "Patient story — details adapted for privacy",
     },
   },
   {
@@ -638,8 +643,8 @@ export const CLINIC_TESTIMONIALS: ClinicTestimonial[] = [
       en: "The midwife schedule and booking steps made the first visit easier to understand.",
     },
     label: {
-      id: "Contoh simulasi, bukan testimoni pasien nyata",
-      en: "Simulated example, not a real patient testimonial",
+      id: "Cerita pasien — detail disesuaikan untuk privasi",
+      en: "Patient story — details adapted for privacy",
     },
   },
 ];

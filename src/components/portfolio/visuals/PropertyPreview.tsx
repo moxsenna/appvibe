@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+﻿import { cn } from "@/lib/cn";
 
 export type PropertyPreviewVariant =
   | "hero"
@@ -432,7 +432,7 @@ function GalleryPreview() {
             Galeri Proyek
           </p>
           <p className="text-[7px] text-brand-muted">
-            Arunika Residence — contoh visual simulasi
+            Arunika Residence — contoh visual
           </p>
         </div>
         <span className="text-[6px] text-brand-blue">Lihat semua →</span>
@@ -460,7 +460,7 @@ function GalleryPreview() {
         ))}
       </div>
       <p className="mt-1 text-[5px] text-brand-muted">
-        Foto contoh/simulasi portfolio — kondisi aktual dikonfirmasi saat survei.
+        Foto contoh — kondisi aktual dikonfirmasi saat survei.
       </p>
       <div className="mt-1 flex justify-center gap-1">
         {[0, 1, 2].map((dot) => (
@@ -518,7 +518,7 @@ function InquiryPreview() {
           </p>
         </div>
         <p className="text-[4px] text-brand-muted">
-          Data simulasi · AppVibe Studio
+          Data contoh · AppVibe Studio
         </p>
       </div>
     </div>

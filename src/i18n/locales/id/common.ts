@@ -118,11 +118,11 @@ export const commonId = {
   },
 
   demo: {
-    bannerEyebrow: "Demo Simulasi",
-    bannerTitle: "Ini demo bukan website klien sungguhan",
+    bannerEyebrow: "Dibangun oleh AppVibe Studio",
+    bannerTitle: "Contoh website yang bisa dimiliki bisnis Anda",
     bannerCta: "Diskusi proyek serupa",
     bannerNote:
-      "Konten brand di halaman ini adalah simulasi yang dibuat AppVibe untuk menunjukkan bagaimana website serupa bisa Anda miliki.",
+      "Tertarik dengan website serupa untuk bisnis Anda? Diskusikan kebutuhan Anda dengan tim kami.",
     realBackendTitle: "Real backend mode",
     realBackendBody:
       "Data dibaca langsung dari Supabase Postgres dengan Row Level Security. Perubahan status tersimpan permanen di showcase tenant — terlihat oleh semua pengunjung.",

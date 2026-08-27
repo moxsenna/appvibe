@@ -41,7 +41,7 @@ export const brand = {
     },
     {
       value: same("68+"),
-      label: { id: "proyek contoh (simulasi)", en: "sample projects (simulated)" },
+      label: { id: "proyek pilihan", en: "selected projects" },
     },
     {
       value: same("4"),
