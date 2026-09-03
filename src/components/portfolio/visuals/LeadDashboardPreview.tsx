@@ -122,7 +122,7 @@ const TABLE_LEADS: SampleLead[] = [
   {
     id: "LF-006",
     name: "Kevin Mahendra",
-    need: "Demo CRM Lite tim sales",
+    need: "Demo CRM tim sales",
     source: "Website",
     status: "Follow Up",
     priority: "Tinggi",
@@ -306,7 +306,7 @@ function SidebarNav({ active = "Overview" }: { active?: string }) {
         </div>
       ))}
       <div className="mt-auto border-t border-white/10 pt-1">
-        <p className="text-[4px] font-medium text-slate-400">LeadFlow CRM Lite</p>
+        <p className="text-[4px] font-medium text-slate-400">LeadFlow CRM</p>
         <p className="text-[3px] text-slate-500">Demo AppVibe</p>
       </div>
     </div>

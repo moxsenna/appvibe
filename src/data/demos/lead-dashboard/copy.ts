@@ -143,8 +143,8 @@ function countLeads(id: string, en: string): (n: number) => Localized<string> {
 export const leadDashboardCopy: LeadDashboardCopy = {
   hero: {
     badge: {
-      id: "CRM Lite · Demo Interaktif",
-      en: "CRM Lite · Interactive demo",
+      id: "CRM · Demo Interaktif",
+      en: "CRM · Interactive demo",
     },
     eyebrow: {
       id: "CRM ringan untuk UMKM & tim sales",
@@ -155,8 +155,8 @@ export const leadDashboardCopy: LeadDashboardCopy = {
       en: "Manage leads from every channel without losing track",
     },
     subtitle: {
-      id: "LeadFlow CRM Lite membantu tim Anda memantau status, assign admin, dan estimasi pipeline tanpa spreadsheet yang berantakan.",
-      en: "LeadFlow CRM Lite helps your team track status, assign owners, and estimate pipeline value without scattered spreadsheets.",
+      id: "LeadFlow CRM membantu tim Anda memantau status, assign admin, dan estimasi pipeline tanpa spreadsheet yang berantakan.",
+      en: "LeadFlow CRM helps your team track status, assign owners, and estimate pipeline value without scattered spreadsheets.",
     },
     trustChips: [
       { id: "50 lead aktif", en: "50 active leads" },
@@ -289,8 +289,8 @@ export const leadDashboardCopy: LeadDashboardCopy = {
       en: "When you are just getting started, the dashboard is still ready to use",
     },
     subtitle: {
-      id: "LeadFlow CRM Lite tidak terasa kosong meski belum ada lead. Ada checklist setup yang bisa diikuti agar tim bisa langsung produktif.",
-      en: "LeadFlow CRM Lite does not feel empty before the first lead arrives. A setup checklist helps your team become productive quickly.",
+      id: "LeadFlow CRM tidak terasa kosong meski belum ada lead. Ada checklist setup yang bisa diikuti agar tim bisa langsung produktif.",
+      en: "LeadFlow CRM does not feel empty before the first lead arrives. A setup checklist helps your team become productive quickly.",
     },
     checklistEyebrow: { id: "Setup checklist", en: "Setup checklist" },
     checklistTitle: { id: "5 langkah untuk mulai", en: "Five steps to get started" },

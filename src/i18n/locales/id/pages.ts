@@ -203,7 +203,7 @@ export const pagesId = {
     meta: {
       title: "Demo Interaktif Website & App | AppVibe Studio",
       description:
-        "5 demo React interaktif + 10 landing template: Company Profile, Webinar, Klinik, Properti, CRM Lite, dan niche lain. Contoh kerja AppVibe Studio.",
+        "5 demo React interaktif + 10 landing template: Company Profile, Webinar, Klinik, Properti, CRM, dan niche lain. Contoh kerja AppVibe Studio.",
     },
     filter: {
       searchPlaceholder: "Cari demo berdasarkan judul, niche, atau tag...",

@@ -1,7 +1,5 @@
-import { AlertCircle, Lightbulb } from "lucide-react";
 import type { PortfolioItem } from "@/types/portfolio";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { useLang } from "@/i18n/use-lang";
 import { pick } from "@/i18n/localized";
 import type { Lang } from "@/i18n/types";
@@ -16,18 +14,18 @@ const copy: Record<
   }
 > = {
   id: {
-    problemTitle: "Masalah Bisnis",
-    solutionTitle: "Solusi Digital",
-    techNoteLabel: "Kemampuan teknis: ",
+    problemTitle: "Masalah bisnis",
+    solutionTitle: "Solusi yang dibangun",
+    techNoteLabel: "Pendekatan teknis: ",
     techNoteBody:
-      "Dibangun dengan pendekatan web modern, responsif, dan siap dikembangkan bertahap sesuai kebutuhan bisnis Anda.",
+      "Dibangun responsif dengan web modern dan siap dikembangkan bertahap sesuai kebutuhan bisnis Anda.",
   },
   en: {
-    problemTitle: "Business Problem",
-    solutionTitle: "Digital Solution",
+    problemTitle: "Business problem",
+    solutionTitle: "What was built",
     techNoteLabel: "Technical approach: ",
     techNoteBody:
-      "Built with a modern, responsive web stack and designed to grow incrementally as your business needs evolve.",
+      "Built responsive on a modern web stack, ready to grow in stages as your business needs evolve.",
   },
 };
 
@@ -40,36 +38,30 @@ export function CaseStudyProblemSolution({ item }: CaseStudyProblemSolutionProps
   const t = copy[lang];
 
   return (
-    <section className="section-padding bg-white">
-      <Container>
-        <div className="grid gap-8 lg:grid-cols-2">
-          <Card hover padding="lg">
-            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-red-50 text-semantic-danger">
-              <AlertCircle className="h-5 w-5" aria-hidden />
-            </div>
-            <h2 className="text-xl font-bold text-brand-navy">{t.problemTitle}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-brand-muted">
+    <section>
+      <Container className="py-12 lg:py-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="border-t-2 border-av-ink pt-5">
+            <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
+              {t.problemTitle}
+            </h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-av-text">
               {pick(item.businessProblem, lang)}
             </p>
-          </Card>
-
-          <Card hover padding="lg">
-            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-brand-blue">
-              <Lightbulb className="h-5 w-5" aria-hidden />
-            </div>
-            <h2 className="text-xl font-bold text-brand-navy">{t.solutionTitle}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-brand-muted">
+          </div>
+          <div className="border-t-2 border-av-ink pt-5">
+            <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
+              {t.solutionTitle}
+            </h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-av-text">
               {pick(item.solution, lang)}
             </p>
-          </Card>
+          </div>
         </div>
-
-        <Card className="mt-8 bg-brand-light" padding="lg">
-          <p className="text-sm leading-relaxed text-brand-muted">
-            <span className="font-semibold text-brand-navy">{t.techNoteLabel}</span>
-            {t.techNoteBody}
-          </p>
-        </Card>
+        <p className="mt-10 max-w-[68ch] border-l-2 border-av-border pl-4 text-sm leading-relaxed text-av-secondary">
+          <span className="font-medium text-av-ink">{t.techNoteLabel}</span>
+          {t.techNoteBody}
+        </p>
       </Container>
     </section>
   );

@@ -632,22 +632,22 @@ export const portfolioItems: PortfolioItem[] = [
       en: "Lead Management Dashboard for Multi-Channel Inquiries",
     },
     category: "dashboard",
-    categoryLabel: same("CRM Lite"),
+    categoryLabel: same("LeadFlow CRM"),
     niche: {
       id: "UMKM, klinik, edukasi, properti, agency, konsultan — bisnis dengan inquiry dari website, iklan, WhatsApp, referral, dan event",
       en: "SMBs, clinics, property agencies, educators, and B2B consultants managing leads from websites, ads, WhatsApp, and events",
     },
     summary: {
-      id: "Contoh CRM Lite internal — LeadFlow CRM Lite — untuk membantu bisnis mencatat lead, memantau status, mengatur follow-up, dan membaca performa inquiry dari website, iklan, WhatsApp, referral, dan event. Bukan CRM enterprise; ini dashboard ringan untuk owner, admin, dan tim sales kecil.",
-      en: "A lightweight internal CRM Lite simulator—LeadFlow CRM Lite—built to help businesses track leads, monitor pipeline status, schedule follow-ups, and analyze marketing channels. Designed for business owners, admins, and small sales teams.",
+      id: "Contoh CRM internal — LeadFlow CRM — untuk membantu bisnis mencatat lead, memantau status, mengatur follow-up, dan membaca performa inquiry dari website, iklan, WhatsApp, referral, dan event. Bukan CRM enterprise; ini dashboard ringan untuk owner, admin, dan tim sales kecil.",
+      en: "A lightweight internal CRM simulator—LeadFlow CRM—built to help businesses track leads, monitor pipeline status, schedule follow-ups, and analyze marketing channels. Designed for business owners, admins, and small sales teams.",
     },
     businessProblem: {
       id: "Saat inquiry mulai ramai dari WhatsApp, website, event, dan iklan, spreadsheet dan chat saja sering tidak cukup. Lead mudah tercecer, admin sulit tahu prioritas, follow-up bergantung ingatan masing-masing orang, owner tidak punya ringkasan performa, status calon customer tidak jelas, dan data source sulit dibaca saat evaluasi campaign. Tim sales tidak punya satu sumber data yang sama — report bulanan pun sulit dibuat.",
       en: "As client inquiries scale up across WhatsApp, websites, events, and ads, spreadsheets and chat logs become hard to manage. Leads are lost, sales follow-ups are missed or forgotten, performance metrics are unavailable, and owners lack a single source of truth for marketing campaigns.",
     },
     solution: {
-      id: "LeadFlow CRM Lite menyatukan data lead, status, follow-up, dan laporan dalam satu dashboard ringan: lead inbox, pipeline kanban, detail drawer dengan catatan, source tracking, laporan ringkas, dan role owner/admin/sales/supervisor. Membantu lead tidak tercecer, follow-up lebih konsisten, dan owner mendapat visibilitas tanpa bertanya manual ke setiap admin.",
-      en: "LeadFlow CRM Lite organizes lead inputs, pipeline statuses, contact history, and analytics into a lightweight dashboard. Features include a lead inbox, pipeline kanban, detail drawer, lead source tracking, summary reports, and user access levels.",
+      id: "LeadFlow CRM menyatukan data lead, status, follow-up, dan laporan dalam satu dashboard ringan: lead inbox, pipeline kanban, detail drawer dengan catatan, source tracking, laporan ringkas, dan role owner/admin/sales/supervisor. Membantu lead tidak tercecer, follow-up lebih konsisten, dan owner mendapat visibilitas tanpa bertanya manual ke setiap admin.",
+      en: "LeadFlow CRM organizes lead inputs, pipeline statuses, contact history, and analytics into a lightweight dashboard. Features include a lead inbox, pipeline kanban, detail drawer, lead source tracking, summary reports, and user access levels.",
     },
     businessValue: {
       id: [
@@ -688,15 +688,15 @@ export const portfolioItems: PortfolioItem[] = [
       ],
     },
     tags: {
-      id: ["CRM Lite", "Lead Management", "Sales Dashboard", "Follow-up Tracking", "Mock Data"],
-      en: ["CRM Lite", "Lead Management", "Sales Dashboard", "Follow-up Tracking", "Analytics Dashboard"],
+      id: ["CRM", "Lead Management", "Sales Dashboard", "Follow-up Tracking", "Mock Data"],
+      en: ["CRM", "Lead Management", "Sales Dashboard", "Follow-up Tracking", "Analytics Dashboard"],
     },
     thumbnail: "/images/portfolio/lead-dashboard.webp",
     demoPath: "/demo/lead-dashboard",
     caseStudyPath: "/portfolio/lead-dashboard",
     mockDataHighlights: {
       id: [
-        "Produk demo: LeadFlow CRM Lite — Kelola lead dari banyak channel tanpa tercecer",
+        "Produk demo: LeadFlow CRM — Kelola lead dari banyak channel tanpa tercecer",
         "50 leads dengan variasi klinik, properti, kursus, agency, UMKM, event organizer",
         "12 lead detail lengkap: Ayu Kartika, Bima Santoso, Citra Maharani, Dewi Lestari, dan 8 lainnya",
         "4 tim dummy: Rina Wulandari (RW), Bayu Pratama (BP), Sari Melati (SM), Dimas Arya (DA)",
@@ -705,7 +705,7 @@ export const portfolioItems: PortfolioItem[] = [
         "Report metrics: 50 lead/bulan, 9 follow-up jatuh tempo, 7 deal, estimasi pipeline Rp186,5 jt",
       ],
       en: [
-        "LeadFlow CRM Lite demo product—managing incoming inquiries across multiple marketing channels",
+        "LeadFlow CRM demo product—managing incoming inquiries across multiple marketing channels",
         "50 simulated leads distributed across clinic, property, courses, agency, and B2B consulting niches",
         "12 detailed customer profiles including Ayu Kartika, Bima Santoso, Citra Maharani, Dewi Lestari, and others",
         "Four dummy team members: Rina Wulandari, Bayu Pratama, Sari Melati, and Dimas Arya",

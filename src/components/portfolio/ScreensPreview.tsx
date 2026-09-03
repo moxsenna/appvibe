@@ -3,8 +3,6 @@ import type { PortfolioItem } from "@/types/portfolio";
 import { useLang } from "@/i18n/use-lang";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Card } from "@/components/ui/Card";
-import { MockupFrame } from "@/components/ui/MockupFrame";
 import {
   CompanyProfilePreview,
   type CompanyProfilePreviewVariant,
@@ -235,7 +233,7 @@ const SECTION_COPY: Record<
       "Preview CSS mockup GrahaNusa Properti & Karya — hero dengan trust badges, listing & filter, detail spesifikasi, galeri visual, dan form survei lokasi. Data berlabel contoh.",
   },
   "lead-dashboard": {
-    title: "Cuplikan dashboard LeadFlow CRM Lite untuk tim sales",
+    title: "Cuplikan dashboard LeadFlow CRM untuk tim sales",
     description:
       "Preview CSS mockup 9 layar — ringkasan lead, inbox, pipeline kanban, detail drawer, aktivitas follow-up, source tracking, laporan, empty state, dan mobile view. Data contoh.",
   },
@@ -246,32 +244,38 @@ export function ScreensPreview({ item }: ScreensPreviewProps) {
   const sectionCopy = SECTION_COPY[item.slug];
 
   return (
-    <section className="section-padding bg-white">
-      <Container>
+    <section className="border-t border-av-border bg-av-surface">
+      <Container className="py-12 lg:py-16">
         <SectionHeader
-          eyebrow="Preview Halaman"
+          eyebrow={lang === "id" ? "Layar proyek" : "Project screens"}
           title={
             sectionCopy?.title ??
-            "Cuplikan struktur halaman dalam solusi ini"
+            (lang === "id"
+              ? "Cuplikan struktur halaman dalam solusi ini"
+              : "Screen structure inside this solution")
           }
           description={
             sectionCopy?.description ??
-            "Visual preview menggunakan mock frame. Gambar screenshot final dapat ditambahkan saat asset visual siap."
+            (lang === "id"
+              ? "Preview antarmuka per bagian. Setiap layar juga bisa dibuka sebagai demo interaktif."
+              : "Interface preview per section. Each screen also opens as an interactive demo.")
           }
         />
-        <div className="mt-10 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 grid gap-x-8 gap-y-10 lg:grid-cols-2">
           {item.screens.map((screen, index) => (
-            <Card key={screen.title[lang]} hover padding="lg">
-              <MockupFrame title={`${item.slug} — ${screen.title[lang]}`}>
+            <figure key={screen.title[lang]}>
+              <div className="overflow-hidden rounded-[4px] border border-av-border bg-av-canvas">
                 {renderScreenContent(item, index)}
-              </MockupFrame>
-              <h3 className="mt-4 text-base font-semibold text-brand-navy">
-                {screen.title[lang]}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-brand-muted">
-                {screen.description[lang]}
-              </p>
-            </Card>
+              </div>
+              <figcaption>
+                <h3 className="mt-4 text-base font-semibold text-av-ink">
+                  {screen.title[lang]}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-av-secondary">
+                  {screen.description[lang]}
+                </p>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </Container>

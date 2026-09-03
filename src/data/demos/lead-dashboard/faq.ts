@@ -12,8 +12,8 @@ export const faqs: FAQ[] = [
       en: "Can this dashboard integrate with website forms?",
     },
     answer: {
-      id: "Bisa. LeadFlow CRM Lite dirancang agar lead dari form website (atau landing page) otomatis tercatat dengan source yang jelas. Anda tidak perlu input manual dari chat atau spreadsheet.",
-      en: "Yes. LeadFlow CRM Lite is designed so leads from website forms (or landing pages) are recorded automatically with a clear source. You do not need manual entry from chat or spreadsheets.",
+      id: "Bisa. LeadFlow CRM dirancang agar lead dari form website (atau landing page) otomatis tercatat dengan source yang jelas. Anda tidak perlu input manual dari chat atau spreadsheet.",
+      en: "Yes. LeadFlow CRM is designed so leads from website forms (or landing pages) are recorded automatically with a clear source. You do not need manual entry from chat or spreadsheets.",
     },
   },
   {
@@ -62,8 +62,8 @@ export const faqs: FAQ[] = [
       en: "How is this different from enterprise CRMs such as HubSpot or Salesforce?",
     },
     answer: {
-      id: "LeadFlow CRM Lite adalah versi ringan yang dirancang untuk UMKM dan tim sales kecil. Tidak ada fitur enterprise yang jarang dipakai (marketing automation kompleks, AI scoring, dll). Fokus: lead inbox, pipeline, dan report ringkas yang langsung dipakai.",
-      en: "LeadFlow CRM Lite is a lightweight product built for SMBs and small sales teams. It omits rarely used enterprise features (complex marketing automation, AI scoring, and similar). The focus is a lead inbox, pipeline, and concise reports your team will actually use.",
+      id: "LeadFlow CRM adalah versi ringan yang dirancang untuk UMKM dan tim sales kecil. Tidak ada fitur enterprise yang jarang dipakai (marketing automation kompleks, AI scoring, dll). Fokus: lead inbox, pipeline, dan report ringkas yang langsung dipakai.",
+      en: "LeadFlow CRM is a lightweight product built for SMBs and small sales teams. It omits rarely used enterprise features (complex marketing automation, AI scoring, and similar). The focus is a lead inbox, pipeline, and concise reports your team will actually use.",
     },
   },
 ];

@@ -2,7 +2,6 @@ import { Check } from "lucide-react";
 import type { PortfolioItem } from "@/types/portfolio";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Card } from "@/components/ui/Card";
 import { useLang } from "@/i18n/use-lang";
 
 type FeatureGridProps = {
@@ -13,26 +12,27 @@ export function FeatureGrid({ item }: FeatureGridProps) {
   const { lang } = useLang();
 
   return (
-    <section className="section-padding bg-white">
-      <Container>
+    <section className="border-t border-av-border bg-av-surface">
+      <Container className="py-12 lg:py-16">
         <SectionHeader
-          eyebrow="Fitur Utama"
-          title="Komponen penting yang dibuat untuk kebutuhan bisnis ini"
-          description="Setiap fitur dirancang agar calon pelanggan mudah memahami layanan dan mengambil langkah berikutnya."
+          eyebrow={lang === "id" ? "Yang dibangun" : "What was built"}
+          title={
+            lang === "id"
+              ? "Komponen penting untuk kebutuhan bisnis ini"
+              : "Key pieces built for this business need"
+          }
         />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-8 grid gap-x-10 gap-y-4 sm:grid-cols-2">
           {item.features[lang].map((feature) => (
-            <Card key={feature} hover className="flex gap-3">
+            <li key={feature} className="flex gap-3 border-t border-av-border-soft pt-4">
               <Check
-                className="mt-0.5 h-5 w-5 shrink-0 text-semantic-success"
+                className="mt-0.5 h-5 w-5 shrink-0 text-av-signal"
                 aria-hidden
               />
-              <p className="text-sm leading-relaxed text-brand-muted">
-                {feature}
-              </p>
-            </Card>
+              <p className="text-sm leading-relaxed text-av-text">{feature}</p>
+            </li>
           ))}
-        </div>
+        </ul>
       </Container>
     </section>
   );

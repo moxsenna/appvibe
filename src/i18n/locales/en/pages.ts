@@ -207,7 +207,7 @@ export const pagesEn: PagesDict = {
     meta: {
       title: "Interactive Website & App Demos | AppVibe Studio",
       description:
-        "Five React interactive demos + ten landing templates: Company Profile, Webinar, Clinic, Property, CRM Lite, and more. AppVibe portfolio simulations.",
+        "Five React interactive demos + ten landing templates: Company Profile, Webinar, Clinic, Property, CRM, and more. AppVibe portfolio simulations.",
     },
     filter: {
       searchPlaceholder: "Search demos by title, niche, or tag...",
