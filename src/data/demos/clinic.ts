@@ -291,7 +291,7 @@ export type ClinicExpert = {
   bio: Localized<string>;
   schedule: Localized<string>;
   cta: Localized<string>;
-  gradient: string;
+  color: string;
 };
 
 export const CLINIC_EXPERTS: ClinicExpert[] = [
@@ -321,7 +321,7 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
       id: "Booking dengan dr. Anindita",
       en: "Book with Dr. Anindita",
     },
-    gradient: "from-teal-400 to-cyan-500",
+    color: "#0F766E",
   },
   {
     id: "raka",
@@ -349,7 +349,7 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
       id: "Booking dengan drg. Raka",
       en: "Book with Dr. Raka",
     },
-    gradient: "from-blue-400 to-sky-500",
+    color: "#1D4ED8",
   },
   {
     id: "meisya",
@@ -374,7 +374,7 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
       en: "Monday, Thursday, Saturday",
     },
     cta: { id: "Tanya Jadwal Bidan", en: "Ask Midwife Schedule" },
-    gradient: "from-rose-400 to-pink-500",
+    color: "#BE123C",
   },
   {
     id: "nadia",
@@ -402,7 +402,7 @@ export const CLINIC_EXPERTS: ClinicExpert[] = [
       id: "Konsultasi dengan Nadia",
       en: "Consult with Nadia",
     },
-    gradient: "from-violet-400 to-indigo-500",
+    color: "#6D28D9",
   },
 ];
 

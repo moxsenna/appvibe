@@ -194,10 +194,8 @@ export function LeadDashboardLeadDrawer({
                   <span className="text-brand-muted">{d.assigned[lang]}</span>
                   <span className="inline-flex items-center gap-2 font-semibold text-brand-navy">
                     <span
-                      className={cn(
-                        "flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br text-[10px] font-bold text-white",
-                        assigned.gradient,
-                      )}
+                      className="flex h-6 w-6 items-center justify-center rounded-full font-mono text-[10px] text-white"
+                      style={{ backgroundColor: assigned.color }}
                     >
                       {assigned.initials}
                     </span>

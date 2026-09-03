@@ -7,7 +7,7 @@ export type Speaker = {
   role: Localized<string>;
   bio: Localized<string>;
   expertise: Localized<string[]>;
-  gradient: string;
+  color: string;
 };
 
 export const speakers: Speaker[] = [
@@ -27,7 +27,7 @@ export const speakers: Speaker[] = [
       id: ["Skill Digital Pemula", "Portofolio", "Career Mapping"],
       en: ["Beginner Digital Skills", "Portfolio", "Career Mapping"],
     },
-    gradient: "from-violet-500 to-blue-500",
+    color: "#4C1D95",
   },
   {
     initials: "DK",
@@ -45,6 +45,6 @@ export const speakers: Speaker[] = [
       id: ["Diskusi Keluarga", "Bimbingan Karier", "Komunikasi Orang Tua-Anak"],
       en: ["Family Discussions", "Career Guidance", "Parent–Child Communication"],
     },
-    gradient: "from-cyan-500 to-emerald-500",
+    color: "#0E7490",
   },
 ];

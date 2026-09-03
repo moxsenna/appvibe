@@ -37,7 +37,7 @@ export function KlinikExperts() {
             );
             return (
               <Card key={expert.id} hover className="overflow-hidden p-0">
-                <div className={`relative h-28 bg-gradient-to-br ${expert.gradient}`}>
+                <div className="relative h-28" style={{ backgroundColor: expert.color }}>
                   <div className="flex h-full items-end p-4">
                     {expert.image ? (
                       <img

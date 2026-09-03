@@ -303,10 +303,8 @@ function ListView({
                   <td className="px-4 py-3">
                     {assigned && (
                       <span
-                        className={cn(
-                          "inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br text-[10px] font-bold text-white",
-                          assigned.gradient,
-                        )}
+                        className="inline-flex h-7 w-7 items-center justify-center rounded-full font-mono text-[10px] text-white"
+                        style={{ backgroundColor: assigned.color }}
                         title={assigned.name}
                       >
                         {assigned.initials}

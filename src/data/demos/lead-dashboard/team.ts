@@ -4,7 +4,7 @@ export type TeamMember = {
   name: string;
   role: "Owner" | "Admin" | "Sales" | "Supervisor";
   workload: number;
-  gradient: string;
+  color: string;
 };
 
 export const team: TeamMember[] = [
@@ -14,7 +14,7 @@ export const team: TeamMember[] = [
     name: "Rina Wulandari",
     role: "Admin",
     workload: 18,
-    gradient: "from-blue-500 to-cyan-500",
+    color: "#2563EB",
   },
   {
     id: "bayu-p",
@@ -22,7 +22,7 @@ export const team: TeamMember[] = [
     name: "Bayu Pratama",
     role: "Sales",
     workload: 12,
-    gradient: "from-violet-500 to-blue-500",
+    color: "#4C1D95",
   },
   {
     id: "sari-m",
@@ -30,7 +30,7 @@ export const team: TeamMember[] = [
     name: "Sari Melati",
     role: "Sales",
     workload: 14,
-    gradient: "from-rose-500 to-orange-500",
+    color: "#E11D48",
   },
   {
     id: "dimas-a",
@@ -38,6 +38,6 @@ export const team: TeamMember[] = [
     name: "Dimas Arya",
     role: "Supervisor",
     workload: 6,
-    gradient: "from-emerald-500 to-cyan-500",
+    color: "#059669",
   },
 ];

@@ -41,7 +41,7 @@ export function CompanyProfileProcessTimeline() {
 
         <div className="relative mt-12">
           <div
-            className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-brand-blue via-brand-violet to-brand-cyan lg:left-1/2 lg:block"
+            className="absolute left-4 top-0 hidden h-full w-px bg-av-border lg:left-1/2 lg:block"
             aria-hidden
           />
           <div className="space-y-6 lg:space-y-0">

@@ -28,7 +28,8 @@ export function WebinarLandingSpeakers() {
           {speakers.map((speaker) => (
             <Card key={speaker.name} hover className="overflow-hidden p-0">
               <div
-                className={`relative h-28 bg-gradient-to-br sm:h-32 ${speaker.gradient}`}
+                className="relative h-28 sm:h-32"
+                style={{ backgroundColor: speaker.color }}
               >
                 <div className="flex h-full items-end p-5">
                   {speaker.image ? (

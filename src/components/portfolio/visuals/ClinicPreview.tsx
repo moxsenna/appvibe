@@ -99,10 +99,8 @@ function ClinicHeroMockup() {
             {CLINIC_EXPERTS.slice(0, 3).map((expert) => (
               <div
                 key={expert.id}
-                className={cn(
-                  "flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br text-[4px] font-bold text-white",
-                  expert.gradient,
-                )}
+                className="flex h-4 w-4 items-center justify-center rounded-full font-mono text-[4px] text-white"
+                style={{ backgroundColor: expert.color }}
               >
                 {expert.initials}
               </div>
@@ -227,10 +225,8 @@ function ClinicExpertCard({ expert }: { expert: (typeof CLINIC_EXPERTS)[number] 
     <div className="rounded border border-[#E2E8F0] bg-white p-1.5">
       <div className="flex items-center gap-1">
         <div
-          className={cn(
-            "flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-[5px] font-bold text-white",
-            expert.gradient,
-          )}
+          className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full font-mono text-[5px] text-white"
+          style={{ backgroundColor: expert.color }}
         >
           {expert.initials}
         </div>
