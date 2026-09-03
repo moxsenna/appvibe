@@ -9,7 +9,7 @@ export function TwoWorlds() {
   return (
     <section aria-label={lang === "id" ? "Dua sisi layanan" : "Two sides of the studio"}>
       <Container className="py-14 lg:py-20">
-        <div className="grid gap-10 md:grid-cols-[1fr_auto_1fr] md:gap-8 lg:gap-12">
+        <div className="grid gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-12">
           {homeWorlds.map((world, i) => (
             <div key={world.index}>
               <p className="font-mono text-xs uppercase tracking-[0.14em] text-av-signal">
@@ -32,12 +32,12 @@ export function TwoWorlds() {
                 ))}
               </ul>
               {i === 0 && (
-                <hr className="mt-10 border-av-border md:hidden" aria-hidden />
+                <hr className="mt-10 border-av-border lg:hidden" aria-hidden />
               )}
             </div>
           ))}
           <div
-            className="hidden w-px self-stretch bg-av-border md:block"
+            className="hidden w-px self-stretch bg-av-border lg:block"
             aria-hidden
           />
         </div>

@@ -55,7 +55,7 @@ export const commonEn: CommonDict = {
       demoInteractive: "Interactive Demos",
     },
     description:
-      "AppVibe Studio helps businesses ship websites, landing pages, dashboards, and lightweight apps that look professional, perform on every screen, and stay ready to grow.",
+      "AppVibe Studio designs and builds websites, digital products, and custom software — from the pages customers see to the internal systems teams run on.",
     copyright: "Website and portfolio reference for prospective clients.",
     serviceLinks: {
       companyProfile: "Company Profile Website",

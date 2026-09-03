@@ -60,7 +60,7 @@ export const commonId = {
       demoInteractive: "Demo Interaktif",
     },
     description:
-      "AppVibe Studio membantu bisnis membangun website, landing page, dashboard, dan app ringan yang terlihat profesional, responsif, dan siap dikembangkan.",
+      "AppVibe Studio merancang dan membangun website, produk digital, dan software custom — dari halaman yang dilihat pelanggan sampai sistem internal yang dipakai tim.",
     copyright: "Website & portfolio demo untuk calon klien bisnis.",
     serviceLinks: {
       companyProfile: "Website Company Profile",

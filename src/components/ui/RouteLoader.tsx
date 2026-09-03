@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 export function RouteLoader() {
   return (
     <div
-      className="section-padding-lg"
+      className="py-16 sm:py-20 lg:py-28"
       role="status"
       aria-live="polite"
       aria-label="Memuat halaman"
