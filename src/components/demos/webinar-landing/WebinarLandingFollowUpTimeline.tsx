@@ -29,7 +29,7 @@ export function WebinarLandingFollowUpTimeline() {
             {followUpSteps.map((step) => (
               <li key={step.number}>
                 <Card hover className="flex gap-4 sm:gap-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-blue-500 text-sm font-bold text-white shadow-sm">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[4px] bg-[#4C1D95] font-mono text-xs text-white">
                     {step.number}
                   </span>
                   <div className="flex-1">

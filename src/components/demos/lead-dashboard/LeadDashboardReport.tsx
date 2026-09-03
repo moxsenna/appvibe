@@ -18,32 +18,26 @@ export function LeadDashboardReport() {
     {
       label: copy.stats.total[lang],
       value: overviewStats.total,
-      accent: "from-blue-500 to-cyan-500",
     },
     {
       label: copy.stats.new[lang],
       value: overviewStats.baru,
-      accent: "from-emerald-500 to-green-500",
     },
     {
       label: copy.stats.followUp[lang],
       value: overviewStats.followUp,
-      accent: "from-amber-500 to-orange-500",
     },
     {
       label: copy.stats.deal[lang],
       value: overviewStats.deal,
-      accent: "from-violet-500 to-purple-500",
     },
     {
       label: copy.stats.estPipeline[lang],
       value: `Rp ${overviewStats.estimatedPipeline} jt`,
-      accent: "from-cyan-500 to-blue-500",
     },
     {
       label: copy.stats.conversion[lang],
       value: `${overviewStats.conversionRate}%`,
-      accent: "from-pink-500 to-rose-500",
     },
   ];
 
@@ -65,9 +59,7 @@ export function LeadDashboardReport() {
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
                 {s.label}
               </p>
-              <p
-                className={`mt-2 text-2xl font-bold text-brand-navy sm:text-3xl bg-gradient-to-r bg-clip-text text-transparent ${s.accent}`}
-              >
+              <p className="mt-2 font-display text-4xl text-brand-navy">
                 {s.value}
               </p>
             </Card>
@@ -87,7 +79,7 @@ export function LeadDashboardReport() {
                 <li key={m.id}>
                   <div className="flex items-center justify-between text-sm">
                     <span className="inline-flex items-center gap-2 font-medium text-brand-navy">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-violet-500 text-[10px] font-bold text-white">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-[4px] bg-slate-900 text-[10px] font-bold text-white">
                         {m.initials}
                       </span>
                       {m.name}
@@ -101,7 +93,7 @@ export function LeadDashboardReport() {
                   </div>
                   <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-blue-500 to-violet-500"
+                      className="h-full rounded-full bg-slate-900"
                       style={{ width: `${(m.leads / maxWorkload) * 100}%` }}
                     />
                   </div>
@@ -132,10 +124,10 @@ export function LeadDashboardReport() {
                       </span>
                     </div>
                     <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500"
-                        style={{ width: `${pct}%` }}
-                      />
+                    <div
+                      className="h-full rounded-full bg-cyan-600"
+                      style={{ width: `${pct}%` }}
+                    />
                     </div>
                   </div>
                 );

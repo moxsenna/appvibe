@@ -27,7 +27,7 @@ export function WebinarLandingBenefits() {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, idx) => (
             <Card key={benefit.title[lang]} hover className="flex flex-col">
-              <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-blue-500 text-white shadow-sm">
+              <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-[4px] bg-[#4C1D95] text-white">
                 <Gift className="h-5 w-5" aria-hidden />
               </span>
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-violet">

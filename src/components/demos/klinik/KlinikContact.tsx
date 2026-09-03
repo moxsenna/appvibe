@@ -71,9 +71,9 @@ export function KlinikContact() {
           </Card>
 
           <div className="flex flex-col gap-4">
-            <div className="overflow-hidden rounded-2xl border border-brand-border bg-white shadow-card">
+            <div className="overflow-hidden rounded border border-brand-border bg-white">
               <div
-                className="flex h-48 items-center justify-center bg-gradient-to-br from-teal-50 via-cyan-50 to-emerald-50 sm:h-64"
+                className="flex h-48 items-center justify-center border-b border-brand-border bg-teal-50/60 sm:h-64"
                 aria-label={pick(section.mapAria, lang)}
               >
                 <div className="flex flex-col items-center gap-2 text-center text-brand-muted">

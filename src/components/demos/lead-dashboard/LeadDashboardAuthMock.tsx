@@ -34,7 +34,7 @@ export function LeadDashboardAuthMock({ onAuth }: LeadDashboardAuthMockProps) {
         <div className="mx-auto max-w-md">
           <Card padding="lg" className="overflow-hidden">
             <div
-              className="-mx-6 -mt-6 mb-5 flex items-center gap-3 border-b border-brand-border bg-gradient-to-r from-blue-600 to-slate-900 px-6 py-4"
+              className="-mx-6 -mt-6 mb-5 flex items-center gap-3 border-b border-brand-border bg-slate-900 px-6 py-4"
               style={{ marginTop: "-1.5rem", marginLeft: "-1.5rem", marginRight: "-1.5rem" }}
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-white">

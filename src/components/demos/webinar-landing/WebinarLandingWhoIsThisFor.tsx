@@ -24,7 +24,7 @@ export function WebinarLandingWhoIsThisFor() {
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {whoIsThisFor.map((persona, idx) => (
             <Card key={persona.title[lang]} hover className="flex gap-4">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-blue-500 text-white">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[4px] bg-[#4C1D95] text-white">
                 <User className="h-5 w-5" aria-hidden />
               </span>
               <div>

@@ -33,7 +33,7 @@ export function PropertiProcess() {
               key={step.number}
               className="relative rounded-2xl border border-brand-border bg-slate-50 p-4"
             >
-              <span className="absolute -top-3 left-4 flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 text-xs font-bold text-white shadow-sm">
+              <span className="absolute -top-3 left-4 flex h-7 w-7 items-center justify-center rounded-[4px] bg-[#0F4C5C] font-mono text-xs text-white">
                 {step.number}
               </span>
               <h3 className="mt-2 text-sm font-semibold text-brand-navy">{step.title[lang]}</h3>

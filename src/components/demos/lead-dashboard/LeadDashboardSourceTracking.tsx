@@ -8,12 +8,12 @@ import { useDict } from "@/i18n/use-dict";
 import { leadSourceLabel } from "@/lib/lead-dashboard-labels";
 
 const sourceAccent: Record<string, string> = {
-  Website: "from-blue-500 to-cyan-500",
-  "Facebook Ads": "from-indigo-500 to-blue-500",
-  WhatsApp: "from-emerald-500 to-green-500",
-  Referral: "from-violet-500 to-purple-500",
-  Event: "from-amber-500 to-orange-500",
-  Instagram: "from-rose-500 to-pink-500",
+  Website: "#2563EB",
+  "Facebook Ads": "#4F46E5",
+  WhatsApp: "#059669",
+  Referral: "#7C3AED",
+  Event: "#D97706",
+  Instagram: "#E11D48",
 };
 
 export function LeadDashboardSourceTracking() {
@@ -41,9 +41,10 @@ export function LeadDashboardSourceTracking() {
             <Card key={s.source} hover className="flex flex-col">
               <div className="flex items-center justify-between">
                 <span
-                  className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br text-white ${sourceAccent[s.source] ?? "from-slate-500 to-slate-600"}`}
+                  className="flex h-9 w-9 items-center justify-center rounded-[4px] text-white"
+                  style={{ backgroundColor: sourceAccent[s.source] ?? "#475569" }}
                 >
-                  <span className="text-[10px] font-bold">
+                  <span className="font-mono text-[10px]">
                     {leadSourceLabel(s.source, common.enums).slice(0, 2).toUpperCase()}
                   </span>
                 </span>
@@ -69,8 +70,11 @@ export function LeadDashboardSourceTracking() {
               </div>
               <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
                 <div
-                  className={`h-full rounded-full bg-gradient-to-r ${sourceAccent[s.source] ?? "from-slate-500 to-slate-600"}`}
-                  style={{ width: `${(s.count / maxCount) * 100}%` }}
+                  className="h-full rounded-full"
+                  style={{
+                    width: `${(s.count / maxCount) * 100}%`,
+                    backgroundColor: sourceAccent[s.source] ?? "#475569",
+                  }}
                 />
               </div>
             </Card>

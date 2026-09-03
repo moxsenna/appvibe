@@ -32,7 +32,7 @@ export function PropertiWhyUs() {
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {whyUs.map((item) => (
             <Card key={item.title.id} hover className="flex gap-4">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 text-white shadow-sm">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[4px] bg-[#0F4C5C] text-white">
                 <Sparkles className="h-5 w-5" aria-hidden />
               </span>
               <div>

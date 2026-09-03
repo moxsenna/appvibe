@@ -15,7 +15,7 @@ export function KlinikDisclaimer() {
         <div className="mx-auto max-w-4xl">
           <Card
             padding="lg"
-            className="border-2 border-teal-200 bg-gradient-to-br from-teal-50/40 to-cyan-50/30"
+            className="border-2 border-teal-200 bg-teal-50/50"
           >
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-100 text-teal-700">

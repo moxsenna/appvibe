@@ -48,7 +48,7 @@ export function WebinarLandingTestimonials() {
               </div>
               <footer className="mt-4 flex items-center gap-3 border-t border-brand-border pt-4">
                 <span
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-blue-500 text-sm font-bold text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4C1D95] font-mono text-xs text-white"
                   aria-hidden
                 >
                   {t.name[lang]
