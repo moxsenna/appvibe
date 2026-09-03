@@ -5,23 +5,28 @@ export type FAQ = {
 
 export const faqs: FAQ[] = [
   {
-    question: "Apakah konsultasi awal benar-benar gratis?",
+    question: "Apakah konsultasi awal via WhatsApp berbayar?",
     answer:
-      "Ya, 100% gratis. Diskusi 30–45 menit untuk memahami kebutuhan Anda. Tidak ada komitmen proyek, tidak ada tekanan untuk lanjut.",
+      "100% gratis tanpa komitmen. Anda bisa berdiskusi langsung dengan Bima mengenai kebutuhan bisnis, estimasi biaya, dan rekomendasi solusi sebelum memutuskan mulai.",
   },
   {
-    question: "Berapa lama respons setelah saya kirim pesan?",
+    question: "Berapa biaya mulai untuk membuat website?",
     answer:
-      "Biasanya dalam 1×24 jam kerja. Untuk WhatsApp langsung, respons bisa lebih cepat (1–2 jam di jam kerja).",
+      "Landing page mulai dari Rp499.000, Company Profile mulai dari Rp2.500.000, dan Web App/Sistem Custom disesuaikan dengan tingkat kerumitan alur. Pembayaran menggunakan termin 50% DP dan 50% pelunasan.",
   },
   {
-    question: "Informasi apa yang perlu saya siapkan untuk konsultasi?",
+    question: "Bagaimana jika saya belum punya materi tulisan dan gambar?",
     answer:
-      "Cukup informasi dasar: jenis bisnis, target customer, layanan/produk utama, dan referensi website yang Anda suka. Detail lain bisa menyusul setelah diskusi.",
+      "Kami melayani pembuatan copywriting bisnis yang terstruktur serta desain visualnya. Anda cukup menceritakan poin produk/layanan Anda.",
   },
   {
-    question: "Apakah data saya aman dan tidak akan disebarkan?",
+    question: "Berapa lama waktu pengerjaannya?",
     answer:
-      "Data yang Anda berikan hanya digunakan untuk merespons inquiry ini. Tidak akan dibagikan ke pihak ketiga atau digunakan untuk spam.",
+      "Landing page di bawah 7 hari, Company profile 7–30 hari, dan sistem custom sekitar 30–90 hari tergantung kompleksitas.",
+  },
+  {
+    question: "Apakah ada garansi setelah website selesai?",
+    answer:
+      "Ada garansi perbaikan bug gratis selama 30 hari pertama pasca go-live, serta opsi paket maintenance bulanan bila membutuhkan pendampingan teknis jangka panjang.",
   },
 ];
