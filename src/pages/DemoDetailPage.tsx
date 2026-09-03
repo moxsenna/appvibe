@@ -9,7 +9,6 @@ import {
 import { DemoShell } from "@/components/demos/DemoShell";
 import { AppVibeDemoBanner } from "@/components/demos/AppVibeDemoBanner";
 import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { getDemoBySlug } from "@/lib/demos";
@@ -17,16 +16,7 @@ import { applyPageMeta } from "@/lib/seo";
 import { buildWhatsAppUrl, getDemoMessage } from "@/lib/whatsapp";
 import { routes } from "@/lib/routes";
 import { trackEvent } from "@/lib/analytics";
-import { cn } from "@/lib/cn";
 import { useLang } from "@/i18n/use-lang";
-import type { DemoItem } from "@/types/demo";
-
-const STATUS_TONE: Record<DemoItem["status"], string> = {
-  live: "bg-green-50 text-semantic-success border-green-100",
-  template: "bg-av-border-soft text-av-secondary border-av-border",
-  "coming-soon": "bg-amber-50 text-semantic-warning border-amber-100",
-  draft: "bg-av-canvas text-av-muted border-av-border",
-};
 
 function fillDemoCopy(
   template: string,
@@ -71,7 +61,6 @@ export function DemoDetailPage() {
     return <NotFoundPage />;
   }
 
-  const statusTone = STATUS_TONE[item.status] ?? STATUS_TONE["coming-soon"];
   const statusLabel =
     common.demoStatusDetail[item.status] ??
     common.demoStatusDetail["coming-soon"];
@@ -91,46 +80,31 @@ export function DemoDetailPage() {
     <DemoShell brand={brand} whatsappUrl={whatsappUrl}>
       <section
         id="top"
-        className="relative overflow-hidden text-white"
+        className="text-white"
         style={{
-          backgroundImage: `linear-gradient(135deg, ${item.brandColor}, ${item.accentColor})`,
+          backgroundColor: item.brandColor,
           viewTransitionName: `demo-cover-${item.slug}`,
         }}
       >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
-        <Container className="relative py-16 sm:py-20 lg:py-24">
+        <Container className="py-14 sm:py-16 lg:py-20">
           <div className="max-w-3xl">
-            <div className="mb-5 flex flex-wrap items-center gap-2">
-              <Badge className="border border-white/20 bg-white/15 text-white">
-                {item.categoryLabel[lang]}
-              </Badge>
-              <Badge
-                className={cn(
-                  "border bg-white/95",
-                  statusTone.replace("bg-", "border-").split(" ")[0],
-                )}
-              >
-                {statusLabel}
-              </Badge>
-            </div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-white/80">
-              {brandName}
+            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-white/70">
+              {brandName} · {item.categoryLabel[lang]} · {statusLabel}
             </p>
             <h1
-              className="mt-3 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
+              className="mt-4 font-display text-display-lg font-normal tracking-tight text-white"
               style={{ viewTransitionName: `demo-title-${item.slug}` }}
             >
               {item.title[lang]}
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
+            <p className="mt-5 max-w-[60ch] text-base leading-relaxed text-white/85 sm:text-lg">
               {item.summary[lang]}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
               <Button
                 href={whatsappUrl}
                 size="lg"
-                className="bg-white text-brand-navy hover:bg-blue-50"
+                className="bg-white text-av-ink hover:bg-av-canvas"
                 onClick={() =>
                   trackEvent("cta_whatsapp_click", {
                     location: "demo_detail_hero",
@@ -145,7 +119,7 @@ export function DemoDetailPage() {
                 href={routes.portfolioDetail(lang, item.relatedCaseStudySlug)}
                 variant="secondary"
                 size="lg"
-                className="border-white/30 bg-white/10 text-white hover:bg-white/20"
+                className="border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10"
               >
                 <ExternalLink className="h-4 w-4" aria-hidden />
                 {copy.viewCaseStudy}
@@ -155,7 +129,7 @@ export function DemoDetailPage() {
                   href={routes.demoDetail(lang, item.slug)}
                   variant="secondary"
                   size="lg"
-                  className="border-white/30 bg-white/10 text-white hover:bg-white/20"
+                  className="border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10"
                 >
                   <Sparkles className="h-4 w-4" aria-hidden />
                   {copy.openFullDemo}

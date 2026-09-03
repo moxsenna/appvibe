@@ -37,9 +37,9 @@ export function AppVibeDemoBanner({
         };
 
   const creditLine = (
-    <p className="text-sm text-brand-muted">
+    <p className="text-sm text-av-secondary">
       {credit.label}{" "}
-      <span className="font-semibold text-brand-navy">AppVibe Studio</span>
+      <span className="font-semibold text-av-ink">AppVibe Studio</span>
     </p>
   );
 
@@ -47,13 +47,13 @@ export function AppVibeDemoBanner({
     <div className="flex items-center gap-5 text-sm font-medium">
       <Link
         to={routes.portfolio(lang)}
-        className="text-brand-blue transition-colors hover:text-brand-violet"
+        className="inline-flex min-h-[44px] items-center text-av-ink transition-colors hover:text-av-signal"
       >
         {credit.caseStudy}
       </Link>
       <Link
         to={routes.demo(lang)}
-        className="text-brand-muted transition-colors hover:text-brand-blue"
+        className="inline-flex min-h-[44px] items-center text-av-secondary transition-colors hover:text-av-ink"
       >
         {credit.allDemos}
       </Link>
@@ -63,7 +63,7 @@ export function AppVibeDemoBanner({
   if (variant === "section") {
     return (
       <section
-        className={cn("border-y border-brand-border bg-brand-light", className)}
+        className={cn("border-y border-av-border bg-av-canvas", className)}
       >
         <Container>
           <div className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between">
@@ -79,7 +79,7 @@ export function AppVibeDemoBanner({
     <div
       role="note"
       className={cn(
-        "flex flex-col gap-3 rounded-xl border border-brand-border bg-brand-light px-5 py-3.5 sm:flex-row sm:items-center sm:justify-between",
+        "flex flex-col gap-3 rounded border border-av-border bg-av-canvas px-5 py-3.5 sm:flex-row sm:items-center sm:justify-between",
         className,
       )}
     >

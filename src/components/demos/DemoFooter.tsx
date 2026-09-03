@@ -19,8 +19,6 @@ export function DemoFooter({ brand }: DemoFooterProps) {
   const initial = brand.name.slice(0, 2).toUpperCase();
   const { lang } = useLang();
 
-  // Locale-specific copy lives inline here — DemoFooter is small enough that
-  // adding two more dict keys for a single string each isn't worth the noise.
   const backLabel =
     lang === "id"
       ? `← Kembali ke ${APP_NAME}`
@@ -29,29 +27,23 @@ export function DemoFooter({ brand }: DemoFooterProps) {
     lang === "id"
       ? `Website oleh ${APP_NAME}`
       : `Website by ${APP_NAME}`;
-  const copyright =
-    lang === "id"
-      ? `© ${year} ${brand.name}. All rights reserved.`
-      : `© ${year} ${brand.name}. All rights reserved.`;
 
   return (
-    <footer className="relative border-t border-slate-800 bg-brand-navy text-slate-300">
-      <Container as="div" className="relative py-10">
+    <footer className="bg-av-ink text-av-dark-body">
+      <Container as="div" className="py-10">
         <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <span
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold text-white"
-                style={{
-                  backgroundImage: `linear-gradient(135deg, ${brand.brandColor}, ${brand.accentColor})`,
-                }}
+                className="flex h-8 w-8 items-center justify-center rounded-[4px] font-mono text-xs font-medium text-white"
+                style={{ backgroundColor: brand.brandColor }}
                 aria-hidden
               >
                 {initial}
               </span>
-              <p className="text-base font-semibold text-white">{brand.name}</p>
+              <p className="text-[15px] font-semibold tracking-tight text-white">{brand.name}</p>
             </div>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-400">
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-av-dark-body">
               {brand.tagline}
             </p>
           </div>
@@ -59,16 +51,16 @@ export function DemoFooter({ brand }: DemoFooterProps) {
           <div className="flex flex-col items-start gap-2 text-sm sm:items-end">
             <Link
               to={routes.home(lang)}
-              className="font-semibold text-white transition-colors hover:text-cyan-300"
+              className="inline-flex min-h-[44px] items-center font-medium text-white transition-colors hover:text-av-signal-on-dark"
             >
               {backLabel}
             </Link>
-            <p className="text-xs text-slate-500">{byline}</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-dark-muted">{byline}</p>
           </div>
         </div>
 
-        <p className="mt-8 border-t border-slate-800 pt-6 text-xs text-slate-500">
-          {copyright}
+        <p className="mt-8 border-t border-av-dark-border pt-6 text-xs text-av-dark-muted">
+          © {year} {brand.name}. {lang === "id" ? "Demo simulasi oleh" : "Simulation demo by"} {APP_NAME}.
         </p>
       </Container>
     </footer>

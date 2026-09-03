@@ -10,10 +10,10 @@ export function DemoGrid({ items }: DemoGridProps) {
   if (items.length === 0) {
     return (
       <Card className="text-center">
-        <p className="text-lg font-semibold text-brand-navy">
+        <p className="text-lg font-semibold text-av-ink">
           Tidak ada demo yang cocok
         </p>
-        <p className="mt-2 text-sm text-brand-muted">
+        <p className="mt-2 text-sm text-av-secondary">
           Coba ubah filter kategori atau kata kunci pencarian Anda.
         </p>
       </Card>

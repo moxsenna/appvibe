@@ -20,8 +20,7 @@ export function DemoMobileStickyCTA({
     >
       <a
         href={whatsappUrl}
-        className="pointer-events-auto inline-flex max-w-[280px] items-center justify-center gap-2 rounded-full border border-white/15 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-4 py-2.5 text-xs font-semibold text-white shadow-lg ring-1 ring-cyan-500/30 transition-transform hover:scale-[1.02] active:scale-[0.98]"
-        style={{ boxShadow: "0 4px 24px -4px rgb(6 182 212 / 0.35)" }}
+        className="pointer-events-auto inline-flex max-w-[280px] items-center justify-center gap-2 rounded bg-av-ink px-4 py-2.5 text-xs font-semibold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
         onClick={() =>
           trackEvent("cta_whatsapp_click", {
             location: "demo_mobile_sticky",
@@ -29,7 +28,7 @@ export function DemoMobileStickyCTA({
           })
         }
       >
-        <MessageCircle className="h-4 w-4 shrink-0 text-brand-cyan" aria-hidden />
+        <MessageCircle className="h-4 w-4 shrink-0 text-av-signal-on-dark" aria-hidden />
         {common.cta.consultAppVibe}
       </a>
     </div>

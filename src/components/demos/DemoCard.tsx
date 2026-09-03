@@ -40,32 +40,33 @@ export function DemoCard({ item }: DemoCardProps) {
   return (
     <Card hover className="flex h-full flex-col overflow-hidden p-0">
       <div
-        className="relative h-32 overflow-hidden sm:h-36"
+        className="relative overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(135deg, ${item.brandColor}, ${item.accentColor})`,
+          backgroundColor: item.brandColor,
           ...(vtCoverName ? { viewTransitionName: vtCoverName } : null),
         }}
         aria-hidden
       >
-        <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-20" />
+        <div className="flex items-end justify-between gap-4 px-5 pb-5 pt-10 sm:px-6 sm:pt-12">
+          <div>
+            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-white/70">
+              {pick(item.categoryLabel, lang)}
+            </p>
+            <p className="mt-1 font-display text-2xl font-normal tracking-tight text-white">
+              {brandName}
+            </p>
+          </div>
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[4px] bg-white/15 font-mono text-sm text-white">
+            {brandName.slice(0, 2).toUpperCase()}
+          </div>
+        </div>
         <div className="absolute right-3 top-3">
           <Badge
             variant={STATUS_VARIANT[item.status]}
-            className="border border-white/20 bg-white/90 backdrop-blur-sm"
+            className="border border-white/25 bg-white/95"
           >
             {statusLabel}
           </Badge>
-        </div>
-        <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-white/80">
-              {pick(item.categoryLabel, lang)}
-            </p>
-            <p className="mt-0.5 text-sm font-semibold text-white">{brandName}</p>
-          </div>
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 text-xs font-bold text-white backdrop-blur-sm">
-            {brandName.slice(0, 2).toUpperCase()}
-          </div>
         </div>
       </div>
 

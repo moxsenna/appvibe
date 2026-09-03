@@ -1,15 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { routes } from "@/lib/routes";
 import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
-import { cn } from "@/lib/cn";
 import { useLang } from "@/i18n/use-lang";
 
 type DemoNavbarProps = {
   brand: {
     name: string;
+    tagline: string;
     brandColor: string;
     accentColor: string;
   };
@@ -26,66 +25,69 @@ export function DemoNavbar({ brand }: DemoNavbarProps) {
 
   const closeMenu = () => setIsOpen(false);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isOpen]);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/75">
-      <Container as="div" className="flex items-center justify-between py-3.5">
+    <header className="sticky top-0 z-40 border-b border-av-border bg-av-canvas/95 backdrop-blur-sm">
+      <Container as="div" className="flex h-16 items-center justify-between gap-4">
         <a
           href="#top"
-          className="group flex items-center gap-2"
+          className="flex min-w-0 items-center gap-2.5"
           onClick={closeMenu}
+          aria-label={brand.name}
         >
           <span
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold text-white shadow-sm transition-transform group-hover:scale-105"
-            style={{
-              backgroundImage: `linear-gradient(135deg, ${brand.brandColor}, ${brand.accentColor})`,
-            }}
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[4px] font-mono text-xs font-medium text-white"
+            style={{ backgroundColor: brand.brandColor }}
             aria-hidden
           >
             {brand.name.slice(0, 2).toUpperCase()}
           </span>
-          <span className="text-base font-bold tracking-tight text-brand-navy">
-            {brand.name}
+          <span className="min-w-0">
+            <span className="block truncate text-[15px] font-semibold tracking-tight text-av-ink">
+              {brand.name}
+            </span>
+            <span className="block truncate text-xs text-av-secondary">
+              {brand.tagline}
+            </span>
           </span>
         </a>
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
-          aria-label={`Navigasi ${brand.name}`}
+          className="hidden items-center gap-6 lg:flex"
+          aria-label={lang === "id" ? `Navigasi ${brand.name}` : `${brand.name} navigation`}
         >
           <a
             href="#top"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-brand-muted transition-colors hover:bg-brand-light hover:text-brand-navy"
+            className="text-sm font-medium text-av-secondary transition-colors hover:text-av-ink"
           >
-            Beranda
-          </a>
-          <a
-            href={routes.portfolio(lang)}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-brand-muted transition-colors hover:bg-brand-light hover:text-brand-navy"
-          >
-            Portfolio
-          </a>
-          <a
-            href={routes.demo(lang)}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-brand-muted transition-colors hover:bg-brand-light hover:text-brand-navy"
-          >
-            Demo
+            {lang === "id" ? "Beranda" : "Home"}
           </a>
           <a
             href={whatsappUrl}
             onClick={handleClick}
-            className="ml-2 inline-flex h-9 items-center gap-2 rounded-lg border border-brand-border bg-white px-4 text-sm font-semibold text-brand-navy transition-colors hover:bg-brand-light"
+            className="inline-flex min-h-[44px] items-center gap-2 rounded border border-av-border bg-av-surface px-4 text-sm font-medium text-av-ink transition-colors hover:border-av-ink"
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
-            Konsultasi AppVibe
+            {lang === "id" ? "Konsultasi AppVibe" : "Talk to AppVibe"}
           </a>
         </nav>
 
         <button
           type="button"
-          className="rounded-lg p-2 text-brand-navy transition-colors hover:bg-brand-light lg:hidden"
+          className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-[4px] text-av-ink transition-colors hover:bg-av-border-soft lg:hidden"
           aria-expanded={isOpen}
           aria-controls="demo-mobile-nav"
-          aria-label={isOpen ? "Tutup menu" : "Buka menu"}
+          aria-label={isOpen
+            ? lang === "id" ? "Tutup menu" : "Close menu"
+            : lang === "id" ? "Buka menu" : "Open menu"}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -95,40 +97,31 @@ export function DemoNavbar({ brand }: DemoNavbarProps) {
       {isOpen && (
         <nav
           id="demo-mobile-nav"
-          className="border-t border-brand-border bg-white/95 backdrop-blur-md lg:hidden"
-          aria-label={`Navigasi mobile ${brand.name}`}
+          className="border-t border-av-border bg-av-canvas lg:hidden"
+          aria-label={lang === "id" ? `Navigasi mobile ${brand.name}` : `${brand.name} mobile navigation`}
         >
           <Container as="div" className="py-4">
-            <ul className="flex flex-col gap-1">
-              {[
-                { label: "Beranda", href: "#top" },
-                { label: "Portfolio AppVibe", href: routes.portfolio(lang) },
-                { label: "Semua Demo AppVibe", href: routes.demo(lang) },
-              ].map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    onClick={closeMenu}
-                    className={cn(
-                      "block rounded-lg px-3 py-2.5 text-sm font-medium",
-                      "text-brand-muted hover:bg-brand-light hover:text-brand-navy",
-                    )}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-              <li className="mt-3">
+            <ul className="flex flex-col">
+              <li className="border-b border-av-border-soft">
+                <a
+                  href="#top"
+                  onClick={closeMenu}
+                  className="flex min-h-[44px] items-center py-2 text-[15px] font-medium text-av-secondary"
+                >
+                  {lang === "id" ? "Beranda" : "Home"}
+                </a>
+              </li>
+              <li className="pt-4">
                 <a
                   href={whatsappUrl}
                   onClick={() => {
                     handleClick();
                     closeMenu();
                   }}
-                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-brand-border bg-white px-5 text-sm font-semibold text-brand-navy transition-colors hover:bg-brand-light"
+                  className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded bg-av-ink px-5 text-sm font-semibold text-white"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden />
-                  Konsultasi AppVibe via WhatsApp
+                  {lang === "id" ? "Konsultasi AppVibe via WhatsApp" : "Talk to AppVibe on WhatsApp"}
                 </a>
               </li>
             </ul>
