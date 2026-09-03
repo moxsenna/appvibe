@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, ArrowRight, Layout, Sparkles, Briefcase, Building2 } from "lucide-react";
+import { Home, ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -54,31 +54,26 @@ function NotFoundContent({ lang }: { lang: Lang }) {
 
   const suggestedLinks = [
     {
-      icon: Home,
       label: common.notFound.suggestions.home.label,
       href: routes.home(lang),
       desc: common.notFound.suggestions.home.desc,
     },
     {
-      icon: Briefcase,
       label: common.notFound.suggestions.services.label,
       href: routes.services(lang),
       desc: common.notFound.suggestions.services.desc,
     },
     {
-      icon: Layout,
       label: common.notFound.suggestions.portfolio.label,
       href: routes.portfolio(lang),
       desc: common.notFound.suggestions.portfolio.desc,
     },
     {
-      icon: Sparkles,
       label: common.notFound.suggestions.demo.label,
       href: routes.demo(lang),
       desc: common.notFound.suggestions.demo.desc,
     },
     {
-      icon: Building2,
       label: common.notFound.suggestions.contact.label,
       href: routes.contact(lang),
       desc: common.notFound.suggestions.contact.desc,
@@ -87,18 +82,18 @@ function NotFoundContent({ lang }: { lang: Lang }) {
 
   return (
     <PageShell>
-      <section className="section-padding-lg">
-        <Container className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+      <section className="border-b border-av-border">
+        <Container className="py-14 text-center lg:py-20">
+          <p className="av-eyebrow">
             {common.notFound.eyebrow}
           </p>
-          <h1 className="mt-3 text-3xl font-bold text-brand-navy sm:text-4xl lg:text-5xl">
+          <h1 className="mx-auto mt-4 max-w-2xl font-display text-display-lg font-normal tracking-tight text-av-ink">
             {common.notFound.title}
           </h1>
-          <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brand-muted sm:text-lg">
+          <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-av-secondary">
             {common.notFound.description}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
             <Button href={routes.home(lang)} size="lg">
               <Home className="h-5 w-5" aria-hidden />
               {common.cta.backToHome}
@@ -110,36 +105,32 @@ function NotFoundContent({ lang }: { lang: Lang }) {
         </Container>
       </section>
 
-      <section className="section-padding bg-slate-50">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+      <section className="bg-av-surface">
+        <Container className="py-14 lg:py-20">
+          <div className="mx-auto max-w-3xl">
+            <p className="av-eyebrow text-av-signal">
               {common.notFound.suggestionEyebrow}
             </p>
-            <h2 className="mt-2 text-xl font-bold text-brand-navy sm:text-2xl">
+            <h2 className="mt-3 text-xl font-semibold tracking-tight text-av-ink sm:text-2xl">
               {common.notFound.suggestionHeading}
             </h2>
           </div>
-          <div className="mx-auto mt-8 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-4xl gap-x-10 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
             {suggestedLinks.map((link) => {
-              const Icon = link.icon;
               return (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className="group flex items-center gap-3 rounded-2xl border border-brand-border bg-white p-4 shadow-sm transition-shadow hover:shadow-card-hover"
+                  className="group flex items-center justify-between gap-3 border-t border-av-border-soft py-4"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-brand-blue transition-transform group-hover:scale-105">
-                    <Icon className="h-4 w-4" aria-hidden />
-                  </span>
                   <div className="flex-1">
-                    <p className="text-sm font-semibold text-brand-navy">
+                    <p className="text-sm font-medium text-av-ink transition-colors group-hover:text-av-signal">
                       {link.label}
                     </p>
-                    <p className="text-xs text-brand-muted">{link.desc}</p>
+                    <p className="text-xs text-av-muted">{link.desc}</p>
                   </div>
                   <ArrowRight
-                    className="h-4 w-4 text-brand-muted transition-transform group-hover:translate-x-1 group-hover:text-brand-blue"
+                    className="h-4 w-4 text-av-muted transition-transform group-hover:translate-x-1"
                     aria-hidden
                   />
                 </Link>

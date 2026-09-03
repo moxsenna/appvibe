@@ -159,14 +159,14 @@ function GenericScreenPlaceholder({
   return (
     <div className="flex h-full min-h-[180px] flex-col justify-between p-5">
       <div>
-        <div className="mb-3 h-4 w-2/3 rounded bg-cta-gradient opacity-80" />
+        <div className="mb-3 h-4 w-2/3 rounded bg-av-signal opacity-80" />
         <div className="space-y-2">
-          <div className="h-2 w-full rounded bg-slate-200" />
-          <div className="h-2 w-5/6 rounded bg-slate-200" />
-          <div className="h-2 w-4/6 rounded bg-slate-200" />
+          <div className="h-2 w-full rounded bg-av-border" />
+          <div className="h-2 w-5/6 rounded bg-av-border" />
+          <div className="h-2 w-4/6 rounded bg-av-border" />
         </div>
       </div>
-      <p className="mt-4 text-xs text-brand-muted">
+      <p className="mt-4 text-xs text-av-muted">
         Layar {index + 1} dari {total}
       </p>
     </div>

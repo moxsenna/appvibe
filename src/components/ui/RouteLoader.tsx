@@ -11,10 +11,10 @@ export function RouteLoader() {
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <div
-            className="mx-auto h-1.5 w-32 animate-pulse rounded-full bg-gradient-to-r from-brand-blue via-brand-violet to-brand-cyan"
+            className="mx-auto h-1.5 w-32 animate-pulse rounded-full bg-av-signal"
             aria-hidden
           />
-          <p className="mt-6 text-sm font-medium text-brand-muted">
+          <p className="mt-6 text-sm font-medium text-av-muted">
             Memuat halaman...
           </p>
         </div>

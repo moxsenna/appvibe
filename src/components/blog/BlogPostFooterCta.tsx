@@ -14,9 +14,9 @@ export function BlogPostFooterCta({ title, subtitle }: BlogPostFooterCtaProps) {
   const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
 
   return (
-    <aside className="mt-14 rounded-2xl border border-brand-blue/15 bg-gradient-to-br from-brand-light via-white to-brand-light p-8 text-center sm:p-10">
-      <h2 className="text-xl font-bold text-brand-navy sm:text-2xl">{title}</h2>
-      <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-brand-muted sm:text-base">
+    <aside className="mt-14 rounded border border-av-border bg-av-surface p-8 text-center sm:p-10">
+      <h2 className="text-xl font-semibold tracking-tight text-av-ink sm:text-2xl">{title}</h2>
+      <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-av-secondary sm:text-base">
         {subtitle}
       </p>
       <div className="mt-6 flex justify-center">

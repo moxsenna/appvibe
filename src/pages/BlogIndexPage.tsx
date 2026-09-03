@@ -154,22 +154,19 @@ export function BlogIndexPage() {
         description={copy.hero.description}
       />
 
-      <section className="relative section-padding">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(37,99,235,0.08),transparent)]" />
-        <div className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-[0.35]" />
-
-        <Container className="relative">
+      <section className="border-t border-av-border">
+        <Container className="py-14 lg:py-20">
           {allPosts.length === 0 ? (
-            <div className="mx-auto flex max-w-md flex-col items-center rounded-2xl border border-dashed border-brand-border bg-white/80 px-8 py-16 text-center">
-              <BookOpen className="h-10 w-10 text-brand-blue/40" aria-hidden />
-              <p className="mt-4 text-brand-muted">{copy.empty}</p>
+            <div className="mx-auto flex max-w-md flex-col items-center rounded border border-dashed border-av-border bg-av-surface px-8 py-16 text-center">
+              <BookOpen className="h-10 w-10 text-av-muted" aria-hidden />
+              <p className="mt-4 text-av-secondary">{copy.empty}</p>
             </div>
           ) : (
             <div className="mx-auto max-w-5xl">
               <div className="mb-6 flex justify-end">
                 <a
                   href={feedPath}
-                  className="text-sm font-semibold text-brand-blue hover:underline"
+                  className="text-sm font-medium text-av-ink underline decoration-av-signal underline-offset-4 hover:text-av-signal"
                 >
                   {copy.rssLinkLabel}
                 </a>
@@ -191,9 +188,9 @@ export function BlogIndexPage() {
               />
 
               {filtered.length === 0 ? (
-                <div className="flex flex-col items-center rounded-2xl border border-brand-border bg-white px-8 py-14 text-center">
-                  <SearchX className="h-10 w-10 text-brand-muted/50" aria-hidden />
-                  <p className="mt-4 max-w-sm text-brand-muted">{copy.noResults}</p>
+                <div className="flex flex-col items-center rounded border border-av-border bg-av-surface px-8 py-14 text-center">
+                  <SearchX className="h-10 w-10 text-av-muted" aria-hidden />
+                  <p className="mt-4 max-w-sm text-av-secondary">{copy.noResults}</p>
                 </div>
               ) : (
                 <div className="space-y-10">

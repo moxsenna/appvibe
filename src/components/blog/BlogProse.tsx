@@ -9,7 +9,7 @@ export function BlogProse({ html, className }: BlogProseProps) {
   return (
     <div
       className={cn(
-        "rounded-2xl border border-brand-border/80 bg-white px-6 py-8 shadow-card sm:px-10 sm:py-12",
+        "rounded border border-av-border bg-av-surface px-6 py-8 sm:px-10 sm:py-12",
         className,
       )}
     >

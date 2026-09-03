@@ -39,7 +39,7 @@ export function BlogListToolbar({
     <div className="mb-10 space-y-5">
       <div className="relative">
         <Search
-          className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-muted"
+          className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-av-muted"
           aria-hidden
         />
         <input
@@ -47,14 +47,14 @@ export function BlogListToolbar({
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
           placeholder={searchPlaceholder}
-          className="w-full rounded-xl border border-brand-border bg-white py-3 pl-11 pr-10 text-sm shadow-card outline-none transition-colors placeholder:text-brand-muted/70 focus:border-brand-blue/40"
+          className="w-full rounded border border-av-border bg-av-surface py-3 pl-11 pr-10 text-sm text-av-ink outline-none transition-colors placeholder:text-av-muted/70 focus:border-av-signal"
           aria-label={searchPlaceholder}
         />
         {query && (
           <button
             type="button"
             onClick={() => onQueryChange("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg p-1 text-brand-muted hover:text-brand-navy"
+            className="absolute right-3 top-1/2 min-h-[44px] min-w-[44px] -translate-y-1/2 rounded p-1 text-av-muted hover:text-av-ink"
             aria-label={clearFiltersLabel}
           >
             <X className="h-4 w-4" aria-hidden />
@@ -68,10 +68,10 @@ export function BlogListToolbar({
             type="button"
             onClick={() => onTagChange(null)}
             className={cn(
-              "rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors",
+              "min-h-[44px] rounded-[4px] border px-3.5 py-1.5 text-xs font-medium transition-colors",
               activeTag === null
-                ? "border-brand-blue bg-brand-blue text-white"
-                : "border-brand-border bg-white text-brand-muted hover:border-brand-blue/30 hover:text-brand-navy",
+                ? "border-av-ink bg-av-ink text-white"
+                : "border-av-border bg-av-surface text-av-secondary hover:border-av-ink hover:text-av-ink",
             )}
           >
             {filterAllLabel}
@@ -79,10 +79,10 @@ export function BlogListToolbar({
           {tags.map((tag) => {
             const isActive = activeTag === tag;
             const className = cn(
-              "rounded-full border px-3.5 py-1.5 text-xs font-semibold capitalize transition-colors",
+              "min-h-[44px] rounded-[4px] border px-3.5 py-1.5 text-xs font-medium capitalize transition-colors",
               isActive
-                ? "border-brand-blue bg-brand-blue/10 text-brand-blue"
-                : "border-brand-border bg-white text-brand-muted hover:border-brand-blue/30 hover:text-brand-navy",
+                ? "border-av-signal bg-av-signal/10 text-av-signal"
+                : "border-av-border bg-av-surface text-av-secondary hover:border-av-ink hover:text-av-ink",
             );
             if (isActive) {
               return (
@@ -104,13 +104,13 @@ export function BlogListToolbar({
         </div>
       )}
 
-      <p className="text-sm text-brand-muted" aria-live="polite">
+      <p className="text-sm text-av-secondary" aria-live="polite">
         {resultsLabel(resultsCount)}
         {hasFilters && (
           <button
             type="button"
             onClick={onClearFilters}
-            className="ml-2 font-semibold text-brand-blue hover:underline"
+            className="ml-2 font-medium text-av-ink underline decoration-av-signal underline-offset-4 hover:text-av-signal"
           >
             {clearFiltersLabel}
           </button>

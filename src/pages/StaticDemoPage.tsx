@@ -68,7 +68,7 @@ export function StaticDemoPage() {
 
   return (
     <div className="fixed inset-0 z-[60] flex flex-col bg-white">
-      <div className="shrink-0 border-b border-slate-800 bg-brand-navy px-3 py-2.5 text-slate-300 sm:px-4">
+      <div className="shrink-0 border-b border-av-dark-border bg-av-ink px-3 py-2.5 text-av-dark-body sm:px-4">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2">
           <p className="min-w-0 flex-1 truncate text-xs sm:text-sm">
             <span className="font-semibold text-white">AppVibe Studio</span>
@@ -78,7 +78,7 @@ export function StaticDemoPage() {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               to={routes.demo(lang)}
-              className="inline-flex items-center gap-1 rounded-lg border border-slate-600 px-2.5 py-1.5 text-xs font-semibold text-slate-200 hover:bg-slate-800"
+              className="inline-flex min-h-[44px] items-center gap-1 rounded border border-av-dark-border px-2.5 py-1.5 text-xs font-medium text-av-dark-body hover:text-white"
             >
               <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
               {banner.back}
@@ -87,7 +87,7 @@ export function StaticDemoPage() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-lg bg-cta-gradient px-2.5 py-1.5 text-xs font-semibold text-white shadow-sm hover:brightness-110"
+              className="inline-flex min-h-[44px] items-center gap-1 rounded bg-av-canvas px-2.5 py-1.5 text-xs font-semibold text-av-ink"
             >
               <MessageCircle className="h-3.5 w-3.5" aria-hidden />
               {banner.consult}

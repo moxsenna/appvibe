@@ -26,12 +26,7 @@ export function ContactHero() {
           <MessageCircle className="h-5 w-5" aria-hidden />
           {lang === "id" ? "Kirim Pesan via WhatsApp" : "Message us on WhatsApp"}
         </Button>
-        <Button
-          href="#form-kontak"
-          variant="secondary"
-          size="lg"
-          className="border-white/30 bg-white/10 text-white hover:bg-white/20"
-        >
+        <Button href="#form-kontak" variant="secondary" size="lg">
           <Send className="h-4 w-4" aria-hidden />
           {lang === "id" ? "Isi Form di Bawah" : "Fill the form below"}
         </Button>

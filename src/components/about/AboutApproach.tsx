@@ -1,8 +1,8 @@
 import { processSteps } from "@/data/process";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { useLang } from "@/i18n/use-lang";
 import { useDict } from "@/i18n/use-dict";
+import { pick } from "@/i18n/localized";
 
 export function AboutApproach() {
   const { lang } = useLang();
@@ -10,33 +10,29 @@ export function AboutApproach() {
   const approach = dict.pages.about.approach;
 
   return (
-    <section className="section-padding bg-white">
-      <Container>
-        <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
-            {approach.eyebrow}
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-brand-navy sm:text-3xl">
+    <section className="border-t border-av-border">
+      <Container className="py-14 lg:py-20">
+        <div className="max-w-3xl">
+          <p className="av-eyebrow text-av-signal">{approach.eyebrow}</p>
+          <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
             {approach.title}
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-brand-muted sm:text-base">
+          <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-av-text">
             {approach.subtitle}
           </p>
         </div>
-        <ol className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {processSteps.map((step) => (
-            <li key={step.id}>
-              <Card hover className="flex flex-col">
-                <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-cta-gradient text-sm font-bold text-white">
-                  {step.step}
-                </span>
-                <h3 className="text-base font-semibold text-brand-navy">
-                  {step.title[lang]}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-muted">
-                  {step.description[lang]}
-                </p>
-              </Card>
+            <li key={step.id} className="border-t border-av-border pt-5">
+              <p className="font-mono text-xs text-av-muted">
+                {String(step.step).padStart(2, "0")}
+              </p>
+              <h3 className="mt-2 text-base font-semibold text-av-ink">
+                {pick(step.title, lang)}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-av-secondary">
+                {pick(step.description, lang)}
+              </p>
             </li>
           ))}
         </ol>

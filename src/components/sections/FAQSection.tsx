@@ -12,70 +12,46 @@ export function FAQSection() {
   const [openId, setOpenId] = useState<string | null>(faqItems[0]?.id ?? null);
 
   return (
-    <section className="section-padding bg-white reveal-on-scroll">
-      <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="premium-eyebrow">
+    <section id="faq" className="border-t border-av-border bg-av-surface scroll-mt-20">
+      <Container className="py-14 lg:py-20">
+        <div className="max-w-3xl">
+          <p className="av-eyebrow text-av-signal">
             {dict.pages.home.faq.eyebrow}
-          </span>
-          <h2 className="mt-4 text-2xl font-bold text-brand-navy sm:text-3xl lg:text-4xl">
+          </p>
+          <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
             {dict.pages.home.faq.title}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-brand-muted">
+          <p className="mt-4 text-base leading-relaxed text-av-text">
             {dict.pages.home.faq.subtitle}
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl space-y-2">
-          {faqItems.map((item, index) => {
+        <div className="mt-8 max-w-3xl divide-y divide-av-border-soft border-b border-t border-av-border-soft">
+          {faqItems.map((item) => {
             const isOpen = openId === item.id;
             return (
-              <div
-                key={item.id}
-                className={cn(
-                  "overflow-hidden rounded-xl border bg-white transition-all duration-200",
-                  isOpen
-                    ? "border-brand-blue/30 shadow-card-hover"
-                    : "border-brand-border shadow-card",
-                )}
-              >
+              <div key={item.id}>
                 <button
                   type="button"
-                  className={cn(
-                    "flex w-full items-center gap-3 px-4 text-left transition-colors hover:bg-brand-light/30 sm:px-5",
-                    isOpen ? "py-4" : "py-3",
-                  )}
+                  className="flex min-h-[56px] w-full items-center justify-between gap-4 py-4 text-left"
                   aria-expanded={isOpen}
                   onClick={() => setOpenId(isOpen ? null : item.id)}
                 >
-                  <span
-                    className={cn(
-                      "flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[10px] font-bold transition-colors",
-                      isOpen
-                        ? "bg-cta-gradient text-white"
-                        : "bg-brand-light text-brand-muted",
-                    )}
-                    aria-hidden
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="flex-1 text-sm font-semibold text-brand-navy sm:text-base">
+                  <span className="text-[15px] font-medium text-av-ink">
                     {item.question[lang]}
                   </span>
                   <ChevronDown
                     className={cn(
-                      "h-4 w-4 shrink-0 text-brand-muted transition-transform duration-200",
-                      isOpen && "rotate-180 text-brand-blue",
+                      "h-4 w-4 shrink-0 text-av-muted transition-transform duration-200",
+                      isOpen && "rotate-180",
                     )}
                     aria-hidden
                   />
                 </button>
                 {isOpen && (
-                  <div className="border-t border-brand-border/60 px-4 pb-4 pt-0 sm:px-5">
-                    <p className="text-sm leading-relaxed text-brand-muted">
-                      {item.answer[lang]}
-                    </p>
-                  </div>
+                  <p className="max-w-[62ch] pb-5 text-sm leading-relaxed text-av-secondary">
+                    {item.answer[lang]}
+                  </p>
                 )}
               </div>
             );

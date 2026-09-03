@@ -54,7 +54,7 @@ function ShareButton({
         trackEvent("blog_share_click", { network, page_path: pagePath })
       }
       className={cn(
-        "inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-border bg-white text-brand-navy shadow-card transition-colors hover:border-brand-blue/40 hover:text-brand-blue",
+        "inline-flex h-11 w-11 items-center justify-center rounded border border-av-border bg-av-surface text-av-ink transition-colors hover:border-av-ink",
         className,
       )}
     >
@@ -113,12 +113,12 @@ export function BlogShareBar({
 
   return (
     <aside
-      className="mt-10 rounded-2xl border border-brand-border bg-white/90 p-6 shadow-card"
+      className="mt-10 rounded border border-av-border bg-av-surface p-6"
       aria-labelledby="blog-share-heading"
     >
       <h2
         id="blog-share-heading"
-        className="text-sm font-bold uppercase tracking-wide text-brand-muted"
+        className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted"
       >
         {shareTitle}
       </h2>
@@ -166,7 +166,7 @@ export function BlogShareBar({
         <button
           type="button"
           onClick={() => void onCopy()}
-          className="inline-flex h-10 items-center gap-2 rounded-full border border-brand-border bg-white px-4 text-sm font-semibold text-brand-navy shadow-card transition-colors hover:border-brand-blue/40 hover:text-brand-blue"
+          className="inline-flex h-11 items-center gap-2 rounded border border-av-border bg-av-surface px-4 text-sm font-medium text-av-ink transition-colors hover:border-av-ink"
           aria-live="polite"
         >
           {copied ? (

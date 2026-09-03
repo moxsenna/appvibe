@@ -4,13 +4,11 @@ import {
   MessageCircle,
   Monitor,
   Smartphone,
-  Sparkles,
 } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { DemoFilter } from "@/components/demos/DemoFilter";
@@ -115,28 +113,20 @@ export function DemoIndexPage() {
             <MessageCircle className="h-5 w-5" aria-hidden />
             {common.cta.consult}
           </Button>
-          <Button
-            href="#demo-list"
-            variant="secondary"
-            size="lg"
-            className="border-white/30 bg-white/10 text-white hover:bg-white/20"
-          >
+          <Button href="#demo-list" variant="secondary" size="lg">
             {common.cta.seeAllDemos}
           </Button>
         </div>
       </PageHero>
 
-      <section className="section-padding bg-white">
-        <Container>
+      <section className="border-t border-av-border">
+        <Container className="py-10 lg:py-14">
           <AppVibeDemoBanner variant="inline" />
         </Container>
       </section>
 
-      <section
-        id="demo-list"
-        className="section-padding bg-gradient-to-br from-slate-50 via-white to-blue-50/40"
-      >
-        <Container>
+      <section id="demo-list" className="border-t border-av-border scroll-mt-20">
+        <Container className="py-14 lg:py-20">
           <SectionHeader
             eyebrow={lang === "id" ? "Etalase Demo" : "Demo Catalogue"}
             title={
@@ -161,7 +151,7 @@ export function DemoIndexPage() {
           </div>
           {interactiveItems.length > 0 && (
             <div className="mt-10">
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-blue">
+              <h3 className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.14em] text-av-signal">
                 {lang === "id"
                   ? `Demo interaktif · ${interactiveItems.length}`
                   : `Interactive demos · ${interactiveItems.length}`}
@@ -171,12 +161,12 @@ export function DemoIndexPage() {
           )}
           {templateItems.length > 0 && (
             <div className="mt-12">
-              <h3 className="mb-2 text-sm font-semibold uppercase tracking-widest text-brand-violet">
+              <h3 className="mb-2 font-mono text-xs font-medium uppercase tracking-[0.14em] text-av-muted">
                 {lang === "id"
                   ? `Landing template · ${templateItems.length}`
                   : `Landing templates · ${templateItems.length}`}
               </h3>
-              <p className="mb-4 max-w-2xl text-sm text-brand-muted">
+              <p className="mb-4 max-w-2xl text-sm text-av-secondary">
                 {lang === "id"
                   ? "Referensi visual HTML — bukan shell React penuh. Cocok untuk membayangkan tone niche; interaksi terbatas."
                   : "HTML visual references — not full React shells. Useful for niche tone; limited interaction."}
@@ -185,7 +175,7 @@ export function DemoIndexPage() {
             </div>
           )}
           {filteredItems.length === 0 && (
-            <p className="mt-10 text-center text-sm text-brand-muted">
+            <p className="mt-10 text-center text-sm text-av-secondary">
               {lang === "id"
                 ? "Tidak ada demo yang cocok dengan filter."
                 : "No demos match this filter."}
@@ -194,8 +184,8 @@ export function DemoIndexPage() {
         </Container>
       </section>
 
-      <section className="section-padding bg-white">
-        <Container>
+      <section className="border-t border-av-border bg-av-surface">
+        <Container className="py-14 lg:py-20">
           <SectionHeader
             eyebrow={lang === "id" ? "Kenapa Demo Interaktif" : "Why interactive demos"}
             title={
@@ -249,10 +239,9 @@ export function DemoIndexPage() {
         </Container>
       </section>
 
-      <section className="section-padding bg-brand-light">
-        <Container>
+      <section className="border-t border-av-border">
+        <Container className="py-14 lg:py-20">
           <SectionHeader
-            align="center"
             eyebrow={lang === "id" ? "Pertanyaan umum" : "Frequently asked"}
             title={
               lang === "id"
@@ -260,36 +249,35 @@ export function DemoIndexPage() {
                 : "Common questions about the interactive demos"
             }
           />
-          <div className="mx-auto mt-10 max-w-3xl space-y-4">
+          <div className="mt-8 max-w-3xl divide-y divide-av-border-soft border-b border-t border-av-border-soft">
             {faqItems.map((item) => (
-              <Card key={item.question} padding="md">
-                <p className="text-base font-semibold text-brand-navy">
+              <div key={item.question} className="py-5">
+                <p className="text-[15px] font-medium text-av-ink">
                   {item.question}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-brand-muted">
+                <p className="mt-2 max-w-[62ch] text-sm leading-relaxed text-av-secondary">
                   {item.answer}
                 </p>
-              </Card>
+              </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="section-padding bg-hero-gradient text-white">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <Sparkles className="mx-auto h-8 w-8 text-cyan-300" aria-hidden />
-            <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+      <section className="border-t-2 border-av-ink bg-av-surface">
+        <Container className="py-14 lg:py-20">
+          <div className="max-w-3xl">
+            <h2 className="font-display text-display-md font-normal tracking-tight text-av-ink">
               {lang === "id"
                 ? "Sudah menemukan demo yang paling cocok?"
                 : "Found the demo that fits?"}
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-blue-100 sm:text-lg">
+            <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-av-text">
               {lang === "id"
                 ? "Ceritakan bisnis Anda — kami bantu rekomendasikan struktur, scope, dan tone yang paling pas untuk tahap bisnis Anda saat ini."
                 : "Tell us about your business — we'll recommend the structure, scope, and tone that fit where you stand today."}
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
               <Button
                 href={whatsappUrl}
                 size="lg"
@@ -302,12 +290,7 @@ export function DemoIndexPage() {
                 <MessageCircle className="h-5 w-5" aria-hidden />
                 {common.cta.consult}
               </Button>
-              <Button
-                href="#demo-list"
-                variant="secondary"
-                size="lg"
-                className="border-white/30 bg-white/10 text-white hover:bg-white/20"
-              >
+              <Button href="#demo-list" variant="secondary" size="lg">
                 {lang === "id" ? "Lihat Demo Lagi" : "See demos again"}
               </Button>
             </div>

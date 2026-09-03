@@ -40,8 +40,8 @@ export function BlogPostCard({
   return (
     <article
       className={cn(
-        "group relative h-full overflow-hidden rounded-2xl border border-brand-border bg-white shadow-card transition-all duration-300",
-        "hover:-translate-y-0.5 hover:border-brand-blue/25 hover:shadow-card-hover",
+        "group relative h-full overflow-hidden rounded border border-av-border bg-av-surface transition-colors duration-200",
+        "hover:border-av-ink",
         featured && !compact && "lg:grid lg:grid-cols-[1.15fr_1fr] lg:gap-0",
       )}
     >
@@ -55,7 +55,7 @@ export function BlogPostCard({
       >
         <div
           className={cn(
-            "relative overflow-hidden bg-gradient-to-br from-brand-navy via-[#1E3A8A] to-brand-violet",
+            "relative overflow-hidden bg-av-canvas",
             featured && !compact
               ? "min-h-[220px] lg:min-h-full"
               : compact
@@ -71,11 +71,14 @@ export function BlogPostCard({
               loading="lazy"
             />
           ) : (
-            <div className="absolute inset-0 bg-hero-mesh opacity-90" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="font-mono text-xs uppercase tracking-[0.14em] text-av-muted">
+                AppVibe
+              </span>
+            </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-brand-navy/20 to-transparent" />
           {post.tags[0] && (
-            <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
+            <span className="absolute left-4 top-4 rounded-[3px] bg-av-ink px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-white">
               {post.tags[0]}
             </span>
           )}
@@ -88,20 +91,20 @@ export function BlogPostCard({
             featured && !compact && "justify-center",
           )}
         >
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-medium text-brand-muted">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-medium text-av-muted">
             <time dateTime={post.date} className="inline-flex items-center gap-1.5">
-              <Calendar className="h-3.5 w-3.5 text-brand-blue" aria-hidden />
+              <Calendar className="h-3.5 w-3.5 text-av-signal" aria-hidden />
               {formatDate(post.date, lang)}
             </time>
             <span className="inline-flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5 text-brand-blue" aria-hidden />
+              <Clock className="h-3.5 w-3.5 text-av-signal" aria-hidden />
               {readTimeLabel(post.readingTimeMinutes)}
             </span>
           </div>
 
           <h2
             className={cn(
-              "mt-3 font-bold tracking-tight text-brand-navy transition-colors group-hover:text-brand-blue",
+              "mt-3 font-semibold tracking-tight text-av-ink transition-colors group-hover:text-av-signal",
               featured && !compact ? "text-2xl sm:text-3xl" : compact ? "text-lg" : "text-xl",
             )}
           >
@@ -110,7 +113,7 @@ export function BlogPostCard({
 
           <p
             className={cn(
-              "mt-3 flex-1 leading-relaxed text-brand-muted",
+              "mt-3 flex-1 leading-relaxed text-av-secondary",
               compact ? "line-clamp-2 text-sm" : "text-sm sm:text-base",
             )}
           >
@@ -122,7 +125,7 @@ export function BlogPostCard({
               {post.tags.slice(1).map((t) => (
                 <span
                   key={t}
-                  className="rounded-full bg-brand-light px-2.5 py-0.5 text-xs font-medium text-brand-muted"
+                  className="rounded-[3px] bg-av-canvas px-2.5 py-0.5 text-xs font-medium text-av-secondary"
                 >
                   {t}
                 </span>
@@ -130,7 +133,7 @@ export function BlogPostCard({
             </div>
           )}
 
-          <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue">
+          <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-av-ink">
             {readLabel}
             <ArrowRight
               className="h-4 w-4 transition-transform group-hover:translate-x-0.5"

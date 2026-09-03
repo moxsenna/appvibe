@@ -34,12 +34,7 @@ export function AboutHero() {
           <MessageCircle className="h-5 w-5" aria-hidden />
           {dict.common.cta.consult}
         </Button>
-        <Button
-          href="#story"
-          variant="secondary"
-          size="lg"
-          className="border-white/30 bg-white/10 text-white hover:bg-white/20"
-        >
+        <Button href="#story" variant="secondary" size="lg">
           {lang === "id" ? "Pelajari Pendekatan Kami" : "Learn how we work"}
         </Button>
       </div>

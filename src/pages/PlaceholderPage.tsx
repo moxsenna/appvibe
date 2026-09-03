@@ -6,7 +6,6 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { FeatureCard } from "@/components/ui/FeatureCard";
 import { applyPageMeta, type PageMeta } from "@/lib/seo";
 import { routes } from "@/lib/routes";
 import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
@@ -58,8 +57,8 @@ export function PlaceholderPage({
         </Button>
       </PageHero>
 
-      <section className="section-padding bg-white">
-        <Container>
+      <section className="border-t border-av-border">
+        <Container className="py-14 lg:py-20">
           <SectionHeader
             eyebrow={lang === "id" ? "Segera hadir" : "Coming soon"}
             title={
@@ -74,38 +73,44 @@ export function PlaceholderPage({
             }
           />
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <FeatureCard
-                key={feature.title}
-                title={feature.title}
-                description={feature.description}
-                icon={feature.icon}
-              />
+          <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, i) => (
+              <div key={feature.title} className="border-t-2 border-av-ink pt-5">
+                <p className="font-mono text-xs text-av-muted">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-2 text-base font-semibold text-av-ink">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-av-secondary">
+                  {feature.description}
+                </p>
+              </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="section-padding bg-brand-light">
-        <Container>
-          <div className="rounded-2xl border border-brand-border bg-white p-8 text-center shadow-card sm:p-10">
-            <h2 className="text-xl font-bold text-brand-navy sm:text-2xl">
+      <section className="border-t-2 border-av-ink bg-av-surface">
+        <Container className="py-14 lg:py-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-display text-display-md font-normal tracking-tight text-av-ink">
               {lang === "id"
                 ? "Punya kebutuhan spesifik untuk bisnis Anda?"
                 : "Have a specific need for your business?"}
             </h2>
-            <p className="mx-auto mt-3 max-w-lg text-sm text-brand-muted sm:text-base">
+            <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-av-text">
               {lang === "id"
                 ? "Ceritakan kebutuhan Anda — kami bantu rekomendasikan solusi website atau web app yang paling cocok."
                 : "Tell us what you need — we'll recommend the website or web app solution that fits best."}
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Button href={routes.home(lang)} variant="secondary">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+              <Button href={routes.home(lang)} variant="secondary" size="lg">
                 {dict.common.cta.backToHome}
               </Button>
               <Button
                 href={whatsappUrl}
+                size="lg"
                 onClick={() =>
                   trackEvent("cta_whatsapp_click", {
                     location: `${trackingLabel}_cta`,

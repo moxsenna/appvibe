@@ -3,7 +3,6 @@ import type { FormEvent } from "react";
 import { MessageCircle, Send, Shield } from "lucide-react";
 import { formFields, whatsappPrefill } from "@/data/contact/form";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { buildWhatsAppUrl, getContactConsultationMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
@@ -57,6 +56,14 @@ function buildPrefilledMessage(data: FormData): string {
     .replace("[opsional]", data.message || "(tidak ada)");
 }
 
+const inputCls = (hasError: boolean) =>
+  cn(
+    "w-full rounded border bg-av-surface px-3.5 py-2.5 text-sm text-av-ink placeholder:text-av-muted focus:outline-none focus:ring-2",
+    hasError
+      ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
+      : "border-av-border focus:border-av-signal focus:ring-av-signal/20",
+  );
+
 export function ContactForm() {
   const [data, setData] = useState<FormData>(initialData);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -89,108 +96,45 @@ export function ContactForm() {
   };
 
   return (
-    <section
-      id="form-kontak"
-      className="section-padding"
-      style={{
-        backgroundImage:
-          "linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)",
-      }}
-    >
-      <Container>
-        <div className="grid gap-10 lg:grid-cols-12">
+    <section id="form-kontak" className="border-t border-av-border">
+      <Container className="py-14 lg:py-20">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
-              Form Konsultasi
-            </p>
-            <h2 className="mt-2 text-2xl font-bold text-brand-navy sm:text-3xl">
+            <p className="av-eyebrow text-av-signal">Form Konsultasi</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-av-ink sm:text-3xl">
               Siapkan pesan WhatsApp dengan konteks lengkap
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-brand-muted sm:text-base">
+            <p className="mt-3 max-w-[60ch] text-[15px] leading-relaxed text-av-text">
               Isi form singkat berikut. Setelah Anda klik kirim, WhatsApp akan
               terbuka dengan pesan yang sudah terformat otomatis — tinggal
               review dan kirim ke kami. Tidak ada data yang dikirim ke server.
             </p>
 
-            <Card padding="lg" className="mt-6 shadow-card-hover">
-              <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                {formFields.map((field) => {
-                  if (field.type === "select") {
-                    return (
-                      <div key={field.name}>
-                        <label className="mb-1.5 block text-sm font-medium text-brand-navy">
-                          {field.label}{" "}
-                          {field.required && <span className="text-red-500">*</span>}
-                        </label>
-                        <select
-                          value={data[field.name] ?? ""}
-                          onChange={(e) => update(field.name, e.target.value)}
-                          className={cn(
-                            "w-full appearance-none rounded-xl border bg-white py-2.5 px-3.5 text-sm text-brand-dark focus:outline-none focus:ring-2",
-                            errors[field.name]
-                              ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                              : "border-brand-border focus:border-brand-blue focus:ring-brand-blue/20",
-                          )}
-                        >
-                          <option value="">{field.placeholder}</option>
-                          {field.options?.map((opt) => (
-                            <option key={opt.value} value={opt.value}>
-                              {opt.label}
-                            </option>
-                          ))}
-                        </select>
-                        {errors[field.name] && (
-                          <p className="mt-1 text-xs font-medium text-red-600">
-                            {errors[field.name]}
-                          </p>
-                        )}
-                      </div>
-                    );
-                  }
-                  if (field.type === "textarea") {
-                    return (
-                      <div key={field.name}>
-                        <label className="mb-1.5 block text-sm font-medium text-brand-navy">
-                          {field.label}
-                        </label>
-                        <textarea
-                          value={data[field.name] ?? ""}
-                          onChange={(e) => update(field.name, e.target.value)}
-                          placeholder={field.placeholder}
-                          rows={4}
-                          className="w-full rounded-xl border border-brand-border bg-white py-2.5 px-3.5 text-sm text-brand-dark placeholder:text-brand-muted focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
-                        />
-                        {field.helper && (
-                          <p className="mt-1 text-xs text-brand-muted">
-                            {field.helper}
-                          </p>
-                        )}
-                      </div>
-                    );
-                  }
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="mt-8 space-y-5 rounded border border-av-border bg-av-surface p-6 sm:p-8"
+            >
+              {formFields.map((field) => {
+                if (field.type === "select") {
                   return (
                     <div key={field.name}>
-                      <label className="mb-1.5 block text-sm font-medium text-brand-navy">
+                      <label className="mb-1.5 block text-sm font-medium text-av-ink">
                         {field.label}{" "}
                         {field.required && <span className="text-red-500">*</span>}
                       </label>
-                      <input
-                        type={field.type === "tel" ? "text" : field.type}
+                      <select
                         value={data[field.name] ?? ""}
                         onChange={(e) => update(field.name, e.target.value)}
-                        placeholder={field.placeholder}
-                        className={cn(
-                          "w-full rounded-xl border bg-white py-2.5 px-3.5 text-sm text-brand-dark placeholder:text-brand-muted focus:outline-none focus:ring-2",
-                          errors[field.name]
-                            ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                            : "border-brand-border focus:border-brand-blue focus:ring-brand-blue/20",
-                        )}
-                      />
-                      {field.helper && !errors[field.name] && (
-                        <p className="mt-1 text-xs text-brand-muted">
-                          {field.helper}
-                        </p>
-                      )}
+                        className={cn(inputCls(Boolean(errors[field.name])), "appearance-none")}
+                      >
+                        <option value="">{field.placeholder}</option>
+                        {field.options?.map((opt) => (
+                          <option key={opt.value} value={opt.value}>
+                            {opt.label}
+                          </option>
+                        ))}
+                      </select>
                       {errors[field.name] && (
                         <p className="mt-1 text-xs font-medium text-red-600">
                           {errors[field.name]}
@@ -198,18 +142,60 @@ export function ContactForm() {
                       )}
                     </div>
                   );
-                })}
-                <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="inline-flex items-center gap-1.5 text-xs text-brand-muted">
-                    <Shield className="h-3.5 w-3.5" aria-hidden /> Data hanya
-                    digunakan untuk follow-up konsultasi.
-                  </p>
-                  <Button type="submit" size="lg">
-                    <Send className="h-4 w-4" aria-hidden /> Kirim via WhatsApp
-                  </Button>
-                </div>
-              </form>
-            </Card>
+                }
+                if (field.type === "textarea") {
+                  return (
+                    <div key={field.name}>
+                      <label className="mb-1.5 block text-sm font-medium text-av-ink">
+                        {field.label}
+                      </label>
+                      <textarea
+                        value={data[field.name] ?? ""}
+                        onChange={(e) => update(field.name, e.target.value)}
+                        placeholder={field.placeholder}
+                        rows={4}
+                        className={inputCls(false)}
+                      />
+                      {field.helper && (
+                        <p className="mt-1 text-xs text-av-muted">{field.helper}</p>
+                      )}
+                    </div>
+                  );
+                }
+                return (
+                  <div key={field.name}>
+                    <label className="mb-1.5 block text-sm font-medium text-av-ink">
+                      {field.label}{" "}
+                      {field.required && <span className="text-red-500">*</span>}
+                    </label>
+                    <input
+                      type={field.type === "tel" ? "text" : field.type}
+                      value={data[field.name] ?? ""}
+                      onChange={(e) => update(field.name, e.target.value)}
+                      placeholder={field.placeholder}
+                      className={inputCls(Boolean(errors[field.name]))}
+                    />
+                    {field.helper && !errors[field.name] && (
+                      <p className="mt-1 text-xs text-av-muted">{field.helper}</p>
+                    )}
+                    {errors[field.name] && (
+                      <p className="mt-1 text-xs font-medium text-red-600">
+                        {errors[field.name]}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+              <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                <p className="inline-flex items-center gap-1.5 text-xs text-av-muted">
+                  <Shield className="h-3.5 w-3.5" aria-hidden /> Data hanya
+                  digunakan untuk follow-up konsultasi.
+                </p>
+                <Button type="submit" size="lg">
+                  <Send className="h-4 w-4" aria-hidden /> Kirim via WhatsApp
+                </Button>
+              </div>
+            </form>
           </div>
 
           <div className="lg:col-span-5">
@@ -225,14 +211,12 @@ function ContactInfo() {
   const { lang } = useLang();
   const whatsappUrl = buildWhatsAppUrl(getContactConsultationMessage(lang));
   return (
-    <Card padding="lg" className="h-full bg-white">
-      <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
-        Kontak Langsung
-      </p>
-      <h2 className="mt-2 text-xl font-bold text-brand-navy">
+    <div className="h-full rounded border border-av-border bg-av-surface p-6 sm:p-8 lg:sticky lg:top-24">
+      <p className="av-eyebrow text-av-signal">Kontak Langsung</p>
+      <h2 className="mt-3 text-xl font-semibold tracking-tight text-av-ink">
         Lebih suka langsung chat?
       </h2>
-      <p className="mt-2 text-sm text-brand-muted">
+      <p className="mt-2 text-sm leading-relaxed text-av-secondary">
         Jika Anda lebih nyaman menghubungi via WhatsApp atau email langsung,
         berikut adalah channel resmi AppVibe Studio.
       </p>
@@ -257,19 +241,15 @@ function ContactInfo() {
         />
       </div>
 
-      <div className="mt-6 rounded-xl border border-emerald-100 bg-emerald-50/40 p-4">
-        <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-          Prefer WhatsApp langsung?
-        </p>
-        <p className="mt-2 text-sm text-emerald-900">
-          Klik tombol di bawah untuk langsung chat dengan tim kami — tidak
-          perlu mengisi form.
+      <div className="mt-6 border-t border-av-border pt-6">
+        <p className="text-sm text-av-secondary">
+          Langsung chat tanpa mengisi form:
         </p>
         <Button href={whatsappUrl} size="md" className="mt-3">
           <MessageCircle className="h-4 w-4" aria-hidden /> Chat Sekarang
         </Button>
       </div>
-    </Card>
+    </div>
   );
 }
 
@@ -286,14 +266,14 @@ function InfoRow({
 }) {
   const content = (
     <>
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-brand-blue">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded border border-av-border bg-av-canvas text-av-signal">
         <Icon className="h-4 w-4" aria-hidden />
       </span>
       <div>
-        <p className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
+        <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-muted">
           {title}
         </p>
-        <p className="mt-0.5 text-sm font-medium text-brand-navy">{body}</p>
+        <p className="mt-0.5 text-sm font-medium text-av-ink">{body}</p>
       </div>
     </>
   );
@@ -303,7 +283,7 @@ function InfoRow({
         href={href}
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-        className="flex items-start gap-3 transition-colors hover:text-brand-blue"
+        className="flex items-start gap-3"
       >
         {content}
       </a>

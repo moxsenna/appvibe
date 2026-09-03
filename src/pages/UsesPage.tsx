@@ -5,7 +5,6 @@ import {
   Layers,
   Palette,
   Rocket,
-  Sparkles,
   Wrench,
 } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
@@ -46,8 +45,8 @@ const STACK: StackGroup[] = [
       },
       {
         name: "Tailwind CSS 3.4",
-        noteId: "Custom design tokens (brand palette + glass-card + bento-card). Tidak pakai UI library.",
-        noteEn: "Custom design tokens (brand palette + glass-card + bento-card). No UI library.",
+        noteId: "Custom design tokens (kanvas netral + aksen teal + tipografi editorial). Tidak pakai UI library.",
+        noteEn: "Custom design tokens (neutral canvas + teal signal + editorial type). No UI library.",
       },
       {
         name: "Lucide React",
@@ -247,8 +246,8 @@ export function UsesPage() {
         description={pages.uses.hero.description}
       />
 
-      <section className="section-padding bg-white">
-        <Container>
+      <section className="border-t border-av-border">
+        <Container className="py-14 lg:py-20">
           <div className="mx-auto max-w-5xl space-y-12">
             {STACK.map((group) => {
               const Icon = group.icon;
@@ -256,20 +255,20 @@ export function UsesPage() {
               return (
                 <div key={group.titleId}>
                   <div className="mb-5 flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cta-gradient text-white shadow-sm">
+                    <span className="flex h-10 w-10 items-center justify-center rounded border border-av-border bg-av-canvas text-av-signal">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
-                    <h2 className="text-xl font-bold text-brand-navy sm:text-2xl">
+                    <h2 className="text-xl font-semibold tracking-tight text-av-ink sm:text-2xl">
                       {title}
                     </h2>
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {group.items.map((item) => (
                       <Card key={item.name} padding="md" hover>
-                        <p className="text-sm font-semibold text-brand-navy">
+                        <p className="text-sm font-semibold text-av-ink">
                           {item.name}
                         </p>
-                        <p className="mt-1.5 text-xs leading-relaxed text-brand-muted">
+                        <p className="mt-1.5 text-xs leading-relaxed text-av-secondary">
                           {lang === "id" ? item.noteId : item.noteEn}
                         </p>
                       </Card>
@@ -282,54 +281,51 @@ export function UsesPage() {
         </Container>
       </section>
 
-      <section className="section-padding bg-slate-50 reveal-on-scroll">
-        <Container>
+      <section className="border-t border-av-border bg-av-surface reveal-on-scroll">
+        <Container className="py-14 lg:py-20">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-8 text-center">
-              <span className="premium-eyebrow">
+            <div className="mb-8 max-w-3xl">
+              <p className="av-eyebrow text-av-signal">
                 {pages.uses.principlesEyebrow}
-              </span>
-              <h2 className="mt-3 text-2xl font-bold text-brand-navy sm:text-3xl">
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-av-ink sm:text-3xl">
                 {pages.uses.principlesTitle}
               </h2>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {PRINCIPLES.map((p) => (
-                <Card key={p.titleId} padding="md">
-                  <div className="flex items-start gap-3">
-                    <Sparkles
-                      className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue"
-                      aria-hidden
-                    />
-                    <div>
-                      <h3 className="text-base font-semibold text-brand-navy">
-                        {lang === "id" ? p.titleId : p.titleEn}
-                      </h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-brand-muted">
-                        {lang === "id" ? p.descId : p.descEn}
-                      </p>
-                    </div>
+            <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+              {PRINCIPLES.map((p, i) => (
+                <div key={p.titleId} className="border-t-2 border-av-ink pt-5">
+                  <p className="font-mono text-xs text-av-muted">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <div>
+                    <h3 className="mt-2 text-base font-semibold text-av-ink">
+                      {lang === "id" ? p.titleId : p.titleEn}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-av-secondary">
+                      {lang === "id" ? p.descId : p.descEn}
+                    </p>
                   </div>
-                </Card>
+                </div>
               ))}
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="section-padding bg-white">
-        <Container>
-          <div className="mx-auto max-w-3xl rounded-3xl border border-brand-border bg-gradient-to-br from-blue-50/40 to-violet-50/30 p-8 sm:p-10">
+      <section className="border-t border-av-border">
+        <Container className="py-14 lg:py-20">
+          <div className="mx-auto max-w-3xl rounded border border-av-border bg-av-surface p-8 sm:p-10">
             <div className="flex items-center gap-3">
-              <Layers className="h-6 w-6 text-brand-blue" aria-hidden />
-              <h2 className="text-xl font-bold text-brand-navy sm:text-2xl">
+              <Layers className="h-6 w-6 text-av-signal" aria-hidden />
+              <h2 className="text-xl font-semibold tracking-tight text-av-ink sm:text-2xl">
                 {pages.uses.notUsedTitle}
               </h2>
             </div>
-            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-brand-muted">
+            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-av-secondary">
               {notUsed.map((item) => (
                 <li key={item.name}>
-                  <strong className="text-brand-navy">{item.name}</strong>
+                  <strong className="font-medium text-av-ink">{item.name}</strong>
                   {" — "}
                   {item.note}
                 </li>
@@ -339,21 +335,19 @@ export function UsesPage() {
         </Container>
       </section>
 
-      <section className="section-padding bg-slate-50">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <Globe2 className="mx-auto h-8 w-8 text-brand-blue" aria-hidden />
-            <h2 className="mt-3 text-xl font-bold text-brand-navy sm:text-2xl">
-              {pages.uses.keepGrowing}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-brand-muted sm:text-base">
-              {pages.uses.updateNote}
-            </p>
-            <div className="mt-5 flex flex-wrap justify-center gap-2">
-              <Badge variant="blue">{pages.uses.badges.lastUpdated}</Badge>
-              <Badge variant="violet">{pages.uses.badges.next}</Badge>
-              <Badge variant="cyan">{pages.uses.badges.openSource}</Badge>
-            </div>
+      <section className="border-t border-av-border bg-av-surface">
+        <Container className="py-14 text-center lg:py-20">
+          <Globe2 className="mx-auto h-8 w-8 text-av-signal" aria-hidden />
+          <h2 className="mx-auto mt-3 max-w-xl text-xl font-semibold tracking-tight text-av-ink sm:text-2xl">
+            {pages.uses.keepGrowing}
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-av-secondary sm:text-base">
+            {pages.uses.updateNote}
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center gap-2">
+            <Badge variant="gray">{pages.uses.badges.lastUpdated}</Badge>
+            <Badge variant="gray">{pages.uses.badges.next}</Badge>
+            <Badge variant="gray">{pages.uses.badges.openSource}</Badge>
           </div>
         </Container>
       </section>

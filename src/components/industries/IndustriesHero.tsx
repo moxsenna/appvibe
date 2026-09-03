@@ -26,12 +26,7 @@ export function IndustriesHero() {
           <MessageCircle className="h-5 w-5" aria-hidden />
           {dict.common.cta.consult}
         </Button>
-        <Button
-          href="#industri-list"
-          variant="secondary"
-          size="lg"
-          className="border-white/30 bg-white/10 text-white hover:bg-white/20"
-        >
+        <Button href="#industri-list" variant="secondary" size="lg">
           {lang === "id" ? "Lihat Industri" : "See industries"}
         </Button>
       </div>

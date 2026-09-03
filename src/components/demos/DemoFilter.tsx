@@ -30,10 +30,10 @@ export function DemoFilter({
             key={filter.id}
             type="button"
             className={cn(
-              "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+              "min-h-[44px] rounded-[4px] border px-4 py-2 text-sm font-medium transition-colors",
               activeCategory === filter.category
-                ? "bg-brand-blue text-white"
-                : "bg-brand-light text-brand-muted hover:bg-slate-200 hover:text-brand-navy",
+                ? "border-av-ink bg-av-ink text-white"
+                : "border-av-border bg-av-surface text-av-secondary hover:border-av-ink hover:text-av-ink",
             )}
             onClick={() => onCategoryChange(filter.category)}
           >
@@ -45,19 +45,19 @@ export function DemoFilter({
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="relative max-w-md flex-1">
           <Search
-            className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-muted"
+            className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-av-muted"
             aria-hidden
           />
           <input
             type="search"
             value={searchQuery}
             placeholder={filterCopy.searchPlaceholder}
-            className="w-full rounded-xl border border-brand-border bg-white py-2.5 pl-10 pr-4 text-sm text-brand-dark placeholder:text-brand-muted focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/20"
+            className="w-full rounded border border-av-border bg-av-surface py-2.5 pl-10 pr-4 text-sm text-av-ink placeholder:text-av-muted focus:border-av-signal focus:outline-none focus:ring-2 focus:ring-av-signal/20"
             onChange={(e) => onSearchChange(e.target.value)}
             aria-label={filterCopy.searchAriaLabel}
           />
         </div>
-        <p className="text-sm text-brand-muted">
+        <p className="text-sm text-av-muted">
           {filterCopy.resultCount.replace("{{n}}", String(resultCount))}
         </p>
       </div>

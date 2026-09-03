@@ -10,28 +10,26 @@ const paragraphs = [
 
 export function AboutStory() {
   return (
-    <section id="story" className="section-padding bg-white">
-      <Container>
-        <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
-            Pendekatan Kami
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-brand-navy sm:text-3xl">
+    <section id="story" className="scroll-mt-20 border-t border-av-border">
+      <Container className="py-14 lg:py-20">
+        <div className="max-w-3xl">
+          <p className="av-eyebrow text-av-signal">Pendekatan Kami</p>
+          <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
             Kenapa AppVibe Studio
           </h2>
-          <div className="mt-8 overflow-hidden rounded-2xl border border-brand-border bg-slate-100 shadow-card">
+          <figure className="mt-8 overflow-hidden rounded border border-av-border bg-av-surface">
             <img
               src="/images/about/studio.webp"
-              alt="AppVibe Studio Workspace - Desain dan Pengembangan Solusi Digital"
+              alt="AppVibe Studio — perancangan antarmuka dan alur inquiry digital"
               loading="lazy"
-              className="h-64 w-full object-cover sm:h-80"
+              className="aspect-[16/9] w-full object-cover"
             />
-            <div className="p-4 bg-slate-50 border-t border-brand-border text-center text-xs text-brand-muted">
-              AppVibe Studio — Berfokus pada perancangan antarmuka, arsitektur web konversi tinggi, dan alur inquiry digital terpadu.
-            </div>
-          </div>
+            <figcaption className="border-t border-av-border-soft px-4 py-3 text-xs leading-relaxed text-av-muted">
+              AppVibe Studio — berfokus pada perancangan antarmuka, arsitektur web yang mengarah ke aksi, dan alur inquiry digital yang terpadu.
+            </figcaption>
+          </figure>
 
-          <div className="mt-8 space-y-5 text-base leading-relaxed text-brand-muted sm:text-lg">
+          <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-av-text sm:text-base">
             {paragraphs.map((p, idx) => (
               <p key={idx}>{p}</p>
             ))}

@@ -1,6 +1,6 @@
-import { ArrowRight, HelpCircle, Layout, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { routes } from "@/lib/routes";
 import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
@@ -12,90 +12,84 @@ export function ContactAlternative() {
 
   const alternatives = [
     {
-      icon: Layout,
-      title: lang === "id" ? "Lihat portfolio" : "Browse the portfolio",
+      title: lang === "id" ? "Lihat karya" : "Browse the work",
       description:
         lang === "id"
-          ? "5 case study yang menunjukkan pendekatan AppVibe untuk berbagai niche."
-          : "Five case studies showing how AppVibe approaches different niches.",
+          ? "5 demo & studi kasus yang menunjukkan pendekatan AppVibe untuk berbagai niche."
+          : "Five demos & case studies showing how AppVibe approaches different niches.",
       href: routes.portfolio(lang),
-      cta: lang === "id" ? "Buka Portfolio" : "Open portfolio",
+      cta: lang === "id" ? "Buka Karya" : "Open work",
     },
     {
-      icon: Sparkles,
       title: lang === "id" ? "Coba demo interaktif" : "Try the interactive demos",
       description:
         lang === "id"
-          ? "5 demo website jadi yang bisa dibuka langsung di browser untuk merasakan hasilnya."
-          : "Five finished-website demos you can explore in the browser to feel the result.",
+          ? "Demo website jadi yang bisa dibuka langsung di browser untuk merasakan hasilnya."
+          : "Finished-website demos you can explore in the browser to feel the result.",
       href: routes.demo(lang),
       cta: lang === "id" ? "Buka Demo" : "Open demos",
     },
     {
-      icon: HelpCircle,
-      title: lang === "id" ? "Lihat FAQ lengkap" : "Read the full FAQ",
+      title: lang === "id" ? "Baca FAQ" : "Read the FAQ",
       description:
         lang === "id"
-          ? "10 pertanyaan yang biasanya ditanyakan calon klien — budget, durasi, teknis, maintenance."
-          : "Ten common questions from prospects — budget, timeline, technical, maintenance.",
+          ? "Pertanyaan yang biasanya ditanyakan calon klien — budget, durasi, teknis, maintenance."
+          : "Common questions from prospects — budget, timeline, technical, maintenance.",
       href: `${routes.home(lang)}#faq`,
       cta: lang === "id" ? "Lihat FAQ" : "Read FAQ",
     },
   ];
 
   return (
-    <section className="section-padding bg-white">
-      <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+    <section className="border-t border-av-border bg-av-surface">
+      <Container className="py-14 lg:py-20">
+        <div className="max-w-3xl">
+          <p className="av-eyebrow text-av-signal">
             {lang === "id" ? "Alternatif" : "Other ways"}
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-brand-navy sm:text-3xl">
+          <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
             {lang === "id"
               ? "Cara lain untuk mengenal AppVibe"
               : "Other ways to get to know AppVibe"}
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-brand-muted sm:text-base">
+          <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-av-text">
             {lang === "id"
-              ? "Belum siap untuk diskusi langsung? Tidak masalah — Anda bisa eksplor portfolio, demo, atau FAQ dulu untuk melihat apakah AppVibe cocok untuk bisnis Anda."
-              : "Not ready for a direct conversation? No problem — explore the portfolio, demos, or FAQ first to see whether AppVibe fits your business."}
+              ? "Belum siap untuk diskusi langsung? Tidak masalah — eksplor karya, demo, atau FAQ dulu untuk melihat apakah AppVibe cocok untuk bisnis Anda."
+              : "Not ready for a direct conversation? No problem — explore the work, demos, or FAQ first to see whether AppVibe fits your business."}
           </p>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-3">
-          {alternatives.map((alt) => {
-            const Icon = alt.icon;
-            return (
-              <Card key={alt.title} hover className="flex flex-col">
-                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-cta-gradient text-white shadow-sm">
-                  <Icon className="h-5 w-5" aria-hidden />
-                </span>
-                <h3 className="text-base font-semibold text-brand-navy">
-                  {alt.title}
-                </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-muted">
-                  {alt.description}
-                </p>
-                <a
-                  href={alt.href}
-                  onClick={() =>
-                    trackEvent("cta_whatsapp_click", {
-                      location: `contact_alternative_${alt.title.toLowerCase()}`,
-                    })
-                  }
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue transition-colors hover:text-brand-violet"
-                >
-                  {alt.cta}
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </a>
-              </Card>
-            );
-          })}
+        <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-3">
+          {alternatives.map((alt, i) => (
+            <div key={alt.title} className="border-t-2 border-av-ink pt-5">
+              <p className="font-mono text-xs text-av-muted">
+                {String(i + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-2 text-base font-semibold text-av-ink">
+                {alt.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-av-secondary">
+                {alt.description}
+              </p>
+              <Link
+                to={alt.href}
+                onClick={() =>
+                  trackEvent("page_view", {
+                    location: `contact_alternative_${alt.title.toLowerCase()}`,
+                  })
+                }
+                className="mt-3 inline-flex min-h-[44px] items-center gap-1 text-sm font-medium text-av-ink transition-colors hover:text-av-signal"
+              >
+                {alt.cta}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+            </div>
+          ))}
         </div>
-        <p className="mt-8 text-center text-sm text-brand-muted">
+        <p className="mt-10 border-t border-av-border pt-6 text-sm text-av-secondary">
           {lang === "id" ? "Atau langsung chat dengan tim kami: " : "Or chat with our team directly: "}
           <a
             href={whatsappUrl}
-            className="font-semibold text-brand-blue hover:underline"
+            className="font-medium text-av-ink underline decoration-av-signal underline-offset-4 hover:text-av-signal"
             onClick={() =>
               trackEvent("cta_whatsapp_click", {
                 location: "contact_alternative_whatsapp",

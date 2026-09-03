@@ -23,9 +23,9 @@ import type { DemoItem } from "@/types/demo";
 
 const STATUS_TONE: Record<DemoItem["status"], string> = {
   live: "bg-green-50 text-semantic-success border-green-100",
-  template: "bg-violet-50 text-brand-violet border-violet-100",
+  template: "bg-av-border-soft text-av-secondary border-av-border",
   "coming-soon": "bg-amber-50 text-semantic-warning border-amber-100",
-  draft: "bg-slate-100 text-brand-muted border-slate-200",
+  draft: "bg-av-canvas text-av-muted border-av-border",
 };
 
 function fillDemoCopy(
@@ -168,27 +168,26 @@ export function DemoDetailPage() {
 
       <AppVibeDemoBanner variant="section" />
 
-      <section className="section-padding bg-white">
-        <Container>
-          <div className="grid gap-8 lg:grid-cols-3">
+      <section className="border-t border-av-border">
+        <Container className="py-14 lg:py-20">
+          <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
             <div className="lg:col-span-2">
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+              <p className="av-eyebrow text-av-signal">
                 {copy.aboutEyebrow}
               </p>
-              <h2 className="mt-2 text-2xl font-bold text-brand-navy sm:text-3xl">
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-av-ink sm:text-3xl">
                 {fillDemoCopy(copy.aboutTitle, vars)}
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-brand-muted">
+              <p className="mt-4 max-w-[64ch] text-base leading-relaxed text-av-text">
                 {item.summary[lang]}{" "}
                 {fillDemoCopy(copy.aboutBodyAfterSummary, vars)}
               </p>
               {item.status === "live" ? (
-                <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
-                  <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-700">
-                    <Sparkles className="h-3.5 w-3.5" aria-hidden />{" "}
+                <div className="mt-5 rounded border border-av-border bg-av-surface p-5">
+                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-signal">
                     {copy.liveEyebrow}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-emerald-900">
+                  <p className="mt-2 text-sm leading-relaxed text-av-text">
                     {copy.liveBody}
                   </p>
                   <Button
@@ -201,63 +200,63 @@ export function DemoDetailPage() {
                   </Button>
                 </div>
               ) : (
-                <p className="mt-4 text-base leading-relaxed text-brand-muted">
+                <p className="mt-4 text-base leading-relaxed text-av-secondary">
                   {copy.comingSoonBody}
                 </p>
               )}
             </div>
-            <aside className="rounded-2xl border border-brand-border bg-brand-light p-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+            <aside className="h-fit rounded border border-av-border bg-av-surface p-6 lg:sticky lg:top-24">
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
                 {copy.asideNowEyebrow}
               </p>
-              <ul className="mt-4 space-y-3 text-sm text-brand-muted">
+              <ul className="mt-4 space-y-3 text-sm text-av-secondary">
                 <li className="flex items-start gap-2">
                   <Sparkles
-                    className="mt-0.5 h-4 w-4 shrink-0 text-brand-cyan"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-av-signal"
                     aria-hidden
                   />
                   <span>{fillDemoCopy(copy.asideNowVisual, vars)}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Sparkles
-                    className="mt-0.5 h-4 w-4 shrink-0 text-brand-cyan"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-av-signal"
                     aria-hidden
                   />
                   <span>{copy.asideNowCaseStudy}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Sparkles
-                    className="mt-0.5 h-4 w-4 shrink-0 text-brand-cyan"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-av-signal"
                     aria-hidden
                   />
                   <span>{copy.asideNowCta}</span>
                 </li>
               </ul>
 
-              <div className="mt-6 flex flex-col gap-2 border-t border-brand-border pt-6">
-                <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+              <div className="mt-6 flex flex-col gap-2 border-t border-av-border pt-6">
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
                   {copy.asideSoonEyebrow}
                 </p>
-                <p className="text-sm text-brand-muted">{copy.asideSoonBody}</p>
+                <p className="text-sm text-av-secondary">{copy.asideSoonBody}</p>
               </div>
             </aside>
           </div>
         </Container>
       </section>
 
-      <section className="section-padding bg-gradient-to-br from-slate-50 via-blue-50/40 to-violet-50/30">
-        <Container>
-          <div className="mx-auto max-w-3xl rounded-3xl bg-white p-8 text-center shadow-card sm:p-10">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+      <section className="border-t-2 border-av-ink bg-av-surface">
+        <Container className="py-14 lg:py-20">
+          <div className="max-w-3xl">
+            <p className="av-eyebrow text-av-signal">
               {copy.finalEyebrow}
             </p>
-            <h2 className="mt-2 text-2xl font-bold text-brand-navy sm:text-3xl">
+            <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
               {fillDemoCopy(copy.finalTitle, vars)}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-brand-muted">
+            <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-av-text">
               {copy.finalBody}
             </p>
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
               <Button
                 href={routes.portfolioDetail(lang, item.relatedCaseStudySlug)}
                 size="lg"
@@ -282,7 +281,7 @@ export function DemoDetailPage() {
             </div>
             <Link
               to={routes.demo(lang)}
-              className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-brand-muted transition-colors hover:text-brand-blue"
+              className="mt-8 inline-flex min-h-[44px] items-center gap-1 text-sm font-medium text-av-secondary transition-colors hover:text-av-ink"
             >
               <ArrowRight className="h-4 w-4 rotate-180" aria-hidden />
               {copy.backToDemos}

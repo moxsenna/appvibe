@@ -8,17 +8,17 @@ export function ContactFAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="section-padding bg-slate-50">
-      <Container>
-        <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+    <section className="border-t border-av-border">
+      <Container className="py-14 lg:py-20">
+        <div className="max-w-3xl">
+          <p className="av-eyebrow text-av-signal">
             Pertanyaan tentang konsultasi
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-brand-navy sm:text-3xl">
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-av-ink sm:text-3xl">
             Sebelum Anda kirim pesan
           </h2>
         </div>
-        <div className="mx-auto mt-10 max-w-3xl divide-y divide-brand-border overflow-hidden rounded-2xl border border-brand-border bg-white shadow-sm">
+        <div className="mt-8 max-w-3xl divide-y divide-av-border-soft border-b border-t border-av-border-soft">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
@@ -26,15 +26,15 @@ export function ContactFAQ() {
                 <button
                   type="button"
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-brand-light sm:px-6 sm:py-5"
+                  className="flex min-h-[56px] w-full items-center justify-between gap-4 py-4 text-left"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm font-semibold text-brand-navy sm:text-base">
+                  <span className="text-[15px] font-medium text-av-ink">
                     {faq.question}
                   </span>
                   <Plus
                     className={cn(
-                      "h-5 w-5 shrink-0 text-brand-blue transition-transform duration-200",
+                      "h-5 w-5 shrink-0 text-av-muted transition-transform duration-200",
                       isOpen && "rotate-45",
                     )}
                     aria-hidden
@@ -49,7 +49,7 @@ export function ContactFAQ() {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 text-sm leading-relaxed text-brand-muted sm:px-6 sm:pb-6 sm:text-base">
+                    <p className="max-w-[62ch] pb-5 text-sm leading-relaxed text-av-secondary">
                       {faq.answer}
                     </p>
                   </div>

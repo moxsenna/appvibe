@@ -34,25 +34,25 @@ export function BlogPagination({
 
   return (
     <nav
-      className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-brand-border pt-8"
+      className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-av-border pt-8"
       aria-label="Pagination"
     >
       {prevTo ? (
         <Link
           to={prevTo}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-brand-border bg-white px-4 py-2.5 text-sm font-semibold text-brand-navy shadow-card transition-colors hover:border-brand-blue/30 hover:text-brand-blue"
+          className="inline-flex min-h-[44px] items-center gap-1.5 rounded border border-av-border bg-av-surface px-4 py-2.5 text-sm font-medium text-av-ink transition-colors hover:border-av-ink"
         >
           <ChevronLeft className="h-4 w-4" aria-hidden />
           {prevLabel}
         </Link>
       ) : (
-        <span className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm text-brand-muted/50">
+        <span className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm text-av-muted/50">
           <ChevronLeft className="h-4 w-4" aria-hidden />
           {prevLabel}
         </span>
       )}
 
-      <p className="text-sm font-medium text-brand-muted">
+      <p className="text-sm font-medium text-av-muted">
         {pageLabel(page, totalPages)}
       </p>
 
@@ -60,14 +60,14 @@ export function BlogPagination({
         <Link
           to={nextTo}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-lg border border-brand-border bg-white px-4 py-2.5 text-sm font-semibold text-brand-navy shadow-card transition-colors hover:border-brand-blue/30 hover:text-brand-blue",
+            "inline-flex min-h-[44px] items-center gap-1.5 rounded border border-av-border bg-av-surface px-4 py-2.5 text-sm font-medium text-av-ink transition-colors hover:border-av-ink",
           )}
         >
           {nextLabel}
           <ChevronRight className="h-4 w-4" aria-hidden />
         </Link>
       ) : (
-        <span className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm text-brand-muted/50">
+        <span className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm text-av-muted/50">
           {nextLabel}
           <ChevronRight className="h-4 w-4" aria-hidden />
         </span>

@@ -20,10 +20,10 @@ export function BlogRelatedPosts({
   if (posts.length === 0) return null;
 
   return (
-    <section className="mt-16 border-t border-brand-border pt-14" aria-labelledby="related-posts-heading">
+    <section className="mt-16 border-t border-av-border pt-14" aria-labelledby="related-posts-heading">
       <h2
         id="related-posts-heading"
-        className="text-xl font-bold tracking-tight text-brand-navy sm:text-2xl"
+        className="text-xl font-semibold tracking-tight text-av-ink sm:text-2xl"
       >
         {title}
       </h2>

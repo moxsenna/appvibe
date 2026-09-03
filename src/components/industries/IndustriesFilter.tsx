@@ -38,10 +38,10 @@ export function IndustriesFilter({ active, onChange }: IndustriesFilterProps) {
           type="button"
           onClick={() => onChange(c.id)}
           className={cn(
-            "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+            "min-h-[44px] rounded-[4px] border px-4 py-2 text-sm font-medium transition-colors",
             active === c.id
-              ? "bg-brand-blue text-white shadow-sm"
-              : "border border-brand-border bg-white text-brand-muted hover:border-brand-blue hover:text-brand-blue",
+              ? "border-av-ink bg-av-ink text-white"
+              : "border-av-border bg-av-surface text-av-secondary hover:border-av-ink hover:text-av-ink",
           )}
         >
           {c.label}

@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/cn";
 
 type PageHeroProps = {
@@ -19,25 +18,14 @@ export function PageHero({
   className,
 }: PageHeroProps) {
   return (
-    <section
-      className={cn(
-        "relative overflow-hidden bg-hero-gradient text-white section-padding-lg",
-        className,
-      )}
-    >
-      <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-cyan/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-brand-violet/20 blur-3xl" />
-      <Container className="relative">
+    <section className={cn("border-b border-av-border", className)}>
+      <Container className="pb-10 pt-12 sm:pt-16">
         <div className="max-w-3xl">
-          {eyebrow && (
-            <Badge variant="cyan" className="mb-4 bg-white/10 text-white">
-              {eyebrow}
-            </Badge>
-          )}
-          <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+          {eyebrow && <p className="av-eyebrow">{eyebrow}</p>}
+          <h1 className="mt-4 font-display text-display-lg font-normal tracking-tight text-av-ink">
             {title}
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-blue-100 sm:text-lg">
+          <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-av-text sm:text-lg">
             {description}
           </p>
           {children && <div className="mt-8">{children}</div>}

@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { routes } from "@/lib/routes";
 import { trackEvent } from "@/lib/analytics";
-import { cn } from "@/lib/cn";
 import { useLang } from "@/i18n/use-lang";
 import { useDict } from "@/i18n/use-dict";
 import { pick } from "@/i18n/localized";
@@ -71,21 +70,16 @@ export function DemoCard({ item }: DemoCardProps) {
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <p
-          className={cn(
-            "text-xs font-medium uppercase tracking-wide",
-            "text-brand-cyan",
-          )}
-        >
+        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-av-signal">
           {pick(item.niche, lang)}
         </p>
         <h3
-          className="mt-1.5 text-lg font-semibold text-brand-navy"
+          className="mt-1.5 text-lg font-semibold tracking-tight text-av-ink"
           style={vtTitleName ? { viewTransitionName: vtTitleName } : undefined}
         >
           {pick(item.title, lang)}
         </h3>
-        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-brand-muted">
+        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-av-secondary">
           {pick(item.summary, lang)}
         </p>
 
@@ -114,7 +108,7 @@ export function DemoCard({ item }: DemoCardProps) {
             {common.cta.openDemo}
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>
-          <p className="text-xs text-brand-muted">{pick(item.tagline, lang)}</p>
+          <p className="text-xs text-av-muted">{pick(item.tagline, lang)}</p>
         </div>
       </div>
     </Card>

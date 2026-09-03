@@ -5,6 +5,7 @@ import { ServicesDetailAccordion } from "@/components/services/ServicesDetailAcc
 import { ServicesProcess } from "@/components/services/ServicesProcess";
 import { ServicesPortfolioLink } from "@/components/services/ServicesPortfolioLink";
 import { ServicesFAQ } from "@/components/services/ServicesFAQ";
+import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { usePageMeta } from "@/i18n/use-page-meta";
 
 export function ServicesPage() {
@@ -18,6 +19,7 @@ export function ServicesPage() {
       <ServicesProcess />
       <ServicesPortfolioLink />
       <ServicesFAQ />
+      <ConsultationCTA location="services_page" />
     </PageShell>
   );
 }

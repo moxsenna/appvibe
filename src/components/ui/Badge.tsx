@@ -10,10 +10,10 @@ type BadgeProps = {
 };
 
 const variantStyles: Record<BadgeVariant, string> = {
-  blue: "bg-blue-50 text-brand-blue",
-  violet: "bg-violet-50 text-brand-violet",
-  cyan: "bg-cyan-50 text-cyan-700",
-  gray: "bg-slate-100 text-brand-muted",
+  blue: "bg-av-signal/10 text-av-signal",
+  violet: "bg-av-border-soft text-av-secondary",
+  cyan: "bg-av-signal/10 text-av-signal",
+  gray: "bg-av-canvas text-av-secondary",
   success: "bg-green-50 text-semantic-success",
   warning: "bg-amber-50 text-semantic-warning",
 };

@@ -109,8 +109,8 @@ export function BlogPostPage() {
         readTimeLabel={readTimeLabel}
       />
 
-      <section className="section-padding bg-gradient-to-b from-brand-light/50 to-white">
-        <Container className="max-w-3xl">
+      <section className="border-t border-av-border">
+        <Container className="max-w-3xl py-14 lg:py-20">
           <BlogProse html={post.html} />
           <BlogShareBar
             url={getCanonicalUrl(routes.blogPost(lang, post.slug))}

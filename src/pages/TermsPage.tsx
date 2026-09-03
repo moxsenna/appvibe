@@ -100,20 +100,20 @@ export function TermsPage() {
 
   return (
     <PageShell>
-      <section className="section-padding bg-white">
-        <Container className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+      <section className="border-b border-av-border">
+        <Container className="max-w-3xl py-12 sm:py-16">
+          <p className="av-eyebrow">
             Legal
           </p>
-          <h1 className="mt-2 text-3xl font-bold text-brand-navy sm:text-4xl">
+          <h1 className="mt-4 font-display text-display-md font-normal tracking-tight text-av-ink">
             {c.title}
           </h1>
-          <p className="mt-2 text-sm text-brand-muted">{c.updated}</p>
+          <p className="mt-2 font-mono text-xs uppercase tracking-[0.1em] text-av-muted">{c.updated}</p>
           <div className="mt-10 space-y-8">
             {c.sections.map((s) => (
-              <div key={s.h}>
-                <h2 className="text-lg font-semibold text-brand-navy">{s.h}</h2>
-                <p className="mt-2 text-base leading-relaxed text-brand-muted">
+              <div key={s.h} className="border-t border-av-border-soft pt-6">
+                <h2 className="text-lg font-semibold text-av-ink">{s.h}</h2>
+                <p className="mt-2 text-[15px] leading-relaxed text-av-text">
                   {s.p}
                 </p>
               </div>

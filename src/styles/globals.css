@@ -195,72 +195,72 @@
 
 @layer components {
   .blog-prose {
-    @apply text-[1.0625rem] leading-[1.75] text-slate-700;
+    @apply text-[1.0625rem] leading-[1.75] text-av-text;
   }
   .blog-prose > *:first-child { margin-top: 0; }
   .blog-prose h2 {
-    @apply relative mt-12 scroll-mt-24 border-b border-brand-border/60 pb-3 text-2xl font-bold tracking-tight text-brand-navy first:mt-0;
+    @apply relative mt-12 scroll-mt-24 border-b border-av-border pb-3 text-2xl font-semibold tracking-tight text-av-ink first:mt-0;
   }
   .blog-prose h2::before {
     content: '';
-    @apply absolute -left-4 top-1 h-[calc(100%-0.25rem)] w-1 rounded-full bg-cta-gradient opacity-80;
+    @apply absolute -left-4 top-1 h-[calc(100%-0.25rem)] w-1 rounded-full bg-av-signal opacity-80;
   }
   .blog-prose h3 {
-    @apply mt-8 text-xl font-semibold text-brand-navy;
+    @apply mt-8 text-xl font-semibold text-av-ink;
   }
   .blog-prose p {
-    @apply mt-5 text-slate-600;
+    @apply mt-5 text-av-secondary;
   }
   .blog-prose strong {
-    @apply font-semibold text-brand-navy;
+    @apply font-semibold text-av-ink;
   }
   .blog-prose a {
-    @apply font-medium text-brand-blue underline decoration-brand-blue/30 underline-offset-4 transition-colors hover:decoration-brand-blue;
+    @apply font-medium text-av-signal underline decoration-av-signal/30 underline-offset-4 transition-colors hover:decoration-av-signal;
   }
   .blog-prose ul,
   .blog-prose ol {
-    @apply mt-5 space-y-2 pl-6 text-slate-600;
+    @apply mt-5 space-y-2 pl-6 text-av-secondary;
   }
-  .blog-prose ul { @apply list-disc marker:text-brand-blue; }
-  .blog-prose ol { @apply list-decimal marker:font-semibold marker:text-brand-blue; }
+  .blog-prose ul { @apply list-disc marker:text-av-signal; }
+  .blog-prose ol { @apply list-decimal marker:font-semibold marker:text-av-signal; }
   .blog-prose li { @apply pl-1; }
-  .blog-prose li::marker { @apply text-brand-blue; }
+  .blog-prose li::marker { @apply text-av-signal; }
   .blog-prose blockquote {
-    @apply my-8 rounded-r-xl border-l-4 border-brand-blue bg-brand-light/80 px-5 py-4 text-base italic text-brand-navy/90;
+    @apply my-8 rounded-r border-l-2 border-av-ink bg-av-surface px-5 py-4 text-base italic text-av-text;
   }
   .blog-prose hr {
-    @apply my-10 border-brand-border;
+    @apply my-10 border-av-border;
   }
   .blog-prose code:not(pre code) {
-    @apply rounded-md bg-brand-light px-1.5 py-0.5 text-[0.9em] font-medium text-brand-navy;
+    @apply rounded bg-av-border-soft px-1.5 py-0.5 text-[0.9em] font-medium text-av-ink;
   }
   .blog-prose pre,
   .blog-prose .blog-code-fallback {
-    @apply my-8 overflow-x-auto rounded-xl border border-slate-800/50 shadow-card;
+    @apply my-8 overflow-x-auto rounded border border-av-dark-border;
   }
   .blog-prose pre code { @apply bg-transparent p-0 text-inherit; }
   .blog-prose .blog-wa-template {
-    @apply my-6 overflow-hidden rounded-2xl border border-emerald-200/80 bg-gradient-to-b from-emerald-50/90 to-white shadow-card;
+    @apply my-6 overflow-hidden rounded border border-av-border bg-av-surface;
   }
   .blog-prose .blog-wa-template__bar {
-    @apply flex items-center gap-2 border-b border-emerald-100 bg-emerald-50/80 px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-emerald-800;
+    @apply flex items-center gap-2 border-b border-av-border-soft bg-av-canvas px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-av-secondary;
   }
   .blog-prose .blog-wa-template__dot {
-    @apply h-2 w-2 shrink-0 rounded-full bg-emerald-500;
+    @apply h-2 w-2 shrink-0 rounded-full bg-av-signal;
   }
   .blog-prose .blog-wa-template__bubble {
-    @apply m-0 px-4 py-4 text-[0.9375rem] leading-relaxed text-slate-700;
+    @apply m-0 px-4 py-4 text-[0.9375rem] leading-relaxed text-av-text;
   }
   .blog-prose img {
-    @apply my-8 rounded-xl shadow-card;
+    @apply my-8 rounded border border-av-border;
   }
   .blog-prose table {
-    @apply my-8 w-full overflow-hidden rounded-xl border border-brand-border text-sm;
+    @apply my-8 w-full overflow-hidden rounded border border-av-border text-sm;
   }
   .blog-prose th {
-    @apply bg-brand-light px-4 py-2 text-left font-semibold text-brand-navy;
+    @apply bg-av-canvas px-4 py-2 text-left font-semibold text-av-ink;
   }
   .blog-prose td {
-    @apply border-t border-brand-border px-4 py-2 text-slate-600;
+    @apply border-t border-av-border px-4 py-2 text-av-secondary;
   }
 }

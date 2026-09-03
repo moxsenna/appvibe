@@ -34,22 +34,11 @@ export function BlogArticleHero({
   const hasCover = Boolean(post.ogImage);
 
   return (
-    <header className="relative overflow-hidden border-b border-brand-border bg-brand-light/40">
-      {hasCover && (
-        <div className="absolute inset-0" aria-hidden>
-          <img
-            src={post.ogImage}
-            alt=""
-            className="h-full w-full object-cover opacity-[0.14]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-brand-light/95" />
-        </div>
-      )}
-
-      <Container className="relative max-w-3xl py-10 sm:py-14 lg:py-16">
+    <header className="border-b border-av-border">
+      <Container className="max-w-3xl py-10 sm:py-14 lg:py-16">
         <Link
           to={routes.blog(lang)}
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-muted transition-colors hover:text-brand-blue"
+          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-medium text-av-secondary transition-colors hover:text-av-ink"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden />
           {backLabel}
@@ -61,7 +50,7 @@ export function BlogArticleHero({
               <Link
                 key={t}
                 to={blogIndexPathWithSearch(lang, t, 1)}
-                className="rounded-full border border-brand-blue/20 bg-brand-blue/5 px-3 py-1 text-xs font-semibold capitalize text-brand-blue transition-colors hover:bg-brand-blue/10"
+                className="rounded-[3px] border border-av-border bg-av-surface px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-av-secondary transition-colors hover:border-av-ink hover:text-av-ink"
               >
                 {t}
               </Link>
@@ -69,37 +58,33 @@ export function BlogArticleHero({
           </div>
         )}
 
-        <h1 className="mt-5 text-3xl font-extrabold leading-[1.15] tracking-tight text-brand-navy sm:text-4xl lg:text-[2.65rem]">
+        <h1 className="mt-5 font-display text-display-md font-normal leading-[1.12] tracking-tight text-av-ink">
           {post.title}
         </h1>
 
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-brand-muted">
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-av-secondary">
           {post.description}
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-brand-border/80 pt-6 text-sm font-medium text-brand-muted">
+        <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-av-border pt-6 text-sm font-medium text-av-secondary">
           <time dateTime={post.date} className="inline-flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-card">
-              <Calendar className="h-4 w-4 text-brand-blue" aria-hidden />
-            </span>
+            <Calendar className="h-4 w-4 text-av-signal" aria-hidden />
             {formatDate(post.date, lang)}
           </time>
           <span className="inline-flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-card">
-              <Clock className="h-4 w-4 text-brand-blue" aria-hidden />
-            </span>
+            <Clock className="h-4 w-4 text-av-signal" aria-hidden />
             {readTimeLabel}
           </span>
-          <span className="hidden h-4 w-px bg-brand-border sm:block" aria-hidden />
+          <span className="hidden h-4 w-px bg-av-border sm:block" aria-hidden />
           <span>AppVibe Studio</span>
         </div>
 
         {hasCover && (
-          <div className="mt-8 overflow-hidden rounded-2xl border border-brand-border bg-slate-900 shadow-card">
+          <div className="mt-8 overflow-hidden rounded border border-av-border">
             <img
               src={post.ogImage}
               alt={post.title}
-              className="h-64 w-full object-cover sm:h-80 lg:h-96"
+              className="aspect-[16/9] w-full object-cover"
             />
           </div>
         )}

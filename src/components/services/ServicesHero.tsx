@@ -26,12 +26,7 @@ export function ServicesHero() {
           <MessageCircle className="h-5 w-5" aria-hidden />
           {dict.common.cta.consult}
         </Button>
-        <Button
-          href="#layanan-detail"
-          variant="secondary"
-          size="lg"
-          className="border-white/30 bg-white/10 text-white hover:bg-white/20"
-        >
+        <Button href="#layanan-detail" variant="secondary" size="lg">
           {lang === "id" ? "Lihat Detail Layanan" : "See service details"}
         </Button>
       </div>
