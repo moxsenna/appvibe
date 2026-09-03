@@ -27,15 +27,13 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-blue">
-          {eyebrow}
-        </p>
+        <p className="av-eyebrow mb-3 text-av-signal">{eyebrow}</p>
       )}
-      <TitleTag className="text-2xl font-bold leading-tight tracking-tight text-brand-navy sm:text-3xl lg:text-4xl">
+      <TitleTag className="text-2xl font-semibold leading-tight tracking-tight text-av-ink sm:text-3xl lg:text-4xl">
         {title}
       </TitleTag>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-brand-muted sm:text-lg">
+        <p className="mt-4 max-w-[65ch] text-base leading-relaxed text-av-text sm:text-lg">
           {description}
         </p>
       )}

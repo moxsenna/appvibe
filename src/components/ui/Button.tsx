@@ -24,23 +24,20 @@ type ButtonAsLink = SharedProps &
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    "bg-cta-gradient text-white shadow-sm hover:brightness-110 hover:shadow-md",
+  primary: "bg-av-ink text-white hover:bg-black",
   secondary:
-    "border border-brand-border bg-white text-brand-navy hover:bg-brand-light",
-  ghost:
-    "text-brand-muted hover:bg-brand-light hover:text-brand-navy",
-  dark:
-    "bg-brand-navy text-white hover:bg-slate-800 shadow-sm",
+    "border border-av-border bg-av-surface text-av-ink hover:border-av-ink",
+  ghost: "text-av-secondary hover:bg-av-border-soft hover:text-av-ink",
+  dark: "bg-av-dark text-av-canvas hover:bg-black",
   outline:
-    "border border-brand-blue text-brand-blue bg-transparent hover:bg-blue-50",
+    "border border-av-signal bg-transparent text-av-signal hover:bg-av-signal/10",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "h-9 px-4 text-sm rounded-lg",
-  md: "h-11 px-5 text-sm rounded-xl",
-  lg: "h-12 px-6 text-base rounded-xl",
-  xl: "h-14 px-8 text-base rounded-xl",
+  sm: "h-9 px-4 text-sm rounded",
+  md: "h-11 px-5 text-sm rounded",
+  lg: "h-12 px-6 text-base rounded-md",
+  xl: "h-14 px-8 text-base rounded-md",
 };
 
 export function Button({
@@ -53,7 +50,7 @@ export function Button({
 }: ButtonProps) {
   const baseStyles = cn(
     "inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-av-signal focus-visible:ring-offset-2",
     "disabled:pointer-events-none disabled:opacity-50",
     sizeStyles[size],
     variantStyles[variant],

@@ -9,14 +9,14 @@
   }
 
   body {
-    @apply overflow-x-hidden bg-white font-sans text-brand-dark antialiased;
+    @apply overflow-x-hidden bg-av-canvas font-sans text-av-text antialiased;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply text-brand-navy;
+    @apply text-av-ink;
   }
 
   section[id],
@@ -27,7 +27,7 @@
   }
 
   *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-brand-blue;
+    @apply outline-2 outline-offset-2 outline-av-signal;
   }
 
   a:focus-visible,
@@ -37,11 +37,11 @@
   textarea:focus-visible,
   [role="button"]:focus-visible,
   [tabindex]:focus-visible {
-    @apply outline-2 outline-offset-2 outline-brand-blue;
+    @apply outline-2 outline-offset-2 outline-av-signal;
   }
 
   ::selection {
-    @apply bg-brand-blue/20 text-brand-navy;
+    @apply bg-av-signal/20 text-av-ink;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -105,19 +105,9 @@
     }
   }
 
-  @supports (animation-timeline: scroll()) {
-    .hero-parallax {
-      animation: hero-drift linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 100vh;
-      will-change: transform, opacity;
-    }
-
-    @keyframes hero-drift {
-      to {
-        transform: translate3d(0, -12%, 0) scale(1.06);
-        opacity: 0.55;
-      }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll {
+      animation: none !important;
     }
   }
 
@@ -134,10 +124,23 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal-on-scroll,
-    .hero-parallax {
+    .reveal-on-scroll {
       animation: none !important;
     }
+  }
+}
+
+@layer components {
+  .av-eyebrow {
+    @apply font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted;
+  }
+
+  .av-rule {
+    @apply border-t border-av-border;
+  }
+
+  .av-rule-strong {
+    @apply border-t border-av-ink;
   }
 }
 

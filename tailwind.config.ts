@@ -5,6 +5,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        av: {
+          canvas: "#F6F7F8",
+          surface: "#FFFFFF",
+          ink: "#12161B",
+          text: "#3A3F45",
+          secondary: "#4B5057",
+          muted: "#6B6F76",
+          border: "#DCDEE1",
+          "border-soft": "#E6E8EA",
+          signal: "#4B7F88",
+          "signal-on-dark": "#7FB3BC",
+          dark: "#12161B",
+          "dark-border": "#2C3238",
+          "dark-body": "#D5D9DD",
+          "dark-muted": "#8F959C",
+        },
         brand: {
           navy: "#0F172A",
           blue: "#2563EB",
@@ -23,13 +39,16 @@ export default {
         },
       },
       fontFamily: {
+        display: ["Newsreader", "Georgia", "serif"],
         sans: [
+          "Public Sans",
           "Plus Jakarta Sans",
           "Inter",
           "system-ui",
           "-apple-system",
           "sans-serif",
         ],
+        mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
       },
       borderRadius: {
         xl: "0.75rem",
@@ -73,7 +92,12 @@ export default {
         },
       },
       maxWidth: {
-        container: "80rem",
+        container: "85rem",
+      },
+      fontSize: {
+        "display-xl": ["clamp(2.5rem, 6vw, 4.875rem)", { lineHeight: "1.04", letterSpacing: "-0.02em" }],
+        "display-lg": ["clamp(2.125rem, 4.5vw, 3.25rem)", { lineHeight: "1.06", letterSpacing: "-0.015em" }],
+        "display-md": ["clamp(1.875rem, 3.4vw, 2.875rem)", { lineHeight: "1.08", letterSpacing: "-0.01em" }],
       },
     },
   },
