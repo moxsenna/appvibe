@@ -24,7 +24,7 @@ const copy = {
     linkedin: "Connect di LinkedIn",
     email: "Email",
     chat: "Chat WhatsApp",
-    photoAlt: "Inisial Bima Putra Sena — foto profil dapat ditambahkan nanti",
+    photoAlt: "Foto Bima Putra Sena, Founder AppVibe Studio",
     paragraphs: [
       "Bima memulai AppVibe Studio setelah melihat banyak UMKM dan bisnis jasa kesulitan menampilkan diri secara profesional secara online — punya layanan yang bagus, tapi belum punya halaman resmi yang menjelaskannya dengan jelas. Sebagian masih bergantung pada DM Instagram, sebagian lagi punya website yang dibuat seadanya dan tidak menghasilkan apa-apa.",
       "Sebagai founder yang juga developer, Bima terlibat langsung di setiap proyek — dari riset kebutuhan, desain antarmuka, hingga pengembangan dan iterasi setelah live. Tidak ada tim sales yang berbeda dari tim yang mengerjakan; orang yang Anda ajak diskusi adalah orang yang sama yang membangun website Anda.",
@@ -39,7 +39,7 @@ const copy = {
     linkedin: "Connect on LinkedIn",
     email: "Email",
     chat: "WhatsApp chat",
-    photoAlt: "Initials for Bima Putra Sena — photo can be added later",
+    photoAlt: "Photo of Bima Putra Sena, Founder of AppVibe Studio",
     paragraphs: [
       "Bima started AppVibe Studio after seeing many SMBs and service businesses struggle to show up professionally online — strong services, but no clear official page. Some still rely on Instagram DMs; others have a thin site that converts nothing.",
       "As founder and developer, Bima stays on every project — research, UI, build, and post-launch iteration. The person you talk to is the person who builds.",
