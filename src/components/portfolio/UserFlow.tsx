@@ -22,13 +22,18 @@ export function UserFlow({ item }: UserFlowProps) {
               : "From first visit to contacting the business"
           }
         />
-        <ol className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-10 max-w-3xl border-l-2 border-av-border pl-0">
           {steps.map((step, index) => (
-            <li key={step} className="border-t border-av-border pt-4">
-              <p className="font-mono text-xs text-av-muted">
+            <li key={step} className="relative pb-8 pl-10 last:pb-0">
+              <span
+                aria-hidden
+                className="absolute -left-[17px] top-0 flex h-8 w-8 items-center justify-center rounded-[4px] border border-av-border bg-av-canvas font-mono text-xs text-av-ink"
+              >
                 {String(index + 1).padStart(2, "0")}
+              </span>
+              <p className="max-w-[60ch] pt-1 text-[15px] leading-relaxed text-av-text">
+                {step}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-av-text">{step}</p>
             </li>
           ))}
         </ol>

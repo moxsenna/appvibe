@@ -40,28 +40,30 @@ export function CaseStudyProblemSolution({ item }: CaseStudyProblemSolutionProps
   return (
     <section>
       <Container className="py-12 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-          <div className="border-t-2 border-av-ink pt-5">
-            <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-7">
+            <p className="font-mono text-xs text-av-muted">01</p>
+            <h2 className="mt-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
               {t.problemTitle}
             </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-av-text">
+            <p className="mt-4 max-w-[56ch] font-display text-2xl font-normal leading-snug tracking-tight text-av-ink">
               {pick(item.businessProblem, lang)}
             </p>
           </div>
-          <div className="border-t-2 border-av-ink pt-5">
-            <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-xs text-av-muted">02</p>
+            <h2 className="mt-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
               {t.solutionTitle}
             </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-av-text">
+            <p className="mt-4 max-w-[52ch] border-l-2 border-av-signal pl-4 text-[15px] leading-relaxed text-av-text">
               {pick(item.solution, lang)}
+            </p>
+            <p className="mt-6 max-w-[52ch] text-sm leading-relaxed text-av-secondary">
+              <span className="font-medium text-av-ink">{t.techNoteLabel}</span>
+              {t.techNoteBody}
             </p>
           </div>
         </div>
-        <p className="mt-10 max-w-[68ch] border-l-2 border-av-border pl-4 text-sm leading-relaxed text-av-secondary">
-          <span className="font-medium text-av-ink">{t.techNoteLabel}</span>
-          {t.techNoteBody}
-        </p>
       </Container>
     </section>
   );

@@ -261,19 +261,27 @@ export function ScreensPreview({ item }: ScreensPreviewProps) {
               : "Interface preview per section. Each screen also opens as an interactive demo.")
           }
         />
-        <div className="mt-10 grid gap-x-8 gap-y-10 lg:grid-cols-2">
+        <div className="mt-10 grid gap-x-8 gap-y-12 lg:grid-cols-2">
           {item.screens.map((screen, index) => (
-            <figure key={screen.title[lang]}>
+            <figure
+              key={screen.title[lang]}
+              className={index === 0 ? "lg:col-span-2" : undefined}
+            >
               <div className="overflow-hidden rounded-[4px] border border-av-border bg-av-canvas">
                 {renderScreenContent(item, index)}
               </div>
-              <figcaption>
-                <h3 className="mt-4 text-base font-semibold text-av-ink">
-                  {screen.title[lang]}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-av-secondary">
-                  {screen.description[lang]}
-                </p>
+              <figcaption className="mt-4 grid gap-2 sm:grid-cols-[56px_1fr] sm:gap-4">
+                <span className="font-mono text-xs text-av-muted">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-base font-semibold text-av-ink">
+                    {screen.title[lang]}
+                  </h3>
+                  <p className="mt-2 max-w-[62ch] text-sm leading-relaxed text-av-secondary">
+                    {screen.description[lang]}
+                  </p>
+                </div>
               </figcaption>
             </figure>
           ))}

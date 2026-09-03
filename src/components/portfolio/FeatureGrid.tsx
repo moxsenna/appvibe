@@ -10,6 +10,7 @@ type FeatureGridProps = {
 
 export function FeatureGrid({ item }: FeatureGridProps) {
   const { lang } = useLang();
+  const [highlight, ...rest] = item.features[lang];
 
   return (
     <section className="border-t border-av-border bg-av-surface">
@@ -22,8 +23,13 @@ export function FeatureGrid({ item }: FeatureGridProps) {
               : "Key pieces built for this business need"
           }
         />
+        {highlight && (
+          <p className="mt-8 max-w-[44ch] border-t-2 border-av-signal pt-5 font-display text-2xl font-normal leading-snug tracking-tight text-av-ink">
+            {highlight}
+          </p>
+        )}
         <ul className="mt-8 grid gap-x-10 gap-y-4 sm:grid-cols-2">
-          {item.features[lang].map((feature) => (
+          {rest.map((feature) => (
             <li key={feature} className="flex gap-3 border-t border-av-border-soft pt-4">
               <Check
                 className="mt-0.5 h-5 w-5 shrink-0 text-av-signal"

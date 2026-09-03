@@ -21,24 +21,29 @@ export function BusinessValueSection({ item }: BusinessValueSectionProps) {
               : "Realistic impact for a business like this"
           }
         />
-        <ul className="mt-8 grid gap-x-10 gap-y-4 sm:grid-cols-2">
-          {item.businessValue[lang].map((value) => (
+        <ol className="mt-8 max-w-4xl divide-y divide-av-border-soft border-b border-t border-av-border-soft">
+          {item.businessValue[lang].map((value, index) => (
             <li
               key={value}
-              className="border-t-2 border-av-ink pt-4 text-[15px] leading-relaxed text-av-text"
+              className="grid gap-1 py-5 sm:grid-cols-[56px_1fr] sm:gap-4"
             >
-              {value}
+              <span className="font-mono text-xs text-av-signal">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <p className="max-w-[62ch] text-[15px] leading-relaxed text-av-text">
+                {value}
+              </p>
             </li>
           ))}
-        </ul>
+        </ol>
 
         <div className="mt-12">
           <SectionHeader
             eyebrow={lang === "id" ? "Data contoh" : "Sample data"}
             title={
               lang === "id"
-                ? "Data contoh yang dipakai demo"
-                : "Sample data used in the demo"
+                ? "Spesifikasi isi demo"
+                : "Demo content spec"
             }
             description={
               lang === "id"
@@ -46,16 +51,18 @@ export function BusinessValueSection({ item }: BusinessValueSectionProps) {
                 : "Realistic data so prospects can picture the site with real business content."
             }
           />
-          <ul className="mt-6 grid gap-x-10 gap-y-3 sm:grid-cols-2">
-            {item.mockDataHighlights[lang].map((highlight) => (
-              <li
-                key={highlight}
-                className="border-l-2 border-av-border pl-3 text-sm leading-relaxed text-av-secondary"
-              >
-                {highlight}
-              </li>
+          <dl className="mt-6 grid max-w-4xl gap-px overflow-hidden rounded border border-av-border bg-av-border sm:grid-cols-2">
+            {item.mockDataHighlights[lang].map((highlight, index) => (
+              <div key={highlight} className="bg-av-surface px-5 py-4">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-muted">
+                  {String(index + 1).padStart(2, "0")}
+                </dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-av-text">
+                  {highlight}
+                </dd>
+              </div>
             ))}
-          </ul>
+          </dl>
         </div>
       </Container>
     </section>

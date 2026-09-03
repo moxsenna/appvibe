@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import type { PortfolioItem } from "@/types/portfolio";
 import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
 import { routes } from "@/lib/routes";
+import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
 import { pick } from "@/i18n/localized";
 import { ProjectStatus } from "@/components/home/work-ui";
@@ -12,49 +14,67 @@ type CaseStudyHeroProps = {
 
 export function CaseStudyHero({ item }: CaseStudyHeroProps) {
   const { lang, dict } = useLang();
+  const demoPath = routes.demoDetail(lang, item.slug);
+
+  const facts = [
+    {
+      label: lang === "id" ? "Kategori" : "Category",
+      value: pick(item.categoryLabel, lang),
+    },
+    {
+      label: lang === "id" ? "Cocok untuk" : "For",
+      value: pick(item.niche, lang),
+    },
+  ];
 
   return (
     <section className="border-b border-av-border">
       <Container className="pb-10 pt-12 sm:pt-16 lg:pb-14">
-        <div className="max-w-3xl">
-          <ProjectStatus slug={item.slug} lang={lang} />
-          <h1
-            className="mt-4 font-display text-display-lg font-normal tracking-tight text-av-ink"
-            style={{ viewTransitionName: `portfolio-title-${item.slug}` }}
-          >
-            {pick(item.title, lang)}
-          </h1>
-          <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-av-text sm:text-lg">
-            {pick(item.summary, lang)}
-          </p>
-          <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-            <div>
+        <ProjectStatus slug={item.slug} lang={lang} />
+        <h1
+          className="mt-4 max-w-[20ch] font-display text-display-lg font-normal tracking-tight text-av-ink"
+          style={{ viewTransitionName: `portfolio-title-${item.slug}` }}
+        >
+          {pick(item.title, lang)}
+        </h1>
+        <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-av-text sm:text-xl">
+          {pick(item.summary, lang)}
+        </p>
+
+        <dl className="mt-8 grid gap-px overflow-hidden rounded border border-av-border bg-av-border sm:grid-cols-3">
+          {facts.map((fact) => (
+            <div key={fact.label} className="bg-av-canvas px-5 py-4">
               <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-muted">
-                {lang === "id" ? "Kategori" : "Category"}
+                {fact.label}
               </dt>
-              <dd className="mt-1 font-medium text-av-ink">
-                {pick(item.categoryLabel, lang)}
+              <dd className="mt-1.5 text-sm font-medium leading-relaxed text-av-ink">
+                {fact.value}
               </dd>
             </div>
-            <div className="max-w-[52ch]">
-              <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-muted">
-                {lang === "id" ? "Cocok untuk" : "For"}
-              </dt>
-              <dd className="mt-1 text-av-secondary">
-                {pick(item.niche, lang)}
-              </dd>
-            </div>
-          </dl>
-          <div className="mt-6">
-            <Link
-              to={routes.demoDetail(lang, item.slug)}
-              className="inline-flex min-h-[44px] items-center text-[15px] font-medium text-av-ink transition-colors hover:text-av-signal"
-            >
-              {dict.common.cta.openDemo} <span aria-hidden>↗</span>
-            </Link>
+          ))}
+          <div className="bg-av-ink px-5 py-4">
+            <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-dark-muted">
+              Live demo
+            </dt>
+            <dd className="mt-1.5">
+              <Link
+                to={demoPath}
+                onClick={() =>
+                  trackEvent("demo_open", {
+                    slug: item.slug,
+                    location: "case_study_hero",
+                    deferred: false,
+                  })
+                }
+                className="text-sm font-medium text-white underline decoration-av-signal-on-dark decoration-2 underline-offset-4 transition-colors hover:text-av-signal-on-dark"
+              >
+                {dict.common.cta.openDemo} <span aria-hidden>↗</span>
+              </Link>
+            </dd>
           </div>
-        </div>
-        <div
+        </dl>
+
+        <figure
           className="mt-10 overflow-hidden rounded-[4px] border border-av-border bg-av-surface"
           style={{ viewTransitionName: `portfolio-cover-${item.slug}` }}
         >
@@ -65,6 +85,26 @@ export function CaseStudyHero({ item }: CaseStudyHeroProps) {
             decoding="async"
             className="aspect-[16/8] w-full object-cover object-top"
           />
+          <figcaption className="border-t border-av-border-soft px-4 py-3 text-xs leading-relaxed text-av-muted">
+            {pick(item.niche, lang)}
+          </figcaption>
+        </figure>
+
+        <div className="mt-8">
+          <Button
+            href={demoPath}
+            viewTransition
+            size="lg"
+            onClick={() =>
+              trackEvent("demo_open", {
+                slug: item.slug,
+                location: "case_study_hero_button",
+                deferred: false,
+              })
+            }
+          >
+            {dict.common.cta.openDemo} <span aria-hidden>↗</span>
+          </Button>
         </div>
       </Container>
     </section>
