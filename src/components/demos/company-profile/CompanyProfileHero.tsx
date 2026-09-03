@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
 import { brand } from "@/data/demos/company-profile/brand";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -42,52 +42,45 @@ export function CompanyProfileHero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden text-white"
-      style={{
-        backgroundImage:
-          "linear-gradient(135deg, #0F172A 0%, #1E3A8A 45%, #4C1D95 100%)",
-      }}
+      className="text-white"
+      style={{ backgroundColor: "#1E3A8A" }}
     >
-      <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-violet-400/20 blur-3xl" />
-      <div className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-5" />
-
-      <Container className="relative grid gap-12 py-16 sm:py-20 lg:grid-cols-12 lg:py-28">
+      <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-7">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-cyan-200 backdrop-blur-sm">
-            <Sparkles className="h-3.5 w-3.5" aria-hidden />
+          <p className="mb-5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-blue-200">
             {copy.badge}
-          </div>
+          </p>
 
-          <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h1 className="font-display text-display-lg font-normal tracking-tight text-white">
             {copy.h1}
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-blue-100 sm:text-lg">
+          <p className="mt-5 max-w-[58ch] text-base leading-relaxed text-blue-100 sm:text-lg">
             {copy.sub}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-blue-100/80 sm:text-base">
+          <p className="mt-3 max-w-[58ch] text-sm leading-relaxed text-blue-200/90 sm:text-base">
             {brand.description[lang]}
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
+          <ul className="mt-6 flex flex-wrap gap-2">
             {brand.trustChips[lang].map((chip) => (
-              <span
+              <li
                 key={chip}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-blue-100"
+                className="inline-flex items-center gap-1.5 rounded-[3px] border border-white/25 px-2.5 py-1 text-xs font-medium text-blue-50"
               >
                 <CheckCircle2
-                  className="h-3.5 w-3.5 text-cyan-300"
+                  className="h-3.5 w-3.5 text-blue-200"
                   aria-hidden
                 />
                 {chip}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button
               href="#inquiry"
               size="lg"
+              className="bg-white text-av-ink hover:bg-av-canvas"
               onClick={() =>
                 trackEvent("cta_whatsapp_click", {
                   location: "cp_hero_primary",
@@ -101,7 +94,7 @@ export function CompanyProfileHero() {
               href={whatsappUrl}
               variant="secondary"
               size="lg"
-              className="border-white/30 bg-white/10 text-white hover:bg-white/20"
+              className="border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10"
               onClick={() =>
                 trackEvent("cta_whatsapp_click", {
                   location: "cp_hero_secondary",
@@ -131,46 +124,38 @@ function HeroVisual({
   copy: HeroCopy;
 }) {
   return (
-    <div className="relative">
-      <div
-        className="absolute -inset-4 rounded-3xl opacity-50 blur-2xl"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, #06B6D4 0%, #2563EB 50%, #7C3AED 100%)",
-        }}
-        aria-hidden
-      />
-      <div className="relative rounded-2xl border border-white/15 bg-white/[0.06] p-5 shadow-2xl backdrop-blur-md sm:p-6">
-        <div className="mb-4 flex items-center gap-2 border-b border-white/10 pb-3">
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-blue-500 to-violet-500 text-[10px] font-bold text-white">
-            AR
-          </span>
-          <div className="flex-1">
-            <p className="text-xs font-semibold text-white">{brand.name[lang]}</p>
-            <p className="text-[10px] text-blue-200/70">{copy.visualDemo}</p>
+    <div className="overflow-hidden rounded-[4px] border border-white/20 bg-white text-av-ink lg:sticky lg:top-24">
+      <div className="flex items-center gap-2.5 border-b border-av-border px-5 py-4">
+        <span className="flex h-8 w-8 items-center justify-center rounded-[4px] bg-[#1E3A8A] font-mono text-xs text-white">
+          AR
+        </span>
+        <div className="flex-1">
+          <p className="text-sm font-semibold text-av-ink">{brand.name[lang]}</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-muted">{copy.visualDemo}</p>
+        </div>
+        <span className="rounded-[3px] bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700">
+          {copy.visualOnline}
+        </span>
+      </div>
+
+      <dl className="divide-y divide-av-border-soft">
+        {brand.trustStats.map((stat) => (
+          <div
+            key={stat.label[lang]}
+            className="flex items-baseline justify-between gap-4 px-5 py-3.5"
+          >
+            <dt className="text-[13px] text-av-secondary">{stat.label[lang]}</dt>
+            <dd className="font-display text-xl text-av-ink">
+              {stat.value[lang]}
+            </dd>
           </div>
-          <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-medium text-emerald-200">
-            {copy.visualOnline}
-          </span>
-        </div>
+        ))}
+      </dl>
 
-        <div className="space-y-3">
-          {brand.trustStats.map((stat) => (
-            <div
-              key={stat.label[lang]}
-              className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 p-3"
-            >
-              <span className="text-xs text-blue-100/80">{stat.label[lang]}</span>
-              <span className="text-base font-bold text-white">
-                {stat.value[lang]}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-4 rounded-lg bg-cta-gradient p-3 text-center text-xs font-semibold text-white">
+      <div className="border-t border-av-border px-5 py-4">
+        <p className="rounded bg-[#1E3A8A] px-4 py-3 text-center text-sm font-semibold text-white">
           {copy.visualCta}
-        </div>
+        </p>
       </div>
     </div>
   );
