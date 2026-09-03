@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { PageShell } from "@/components/layout/PageShell";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { ProblemSection } from "@/components/sections/ProblemSection";
-import { SolutionSection } from "@/components/sections/SolutionSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { FeaturedPortfolioSection } from "@/components/sections/FeaturedPortfolioSection";
-import { IndustriesSection } from "@/components/sections/IndustriesSection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
+import { HomeHero } from "@/components/home/HomeHero";
+import { TwoWorlds } from "@/components/home/TwoWorlds";
+import { FeaturedWork } from "@/components/home/FeaturedWork";
+import { ProjectDeepDive } from "@/components/home/ProjectDeepDive";
+import { Capabilities } from "@/components/home/Capabilities";
+import { IndustriesPreview } from "@/components/home/IndustriesPreview";
+import { HomeProcess } from "@/components/home/HomeProcess";
+import { StudioTrust } from "@/components/home/StudioTrust";
+import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { usePageMeta } from "@/i18n/use-page-meta";
 import { useLang } from "@/i18n/use-lang";
 import { faqItems } from "@/data/faq";
@@ -32,15 +33,16 @@ export function HomePage() {
 
   return (
     <PageShell>
-      <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <ServicesSection />
-      <FeaturedPortfolioSection />
-      <IndustriesSection />
-      <ProcessSection />
+      <HomeHero />
+      <TwoWorlds />
+      <FeaturedWork />
+      <ProjectDeepDive />
+      <Capabilities />
+      <IndustriesPreview />
+      <HomeProcess />
+      <StudioTrust />
       <FAQSection />
-      <FinalCTASection />
+      <ConsultationCTA location="home_final" />
     </PageShell>
   );
 }
