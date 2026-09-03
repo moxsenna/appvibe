@@ -15,10 +15,11 @@ export const commonEn: CommonDict = {
 
   nav: {
     home: "Home",
-    services: "Services",
-    portfolio: "Portfolio",
+    services: "Capabilities",
+    portfolio: "Work",
     demo: "Demos",
     industries: "Industries",
+    process: "Process",
     about: "About",
     blog: "Blog",
     contact: "Contact",
@@ -27,14 +28,14 @@ export const commonEn: CommonDict = {
 
   cta: {
     consult: "Free consult on WhatsApp",
-    consultShort: "Get in touch",
+    consultShort: "Tell us what you need",
     chatNow: "Chat now",
     viewPortfolio: "See the work",
     viewCaseStudy: "View case study",
     openDemo: "Open demo",
     openCaseStudy: "Open case study",
     seeAllDemos: "All demos",
-    seeAllPortfolio: "All portfolio",
+    seeAllPortfolio: "All work",
     backToHome: "Back to home",
     backToAllDemos: "Back to all demos",
     backToAppVibe: "Back to AppVibe Studio",
@@ -49,8 +50,8 @@ export const commonEn: CommonDict = {
   footer: {
     heading: {
       nav: "Navigation",
-      services: "Services",
-      portfolio: "Portfolio",
+      services: "Capabilities",
+      portfolio: "Work",
       demoInteractive: "Interactive Demos",
     },
     description:

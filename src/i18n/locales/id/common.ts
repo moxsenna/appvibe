@@ -20,10 +20,11 @@ export const commonId = {
 
   nav: {
     home: "Beranda",
-    services: "Layanan",
-    portfolio: "Portfolio",
+    services: "Kapabilitas",
+    portfolio: "Karya",
     demo: "Demo",
     industries: "Industri",
+    process: "Proses",
     about: "Tentang",
     blog: "Blog",
     contact: "Kontak",
@@ -32,14 +33,14 @@ export const commonId = {
 
   cta: {
     consult: "Konsultasi gratis via WhatsApp",
-    consultShort: "Konsultasi",
+    consultShort: "Ceritakan kebutuhan",
     chatNow: "Chat Sekarang",
     viewPortfolio: "Lihat Portfolio",
     viewCaseStudy: "Lihat Studi Kasus",
     openDemo: "Buka Demo",
     openCaseStudy: "Buka Studi Kasus",
     seeAllDemos: "Semua Demo",
-    seeAllPortfolio: "Semua Portfolio",
+    seeAllPortfolio: "Semua Karya",
     backToHome: "Kembali ke Beranda",
     backToAllDemos: "Kembali ke semua demo",
     backToAppVibe: "Kembali ke AppVibe Studio",
@@ -54,8 +55,8 @@ export const commonId = {
   footer: {
     heading: {
       nav: "Navigasi",
-      services: "Layanan",
-      portfolio: "Portfolio",
+      services: "Kapabilitas",
+      portfolio: "Karya",
       demoInteractive: "Demo Interaktif",
     },
     description:

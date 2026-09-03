@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { MessageCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { routes } from "@/lib/routes";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { LanguageToggle } from "@/components/layout/LanguageToggle";
 import { buildWhatsAppUrl, getDefaultConsultationMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
@@ -18,13 +17,12 @@ const PORTFOLIO_SLUGS = [
   "lead-dashboard",
 ] as const;
 
-/** Display labels for portfolio/demo slugs — kept canonical (no translation). */
 const SLUG_LABEL: Record<(typeof PORTFOLIO_SLUGS)[number], string> = {
   "company-profile": "Company Profile",
   "webinar-landing": "Webinar Landing",
   klinik: "Klinik",
   properti: "Properti",
-  "lead-dashboard": "Lead Dashboard",
+  "lead-dashboard": "LeadFlow CRM",
 };
 
 export function Footer() {
@@ -87,116 +85,75 @@ export function Footer() {
     { label: common.footer.legal.sitemap, to: "/sitemap.xml", external: true },
   ];
 
+  const columns = [
+    { heading: common.footer.heading.nav, links: navLinks },
+    { heading: common.footer.heading.services, links: serviceLinks },
+    { heading: common.footer.heading.portfolio, links: portfolioLinks },
+    { heading: common.footer.heading.demoInteractive, links: demoLinks },
+  ];
+
   return (
-    <footer className="relative border-t border-slate-800 bg-brand-navy text-slate-300">
-      <div className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-[0.04]" />
-      <Container as="div" className="relative py-12 lg:py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cta-gradient text-xs font-bold text-white">
+    <footer className="bg-av-ink text-av-dark-body">
+      <Container as="div" className="pb-8 pt-14 lg:pt-20">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
+          <div>
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-8 w-8 items-center justify-center rounded-[4px] bg-av-canvas font-mono text-xs font-medium text-av-ink">
                 AV
               </span>
-              <p className="text-lg font-bold text-white">{APP_NAME}</p>
+              <p className="text-[15px] font-semibold tracking-tight text-white">
+                {APP_NAME}
+              </p>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-400">
+            <p className="mt-4 max-w-[38ch] text-sm leading-relaxed text-av-dark-body">
               {common.footer.description}
             </p>
-            <Button
+            <a
               href={whatsappUrl}
-              size="sm"
-              className="mt-5"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() =>
                 trackEvent("cta_whatsapp_click", { location: "footer" })
               }
+              className="mt-5 inline-flex min-h-[44px] items-center gap-2 border-b border-av-dark-border pb-1 text-sm font-medium text-white transition-colors hover:border-av-signal-on-dark hover:text-av-signal-on-dark"
             >
-              <MessageCircle className="h-4 w-4" aria-hidden />
-              {common.cta.contactUs}
-            </Button>
-            <div className="mt-5">
+              {common.cta.consultShort}
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </a>
+            <div className="mt-6">
               <LanguageToggle variant="onDark" />
             </div>
           </div>
 
-          <nav aria-label={common.aria.footerNav}>
-            <p className="text-sm font-semibold text-white">
-              {common.footer.heading.nav}
-            </p>
-            <ul className="mt-4 flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <li key={link.to + link.label}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label={common.footer.heading.services}>
-            <p className="text-sm font-semibold text-white">
-              {common.footer.heading.services}
-            </p>
-            <ul className="mt-4 flex flex-col gap-2">
-              {serviceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label={common.footer.heading.portfolio}>
-            <p className="text-sm font-semibold text-white">
-              {common.footer.heading.portfolio}
-            </p>
-            <ul className="mt-4 flex flex-col gap-2">
-              {portfolioLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label={common.footer.heading.demoInteractive}>
-            <p className="text-sm font-semibold text-white">
-              {common.footer.heading.demoInteractive}
-            </p>
-            <ul className="mt-4 flex flex-col gap-2">
-              {demoLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:gap-6">
+            {columns.map((col) => (
+              <nav key={col.heading} aria-label={col.heading}>
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-dark-muted">
+                  {col.heading}
+                </p>
+                <ul className="mt-4 flex flex-col gap-2.5">
+                  {col.links.map((link) => (
+                    <li key={link.to + link.label}>
+                      <Link
+                        to={link.to}
+                        className="text-sm text-av-dark-body transition-colors hover:text-white"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-slate-700 pt-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-slate-500">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-av-dark-border pt-6 sm:flex-row sm:items-center">
+          <p className="text-xs leading-relaxed text-av-dark-muted">
             © {year} {APP_NAME}. {common.footer.copyright}
           </p>
           <nav aria-label={common.aria.legalNav}>
-            <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-av-dark-muted">
               {legalLinks.map((link) =>
                 link.external ? (
                   <li key={link.label}>

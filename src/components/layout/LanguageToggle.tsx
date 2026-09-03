@@ -33,25 +33,25 @@ export function LanguageToggle({
 
   const containerStyles =
     variant === "onDark"
-      ? "border-white/20 bg-white/10 backdrop-blur-sm"
-      : "border-brand-border bg-white shadow-sm";
+      ? "border-av-dark-border bg-white/5"
+      : "border-av-border bg-av-surface";
 
   const activeStyles =
     variant === "onDark"
-      ? "bg-white text-brand-navy"
-      : "bg-brand-navy text-white";
+      ? "bg-av-canvas text-av-ink"
+      : "bg-av-ink text-white";
 
   const inactiveStyles =
     variant === "onDark"
-      ? "text-white/70 hover:text-white"
-      : "text-brand-muted hover:text-brand-navy";
+      ? "text-av-dark-muted hover:text-white"
+      : "text-av-secondary hover:text-av-ink";
 
   return (
     <div
       role="group"
       aria-label={lang === "id" ? "Ganti bahasa" : "Switch language"}
       className={cn(
-        "inline-flex items-center rounded-full border p-0.5 text-xs font-semibold",
+        "inline-flex items-center rounded-[4px] border p-0.5 text-xs font-semibold",
         containerStyles,
         className,
       )}
@@ -75,7 +75,7 @@ export function LanguageToggle({
               navigate(targetPath);
             }}
             className={cn(
-              "rounded-full px-2.5 py-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-1",
+              "min-h-[32px] rounded-[3px] px-2.5 py-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-av-signal focus-visible:ring-offset-1",
               active ? activeStyles : inactiveStyles,
             )}
           >
