@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 import { DemoShell } from "@/components/demos/DemoShell";
 import { AppVibeDemoBanner } from "@/components/demos/AppVibeDemoBanner";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { NotFoundPage } from "@/pages/NotFoundPage";
@@ -88,14 +87,7 @@ export function DemoDetailPage() {
         }}
       >
         <Container className="py-14 sm:py-16 lg:py-20">
-          <Breadcrumbs
-            tone="dark"
-            items={[
-              { label: common.nav.demo, to: routes.demo(lang) },
-              { label: item.title[lang] },
-            ]}
-          />
-          <div className="mt-6 max-w-3xl">
+          <div className="max-w-3xl">
             <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-white/70">
               {brandName} · {item.categoryLabel[lang]} · {statusLabel}
             </p>
