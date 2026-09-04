@@ -24,7 +24,7 @@ export function ProjectVisual({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-[4px] border border-av-border bg-av-surface",
+        "zoom-hover overflow-hidden rounded-[4px] border border-av-border bg-av-surface",
         className,
       )}
     >
