@@ -35,6 +35,7 @@ export function FAQSection() {
                   type="button"
                   className="flex min-h-[56px] w-full items-center justify-between gap-4 py-4 text-left"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${item.id}`}
                   onClick={() => setOpenId(isOpen ? null : item.id)}
                 >
                   <span className="text-[15px] font-medium text-av-ink">
@@ -49,7 +50,11 @@ export function FAQSection() {
                   />
                 </button>
                 {isOpen && (
-                  <p className="max-w-[62ch] pb-5 text-sm leading-relaxed text-av-secondary">
+                  <p
+                    id={`faq-panel-${item.id}`}
+                    role="region"
+                    className="max-w-[62ch] pb-5 text-sm leading-relaxed text-av-secondary"
+                  >
                     {item.answer[lang]}
                   </p>
                 )}

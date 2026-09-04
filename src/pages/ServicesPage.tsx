@@ -2,6 +2,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ServicesHero } from "@/components/services/ServicesHero";
 import { ServicesOverview } from "@/components/services/ServicesOverview";
 import { ServicesPricing } from "@/components/services/ServicesPricing";
+import { DecisionHelper } from "@/components/services/DecisionHelper";
 import { ServicesDetailAccordion } from "@/components/services/ServicesDetailAccordion";
 import { ServicesProcess } from "@/components/services/ServicesProcess";
 import { ServicesPortfolioLink } from "@/components/services/ServicesPortfolioLink";
@@ -17,6 +18,7 @@ export function ServicesPage() {
       <ServicesHero />
       <ServicesOverview />
       <ServicesPricing />
+      <DecisionHelper />
       <ServicesDetailAccordion />
       <ServicesProcess />
       <ServicesPortfolioLink />

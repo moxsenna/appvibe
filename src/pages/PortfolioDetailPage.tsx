@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { CaseStudyLayout } from "@/components/portfolio/CaseStudyLayout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Container } from "@/components/ui/Container";
 import { CaseStudyHero } from "@/components/portfolio/CaseStudyHero";
 import { CaseStudyProblemSolution } from "@/components/portfolio/CaseStudyProblemSolution";
 import { FeatureGrid } from "@/components/portfolio/FeatureGrid";
@@ -14,11 +16,12 @@ import { applyPageMeta } from "@/lib/seo";
 import { routes } from "@/lib/routes";
 import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
+import { pick } from "@/i18n/localized";
 
 export function PortfolioDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const item = slug ? getPortfolioBySlug(slug) : undefined;
-  const { lang } = useLang();
+  const { lang, dict } = useLang();
 
   useEffect(() => {
     if (item) {
@@ -45,6 +48,14 @@ export function PortfolioDetailPage() {
 
   return (
     <CaseStudyLayout>
+      <Container className="pt-8">
+        <Breadcrumbs
+          items={[
+            { label: dict.common.nav.portfolio, to: routes.portfolio(lang) },
+            { label: pick(item.title, lang) },
+          ]}
+        />
+      </Container>
       <CaseStudyHero item={item} />
       <CaseStudyProblemSolution item={item} />
       <FeatureGrid item={item} />

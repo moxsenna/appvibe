@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Plus } from "lucide-react";
 import { faqs } from "@/data/contact/faq";
 import { Container } from "@/components/ui/Container";
@@ -6,6 +6,7 @@ import { cn } from "@/lib/cn";
 
 export function ContactFAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const uid = useId().replace(/:/g, "");
 
   return (
     <section className="border-t border-av-border">
@@ -28,6 +29,7 @@ export function ContactFAQ() {
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
                   className="flex min-h-[56px] w-full items-center justify-between gap-4 py-4 text-left"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${uid}-${idx}`}
                 >
                   <span className="text-[15px] font-medium text-av-ink">
                     {faq.question}
@@ -41,6 +43,8 @@ export function ContactFAQ() {
                   />
                 </button>
                 <div
+                  id={`faq-panel-${uid}-${idx}`}
+                  role="region"
                   className={cn(
                     "grid transition-all duration-300",
                     isOpen
