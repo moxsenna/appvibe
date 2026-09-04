@@ -157,10 +157,17 @@
   .anim-fade,
   .anim-scale-in,
   .anim-rule {
-    opacity: 0;
+    opacity: 1;
   }
 
   @media (prefers-reduced-motion: no-preference) {
+    .anim-rise,
+    .anim-fade,
+    .anim-scale-in,
+    .anim-rule {
+      opacity: 0;
+    }
+
     .anim-rise {
       animation: rise-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
     }
