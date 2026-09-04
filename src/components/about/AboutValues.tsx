@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 const values = [
   {
@@ -27,15 +28,18 @@ export function AboutValues() {
   return (
     <section className="border-t border-av-border bg-av-surface">
       <Container className="py-14 lg:py-20">
-        <div className="max-w-3xl">
-          <p className="av-eyebrow text-av-signal">Nilai Utama</p>
-          <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
-            4 prinsip yang kami pegang di setiap project
-          </h2>
-        </div>
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="av-eyebrow text-av-signal">Nilai Utama</p>
+            <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
+              4 prinsip yang kami pegang di setiap project
+            </h2>
+          </div>
+        </Reveal>
         <ol className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
           {values.map((v, i) => (
-            <li key={v.title} className="border-t-2 border-av-ink pt-5">
+            <Reveal key={v.title} delay={Math.min(i % 2, 1) * 100}>
+            <li className="border-t-2 border-av-ink pt-5">
               <p className="font-mono text-xs text-av-muted">
                 {String(i + 1).padStart(2, "0")}
               </p>
@@ -46,6 +50,7 @@ export function AboutValues() {
                 {v.description}
               </p>
             </li>
+            </Reveal>
           ))}
         </ol>
       </Container>

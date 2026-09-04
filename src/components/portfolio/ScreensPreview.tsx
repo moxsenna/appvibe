@@ -3,6 +3,7 @@ import type { PortfolioItem } from "@/types/portfolio";
 import { useLang } from "@/i18n/use-lang";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
 import {
   CompanyProfilePreview,
   type CompanyProfilePreviewVariant,
@@ -263,9 +264,12 @@ export function ScreensPreview({ item }: ScreensPreviewProps) {
         />
         <div className="mt-10 grid gap-x-8 gap-y-12 lg:grid-cols-2">
           {item.screens.map((screen, index) => (
-            <figure
+            <Reveal
               key={screen.title[lang]}
+              delay={Math.min(index % 2, 1) * 100}
               className={index === 0 ? "lg:col-span-2" : undefined}
+            >
+            <figure
             >
               <div className="overflow-hidden rounded-[4px] border border-av-border bg-av-canvas">
                 {renderScreenContent(item, index)}
@@ -284,6 +288,7 @@ export function ScreensPreview({ item }: ScreensPreviewProps) {
                 </div>
               </figcaption>
             </figure>
+            </Reveal>
           ))}
         </div>
       </Container>

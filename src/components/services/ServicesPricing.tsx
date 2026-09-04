@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { buildWhatsAppUrl, getServiceMessage } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
+import { Reveal } from "@/components/ui/Reveal";
 
 type Tier = {
   name: string;
@@ -85,12 +86,12 @@ export function ServicesPricing() {
           }
         />
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {items.map((tier) => {
+          {items.map((tier, idx) => {
             const waUrl = buildWhatsAppUrl(getServiceMessage(lang, tier.serviceTitle));
             return (
+              <Reveal key={tier.name} delay={Math.min(idx, 2) * 100}>
               <div
-                key={tier.name}
-                className="flex flex-col rounded border border-av-border bg-av-canvas p-6"
+                className="lift flex h-full flex-col rounded border border-av-border bg-av-canvas p-6"
               >
                 <h3 className="text-base font-semibold text-av-ink">{tier.name}</h3>
                 <p className="mt-2 font-display text-display-md font-normal tracking-tight text-av-ink">
@@ -115,6 +116,7 @@ export function ServicesPricing() {
                   {lang === "id" ? "Tanya paket ini" : "Ask about this plan"}
                 </Button>
               </div>
+              </Reveal>
             );
           })}
         </div>

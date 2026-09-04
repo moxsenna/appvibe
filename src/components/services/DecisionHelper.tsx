@@ -113,6 +113,7 @@ export function DecisionHelper() {
           aria-live="polite"
           className="mt-8 max-w-4xl rounded border border-av-border bg-av-canvas p-6"
         >
+          <div key={need ?? "none"} className="anim-fade">
           {ready && need ? (
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -146,6 +147,7 @@ export function DecisionHelper() {
                 : "Pick 1 need and 1 budget range to see the recommendation."}
             </p>
           )}
+          </div>
         </div>
       </Container>
     </section>

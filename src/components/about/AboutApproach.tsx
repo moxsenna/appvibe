@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { useLang } from "@/i18n/use-lang";
 import { useDict } from "@/i18n/use-dict";
 import { pick } from "@/i18n/localized";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function AboutApproach() {
   const { lang } = useLang();
@@ -22,8 +23,9 @@ export function AboutApproach() {
           </p>
         </div>
         <ol className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {processSteps.map((step) => (
-            <li key={step.id} className="border-t border-av-border pt-5">
+          {processSteps.map((step, idx) => (
+            <Reveal key={step.id} delay={Math.min(idx % 3, 2) * 100}>
+            <li className="border-t border-av-border pt-5">
               <p className="font-mono text-xs text-av-muted">
                 {String(step.step).padStart(2, "0")}
               </p>
@@ -34,6 +36,7 @@ export function AboutApproach() {
                 {pick(step.description, lang)}
               </p>
             </li>
+            </Reveal>
           ))}
         </ol>
       </Container>

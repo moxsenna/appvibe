@@ -8,6 +8,7 @@ import { useLang } from "@/i18n/use-lang";
 import { homeWorkHeader } from "@/data/home";
 import { pick } from "@/i18n/localized";
 import { ProjectStatus, ProjectVisual, WorkLinks } from "@/components/home/work-ui";
+import { Reveal } from "@/components/ui/Reveal";
 
 function bySlug(slug: string) {
   return portfolioItems.find((p) => p.slug === slug);
@@ -26,17 +27,20 @@ export function FeaturedWork() {
   return (
     <section className="border-t border-av-border bg-av-surface">
       <Container className="py-14 lg:py-20">
-        <div className="max-w-3xl">
-          <p className="av-eyebrow text-av-signal">{pick(homeWorkHeader.eyebrow, lang)}</p>
-          <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
-            {pick(homeWorkHeader.title, lang)}
-          </h2>
-          <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-av-text">
-            {pick(homeWorkHeader.desc, lang)}
-          </p>
-        </div>
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="av-eyebrow text-av-signal">{pick(homeWorkHeader.eyebrow, lang)}</p>
+            <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
+              {pick(homeWorkHeader.title, lang)}
+            </h2>
+            <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-av-text">
+              {pick(homeWorkHeader.desc, lang)}
+            </p>
+          </div>
+        </Reveal>
 
-        <article className="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-10">
+        <Reveal delay={120}>
+          <article className="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
             <ProjectVisual
               src={featured.thumbnail}
@@ -62,12 +66,13 @@ export function FeaturedWork() {
             </div>
           </div>
         </article>
+        </Reveal>
 
         <div className="mt-12 space-y-10">
-          {rows.map((item) =>
+          {rows.map((item, idx) =>
             item ? (
+              <Reveal key={item.id} delay={Math.min(idx, 2) * 120}>
               <article
-                key={item.id}
                 className="grid gap-6 border-t border-av-border pt-10 md:grid-cols-12 md:gap-8"
               >
                 <div className="md:col-span-5">
@@ -95,14 +100,16 @@ export function FeaturedWork() {
                   </div>
                 </div>
               </article>
+              </Reveal>
             ) : null,
           )}
         </div>
 
         <div className="mt-12 grid gap-6 border-t border-av-border pt-10 sm:grid-cols-2">
-          {secondary.map((item) =>
+          {secondary.map((item, idx) =>
             item ? (
-              <article key={item.id}>
+              <Reveal key={item.id} delay={Math.min(idx, 1) * 120}>
+              <article>
                 <ProjectVisual
                   src={item.thumbnail}
                   alt={pick(item.title, lang)}
@@ -123,6 +130,7 @@ export function FeaturedWork() {
                   </div>
                 </div>
               </article>
+              </Reveal>
             ) : null,
           )}
         </div>

@@ -38,7 +38,7 @@ export function DemoCard({ item }: DemoCardProps) {
     common.demoStatus?.[item.status] ?? item.status;
 
   return (
-    <Card hover className="flex h-full flex-col overflow-hidden p-0">
+    <Card hover className="lift flex h-full flex-col overflow-hidden p-0">
       <div
         className="relative overflow-hidden"
         style={{

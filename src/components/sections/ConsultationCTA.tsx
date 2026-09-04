@@ -11,6 +11,7 @@ import { trackEvent } from "@/lib/analytics";
 import { useLang } from "@/i18n/use-lang";
 import { homeFinalCta } from "@/data/home";
 import { pick } from "@/i18n/localized";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function ConsultationCTA({ location = "home_final" }: { location?: string }) {
   const { lang } = useLang();
@@ -20,15 +21,18 @@ export function ConsultationCTA({ location = "home_final" }: { location?: string
     <section className="border-t-2 border-av-ink">
       <Container className="py-14 lg:py-20">
         <div className="max-w-3xl">
-          <p className="av-eyebrow text-av-signal">
-            {lang === "id" ? "Konsultasi · WhatsApp-first" : "Consultation · WhatsApp-first"}
-          </p>
-          <h2 className="mt-3 font-display text-display-lg font-normal tracking-tight text-av-ink">
-            {pick(homeFinalCta.title, lang)}
-          </h2>
-          <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-av-text">
-            {pick(homeFinalCta.body, lang)}
-          </p>
+          <Reveal>
+            <p className="av-eyebrow text-av-signal">
+              {lang === "id" ? "Konsultasi · WhatsApp-first" : "Consultation · WhatsApp-first"}
+            </p>
+            <h2 className="mt-3 font-display text-display-lg font-normal tracking-tight text-av-ink">
+              {pick(homeFinalCta.title, lang)}
+            </h2>
+            <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-av-text">
+              {pick(homeFinalCta.body, lang)}
+            </p>
+          </Reveal>
+          <Reveal delay={120}>
           <ul className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-8">
             {(lang === "id"
               ? [
@@ -51,6 +55,8 @@ export function ConsultationCTA({ location = "home_final" }: { location?: string
               </li>
             ))}
           </ul>
+          </Reveal>
+          <Reveal delay={200}>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
             <Button
               href={waUrl}
@@ -72,6 +78,7 @@ export function ConsultationCTA({ location = "home_final" }: { location?: string
               {pick(homeFinalCta.secondary, lang)}
             </Link>
           </div>
+          </Reveal>
         </div>
       </Container>
     </section>

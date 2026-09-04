@@ -88,19 +88,19 @@ export function DemoDetailPage() {
       >
         <Container className="py-14 sm:py-16 lg:py-20">
           <div className="max-w-3xl">
-            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-white/70">
+            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-white/70 anim-rise ad-1">
               {brandName} · {item.categoryLabel[lang]} · {statusLabel}
             </p>
             <h1
-              className="mt-4 font-display text-display-lg font-normal tracking-tight text-white"
+              className="mt-4 font-display text-display-lg font-normal tracking-tight text-white anim-rise ad-2"
               style={{ viewTransitionName: `demo-title-${item.slug}` }}
             >
               {item.title[lang]}
             </h1>
-            <p className="mt-5 max-w-[60ch] text-base leading-relaxed text-white/85 sm:text-lg">
+            <p className="mt-5 max-w-[60ch] text-base leading-relaxed text-white/85 sm:text-lg anim-rise ad-3">
               {item.summary[lang]}
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4 anim-rise ad-4">
               <Button
                 href={whatsappUrl}
                 size="lg"

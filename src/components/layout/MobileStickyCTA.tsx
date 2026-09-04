@@ -15,7 +15,7 @@ export function MobileStickyCTA() {
     >
       <a
         href={whatsappUrl}
-        className="pointer-events-auto inline-flex max-w-[280px] items-center justify-center gap-2 rounded border border-av-dark-border bg-av-ink px-4 py-2.5 text-xs font-semibold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
+        className="anim-rise ad-5 pointer-events-auto inline-flex max-w-[280px] items-center justify-center gap-2 rounded border border-av-dark-border bg-av-ink px-4 py-2.5 text-xs font-semibold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
         onClick={() =>
           trackEvent("cta_whatsapp_click", { location: "mobile_sticky" })
         }

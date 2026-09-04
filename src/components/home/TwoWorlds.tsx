@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { useLang } from "@/i18n/use-lang";
 import { homeWorlds } from "@/data/home";
 import { pick } from "@/i18n/localized";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function TwoWorlds() {
   const { lang } = useLang();
@@ -11,7 +12,8 @@ export function TwoWorlds() {
       <Container className="py-14 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-12">
           {homeWorlds.map((world, i) => (
-            <div key={world.index}>
+            <Reveal key={world.index} delay={i * 120}>
+            <div>
               <p className="font-mono text-xs uppercase tracking-[0.14em] text-av-signal">
                 {world.index}
               </p>
@@ -35,6 +37,7 @@ export function TwoWorlds() {
                 <hr className="mt-10 border-av-border lg:hidden" aria-hidden />
               )}
             </div>
+            </Reveal>
           ))}
           <div
             className="hidden w-px self-stretch bg-av-border lg:block"

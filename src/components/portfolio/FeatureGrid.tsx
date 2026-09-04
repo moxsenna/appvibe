@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import type { PortfolioItem } from "@/types/portfolio";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
 import { useLang } from "@/i18n/use-lang";
 
 type FeatureGridProps = {
@@ -28,6 +29,7 @@ export function FeatureGrid({ item }: FeatureGridProps) {
             {highlight}
           </p>
         )}
+        <Reveal delay={100}>
         <ul className="mt-8 grid gap-x-10 gap-y-4 sm:grid-cols-2">
           {rest.map((feature) => (
             <li key={feature} className="flex gap-3 border-t border-av-border-soft pt-4">
@@ -39,6 +41,7 @@ export function FeatureGrid({ item }: FeatureGridProps) {
             </li>
           ))}
         </ul>
+        </Reveal>
       </Container>
     </section>
   );

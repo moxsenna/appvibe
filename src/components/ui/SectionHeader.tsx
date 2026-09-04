@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { Reveal } from "@/components/ui/Reveal";
 
 type SectionHeaderProps = {
   eyebrow?: string;
@@ -19,7 +20,7 @@ export function SectionHeader({
   titleAs: TitleTag = "h2",
 }: SectionHeaderProps) {
   return (
-    <div
+    <Reveal
       className={cn(
         "max-w-3xl",
         align === "center" && "mx-auto text-center",
@@ -37,6 +38,6 @@ export function SectionHeader({
           {description}
         </p>
       )}
-    </div>
+    </Reveal>
   );
 }

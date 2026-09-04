@@ -19,14 +19,14 @@ export function HomeHero() {
     <section className="border-b border-av-border">
       <Container className="pb-14 pt-14 sm:pt-20 lg:pb-20 lg:pt-24">
         <div className="max-w-[62ch]">
-          <p className="av-eyebrow">{pick(homeHero.eyebrow, lang)}</p>
-          <h1 className="mt-5 font-display text-display-xl font-light text-av-ink">
+          <p className="av-eyebrow anim-rise ad-1">{pick(homeHero.eyebrow, lang)}</p>
+          <h1 className="mt-5 font-display text-display-xl font-light text-av-ink anim-rise ad-2">
             {pick(homeHero.title, lang)}
           </h1>
-          <p className="mt-6 max-w-[60ch] text-base leading-relaxed text-av-text sm:text-lg">
+          <p className="mt-6 max-w-[60ch] text-base leading-relaxed text-av-text sm:text-lg anim-rise ad-3">
             {pick(homeHero.support, lang)}
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6 anim-rise ad-4">
             <Button
               href={routes.portfolio(lang)}
               size="lg"
@@ -49,7 +49,7 @@ export function HomeHero() {
               {pick(homeHero.secondary, lang)}
             </a>
           </div>
-          <p className="mt-8 font-mono text-xs uppercase tracking-[0.1em] text-av-muted">
+          <p className="mt-8 font-mono text-xs uppercase tracking-[0.1em] text-av-muted anim-fade ad-5">
             {pick(homeHero.meta, lang)}
           </p>
         </div>

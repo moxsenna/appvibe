@@ -5,6 +5,7 @@ import { useLang } from "@/i18n/use-lang";
 import { homeDeepDiveNote } from "@/data/home";
 import { pick } from "@/i18n/localized";
 import { ProjectStatus, ProjectVisual, WorkLinks } from "@/components/home/work-ui";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function ProjectDeepDive() {
   const { lang, dict } = useLang();
@@ -16,17 +17,22 @@ export function ProjectDeepDive() {
   return (
     <section className="bg-av-dark text-av-dark-body">
       <Container className="py-14 lg:py-20">
-        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-signal-on-dark">
-          {pick(homeDeepDiveNote.eyebrow, lang)}
-        </p>
+        <Reveal>
+          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-signal-on-dark">
+            {pick(homeDeepDiveNote.eyebrow, lang)}
+          </p>
+        </Reveal>
         <div className="mt-6 grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
-            <ProjectVisual
-              src={item.thumbnail}
-              alt={pick(item.title, lang)}
-              className="border-av-dark-border"
-            />
+            <Reveal delay={100}>
+              <ProjectVisual
+                src={item.thumbnail}
+                alt={pick(item.title, lang)}
+                className="border-av-dark-border"
+              />
+            </Reveal>
             <dl className="mt-8 space-y-6">
+              <Reveal delay={140}>
               <div>
                 <dt className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-dark-muted">
                   {lang === "id" ? "Masalah" : "Problem"}
@@ -35,6 +41,8 @@ export function ProjectDeepDive() {
                   {pick(item.businessProblem, lang)}
                 </dd>
               </div>
+              </Reveal>
+              <Reveal delay={200}>
               <div>
                 <dt className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-dark-muted">
                   {lang === "id" ? "Yang dibangun" : "What was built"}
@@ -52,6 +60,8 @@ export function ProjectDeepDive() {
                   </ul>
                 </dd>
               </div>
+              </Reveal>
+              <Reveal delay={260}>
               <div>
                 <dt className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-dark-muted">
                   {lang === "id" ? "Catatan" : "Note"}
@@ -60,9 +70,11 @@ export function ProjectDeepDive() {
                   {pick(homeDeepDiveNote.note, lang)}
                 </dd>
               </div>
+              </Reveal>
             </dl>
           </div>
           <div className="lg:col-span-5">
+            <Reveal delay={180}>
             <div className="lg:sticky lg:top-24">
               <ProjectStatus slug={item.slug} lang={lang} dark />
               <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
@@ -81,6 +93,7 @@ export function ProjectDeepDive() {
                 />
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
       </Container>

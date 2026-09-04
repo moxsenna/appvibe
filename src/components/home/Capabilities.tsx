@@ -4,6 +4,7 @@ import { routes } from "@/lib/routes";
 import { useLang } from "@/i18n/use-lang";
 import { homeCapabilities, homeCapabilitiesHeader } from "@/data/home";
 import { pick } from "@/i18n/localized";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function Capabilities() {
   const { lang } = useLang();
@@ -12,20 +13,23 @@ export function Capabilities() {
   return (
     <section className="border-t border-av-border">
       <Container className="py-14 lg:py-20">
-        <div className="max-w-3xl">
-          <p className="av-eyebrow text-av-signal">
-            {pick(homeCapabilitiesHeader.eyebrow, lang)}
-          </p>
-          <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
-            {pick(homeCapabilitiesHeader.title, lang)}
-          </h2>
-          <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-av-text">
-            {pick(homeCapabilitiesHeader.desc, lang)}
-          </p>
-        </div>
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="av-eyebrow text-av-signal">
+              {pick(homeCapabilitiesHeader.eyebrow, lang)}
+            </p>
+            <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
+              {pick(homeCapabilitiesHeader.title, lang)}
+            </h2>
+            <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-av-text">
+              {pick(homeCapabilitiesHeader.desc, lang)}
+            </p>
+          </div>
+        </Reveal>
 
         {homeCapabilities.map((group) => (
-          <div key={pick(group.group, lang)} className="mt-12">
+          <Reveal key={pick(group.group, lang)} delay={80}>
+          <div className="mt-12">
             <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-av-muted">
               {pick(group.group, lang)}
             </p>
@@ -56,6 +60,7 @@ export function Capabilities() {
               ))}
             </ol>
           </div>
+          </Reveal>
         ))}
       </Container>
     </section>

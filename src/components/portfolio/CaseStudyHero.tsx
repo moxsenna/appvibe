@@ -30,18 +30,20 @@ export function CaseStudyHero({ item }: CaseStudyHeroProps) {
   return (
     <section className="border-b border-av-border">
       <Container className="pb-10 pt-12 sm:pt-16 lg:pb-14">
-        <ProjectStatus slug={item.slug} lang={lang} />
+        <div className="anim-rise ad-1">
+          <ProjectStatus slug={item.slug} lang={lang} />
+        </div>
         <h1
-          className="mt-4 max-w-[20ch] font-display text-display-lg font-normal tracking-tight text-av-ink"
+          className="mt-4 max-w-[20ch] font-display text-display-lg font-normal tracking-tight text-av-ink anim-rise ad-2"
           style={{ viewTransitionName: `portfolio-title-${item.slug}` }}
         >
           {pick(item.title, lang)}
         </h1>
-        <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-av-text sm:text-xl">
+        <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-av-text sm:text-xl anim-rise ad-3">
           {pick(item.summary, lang)}
         </p>
 
-        <dl className="mt-8 grid gap-px overflow-hidden rounded border border-av-border bg-av-border sm:grid-cols-3">
+        <dl className="mt-8 grid gap-px overflow-hidden rounded border border-av-border bg-av-border sm:grid-cols-3 anim-rise ad-4">
           {facts.map((fact) => (
             <div key={fact.label} className="bg-av-canvas px-5 py-4">
               <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-muted">
@@ -75,7 +77,7 @@ export function CaseStudyHero({ item }: CaseStudyHeroProps) {
         </dl>
 
         <figure
-          className="mt-10 overflow-hidden rounded-[4px] border border-av-border bg-av-surface"
+          className="mt-10 overflow-hidden rounded-[4px] border border-av-border bg-av-surface anim-scale-in ad-5"
           style={{ viewTransitionName: `portfolio-cover-${item.slug}` }}
         >
           <img
@@ -90,7 +92,7 @@ export function CaseStudyHero({ item }: CaseStudyHeroProps) {
           </figcaption>
         </figure>
 
-        <div className="mt-8">
+        <div className="mt-8 anim-rise ad-6">
           <Button
             href={demoPath}
             viewTransition

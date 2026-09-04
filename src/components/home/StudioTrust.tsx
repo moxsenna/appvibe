@@ -5,6 +5,7 @@ import { routes } from "@/lib/routes";
 import { useLang } from "@/i18n/use-lang";
 import { homeTrust } from "@/data/home";
 import { pick } from "@/i18n/localized";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function StudioTrust() {
   const { lang } = useLang();
@@ -14,20 +15,23 @@ export function StudioTrust() {
       <Container className="py-14 lg:py-20">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
-            <img
-              src="/images/about/founder.webp"
-              alt="Bima Putra Sena"
-              width={800}
-              height={1000}
-              loading="lazy"
-              decoding="async"
-              className="aspect-[4/5] w-full max-w-[280px] rounded-[4px] border border-av-border object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
-            />
+            <Reveal y={32}>
+              <img
+                src="/images/about/founder.webp"
+                alt="Bima Putra Sena"
+                width={800}
+                height={1000}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[4/5] w-full max-w-[280px] rounded-[4px] border border-av-border object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+            </Reveal>
           </div>
-          <div className="lg:col-span-8">
+          <Reveal delay={120} className="lg:col-span-8">
+          <div>
             <p className="av-eyebrow text-av-signal">
               {pick(homeTrust.eyebrow, lang)}
             </p>
@@ -45,6 +49,7 @@ export function StudioTrust() {
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
+          </Reveal>
         </div>
       </Container>
     </section>

@@ -149,7 +149,7 @@ export function Navbar() {
       {isOpen && (
         <nav
           id="mobile-nav"
-          className="border-t border-av-border bg-av-canvas xl:hidden"
+          className="mobile-nav-enter border-t border-av-border bg-av-canvas xl:hidden"
           aria-label={common.aria.mobileNav}
         >
           <Container as="div" className="py-4">

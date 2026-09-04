@@ -8,6 +8,7 @@ import { usePageMeta } from "@/i18n/use-page-meta";
 import { useLang } from "@/i18n/use-lang";
 import { pick } from "@/i18n/localized";
 import { cn } from "@/lib/cn";
+import { Reveal } from "@/components/ui/Reveal";
 import {
   ProjectStatus,
   ProjectVisual,
@@ -157,16 +158,16 @@ export function PortfolioPage() {
     <PageShell>
       <section className="border-b border-av-border">
         <Container className="pb-10 pt-12 sm:pt-16">
-          <div className="flex items-baseline justify-between gap-6">
+          <div className="flex items-baseline justify-between gap-6 anim-rise ad-1">
             <p className="av-eyebrow">{lang === "id" ? "Karya" : "Work"}</p>
             <p className="font-mono text-xs uppercase tracking-[0.1em] text-av-muted">
               {countLabel}
             </p>
           </div>
-          <h1 className="mt-4 max-w-[16ch] font-display text-display-lg font-normal tracking-tight text-av-ink">
+          <h1 className="mt-4 max-w-[16ch] font-display text-display-lg font-normal tracking-tight text-av-ink anim-rise ad-2">
             {lang === "id" ? "Arsip kerja studio." : "The studio work archive."}
           </h1>
-          <div className="mt-6 grid gap-6 border-t border-av-border pt-6 md:grid-cols-12">
+          <div className="mt-6 grid gap-6 border-t border-av-border pt-6 md:grid-cols-12 anim-rise ad-3">
             <p className="max-w-[62ch] text-base leading-relaxed text-av-text md:col-span-7">
               {lang === "id"
                 ? "Setiap proyek bisa dibuka sebagai demo interaktif atau dibaca sebagai studi kasus — dengan konteks bisnis, keputusan desain, dan alur yang sebenarnya."
@@ -184,7 +185,9 @@ export function PortfolioPage() {
       {featured && (
         <section className="bg-av-surface">
           <Container className="py-12 lg:py-16">
-            <ArchiveArticle item={featured} index="01" layout="feature" />
+            <Reveal>
+              <ArchiveArticle item={featured} index="01" layout="feature" />
+            </Reveal>
           </Container>
         </section>
       )}
@@ -193,12 +196,13 @@ export function PortfolioPage() {
         <Container className="space-y-12 py-12 lg:py-16">
           {rows.map((item, i) =>
             item ? (
-              <ArchiveArticle
-                key={item.id}
-                item={item}
-                index={String(i + 2).padStart(2, "0")}
-                layout="row"
-              />
+              <Reveal key={item.id} delay={Math.min(i, 2) * 120}>
+                <ArchiveArticle
+                  item={item}
+                  index={String(i + 2).padStart(2, "0")}
+                  layout="row"
+                />
+              </Reveal>
             ) : null,
           )}
         </Container>
@@ -209,12 +213,13 @@ export function PortfolioPage() {
           <div className="grid gap-8 sm:grid-cols-2 sm:gap-6">
             {secondary.map((item, i) =>
               item ? (
-                <ArchiveArticle
-                  key={item.id}
-                  item={item}
-                  index={String(i + 4).padStart(2, "0")}
-                  layout="compact"
-                />
+                <Reveal key={item.id} delay={Math.min(i, 1) * 120}>
+                  <ArchiveArticle
+                    item={item}
+                    index={String(i + 4).padStart(2, "0")}
+                    layout="compact"
+                  />
+                </Reveal>
               ) : null,
             )}
           </div>

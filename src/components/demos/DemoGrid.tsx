@@ -1,6 +1,7 @@
 import type { DemoItem } from "@/types/demo";
 import { DemoCard } from "@/components/demos/DemoCard";
 import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
 
 type DemoGridProps = {
   items: DemoItem[];
@@ -22,8 +23,10 @@ export function DemoGrid({ items }: DemoGridProps) {
 
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((item) => (
-        <DemoCard key={item.id} item={item} />
+      {items.map((item, idx) => (
+        <Reveal key={item.id} delay={Math.min(idx % 3, 2) * 100}>
+          <DemoCard item={item} />
+        </Reveal>
       ))}
     </div>
   );

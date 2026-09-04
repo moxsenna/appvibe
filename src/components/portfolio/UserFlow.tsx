@@ -1,6 +1,7 @@
 import type { PortfolioItem } from "@/types/portfolio";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
 import { useLang } from "@/i18n/use-lang";
 
 type UserFlowProps = {
@@ -22,6 +23,7 @@ export function UserFlow({ item }: UserFlowProps) {
               : "From first visit to contacting the business"
           }
         />
+        <Reveal delay={100}>
         <ol className="mt-10 max-w-3xl border-l-2 border-av-border pl-0">
           {steps.map((step, index) => (
             <li key={step} className="relative pb-8 pl-10 last:pb-0">
@@ -37,6 +39,7 @@ export function UserFlow({ item }: UserFlowProps) {
             </li>
           ))}
         </ol>
+        </Reveal>
       </Container>
     </section>
   );

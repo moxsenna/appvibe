@@ -7,6 +7,7 @@ import { routes } from "@/lib/routes";
 import { useLang } from "@/i18n/use-lang";
 import { homeIndustriesHeader } from "@/data/home";
 import { pick } from "@/i18n/localized";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function IndustriesPreview() {
   const { lang } = useLang();
@@ -15,27 +16,29 @@ export function IndustriesPreview() {
   return (
     <section className="border-t border-av-border bg-av-surface">
       <Container className="py-14 lg:py-20">
-        <div className="max-w-3xl">
-          <p className="av-eyebrow text-av-signal">
-            {pick(homeIndustriesHeader.eyebrow, lang)}
-          </p>
-          <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
-            {pick(homeIndustriesHeader.title, lang)}
-          </h2>
-          <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-av-text">
-            {pick(homeIndustriesHeader.desc, lang)}
-          </p>
-        </div>
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="av-eyebrow text-av-signal">
+              {pick(homeIndustriesHeader.eyebrow, lang)}
+            </p>
+            <h2 className="mt-3 font-display text-display-md font-normal tracking-tight text-av-ink">
+              {pick(homeIndustriesHeader.title, lang)}
+            </h2>
+            <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-av-text">
+              {pick(homeIndustriesHeader.desc, lang)}
+            </p>
+          </div>
+        </Reveal>
 
         <div className="mt-10 grid gap-x-10 gap-y-8 md:grid-cols-2">
-          {preview.map((industry) => {
+          {preview.map((industry, idx) => {
             const related = (industry.relatedPortfolioSlugs ?? [])
               .map((slug) => portfolioItems.find((p) => p.slug === slug))
               .filter(Boolean)
               .slice(0, 1)[0];
             return (
+              <Reveal key={industry.id} delay={Math.min(idx % 2, 1) * 100}>
               <article
-                key={industry.id}
                 className="border-t-2 border-av-ink pt-5"
               >
                 <h3 className="text-base font-semibold text-av-ink">
@@ -63,6 +66,7 @@ export function IndustriesPreview() {
                   </Link>
                 )}
               </article>
+              </Reveal>
             );
           })}
         </div>

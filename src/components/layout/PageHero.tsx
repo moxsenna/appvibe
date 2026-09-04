@@ -21,14 +21,14 @@ export function PageHero({
     <section className={cn("border-b border-av-border", className)}>
       <Container className="pb-10 pt-12 sm:pt-16">
         <div className="max-w-3xl">
-          {eyebrow && <p className="av-eyebrow">{eyebrow}</p>}
-          <h1 className="mt-4 font-display text-display-lg font-normal tracking-tight text-av-ink">
+          {eyebrow && <p className="av-eyebrow anim-rise ad-1">{eyebrow}</p>}
+          <h1 className="mt-4 font-display text-display-lg font-normal tracking-tight text-av-ink anim-rise ad-2">
             {title}
           </h1>
-          <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-av-text sm:text-lg">
+          <p className="mt-5 max-w-[62ch] text-base leading-relaxed text-av-text sm:text-lg anim-rise ad-3">
             {description}
           </p>
-          {children && <div className="mt-8">{children}</div>}
+          {children && <div className="mt-8 anim-rise ad-4">{children}</div>}
         </div>
       </Container>
     </section>
