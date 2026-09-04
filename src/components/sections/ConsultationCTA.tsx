@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { routes } from "@/lib/routes";
@@ -29,6 +29,28 @@ export function ConsultationCTA({ location = "home_final" }: { location?: string
           <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-av-text">
             {pick(homeFinalCta.body, lang)}
           </p>
+          <ul className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-8">
+            {(lang === "id"
+              ? [
+                  "Garansi bug 30 hari pasca go-live",
+                  "Full source code milik Anda",
+                  "Revisi 2–3x sampai cocok",
+                ]
+              : [
+                  "30-day bug-fix warranty after go-live",
+                  "Full source code ownership for you",
+                  "2–3 revision rounds until it fits",
+                ]
+            ).map((point) => (
+              <li
+                key={point}
+                className="inline-flex items-center gap-2 text-sm font-medium text-av-ink"
+              >
+                <Check className="h-4 w-4 shrink-0 text-av-signal" aria-hidden />
+                {point}
+              </li>
+            ))}
+          </ul>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
             <Button
               href={waUrl}

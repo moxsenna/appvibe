@@ -27,6 +27,7 @@ export function Navbar() {
     { label: common.nav.industries, to: routes.industries(lang) },
     { label: common.nav.about, to: routes.about(lang) },
     { label: common.nav.blog, to: routes.blog(lang) },
+    { label: common.nav.contact, to: routes.contact(lang) },
   ];
 
   const processHref = `${routes.home(lang)}#proses`;
