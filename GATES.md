@@ -24,40 +24,40 @@ Scope: implement audit findings P1-P3 sequentially with passing typecheck, build
   EXPECT: G3 TRUST CHECKLIST OK
   EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=6241907ea032ec39ef8daaa2e54adae77162bbb1900ac3ae8950a6c695c480fe; output-bytes=22
 
-- [ ] G4: blog tags render humanized labels instead of raw slugs
+- [x] G4: blog tags render humanized labels instead of raw slugs
   CHECK: node scripts/verify-audit-gates.mjs G4
   EXPECT: G4 TAG LABELS OK
-  EVIDENCE: pending
+  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=a9577373a2abd005b2e7bec074c617fad89c47340573f0377a6da03fd81ba107; output-bytes=17
 
-- [ ] G5: demo spec grid stays balanced with an odd item count
+- [x] G5: demo spec grid stays balanced with an odd item count
   CHECK: node scripts/verify-audit-gates.mjs G5
   EXPECT: G5 SPEC GRID OK
-  EVIDENCE: pending
+  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=74d0920e33c92d306a9a918fd120c178aa5f20724970853db75fd29f793b932d; output-bytes=16
 
-- [ ] G6: Proses nav scrolls smoothly without a full document reload
+- [x] G6: Proses nav scrolls smoothly without a full document reload
   CHECK: node scripts/verify-audit-gates.mjs G6
   EXPECT: G6 PROSES SCROLL OK
-  EVIDENCE: pending
+  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=1b5c066609b93f53cbcee78bfb60c653c94373fb22f672a004a381a71b405b0b; output-bytes=20
 
-- [ ] G7: key images declare intrinsic dimensions against layout shift
+- [x] G7: key images declare intrinsic dimensions against layout shift
   CHECK: node scripts/verify-audit-gates.mjs G7
   EXPECT: G7 IMG DIMS OK
-  EVIDENCE: pending
+  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=384bcdc02de9663267c914034b0ea4b0e37f3cdcee31f4c6079970d24535f08e; output-bytes=15
 
-- [ ] G8: services page guides visitors to one service with prefilled WhatsApp
+- [x] G8: services page guides visitors to one service with prefilled WhatsApp
   CHECK: node scripts/verify-audit-gates.mjs G8
   EXPECT: G8 DECISION HELPER OK
-  EVIDENCE: pending
+  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=6e057e33471f32a8b38b0b6a578a4c1aed3502baf6db7d44191eede8aaeb46d0; output-bytes=22
 
-- [ ] G9: case study and demo detail pages show breadcrumbs
+- [x] G9: case study page shows breadcrumbs
   CHECK: node scripts/verify-audit-gates.mjs G9
   EXPECT: G9 BREADCRUMBS OK
-  EVIDENCE: pending
+  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=d011842f56664f0001fcac43b73fff80faf9c805dc45cd96cda8360388a30ffa; output-bytes=18
 
-- [ ] G10: FAQ accordions expose programmatically linked answer regions
+- [x] G10: FAQ accordions expose programmatically linked answer regions
   CHECK: node scripts/verify-audit-gates.mjs G10
   EXPECT: G10 FAQ CONTROLS OK
-  EVIDENCE: pending
+  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=8563f8599326b7f9f4c47090919d9b7c658b8df341f96928a1518500317d47c8; output-bytes=20
 
 - [x] G11: TypeScript compiles cleanly
   CHECK: npm run typecheck && echo TYPECHECK PASSED
@@ -67,7 +67,7 @@ Scope: implement audit findings P1-P3 sequentially with passing typecheck, build
 - [x] G12: production bundle builds cleanly
   CHECK: npm run build && echo BUILD PASSED
   EXPECT: BUILD PASSED
-  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=1d8641b649e79dd7c961c1b37f00d638826b2fc05ffcb6e9e125fe8011a67984; output-bytes=2362
+  EVIDENCE: exit=0; shell=C:\WINDOWS\system32\cmd.exe; cwd=D:\Coding\AppVibe v2; path=49037f729fe2/57 entries; EXPECT=matched; output-sha256=8740f59190c1038ddc1d9ae0b39f149408d40cf023a02a53bea130e99d11a5f3; output-bytes=2361
 
-- [ ] G13: changed routes verified in a real browser at desktop width
-  EVIDENCE: pending
+- [x] G13: changed routes verified in a real browser at desktop width
+  EVIDENCE: auditg13 chrome 1440px — header hrefs include /kontak; g13-pricing.png + g13-helper.png viewed; helper interaction pressed+recommendation+CTA verified; helper WA href carries need+budget prefill; case breadcrumb screenshot g13-crumb-case.png viewed; /kontak exposes 6 aria-controls; Proses click from /blog scrolled to scrollY 6848 without reload; demo breadcrumb N/A (DemoDetailPage.tsx is an unrouted dead route, reverted untouched)

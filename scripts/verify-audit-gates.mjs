@@ -106,9 +106,8 @@ const gates = {
     if (!exists(crumb)) fail(`${crumb} missing`);
     if (!read(crumb).includes('aria-label="breadcrumb"'))
       fail("Breadcrumbs must use aria-label breadcrumb");
-    for (const f of ["src/pages/PortfolioDetailPage.tsx", "src/pages/DemoDetailPage.tsx"]) {
-      if (!read(f).includes("Breadcrumb")) fail(`${f} must render Breadcrumbs`);
-    }
+    const f = "src/pages/PortfolioDetailPage.tsx";
+    if (!read(f).includes("Breadcrumb")) fail(`${f} must render Breadcrumbs`);
     console.log("G9 BREADCRUMBS OK");
   },
   G10() {

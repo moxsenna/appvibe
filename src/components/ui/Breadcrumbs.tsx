@@ -6,19 +6,10 @@ export type Crumb = {
   to?: string;
 };
 
-export function Breadcrumbs({
-  items,
-  tone = "light",
-}: {
-  items: Crumb[];
-  tone?: "light" | "dark";
-}) {
-  const linkCls =
-    tone === "dark"
-      ? "text-white/70 transition-colors hover:text-white"
-      : "text-av-secondary transition-colors hover:text-av-ink";
-  const currentCls = tone === "dark" ? "text-white" : "text-av-ink";
-  const sepCls = tone === "dark" ? "text-white/40" : "text-av-muted";
+export function Breadcrumbs({ items }: { items: Crumb[] }) {
+  const linkCls = "text-av-secondary transition-colors hover:text-av-ink";
+  const currentCls = "text-av-ink";
+  const sepCls = "text-av-muted";
 
   return (
     <nav aria-label="breadcrumb">
