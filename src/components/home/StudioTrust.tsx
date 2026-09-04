@@ -17,6 +17,8 @@ export function StudioTrust() {
             <img
               src="/images/about/founder.webp"
               alt="Bima Putra Sena"
+              width={800}
+              height={1000}
               loading="lazy"
               decoding="async"
               className="aspect-[4/5] w-full max-w-[280px] rounded-[4px] border border-av-border object-cover"

@@ -9,12 +9,16 @@ export function ProjectVisual({
   alt,
   aspect = "aspect-[16/10]",
   eager = false,
+  width = 1600,
+  height = 1000,
   className,
 }: {
   src: string;
   alt: string;
   aspect?: string;
   eager?: boolean;
+  width?: number;
+  height?: number;
   className?: string;
 }) {
   return (
@@ -27,6 +31,8 @@ export function ProjectVisual({
       <img
         src={src}
         alt={alt}
+        width={width}
+        height={height}
         loading={eager ? "eager" : "lazy"}
         decoding="async"
         className={cn("h-full w-full object-cover object-top", aspect)}

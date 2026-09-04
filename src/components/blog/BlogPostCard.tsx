@@ -3,6 +3,7 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 import type { BlogPost } from "@/types/blog";
 import type { Lang } from "@/i18n/types";
 import { routes } from "@/lib/routes";
+import { formatTagLabel } from "@/lib/blog-tags";
 import { cn } from "@/lib/cn";
 
 type BlogPostCardProps = {
@@ -79,7 +80,7 @@ export function BlogPostCard({
           )}
           {post.tags[0] && (
             <span className="absolute left-4 top-4 rounded-[3px] bg-av-ink px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-white">
-              {post.tags[0]}
+              {formatTagLabel(post.tags[0])}
             </span>
           )}
         </div>
@@ -127,7 +128,7 @@ export function BlogPostCard({
                   key={t}
                   className="rounded-[3px] bg-av-canvas px-2.5 py-0.5 text-xs font-medium text-av-secondary"
                 >
-                  {t}
+                  {formatTagLabel(t)}
                 </span>
               ))}
             </div>

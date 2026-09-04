@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/cn";
@@ -17,6 +17,7 @@ export function Navbar() {
   const { lang, dict } = useLang();
   const { common } = dict;
   const location = useLocation();
+  const navigate = useNavigate();
 
   const whatsappUrl = buildWhatsAppUrl(getDefaultConsultationMessage(lang));
 
@@ -31,6 +32,26 @@ export function Navbar() {
   ];
 
   const processHref = `${routes.home(lang)}#proses`;
+
+  const scrollToProses = () => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document
+      .getElementById("proses")
+      ?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  };
+
+  const handleProcessClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    event.preventDefault();
+    closeMenu();
+    if (location.pathname !== routes.home(lang)) {
+      navigate(routes.home(lang));
+      window.setTimeout(scrollToProses, 120);
+      return;
+    }
+    scrollToProses();
+  };
 
   const handleWhatsAppClick = (placement: string) => {
     trackEvent("cta_whatsapp_click", { location: placement });
@@ -91,6 +112,7 @@ export function Navbar() {
           ))}
           <a
             href={processHref}
+            onClick={handleProcessClick}
             className="text-sm font-medium text-av-secondary transition-colors hover:text-av-ink"
           >
             {common.nav.process}
@@ -152,8 +174,8 @@ export function Navbar() {
               <li className="border-b border-av-border-soft">
                 <a
                   href={processHref}
+                  onClick={handleProcessClick}
                   className="flex min-h-[44px] items-center py-2 text-[15px] font-medium text-av-secondary"
-                  onClick={closeMenu}
                 >
                   {common.nav.process}
                 </a>

@@ -4,6 +4,7 @@ import type { BlogPost } from "@/types/blog";
 import type { Lang } from "@/i18n/types";
 import { routes } from "@/lib/routes";
 import { blogIndexPathWithSearch } from "@/lib/blog-url";
+import { formatTagLabel } from "@/lib/blog-tags";
 import { Container } from "@/components/ui/Container";
 
 type BlogArticleHeroProps = {
@@ -52,7 +53,7 @@ export function BlogArticleHero({
                 to={blogIndexPathWithSearch(lang, t, 1)}
                 className="rounded-[3px] border border-av-border bg-av-surface px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.1em] text-av-secondary transition-colors hover:border-av-ink hover:text-av-ink"
               >
-                {t}
+                {formatTagLabel(t)}
               </Link>
             ))}
           </div>

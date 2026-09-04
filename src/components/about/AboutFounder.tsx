@@ -72,6 +72,8 @@ export function AboutFounder() {
                   <img
                     src="/images/about/founder.webp"
                     alt="Bima Putra Sena - Founder & Principal AppVibe"
+                    width={800}
+                    height={1000}
                     className="h-20 w-20 shrink-0 rounded border border-av-border object-cover"
                     onError={(e) => {
                       // Graceful fallback if image fails

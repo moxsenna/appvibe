@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Search, X } from "lucide-react";
 import type { Lang } from "@/i18n/types";
 import { blogIndexPathWithSearch } from "@/lib/blog-url";
+import { formatTagLabel } from "@/lib/blog-tags";
 import { cn } from "@/lib/cn";
 
 type BlogListToolbarProps = {
@@ -86,9 +87,9 @@ export function BlogListToolbar({
             );
             if (isActive) {
               return (
-                <button key={tag} type="button" onClick={() => onTagChange(null)} className={className}>
-                  {tag}
-                </button>
+              <button key={tag} type="button" onClick={() => onTagChange(null)} className={className}>
+                {formatTagLabel(tag)}
+              </button>
               );
             }
             return (
@@ -97,7 +98,7 @@ export function BlogListToolbar({
                 to={blogIndexPathWithSearch(lang, tag, 1)}
                 className={className}
               >
-                {tag}
+                {formatTagLabel(tag)}
               </Link>
             );
           })}
