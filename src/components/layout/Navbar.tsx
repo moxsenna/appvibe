@@ -81,12 +81,14 @@ export function Navbar() {
           onClick={closeMenu}
           aria-label={APP_NAME}
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-[4px] bg-av-ink font-mono text-xs font-medium text-av-canvas">
-            AV
-          </span>
-          <span className="whitespace-nowrap text-[15px] font-semibold tracking-tight text-av-ink">
-            {APP_NAME}
-          </span>
+          <img
+            src="/logo.webp"
+            alt={APP_NAME}
+            width={480}
+            height={156}
+            className="h-8 w-auto lg:h-10"
+            fetchPriority="high"
+          />
         </Link>
 
         <nav

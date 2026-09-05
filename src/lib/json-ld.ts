@@ -44,7 +44,7 @@ export function organizationJsonLd(siteUrl: string, name: string): Record<string
     "@id": `${siteUrl}/#organization`,
     name,
     url: siteUrl,
-    logo: `${siteUrl}/favicon.svg`,
+    logo: `${siteUrl}/logo.webp`,
   };
 }
 

@@ -98,12 +98,14 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-[4px] bg-av-canvas font-mono text-xs font-medium text-av-ink">
-                AV
-              </span>
-              <p className="text-[15px] font-semibold tracking-tight text-white">
-                {APP_NAME}
-              </p>
+              <img
+                src="/logo-dark.webp"
+                alt={APP_NAME}
+                width={480}
+                height={184}
+                className="h-8 w-auto"
+                loading="lazy"
+              />
             </div>
             <p className="mt-4 max-w-[38ch] text-sm leading-relaxed text-av-dark-body">
               {common.footer.description}
