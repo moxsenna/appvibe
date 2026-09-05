@@ -51,6 +51,25 @@ export function ProjectStatus({
   dark?: boolean;
 }) {
   const label: Localized<string> | undefined = projectStatusLabel[slug];
+  const hasLiveDemo = [
+    "company-profile",
+    "webinar-landing",
+    "klinik",
+    "properti",
+    "lead-dashboard",
+    "littlestar",
+    "natura-skin-clinic",
+    "nusa-grove-residences",
+    "kelaspintar-ai",
+    "leadloop-crm",
+    "banyu-villa",
+    "ruangtumbuh-interior",
+    "lunaria-wedding",
+    "satria-print",
+    "kopi-pagi",
+    "mitra-legal",
+  ].includes(slug);
+
   return (
     <p
       className={cn(
@@ -58,10 +77,16 @@ export function ProjectStatus({
         dark ? "text-av-dark-muted" : "text-av-muted",
       )}
     >
-      {label ? pick(label, lang) : null}
-      <span className={dark ? "text-av-signal-on-dark" : "text-av-signal"}>
-        {"  ·  Live Demo"}
-      </span>
+      {label ? pick(label, lang) : "Studio Project"}
+      {hasLiveDemo ? (
+        <span className={dark ? "text-av-signal-on-dark" : "text-av-signal"}>
+          {"  ·  Live Demo"}
+        </span>
+      ) : (
+        <span className={dark ? "text-av-dark-muted" : "text-av-muted"}>
+          {lang === "id" ? "  ·  Studi Kasus" : "  ·  Case Study"}
+        </span>
+      )}
     </p>
   );
 }
@@ -82,14 +107,28 @@ export function WorkLinks({
   const linkCls = dark
     ? "text-av-dark-body hover:text-white"
     : "text-av-ink hover:text-av-signal";
+  const hasExternalDemo = demoPath.startsWith("http");
+  const hasDedicatedDemo = demoPath !== caseStudyPath;
+
   return (
     <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium">
       <Link to={caseStudyPath} className={linkCls}>
         {caseLabel} <span aria-hidden>→</span>
       </Link>
-      <Link to={demoPath} className={linkCls}>
-        {demoLabel} <span aria-hidden>↗</span>
-      </Link>
+      {hasExternalDemo ? (
+        <a
+          href={demoPath}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkCls}
+        >
+          {demoLabel} <span aria-hidden>↗</span>
+        </a>
+      ) : hasDedicatedDemo ? (
+        <Link to={demoPath} className={linkCls}>
+          {demoLabel} <span aria-hidden>↗</span>
+        </Link>
+      ) : null}
     </div>
   );
 }

@@ -129,6 +129,21 @@ const DEMO_GALLERY_MAP: Record<string, string[]> = {
     "/images/demo/mitra-legal-team.webp",
     "/images/portfolio/mitra-legal.webp",
   ],
+  littlestar: [
+    "/images/portfolio/littlestar.webp",
+  ],
+  lakoku: [
+    "/images/portfolio/lakoku.webp",
+  ],
+  "promotor-class": [
+    "/images/portfolio/promotor-class.webp",
+  ],
+  "zorro-rental": [
+    "/images/portfolio/zorro-rental.webp",
+  ],
+  "fwk-leather": [
+    "/images/portfolio/fwk-leather.webp",
+  ],
 };
 
 function GenericScreenPlaceholder({

@@ -1952,4 +1952,606 @@ export const portfolioItems: PortfolioItem[] = [
       },
     ],
   },
+  {
+    id: "littlestar",
+    slug: "littlestar",
+    title: {
+      id: "Website Multi-Cabang Little Star Child Development Center",
+      en: "Multi-Location Website for Little Star Child Development Center",
+    },
+    category: "clinic",
+    categoryLabel: { id: "Tumbuh Kembang Anak", en: "Child Development" },
+    niche: {
+      id: "Pusat tumbuh kembang anak, terapi wicara, okupasi, sensori integrasi, psikologi anak, dan klinik multi-cabang",
+      en: "Child development centers, speech therapy, occupational therapy, sensory integration, and multi-branch pediatric clinics",
+    },
+    summary: {
+      id: "Prototipe website multi-cabang untuk Little Star — arsitektur rute 6 cabang, alur skrining awal orang tua, routing WhatsApp cabang otomatis, dan positioning klinis berbasis bukti.",
+      en: "A multi-location website prototype for Little Star — 6-branch routing architecture, parent screening intake flow, automated branch WhatsApp routing, and evidence-led clinical positioning.",
+    },
+    businessProblem: {
+      id: "Pusat tumbuh kembang dengan banyak cabang sering menghadapi inquiry orang tua yang bingung menentukan layanan yang tepat, salah memilih cabang, atau terhambat antrean asesmen manual via chat yang tidak terstruktur.",
+      en: "Multi-branch developmental centers often struggle with parents unsure which therapy is needed, contacting the wrong location, or hitting bottlenecks in unorganized chat-based intake.",
+    },
+    solution: {
+      id: "Website publik dengan arsitektur 6 cabang independen, katalog layanan terperinci (terapi wicara, okupasi, sensori integrasi), asesmen mandiri orang tua, dan routing WhatsApp presisi ke cabang terdekat.",
+      en: "A public multi-location platform with 6 independent branch directories, detailed service catalog (speech, occupational, sensory therapy), parent self-screening, and precise geo-routed WhatsApp routing.",
+    },
+    businessValue: {
+      id: [
+        "Orang tua memahami layanan dan tahapan terapi sebelum datang ke klinik",
+        "Routing WhatsApp otomatis mengarahkan inquiry ke admin cabang yang tepat",
+        "Katalog layanan klinis transparan tanpa klaim medis berlebihan",
+        "Arsitektur multi-cabang siap scale dari 6 cabang ke puluhan lokasi",
+        "Struktur konten ramah SEO lokal per wilayah operasional",
+      ],
+      en: [
+        "Parents understand therapy stages and modalities before visiting",
+        "Automated routing delivers inquiries directly to the correct branch desk",
+        "Evidence-led clinical catalog without medical overclaims",
+        "Multi-location architecture built to scale from 6 to dozens of branches",
+        "Local SEO structure optimized for each operating area",
+      ],
+    },
+    features: {
+      id: [
+        "Arsitektur rute mandiri untuk 6 cabang (Bandung, Jakarta, dan sekitarnya)",
+        "Katalog layanan klinis: terapi wicara, okupasi, sensori integrasi, psikologi",
+        "Alur skrining mandiri orang tua berbasis milestone usia anak",
+        "Routing WhatsApp cabang otomatis dengan prefill pesan kontekstual",
+        "Profil terapis dan fasilitas klinik per cabang",
+        "FAQ klinis transparan seputar proses asesmen dan estimasi sesi",
+      ],
+      en: [
+        "Independent routing architecture across 6 operating branches",
+        "Clinical service catalog: speech, occupational, sensory therapy, psychology",
+        "Age-milestone self-screening intake flow for parents",
+        "Automated branch-specific WhatsApp routing with prefilled context",
+        "Therapist profiles and clinic facility tours per location",
+        "Clinical FAQ addressing assessment process and session expectations",
+      ],
+    },
+    tags: {
+      id: ["Multi-Cabang", "Klinik Anak", "WhatsApp Routing", "Astro", "React Islands"],
+      en: ["Multi-Location", "Pediatric Clinic", "WhatsApp Routing", "Astro", "React Islands"],
+    },
+    thumbnail: "/images/portfolio/littlestar.webp",
+    demoPath: "https://littlestar.appvibe.web.id/",
+    caseStudyPath: "/portfolio/littlestar",
+    mockDataHighlights: {
+      id: [
+        "6 cabang operasional aktif: Bandung, Cimahi, Buahbatu, BSD, Bintaro, Bekasi",
+        "4 pilar terapi klinis: Wicara, Okupasi, Sensori Integrasi, Fisioterapi Pediatrik",
+        "Alur skrining 3 langkah berbasis rentang usia anak (1–3 thn, 4–6 thn, 7+ thn)",
+        "Integrasi routing WhatsApp cabang mandiri",
+        "Stack: Astro 5, React Islands, TypeScript, Cloudflare Workers",
+      ],
+      en: [
+        "6 active branch directories: Bandung, Cimahi, Buahbatu, BSD, Bintaro, Bekasi",
+        "4 core clinical pillars: Speech, Occupational, Sensory, Pediatric Physio",
+        "3-step parent intake flow by child age band (1–3y, 4–6y, 7y+)",
+        "Branch-specific WhatsApp routing engine",
+        "Stack: Astro 5, React Islands, TypeScript, Cloudflare Workers",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Orang tua membuka website dari rujukan dokter anak, iklan, atau Google Maps",
+        "Pilih cabang terdekat atau telusuri layanan yang sesuai kekhawatiran tumbuh kembang",
+        "Pelajari modalitas terapi, profil terapis, dan fasilitas cabang",
+        "Gunakan panduan skrining usia untuk memahami kebutuhan asesmen",
+        "Klik Hubungi Cabang — WhatsApp admin cabang terbuka dengan konteks lengkap",
+      ],
+      en: [
+        "Parents visit the site from pediatrician referral, ads, or Google Maps",
+        "Select the nearest branch or browse therapies matching developmental concerns",
+        "Review therapy modalities, therapist credentials, and facility photos",
+        "Use the age-milestone guide to identify appropriate assessment steps",
+        "Click Contact Branch — opens the specific branch WhatsApp with full context",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Beranda Multi-Cabang", en: "Multi-Location Homepage" },
+        description: {
+          id: "Hero dengan selector cabang, value proposition klinis, dan akses cepat ke layanan terapi.",
+          en: "Hero with branch selector, clinical value proposition, and quick therapy access.",
+        },
+      },
+      {
+        title: { id: "Katalog Layanan Klinis", en: "Clinical Service Catalog" },
+        description: {
+          id: "Penjelasan terstruktur terapi wicara, okupasi, dan sensori integrasi berbasis milestone anak.",
+          en: "Structured breakdown of speech, occupational, and sensory therapies by child milestone.",
+        },
+      },
+      {
+        title: { id: "Direktori & Routing Cabang", en: "Branch Directory & Routing" },
+        description: {
+          id: "Halaman khusus per cabang dengan jadwal, tim terapis, peta lokasi, dan tombol WhatsApp cabang.",
+          en: "Dedicated branch pages with schedules, therapist team, map, and branch WhatsApp link.",
+        },
+      },
+    ],
+  },
+  {
+    id: "lakoku",
+    slug: "lakoku",
+    title: {
+      id: "Lakoku — Platform Interactive Fiction & Novel Pilihan",
+      en: "Lakoku — Interactive Fiction & Choice-Driven Novel Engine",
+    },
+    category: "custom-app",
+    categoryLabel: { id: "Aplikasi Web / SaaS", en: "Web App / SaaS" },
+    niche: {
+      id: "Platform cerita interaktif, game naratif web, novel digital bercabang, dan penerbitan interaktif",
+      en: "Interactive fiction platforms, web narrative games, branching digital novels, and interactive publishing",
+    },
+    summary: {
+      id: "Aplikasi web novel interaktif di mana pilihan pembaca menentukan alur cerita — engine state bercabang, auto-save progress, mode baca mobile-first, dan ekosistem kreator.",
+      en: "A choice-driven web novel application where reader decisions shape the story — branching state engine, auto-save progression, mobile-first reader, and creator ecosystem.",
+    },
+    businessProblem: {
+      id: "Platform novel digital konvensional bersifat linier dan pasif. Pembaca modern menginginkan keterlibatan interaktif, sementara kreator cerita bercabang kesulitan mengelola variabel state tanpa coding yang rumit.",
+      en: "Conventional digital novel platforms are strictly linear and passive. Modern readers crave interactive agency, while branching-narrative writers struggle with state tracking without complex coding.",
+    },
+    solution: {
+      id: "Aplikasi web Next.js dengan engine cerita berbasis graph, pelacakan state variabel keputusan, reader mobile responsif bebas distraksi, dan arsitektur database Supabase.",
+      en: "A Next.js web app powered by a graph-based story engine, decision variable state tracking, distraction-free mobile reader, and Supabase database architecture.",
+    },
+    businessValue: {
+      id: [
+        "Retensi pembaca lebih tinggi berkat mekanik pilihan dan ending bercabang",
+        "Reader mobile-first nyaman dibaca berjam-jam tanpa lagging",
+        "State tersimpan otomatis per pembaca di local storage dan database",
+        "Format cerita interaktif membuka monetisasi per episode / rute",
+        "Engine naratif modular yang bisa diadaptasi untuk gamifikasi bisnis",
+      ],
+      en: [
+        "Higher reader retention driven by choice mechanics and multiple endings",
+        "Mobile-first reader optimized for long reading sessions without lag",
+        "State automatically persists per reader via local storage and database sync",
+        "Branching format creates granular monetization per route/episode",
+        "Modular narrative engine adaptable for corporate training gamification",
+      ],
+    },
+    features: {
+      id: [
+        "Engine pohon keputusan naratif dengan visualisasi graph cabang",
+        "Reader interaktif mobile-first: pilihan rute, inventory item, status",
+        "Auto-save progres membaca dan histori keputusan pembaca",
+        "Katalog cerita dengan filter genre, estimasi durasi, dan jumlah ending",
+        "Sistem checkpoint untuk eksplorasi rute cerita alternatif",
+        "Dashboard kreator untuk menyusun alur cerita bercabang",
+      ],
+      en: [
+        "Branching decision tree engine with story graph visualization",
+        "Mobile-first reader: choice prompts, inventory items, character status",
+        "Auto-saving reading progress and historical decision logging",
+        "Story catalog filterable by genre, read duration, and ending count",
+        "Checkpoint mechanic allowing exploration of alternate story branches",
+        "Creator dashboard to write and map out branching narratives",
+      ],
+    },
+    tags: {
+      id: ["Web App", "Next.js", "Interactive Fiction", "Supabase", "Gamifikasi"],
+      en: ["Web App", "Next.js", "Interactive Fiction", "Supabase", "Gamification"],
+    },
+    thumbnail: "/images/portfolio/lakoku.webp",
+    demoPath: "/portfolio/lakoku",
+    caseStudyPath: "/portfolio/lakoku",
+    mockDataHighlights: {
+      id: [
+        "Engine branching naratif dengan 3+ ending per judul cerita",
+        "Pelacakan state variabel: relasi karakter, inventory, dan poin keputusan",
+        "Reader responsif dengan custom typography, font sizing, dan night mode",
+        "Stack: Next.js 16, TypeScript, Supabase Postgres, Tailwind CSS",
+      ],
+      en: [
+        "Branching narrative engine with 3+ unique endings per story title",
+        "Variable state tracking: character affinity, inventory, decision points",
+        "Responsive reader with custom typography, sizing, and dark mode",
+        "Stack: Next.js 16, TypeScript, Supabase Postgres, Tailwind CSS",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Pembaca menjelajahi katalog cerita interaktif berdasarkan genre",
+        "Mulai membaca episode pertama pada reader mobile-first yang bersih",
+        "Menemui titik keputusan dan memilih aksi karakter",
+        "Engine memperbarui state cerita dan membuka cabang rute berikutnya",
+        "Mencapai salah satu ending atau kembali ke checkpoint untuk mencoba rute lain",
+      ],
+      en: [
+        "Readers browse the interactive story catalog by genre",
+        "Start reading the opening chapter in a clean mobile-first reader",
+        "Encounter decision crossroads and choose character actions",
+        "The engine calculates state changes and transitions to the next branch",
+        "Reach one of multiple endings or revert to checkpoints for alternate paths",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Katalog Cerita Interaktif", en: "Interactive Story Catalog" },
+        description: {
+          id: "Tampilan kartu cerita dengan visual cover, genre, estimasi durasi, dan indikator jumlah rute/ending.",
+          en: "Story cards showcasing custom covers, genres, read times, and branch/ending counters.",
+        },
+      },
+      {
+        title: { id: "Reader & Pilihan Bercabang", en: "Branching Choice Reader" },
+        description: {
+          id: "Tampilan baca imersif dengan prompt keputusan di akhir bagian yang memengaruhi alur cerita.",
+          en: "Immersive reader layout featuring actionable decision prompts at narrative crossroads.",
+        },
+      },
+      {
+        title: { id: "Visualisasi Graph Cabang", en: "Branching Graph Map" },
+        description: {
+          id: "Peta rute cerita yang menunjukkan percabangan alur dan checkpoint yang sudah terbuka.",
+          en: "Visual story flowchart showing unlocked story routes and discoverable endings.",
+        },
+      },
+    ],
+  },
+  {
+    id: "promotor-class",
+    slug: "promotor-class",
+    title: {
+      id: "PromotorClass — Client Education OS & Funnel Edukator",
+      en: "PromotorClass — Client Education OS & Creator Funnel",
+    },
+    category: "saas",
+    categoryLabel: { id: "Platform Edukasi", en: "Education Platform" },
+    niche: {
+      id: "Praktisi STIFIn, konsultan parenting, career coach, trainer korporat, dan edukator profesional",
+      en: "Assessment practitioners, parenting consultants, career coaches, corporate trainers, and educators",
+    },
+    summary: {
+      id: "Platform Client Education OS yang mengubah materi edukasi menjadi lead magnet terarah, onboarding klien privat, dan funnel follow-up otomatis via WhatsApp.",
+      en: "A Client Education OS turning educational material into structured lead magnets, private onboarding portals, and automated WhatsApp conversion funnels.",
+    },
+    businessProblem: {
+      id: "Edukator profesional dan konsultan sering kehilangan prospek setelah workshop karena materi tercecer di PDF/video umum, tanpa pelacakan progres belajar yang memicu aksi lanjutan tim sales.",
+      en: "Professional educators and consultants frequently lose post-workshop prospects because materials live scattered across static PDFs/videos without behavioral learning triggers for sales follow-up.",
+    },
+    solution: {
+      id: "Platform edukasi micro-learning terintegrasi dengan trigger follow-up WhatsApp berbasis sinyal belajar peserta (penyelesaian modul, refleksi materi, sinyal minat konsultasi).",
+      en: "A micro-learning delivery platform tightly integrated with WhatsApp triggers fired by learner behavioral signals (module completion, reflection submissions, upsell intent).",
+    },
+    businessValue: {
+      id: [
+        "Materi workshop terdistribusi rapi di portal klien yang profesional",
+        "Trigger follow-up WhatsApp aktif otomatis saat peserta menyelesaikan modul kunci",
+        "Tingkat penyelesaian materi lebih tinggi berkat format micro-learning",
+        "Landing page edukator siap pakai dengan sistem registrasi WhatsApp-first",
+        "Arsitektur serverless di Cloudflare dengan biaya operasional sangat efisien",
+      ],
+      en: [
+        "Workshop materials neatly structured in branded private client portals",
+        "Automated WhatsApp follow-up triggers fire when key modules complete",
+        "Higher completion rates driven by mobile-optimized micro-learning",
+        "Ready-to-deploy educator landing pages with WhatsApp-first onboarding",
+        "Serverless Cloudflare deployment keeping infrastructure costs near zero",
+      ],
+    },
+    features: {
+      id: [
+        "Landing page edukator dengan registrasi instan tanpa password (WhatsApp-first)",
+        "Portal belajar micro-learning: video ringkas, lembar refleksi, checklist",
+        "Sinyal perilaku belajar yang memicu notifikasi WhatsApp ke tim konsultan",
+        "Dashboard progres peserta per sesi workshop atau program asesmen",
+        "Portal privat terenkripsi per klien korporat atau parenting",
+        "Arsitektur serverless global dengan OpenNext di Cloudflare Workers",
+      ],
+      en: [
+        "Educator landing pages with instant WhatsApp-first passwordless registration",
+        "Micro-learning portal: bite-sized video, reflection prompts, action checklists",
+        "Behavioral learning signals triggering automated WhatsApp consultant alerts",
+        "Learner progression dashboard broken down by workshop cohort",
+        "Private branded portals for corporate or parenting cohorts",
+        "Global serverless architecture deployed via OpenNext on Cloudflare Workers",
+      ],
+    },
+    tags: {
+      id: ["SaaS", "Next.js", "Cloudflare Workers", "Education OS", "WhatsApp Funnel"],
+      en: ["SaaS", "Next.js", "Cloudflare Workers", "Education OS", "WhatsApp Funnel"],
+    },
+    thumbnail: "/images/portfolio/promotor-class.webp",
+    demoPath: "/portfolio/promotor-class",
+    caseStudyPath: "/portfolio/promotor-class",
+    mockDataHighlights: {
+      id: [
+        "Monorepo terintegrasi: PromotorClass Web, PromotorFlow Engine, Platform API",
+        "Otentikasi magic-link & WhatsApp token tanpa friksi pendaftaran",
+        "Player materi responsif mobile dengan progress auto-sync",
+        "Deploy: OpenNext Cloudflare Workers, edge caching, latency <50ms",
+      ],
+      en: [
+        "Integrated monorepo: PromotorClass Web, PromotorFlow Engine, Platform API",
+        "Frictionless magic-link & WhatsApp token authentication",
+        "Mobile-optimized lesson player with real-time progress syncing",
+        "Deployed via OpenNext on Cloudflare Workers edge (<50ms latency)",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Peserta mendaftar lewat landing page edukator via nomor WhatsApp",
+        "Menerima akses instan ke portal belajar privat di browser HP",
+        "Menonton materi ringkas dan mengisi refleksi pemahaman",
+        "Sistem mengirim sinyal kelulusan modul ke WhatsApp konsultan untuk follow-up",
+        "Konsultan mengarahkan peserta ke program pendampingan lanjutan berbayar",
+      ],
+      en: [
+        "Learners register through the educator landing page via WhatsApp number",
+        "Receive instant access to their private learning space on mobile",
+        "Watch bite-sized lessons and complete brief reflection prompts",
+        "System sends milestone triggers to the consultant's WhatsApp for follow-up",
+        "Consultant guides warm learners into premium coaching/assessment programs",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Portal Belajar Klien", en: "Client Learning Portal" },
+        description: {
+          id: "Tampilan kelas mobile-first yang bersih dengan daftar modul, video player, dan lembar refleksi.",
+          en: "Clean mobile-first lesson viewer displaying module checklist, video, and action inputs.",
+        },
+      },
+      {
+        title: { id: "Landing Page Program Edukasi", en: "Course Program Landing" },
+        description: {
+          id: "Halaman penawaran program dengan silabus, testimoni peserta, dan registrasi WhatsApp.",
+          en: "Program sales page featuring syllabus outline, testimonials, and WhatsApp registration.",
+        },
+      },
+      {
+        title: { id: "Dashboard Sinyal Peserta", en: "Learner Intent Signals" },
+        description: {
+          id: "Dashboard konsultan untuk memantau progres belajar dan daftar peserta yang siap difollow-up.",
+          en: "Consultant dashboard tracking learning completion and high-intent followup leads.",
+        },
+      },
+    ],
+  },
+  {
+    id: "zorro-rental",
+    slug: "zorro-rental",
+    title: {
+      id: "Website Rental Mobil & Armada Zorro's Rental Cirebon",
+      en: "Fleet Showcase & Booking Website for Zorro's Rental",
+    },
+    category: "company-profile",
+    categoryLabel: { id: "Rental & Transportasi", en: "Car Rental & Fleet" },
+    niche: {
+      id: "Rental mobil lokal, sewa kendaraan wisata, drop-off bandara, car rental Cirebon, dan transportasi bisnis",
+      en: "Local car rental services, tourist transportation, airport drop-offs, and commercial fleet rentals",
+    },
+    summary: {
+      id: "Website showcase armada dan booking cepat untuk Zorro's Rental Cirebon — katalog unit transparan, paket lepas kunci / all-in supir, dan kalkulator booking langsung ke WhatsApp.",
+      en: "Fleet showcase and fast booking website for Zorro's Rental Cirebon — transparent vehicle catalog, self-drive / with-driver packages, and WhatsApp booking flow.",
+    },
+    businessProblem: {
+      id: "Bisnis rental mobil lokal sering mengandalkan chat WhatsApp tanpa katalog harga dan ketersediaan unit yang jelas, membuat admin lelah menjawab pertanyaan spesifikasi unit dan harga berulang kali.",
+      en: "Local car rental operators rely heavily on manual chats without clear fleet catalogs or pricing tiers, forcing staff to repeatedly answer basic vehicle spec and rate inquiries.",
+    },
+    solution: {
+      id: "Website katalog armada cepat dan mobile-first dengan daftar unit (Innova Reborn, Avanza, HiAce, Brio), rincian paket sewa, syarat rental transparan, dan form booking WhatsApp instan.",
+      en: "A fast, mobile-first fleet showcase displaying vehicle tiers, rental package terms, transparent requirements, and an instant WhatsApp reservation flow.",
+    },
+    businessValue: {
+      id: [
+        "Calon penyewa langsung melihat foto asli unit, transmisi, dan kapasitas",
+        "Paket sewa (lepas kunci vs +supir +BBM) jelas di awal",
+        "Inquiry WhatsApp masuk dengan tanggal sewa dan pilihan unit yang sudah terisi",
+        "Loading website secepat kilat dengan hosting Cloudflare Workers edge",
+        "Membangun kredibilitas bisnis rental lokal terhadap wisatawan & tamu bisnis",
+      ],
+      en: [
+        "Renters instantly inspect vehicle photos, transmission types, and seating capacity",
+        "Clear pricing distinctions between self-drive and all-inclusive driver packages",
+        "WhatsApp booking requests arrive pre-filled with selected car model and rental dates",
+        "Lightning-fast load performance hosted on Cloudflare Workers edge",
+        "Builds local brand authority for out-of-town tourists and corporate travelers",
+      ],
+    },
+    features: {
+      id: [
+        "Katalog armada dengan filter transmisi (Matic/Manual) dan kapasitas penumpang",
+        "Kartu unit dengan rincian tarif 12 jam, 24 jam, dan mingguan",
+        "Form kalkulator booking dengan pilihan tanggal sewa dan kota tujuan",
+        "Syarat sewa lepas kunci dan verifikasi identitas yang transparan",
+        "Tombol WhatsApp darurat 24 jam & reservasi cepat",
+        "Layout super ringan dioptimasi untuk jaringan internet mobile",
+      ],
+      en: [
+        "Fleet catalog filterable by transmission (Auto/Manual) and passenger count",
+        "Vehicle rate cards detailing 12-hour, 24-hour, and weekly rental options",
+        "Booking intake form capturing rental dates, vehicle choice, and destination",
+        "Transparent self-drive verification checklist and deposit terms",
+        "24/7 roadside assistance WhatsApp prompt & express booking CTA",
+        "Ultra-lightweight assets optimized for mobile connectivity",
+      ],
+    },
+    tags: {
+      id: ["Rental Mobil", "Katalog Armada", "Booking WhatsApp", "Cloudflare", "Lokal Cirebon"],
+      en: ["Car Rental", "Fleet Catalog", "WhatsApp Booking", "Cloudflare", "Local Business"],
+    },
+    thumbnail: "/images/portfolio/zorro-rental.webp",
+    demoPath: "/portfolio/zorro-rental",
+    caseStudyPath: "/portfolio/zorro-rental",
+    mockDataHighlights: {
+      id: [
+        "Armada terverifikasi: Innova Reborn, All New Avanza, Toyota HiAce, Honda Brio",
+        "Area layanan: Cirebon, Kuningan, Majalengka, Indramayu (Ciayumajakuning)",
+        "Paket: Lepas Kunci, Mobil + Supir, All In Wisata & Drop Bandara Kertajati",
+        "Deploy: Cloudflare Workers edge static assets",
+      ],
+      en: [
+        "Fleet models: Innova Reborn, All New Avanza, Toyota HiAce, Honda Brio",
+        "Service area: Cirebon, Kuningan, Majalengka, Indramayu region",
+        "Packages: Self-Drive, With Driver, Tour Package & Kertajati Airport Drop",
+        "Deployed on Cloudflare Workers edge",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Wisatawan atau pebisnis membuka website mencari rental mobil di Cirebon",
+        "Melihat katalog armada, ketersediaan transmisi, dan kisaran tarif",
+        "Pilih jenis mobil dan paket (lepas kunci atau dengan supir)",
+        "Baca syarat sewa dan ketentuan verifikasi dokumen",
+        "Klik Booking via WhatsApp — admin menerima rincian tanggal dan unit pilihan",
+      ],
+      en: [
+        "Travelers visit the site seeking reliable car rental in Cirebon",
+        "Browse the vehicle fleet, transmission options, and daily rate tiers",
+        "Select the preferred car model and package (self-drive or with driver)",
+        "Review rental requirements and document verification terms",
+        "Click WhatsApp Booking — admin receives pre-filled vehicle and date details",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Showcase Armada Mobil", en: "Fleet Showcase" },
+        description: {
+          id: "Grid katalog mobil dengan foto unit, transmisi, kapasitas kursi, dan tarif sewa per hari.",
+          en: "Vehicle fleet catalog cards showing photos, transmission, seating, and daily rental rates.",
+        },
+      },
+      {
+        title: { id: "Paket & Syarat Rental", en: "Packages & Terms" },
+        description: {
+          id: "Penjelasan paket lepas kunci, all-in supir, serta checklist dokumen syarat sewa.",
+          en: "Breakdown of self-drive vs with-driver packages and required ID verification documents.",
+        },
+      },
+      {
+        title: { id: "Form Booking Cepat", en: "Quick Booking Flow" },
+        description: {
+          id: "Formulir input tanggal sewa dan pilihan armada yang otomatis menyusun pesan WhatsApp ke admin.",
+          en: "Date and vehicle selection intake generating a structured WhatsApp reservation text.",
+        },
+      },
+    ],
+  },
+  {
+    id: "fwk-leather",
+    slug: "fwk-leather",
+    title: {
+      id: "Website Brand & Manufaktur Kulit FWK Leather Bandung",
+      en: "Brand & B2B Manufacturing Website for FWK Leather",
+    },
+    category: "company-profile",
+    categoryLabel: { id: "Craft & Manufaktur", en: "Craft & Manufacturing" },
+    niche: {
+      id: "Brand kerajinan kulit asli, manufaktur tas & dompet kulit, maklon private-label, dan souvenir korporat B2B",
+      en: "Genuine leather craft brands, bag & wallet manufacturing, private-label OEM, and corporate gifting",
+    },
+    summary: {
+      id: "Website brand dan 3 jalur revenue untuk FWK Leather (Est. 2014, Bandung) — katalog retail kustom monogram, penawaran corporate merchandise (B2B), dan funnel maklon / private label.",
+      en: "Brand and 3-channel revenue website for FWK Leather (Bandung, Est. 2014) — custom retail catalog with monogramming, corporate gifting RFQ, and private-label manufacturing funnel.",
+    },
+    businessProblem: {
+      id: "Pengrajin kulit berkualitas tinggi sering terjebak hanya menjual satuan di marketplace dengan perang harga, padahal mereka memiliki kapasitas produksi maklon dan pesanan korporat bernilai tinggi.",
+      en: "High-quality leather artisans often get trapped selling retail on marketplaces amidst price wars, despite having production capacity for lucrative B2B corporate orders and private-label manufacturing.",
+    },
+    solution: {
+      id: "Website terstruktur dengan 3 funnel berbeda: katalog retail kustom nama, form RFQ merchandise kantor (B2B), dan portal pengembangan produk maklon / private-label untuk brand fashion.",
+      en: "A structured platform operating 3 distinct revenue funnels: personalized retail catalog, corporate merchandise RFQ engine, and private-label product development portal for fashion brands.",
+    },
+    businessValue: {
+      id: [
+        "Membuka pintu inquiry B2B bernilai tinggi (souvenir kantor, seminar kit kulit)",
+        "Funnel maklon private-label menarik brand fashion yang butuh partner produksi",
+        "Katalog retail menyajikan storytelling material kulit asli dan teknik jahitan tangan",
+        "Struktur inquiry B2B menyaring kebutuhan quantity, deadline, dan budget di awal",
+        "Identitas brand craft premium yang berdiri kokoh di luar platform marketplace",
+      ],
+      en: [
+        "Unlocks high-ticket B2B inquiry funnels (corporate souvenirs, executive gift sets)",
+        "Private-label maklon funnel attracts fashion brands seeking reliable manufacturing",
+        "Retail catalog highlights full-grain leather storytelling and hand-stitching craft",
+        "B2B intake filters order volume, timeline, and budget specifications upfront",
+        "Premium craft brand identity establishing independence from marketplace price wars",
+      ],
+    },
+    features: {
+      id: [
+        "Storytelling keaslian material (Full Grain Pull-Up, Crazy Horse, Veg-Tan)",
+        "Katalog produk retail: tas laptop, dompet, cardholder, clutch, custom monogram",
+        "Formulir Request for Quotation (RFQ) khusus corporate merchandise & souvenir B2B",
+        "Halaman Maklon / Private Label dengan alur sampling dan Minimum Order Quantity (MOQ)",
+        "Galeri workshop dan proses produksi pengrajin lokal Bandung",
+        "Kanal WhatsApp terdedikasi untuk tim B2B procurement dan retail customer",
+      ],
+      en: [
+        "Material craftsmanship storytelling (Full Grain Pull-Up, Crazy Horse, Veg-Tan)",
+        "Retail collection catalog: laptop bags, wallets, cardholders, custom monogramming",
+        "Dedicated Request for Quotation (RFQ) engine for corporate B2B gifting",
+        "Private Label (Maklon) development page detailing sampling stages and MOQ terms",
+        "Artisan workshop gallery and manufacturing process showcase in Bandung",
+        "Dedicated WhatsApp channels routing retail buyers and corporate procurement desks",
+      ],
+    },
+    tags: {
+      id: ["Craft Brand", "Manufaktur B2B", "Maklon Kulit", "RFQ Corporate", "Bandung"],
+      en: ["Craft Brand", "B2B Manufacturing", "Private Label", "Corporate RFQ", "Leather Goods"],
+    },
+    thumbnail: "/images/portfolio/fwk-leather.webp",
+    demoPath: "/portfolio/fwk-leather",
+    caseStudyPath: "/portfolio/fwk-leather",
+    mockDataHighlights: {
+      id: [
+        "Brand: FWK Leather — Bandung, Est. 2014, Authentic Leather Goods",
+        "3 kanal pendapatan: Retail Custom, Corporate Gifting (B2B), Maklon Private Label",
+        "Katalog material: Full-Grain Vegetable Tanned, Crazy Horse, Pull-Up Leather",
+        "Deploy: Cloudflare Workers edge architecture",
+      ],
+      en: [
+        "Brand: FWK Leather — Bandung, Est. 2014, Authentic Leather Goods",
+        "3 revenue funnels: Custom Retail, Corporate B2B Gifting, Private-Label OEM",
+        "Material selection: Full-Grain Veg-Tan, Crazy Horse, Pull-Up Leather",
+        "Deployed on Cloudflare Workers edge architecture",
+      ],
+    },
+    userFlow: {
+      id: [
+        "Pengunjung (retail / tim procurement / owner brand) membuka website",
+        "Memilih jalur sesuai kebutuhan: belanja retail, souvenir kantor, atau maklon",
+        "Mempelajari standar material kulit asli dan foto detail pengerjaan",
+        "Mengisi form spesifikasi pesanan (quantity, kustomisasi logo, target deadline)",
+        "Tersambung ke WhatsApp divisi yang tepat (Retail Customer Support atau Tim B2B)",
+      ],
+      en: [
+        "Visitors (retail customers / procurement managers / brand owners) land on the platform",
+        "Choose their desired funnel: retail shop, corporate gifting, or private label manufacturing",
+        "Inspect genuine leather material standards and artisanal workshop craftsmanship",
+        "Submit order specifications (quantities, embossed logo options, deadlines)",
+        "Route directly to the appropriate WhatsApp desk (Retail Support or B2B Accounts)",
+      ],
+    },
+    screens: [
+      {
+        title: { id: "Showcase Craft & Material", en: "Craft & Material Showcase" },
+        description: {
+          id: "Hero visual artisan dengan penekanan pada keaslian kulit asli dan detail jahitan tangan.",
+          en: "Artisanal visual hero highlighting genuine leather authenticity and hand-stitched detailing.",
+        },
+      },
+      {
+        title: { id: "Koleksi Produk & Kustomisasi", en: "Product Collections" },
+        description: {
+          id: "Katalog barang kulit dengan opsi personalisasi grafir nama dan varian warna material.",
+          en: "Leather goods catalog featuring monogram personalization options and material finishes.",
+        },
+      },
+      {
+        title: { id: "Portal B2B & Maklon", en: "Corporate RFQ & Private Label" },
+        description: {
+          id: "Halaman khusus tim procurement kantor dan brand fashion untuk memesan skala produksi.",
+          en: "Dedicated intake portal for corporate procurement teams and fashion private-label orders.",
+        },
+      },
+    ],
+  },
 ];

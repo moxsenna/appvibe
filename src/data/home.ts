@@ -252,4 +252,9 @@ export const projectStatusLabel: Record<string, Localized<string>> = {
   klinik: { id: "Studio Project", en: "Studio Project" },
   properti: { id: "Studio Project", en: "Studio Project" },
   "lead-dashboard": { id: "Studio Project", en: "Studio Project" },
+  littlestar: { id: "Studio Project", en: "Studio Project" },
+  lakoku: { id: "Studio Project", en: "Studio Project" },
+  "promotor-class": { id: "Studio Project", en: "Studio Project" },
+  "zorro-rental": { id: "Studio Project", en: "Studio Project" },
+  "fwk-leather": { id: "Studio Project", en: "Studio Project" },
 };

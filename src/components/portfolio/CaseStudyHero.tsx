@@ -14,7 +14,11 @@ type CaseStudyHeroProps = {
 
 export function CaseStudyHero({ item }: CaseStudyHeroProps) {
   const { lang, dict } = useLang();
-  const demoPath = routes.demoDetail(lang, item.slug);
+  const demoPath = item.demoPath.startsWith("http")
+    ? item.demoPath
+    : routes.demoDetail(lang, item.slug);
+  const hasExternalDemo = item.demoPath.startsWith("http");
+  const hasDedicatedDemo = item.demoPath !== item.caseStudyPath;
 
   const facts = [
     {
@@ -54,26 +58,55 @@ export function CaseStudyHero({ item }: CaseStudyHeroProps) {
               </dd>
             </div>
           ))}
-          <div className="bg-av-ink px-5 py-4">
-            <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-dark-muted">
-              Live demo
-            </dt>
-            <dd className="mt-1.5">
-              <Link
-                to={demoPath}
-                onClick={() =>
-                  trackEvent("demo_open", {
-                    slug: item.slug,
-                    location: "case_study_hero",
-                    deferred: false,
-                  })
-                }
-                className="text-sm font-medium text-white underline decoration-av-signal-on-dark decoration-2 underline-offset-4 transition-colors hover:text-av-signal-on-dark"
-              >
-                {dict.common.cta.openDemo} <span aria-hidden>↗</span>
-              </Link>
-            </dd>
-          </div>
+          {hasDedicatedDemo ? (
+            <div className="bg-av-ink px-5 py-4">
+              <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-dark-muted">
+                Live demo
+              </dt>
+              <dd className="mt-1.5">
+                {hasExternalDemo ? (
+                  <a
+                    href={demoPath}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackEvent("demo_open", {
+                        slug: item.slug,
+                        location: "case_study_hero",
+                        deferred: false,
+                      })
+                    }
+                    className="text-sm font-medium text-white underline decoration-av-signal-on-dark decoration-2 underline-offset-4 transition-colors hover:text-av-signal-on-dark"
+                  >
+                    {dict.common.cta.openDemo} <span aria-hidden>↗</span>
+                  </a>
+                ) : (
+                  <Link
+                    to={demoPath}
+                    onClick={() =>
+                      trackEvent("demo_open", {
+                        slug: item.slug,
+                        location: "case_study_hero",
+                        deferred: false,
+                      })
+                    }
+                    className="text-sm font-medium text-white underline decoration-av-signal-on-dark decoration-2 underline-offset-4 transition-colors hover:text-av-signal-on-dark"
+                  >
+                    {dict.common.cta.openDemo} <span aria-hidden>↗</span>
+                  </Link>
+                )}
+              </dd>
+            </div>
+          ) : (
+            <div className="bg-av-canvas px-5 py-4">
+              <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-av-muted">
+                {lang === "id" ? "Format" : "Format"}
+              </dt>
+              <dd className="mt-1.5 text-sm font-medium text-av-ink">
+                {lang === "id" ? "Studi Kasus Lengkap" : "Full Case Study"}
+              </dd>
+            </div>
+          )}
         </dl>
 
         <figure
@@ -92,22 +125,24 @@ export function CaseStudyHero({ item }: CaseStudyHeroProps) {
           </figcaption>
         </figure>
 
-        <div className="mt-8 anim-rise ad-6">
-          <Button
-            href={demoPath}
-            viewTransition
-            size="lg"
-            onClick={() =>
-              trackEvent("demo_open", {
-                slug: item.slug,
-                location: "case_study_hero_button",
-                deferred: false,
-              })
-            }
-          >
-            {dict.common.cta.openDemo} <span aria-hidden>↗</span>
-          </Button>
-        </div>
+        {hasDedicatedDemo && (
+          <div className="mt-8 anim-rise ad-6">
+            <Button
+              href={demoPath}
+              viewTransition={!hasExternalDemo}
+              size="lg"
+              onClick={() =>
+                trackEvent("demo_open", {
+                  slug: item.slug,
+                  location: "case_study_hero_button",
+                  deferred: false,
+                })
+              }
+            >
+              {dict.common.cta.openDemo} <span aria-hidden>↗</span>
+            </Button>
+          </div>
+        )}
       </Container>
     </section>
   );

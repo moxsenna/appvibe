@@ -53,19 +53,39 @@ export function CaseStudyCTA({ item }: CaseStudyCTAProps) {
             >
               {dict.common.cta.consultShort}
             </Button>
-            <Link
-              to={routes.demoDetail(lang, item.slug)}
-              onClick={() =>
-                trackEvent("demo_open", {
-                  location: "case_study_cta",
-                  slug: item.slug,
-                  deferred: false,
-                })
-              }
-              className="inline-flex min-h-[44px] items-center border-b border-av-ink pb-0.5 text-[15px] font-medium text-av-ink transition-colors hover:border-av-signal hover:text-av-signal"
-            >
-              {dict.common.cta.openDemo} <span aria-hidden>↗</span>
-            </Link>
+            {item.demoPath !== item.caseStudyPath && (
+              item.demoPath.startsWith("http") ? (
+                <a
+                  href={item.demoPath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent("demo_open", {
+                      location: "case_study_cta",
+                      slug: item.slug,
+                      deferred: false,
+                    })
+                  }
+                  className="inline-flex min-h-[44px] items-center border-b border-av-ink pb-0.5 text-[15px] font-medium text-av-ink transition-colors hover:border-av-signal hover:text-av-signal"
+                >
+                  {dict.common.cta.openDemo} <span aria-hidden>↗</span>
+                </a>
+              ) : (
+                <Link
+                  to={routes.demoDetail(lang, item.slug)}
+                  onClick={() =>
+                    trackEvent("demo_open", {
+                      location: "case_study_cta",
+                      slug: item.slug,
+                      deferred: false,
+                    })
+                  }
+                  className="inline-flex min-h-[44px] items-center border-b border-av-ink pb-0.5 text-[15px] font-medium text-av-ink transition-colors hover:border-av-signal hover:text-av-signal"
+                >
+                  {dict.common.cta.openDemo} <span aria-hidden>↗</span>
+                </Link>
+              )
+            )}
           </div>
           <div className="mt-10 flex flex-col gap-2 border-t border-av-border pt-6 sm:flex-row sm:items-center sm:justify-between">
             <Link
