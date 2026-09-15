@@ -28,6 +28,9 @@ npm-debug.log*
 # TypeScript
 *.tsbuildinfo
 
+# Agent cache
+.omo/
+
 # Agent tools (design reference only)
 .agent-tools/
 
